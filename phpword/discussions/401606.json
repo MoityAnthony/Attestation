@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "935462",
+    "ThreadId": "401606",
+    "Html": "\r\n<p>Hello, &nbsp;I apologize if this has been answered before.</p>\r\n<p>&nbsp;</p>\r\n<p>I created a template file a la the Template.php example and it works '<span id=\"GRmark_93546fddce878c8b87b8bdf4df19140ba9b504ae_kinda:0\">kinda</span>' &nbsp;Some of the values are replaced as they should be but others not. &nbsp;For example,</p>\r\n<p>&nbsp;</p>\r\n<p><span id=\"GRmark_d8a54ed4bd9ee81e856d7915ffe5997465c31911_a:0\"><span id=\"GRmark_d8a54ed4bd9ee81e856d7915ffe5997465c31911_a:0\">a</span></span> table:</p>\r\n<p>Col 1<span style=\"white-space:pre\"> </span>Col 2</p>\r\n<p>$<span id=\"GRmark_cd5bfa401d6f8271f38e8b842415c13d889873e8_{:0\"><span id=\"GRmark_b4934a60019ada4e3870d7a4148f9a64825175a6_{:0\">{</span></span>year}<span style=\"white-space:pre\">\r\n</span>$<span id=\"GRmark_cd5bfa401d6f8271f38e8b842415c13d889873e8_{:1\"><span id=\"GRmark_1abbf5b62f6783e1bcb33f340d140d97d9ec701c_{:0\">{</span></span><span id=\"GRmark_cd5bfa401d6f8271f38e8b842415c13d889873e8_lastyear:2\"><span id=\"GRmark_1abbf5b62f6783e1bcb33f340d140d97d9ec701c_lastyear:1\">lastyear</span></span>}</p>\r\n<p>$<span id=\"GRmark_76b66220676f4091462cb02304879431c1a191de_{:0\"><span id=\"GRmark_6ba1381553f22624e6267fb60b6567ac0fe7fbf2_{:0\">{</span></span>reports}<span style=\"white-space:pre\">\r\n</span>${lastreports}</p>\r\n<p><span id=\"GRmark_0cc0dcd8aba519e9df03bec0ee7c32b408a8bfb2_the:0\">the</span> year and\r\n<span id=\"GRmark_0cc0dcd8aba519e9df03bec0ee7c32b408a8bfb2_lastreports:1\">lastreports</span>&nbsp;substitutions work fine. But not the others. &nbsp;I can't see any\r\n<span id=\"GRmark_834fe462233390c5c1a26f73dc8abe10706c7939_diff:0\">diff</span>. <span id=\"GRmark_5c97c412fa16f7c7dbfc55749c8055915a21bba3_bet:0\">\r\nbet</span>. <span id=\"GRmark_b4e3c63fac9623d05397ce9857b5e244c0cecf4b_these:0\">\r\nthese</span>. &nbsp;Anyone else have a problem like this? &nbsp;Solution?</p>\r\n<p><br>\r\nThanks.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-11-01T15:02:08.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "938860",
+    "ThreadId": "401606",
+    "Html": "\r\n<p>Hi There,</p>\r\n<p>I've discovered this, seems to happen only when the templates are made in Word 2010.</p>\r\n<p>I'm using a template with replacement ${client_name} - sometimes Word 2010 will input it as that, Open Office always will.</p>\r\n<p>The client name wasn't replaced, so I put a echo _documentXML in Template::save, and ${client_name} was output as:</p>\r\n<pre id=\"line1\"><span>${</span><span>&lt;/<span>w:t</span>&gt;</span><span>&lt;/<span>w:r</span>&gt;</span><span>&lt;<span>w:bookmarkStart</span> <span>w:id</span>=&quot;<a>0</a>&quot; <span>w:name</span>=&quot;<a>_GoBack</a>&quot;<span title=\"Self-closing syntax (“/&gt;”) used on a non-void HTML element. Ignoring the slash and treating as a start tag.&quot;&gt;/&lt;/span&gt;&gt;&lt;/span&gt;&lt;span&gt;&lt;&lt;span &gt;w:bookmarkEnd&lt;/span&gt; &lt;span &gt;w:id&lt;/span&gt;=&quot;&lt;a &gt;0&lt;/a&gt;&quot;&lt;span  title=\">”) used on a non-void HTML element. Ignoring the slash and treating as a start tag.&quot;&gt;/</span>&gt;</span><span>&lt;<span>w:r</span>&gt;</span><span>&lt;<span>w:t</span>&gt;</span><span>client_name}</span><span title=\"End tag “w:p” seen, but there were open elements.\"><br><br>So that's never going to be matched properly.<br><br>another part in the same document is:<br></span><span><br>${</span><span>&lt;/<span>w:t</span>&gt;</span><span>&lt;/<span>w:r</span>&gt;</span><span>&lt;<span>w:proofErr</span> <span>w:type</span>=&quot;<a>spellStart</a>&quot;<span title=\"Self-closing syntax (“/&gt;”) used on a non-void HTML element. Ignoring the slash and treating as a start tag.&quot;&gt;/&lt;/span&gt;&gt;&lt;/span&gt;&lt;span&gt;&lt;&lt;span &gt;w:r&lt;/span&gt;&gt;&lt;/span&gt;&lt;span&gt;&lt;&lt;span &gt;w:t&lt;/span&gt;&gt;&lt;/span&gt;&lt;span&gt;client_name&lt;/span&gt;&lt;span&gt;&lt;/&lt;span &gt;w:t&lt;/span&gt;&gt;&lt;/span&gt;&lt;span&gt;&lt;/&lt;span &gt;w:r&lt;/span&gt;&gt;&lt;/span&gt;&lt;span&gt;&lt;&lt;span &gt;w:proofErr&lt;/span&gt; &lt;span &gt;w:type&lt;/span&gt;=&quot;&lt;a &gt;spellEnd&lt;/a&gt;&quot;&lt;span  title=\">”) used on a non-void HTML element. Ignoring the slash and treating as a start tag.&quot;&gt;/</span>&gt;</span><span>&lt;<span>w:proofErr</span> <span>w:type</span>=&quot;<a>gramStart</a>&quot;&lt;span  title=&quot;Self-closing syntax (“/&gt;”) used on a non-void HTML element. Ignoring the slash and treating as a start tag.&quot;&gt;/</span>&gt;<span>&lt;<span>w:r</span>&gt;</span><span>&lt;<span>w:t</span>&gt;</span><span>}<br><br>so you can't even reliably filter all the other tags out.<br><br>Would be nice if there was a solution, perhaps something that cleans all that extra crap out</span></pre>\r\n",
+    "PostedDate": "2012-11-08T16:08:03.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "938925",
+    "ThreadId": "401606",
+    "Html": "<p>ok, my solution was to remove any non-letters, I tried changing the replace to _client_code_ but it started adding xml around all the underscores, so I just have tsclientcode and replace that, works great and is workable for what I'm using it for.</p>",
+    "PostedDate": "2012-11-08T19:33:29.847-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "939121",
+    "ThreadId": "401606",
+    "Html": "<p>Thanks for your input stunz. &nbsp;I want to understand your solution better, however. &nbsp;Are you saying that simply changing the template var names to eliminate non-letters cured the problem, i.e. &nbsp;$<span id=\"GRmark_37fcbe9d24183bc02858cea7a04af9984c96010b_{:0\" class=\"GRcorrect\">{</span>client_name} =&gt; $<span id=\"GRmark_37fcbe9d24183bc02858cea7a04af9984c96010b_{:1\" class=\"GRcorrect\">{</span><span id=\"GRmark_37fcbe9d24183bc02858cea7a04af9984c96010b_clientname:2\" class=\"GRcorrect\">clientname</span>} &nbsp;</p>\r\n<p>OR -- Are you saying that you edited the XML produced? &nbsp;I am not trying to be dense here but I'm a bit new to all this.<br /><br />Thanks again for your input to a vexing problem.&nbsp;</p>",
+    "PostedDate": "2012-11-09T06:21:29.693-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "939332",
+    "ThreadId": "401606",
+    "Html": "<p>Hi there,</p>\r\n<p>no I had to remove the ${'s altogether as Word 2010 was putting xml in there, i.e. ${client_name} =&gt; tsclientname - ts is abbreviation of the app I'm using it in, and prevents real words being replaced prefixing with that.</p>\r\n<p>So I edited Template::setValue and removed pretty much everything but the last line</p>",
+    "PostedDate": "2012-11-09T12:32:57.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "940602",
+    "ThreadId": "401606",
+    "Html": "<p>Oh. &nbsp;That makes sense. I'm going to give it a try and see what happens. Thanks again. &nbsp;It would be a great feature if I could get it to work :)</p>",
+    "PostedDate": "2012-11-12T14:49:40.693-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "940933",
+    "ThreadId": "401606",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>winettsg wrote:</strong><br>\r\n<p>Oh. &nbsp;That makes sense. I'm going to give it a try and see what happens. Thanks again. &nbsp;It would be a great feature if I could get it to work :)</p>\r\n</blockquote>\r\n<p>Just had to give you a big THANKS. &nbsp;I just updated the Template-&gt;<span id=\"GRmark_912c431018f20a4f04f1a1ffedf5cb0b41fc3400_setValue:0\">setValue</span><span id=\"GRmark_912c431018f20a4f04f1a1ffedf5cb0b41fc3400_(:1\">(</span>)&nbsp;code as you suggested and it\r\n works like a charm. &nbsp;This is a HUGE help to me.</p>\r\n",
+    "PostedDate": "2012-11-13T05:41:10.15-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "944846",
+    "ThreadId": "401606",
+    "Html": "\r\n<p>If this can help you i would be glad.</p>\r\n<p><span>I cracked a little bit the function, using some regular expressions in order to:</span><br>\r\n<span>1. Find the regular expressions commencing with '${' and ending with '}' (in my case i dropped the $ sign cause i needed to use the $ sign in my word file)</span><br>\r\n<span>2. With only that string, find and eliminate all the opening tags</span><br>\r\n<span>3. find and eliminate the closing tags in that string</span><br>\r\n<span>4. replace the old string (with garbage code) with the cleaned string</span><br>\r\n<span>5. output the _documentXML</span><br>\r\n<br>\r\n<span>this is the piece of code I implemented if anyone is interested</span><br>\r\n<br>\r\n<span>public function setValue($search, $replace) {</span><br>\r\n<span>$pattern = '|\\{([^\\}]+)\\}|U'; //if you need the $, use: '|\\$\\{([^\\}]+)\\}|U''</span><br>\r\n<span>preg_match_all($pattern, $this-&gt;_documentXML, $matches);</span><br>\r\n<span>$openedTagPattern= '/&lt;[^&gt;]+&gt;/';</span><br>\r\n<span>$closedTagPattern= '/&lt;\\/[^&gt;]+&gt;/';</span><br>\r\n<span>foreach ($matches[0] as $value) {</span><br>\r\n<span>$modified= preg_replace($openedTagPattern, '', $value);</span><br>\r\n<span>$modified= preg_replace($closedTagPattern, '', $modified);</span><br>\r\n<span>$this-&gt;_documentXML = str_replace($value, $modified, $this-&gt;_documentXML);</span><br>\r\n<span>}</span><br>\r\n<span></span><br>\r\n<span>if(substr($search, 0, 1) !== '{' && substr($search, -1) !== '}') { //change to: substr($search, 0, 2) !== '${' if you need the $ character</span><br>\r\n<span>$search = '{'.$search.'}'; //change to '${'.$search.'}' if $ needed</span><br>\r\n<span>}</span><br>\r\n<span></span><br>\r\n<span>if(!is_array($replace)) {</span><br>\r\n<span>$replace = utf8_encode($replace);</span><br>\r\n<span>}</span><br>\r\n<span></span><br>\r\n<span>$this-&gt;_documentXML = str_replace($search, $replace, $this-&gt;_documentXML);</span><br>\r\n<span>}</span></p>\r\n",
+    "PostedDate": "2012-11-20T15:28:31.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "945103",
+    "ThreadId": "401606",
+    "Html": "\r\n<p>That's an interesting approach. &nbsp;I may try adding it to the class as a different function (e.g.\r\n<span id=\"GRmark_29509a0cb1ab663481fb301364a3aacf01536391_NewSetValue:0\">NewSetValue</span>) and give it a whirl.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2012-11-21T05:17:00.803-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

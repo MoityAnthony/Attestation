@@ -1,0 +1,61 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "When converting a Word document to HTML. text in a paragraph is being split up into separate textruns when it should just be one textrun.\r\n\r\nE.g.\r\n\r\nHere is some paragraph content. Bloomin' 'eck ah'll gi' thee a thick ear how much. God's own county ah'll gi' thee a thick ear shu' thi gob tintintin. Will 'e 'eckerslike sup wi' 'im bobbar gerritetten. Cack-handed nobbut a lad soft lad tha knows tha what. Shurrup be reet nobbut a lad eeh shurrup aye. Michael palin dahn t'coil oil ah'll gi' thee a thick \r\n\r\nBecomes\r\n\r\nHere is some paragraph content.\r\n\r\nBloomin\r\n\r\n' '\r\n\r\neck\r\n\r\nah'll\r\n\r\ngi\r\n\r\n' thee a thick ear how much. God's own county\r\n\r\nah'll\r\n\r\ngi\r\n\r\n' thee a thick ear\r\n\r\nshu\r\n\r\n'\r\n\r\nthi\r\n\r\ngob\r\n\r\ntintintin\r\n\r\n. Will 'e '\r\n\r\neckerslike\r\n\r\nsup\r\n\r\nwi\r\n\r\n' '\r\n\r\nim\r\n\r\nbobbar\r\n\r\ngerritetten\r\n\r\n. Cack-handed\r\n\r\nnobbut\r\n\r\na lad soft lad\r\n\r\ntha\r\n\r\nknows\r\n\r\ntha\r\n\r\nwhat.\r\n\r\nShurrup\r\n\r\nbe\r\n\r\nreet\r\n\r\nnobbut\r\n\r\na lad\r\n\r\neeh\r\n\r\nshurrup\r\n\r\naye. Michael\r\n\r\npalin\r\n\r\ndahn\r\n\r\nt'coil\r\n\r\noil\r\n\r\nah'll\r\n\r\ngi\r\n\r\n' thee a thick",
+    "LastUpdatedDate": "2015-01-06T09:09:36.25-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2015-01-06T08:53:27.087-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "textrun breaking up a paragraph",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 90
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1382613,
+      "FileName": "Screen Shot 2015-01-06 at 16.52.07.png",
+      "DownloadUrl": ".\\1382613"
+    },
+    {
+      "FileId": 1382614,
+      "FileName": "Screen Shot 2015-01-06 at 16.52.54.png",
+      "DownloadUrl": ".\\1382614"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "How it looks in word",
+      "PostedDate": "2015-01-06T08:53:56.727-08:00",
+      "Id": 169549
+    },
+    {
+      "Message": "Here is a pull request which fixes this issue:\n\nhttps://github.com/PHPOffice/PHPWord/pull/463",
+      "PostedDate": "2015-01-06T09:06:17.727-08:00",
+      "Id": 169550
+    }
+  ]
+}

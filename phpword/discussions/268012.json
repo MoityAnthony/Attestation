@@ -1,0 +1,186 @@
+[
+  {
+    "Id": "653607",
+    "ThreadId": "268012",
+    "Html": "\r\n<p>I am facing a very strange problem with editing templates and I'm completely stuck right now. It must be a problem with the docx files themselves</p>\r\n<p>Here are some parts of my code:</p>\r\n<p>$PHPWord = new PHPWord();<br>\r\n$template = $PHPWord-&gt;loadTemplate($file_in);</p>\r\n<p>$template-&gt;setValue('main_name', $main_name);<br>\r\n$template-&gt;setValue('main_stra&szlig;e', $main_stra&szlig;e);<br>\r\n$template-&gt;setValue('main_plz', $main_plz);<br>\r\n$template-&gt;setValue('main_ort', $main_ort);<br>\r\n$template-&gt;setValue('main_www', $main_www);<br>\r\n$template-&gt;setValue('main_bem', $main_bem);</p>\r\n<p>$template-&gt;setValue('Value1', 'Sun');<br>\r\n$template-&gt;setValue('Value2', 'Mercury');<br>\r\n$template-&gt;setValue('Value3', 'Venus');<br>\r\n$template-&gt;setValue('Value4', 'Earth');<br>\r\n$template-&gt;setValue('Value5', 'Mars');</p>\r\n<p>$template-&gt;save($file_out);</p>\r\n<p>All the variables are containing strings, I checked this. $file_in contains path&#43;filename of the Template.docx. I used the one from the examples folder and added some own search patterns. Here's my docx:</p>\r\n<p>${main_name}<br>\r\n${main_stra&szlig;e}<br>\r\n${main_plz}<br>\r\n${main_ort}<br>\r\n<br>\r\n${value1}<br>\r\n${value2}<br>\r\n${value3}<br>\r\n${value4}<br>\r\n${Value5} // This one was typed manually<br>\r\n${Value5} // This one was copy-pasted from the original Template.docx fro the examples folder</p>\r\n<p>This produces the following Output.docx</p>\r\n<p>FH W&uuml;rzburg<br>\r\n${main_stra&szlig;e}<br>\r\n97070<br>\r\nW&uuml;rzburg<br>\r\n<br>\r\n${value1}<br>\r\n${value2}<br>\r\n${value3}<br>\r\n${value4}<br>\r\n${Value5} // This one was typed manually<br>\r\nMars&nbsp;// This one was copy-pasted from the original Template.docx fro the examples folder</p>\r\n<p>&nbsp;</p>\r\n<p>What the hell is going on ???</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-08-06T04:00:04.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "653608",
+    "ThreadId": "268012",
+    "Html": "<p>By the way, I am using Office2010, no doc2docx conversion or something like that is involved...</p>",
+    "PostedDate": "2011-08-06T04:02:11.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "654618",
+    "ThreadId": "268012",
+    "Html": "<p>Nobody an idea???</p>\r\n<p>I guess I have to implement it myself. Already lost two days with this...</p>",
+    "PostedDate": "2011-08-08T08:55:41.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "654894",
+    "ThreadId": "268012",
+    "Html": "<p>So, some setValue work and other do not.</p>\r\n<p>What is the difference between the setValue that work and the setValue that don't work?</p>\r\n<p>What I see is the the setValue that don't work have either:</p>\r\n<ul>\r\n<li>a German character <strong>Eszett&nbsp; </strong>http://en.wikipedia.org/wiki/%C3%9F</li>\r\n<li>incorrect case: value1 vs Value1</li>\r\n</ul>\r\n<p>Try removing the Eszett and correct your case.</p>\r\n<p>Please post back if that solves your problem.</p>",
+    "PostedDate": "2011-08-08T18:18:27.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "655190",
+    "ThreadId": "268012",
+    "Html": "<p>Thanks for the hint.</p>\r\n<p>But I'm afraid I can't see any logic difference between those strings that are replaced and those which are not.</p>\r\n<p>I already checked for case sensivity and the special characters. Even very simple strings sometimes work and sometimes do not.</p>\r\n<p>This is clearly shown by my example with ${Value5}. In my template there where two lines which contained exactly the same string. The first string was copied from the original Template.docx in the examples folder. The second string was typed in by myself manually. But the two strings look exactly equal.</p>\r\n<p>One of them is replaced, the other is not...</p>\r\n<p>&nbsp;</p>\r\n<p>Another example...</p>\r\n<p>I have a complete template containing many strings that should be replaced. Some of them are replaced, others are not. All strings where just copy-pasted from the same source. For example the string \"${main_plz}\" is replaced correctly. Now I create another template, that is containing this one single string \"${main_plz}\", run the same code as before and the string is not replaced...</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-08-09T06:56:22.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "655255",
+    "ThreadId": "268012",
+    "Html": "<p>Okay. It's helpful to post the actual code you use; otherwise we chase wild geese (value1 vs Value1).</p>\r\n<p>You might check these links:</p>\r\n<p><a href=\"http://phpword.codeplex.com/workitem/15\">http://phpword.codeplex.com/workitem/15</a></p>\r\n<p><a href=\"http://phpword.codeplex.com/discussions/261365\">http://phpword.codeplex.com/discussions/261365</a></p>\r\n<p><a href=\"http://phpword.codeplex.com/discussions/232636\">http://phpword.codeplex.com/discussions/232636</a></p>\r\n<p>Good luck</p>",
+    "PostedDate": "2011-08-09T08:18:30.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "655417",
+    "ThreadId": "268012",
+    "Html": "<p>Unbelievable, finally it is working!! :)</p>\r\n<p>&nbsp;</p>\r\n<p>I checked your links and found some usefull hints. There was no problem in my code, only in my docx-files.</p>\r\n<p>I always like to use underscores, like in ${main_name} for example. It seems that in the xml format these strings are split into pieces and the search pattern can't be found any more. I tried some other names like ${MAINname}, but no success. It seems that 2 or more uppercase letters also cause problems. Special characters like the german \"&szlig;\" are also not working.</p>\r\n<p>Finally I only used simple words like ${Name}... it worked! 8)</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a lot!!!</p>\r\n<p>&nbsp;</p>\r\n<p>By the way... how can I look into the xml structure? I already had the idea of checking the docx-xml structure myseld but only got a bunch of unreadable characters when I tried to open it with an editor...</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-08-09T11:54:26.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "655427",
+    "ThreadId": "268012",
+    "Html": "<p>Hmm... it's working. But it is very annoying to create working templates.</p>\r\n<p>For example, I have a template with text and many Variables all over the text that are all replaced correctly.</p>\r\n<p>Then I open the template again and just change the text style of a whole line to bold. Afterwards 90% of the variables are not replaced any more...</p>\r\n<p>The same problem when I want to align right or change the color of the text... I did not manage to create a formatted working template yet... but I'll keep trying...</p>",
+    "PostedDate": "2011-08-09T12:23:20.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "655444",
+    "ThreadId": "268012",
+    "Html": "<p>Just found out that docx-files are zip archives... :)</p>\r\n<p>this is getting stranger and stranger...</p>",
+    "PostedDate": "2011-08-09T12:53:06.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "655447",
+    "ThreadId": "268012",
+    "Html": "<p>Ok, finally I am getting into it.</p>\r\n<p>Right now I just realize the accomplishment of the developers... Understanding and working with this docx-format is very difficult. Now that I managed to see the real xml structure by unzipping the docx-archive I understand all the problems that I had. Most problems where caused by the spell checker. Some others by the format. Finally I succeeded creating a template that is completely working like it is supposed to.</p>\r\n<p>Thanks for your support! I will be able to go on by myself now :)</p>",
+    "PostedDate": "2011-08-09T13:01:11.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "655608",
+    "ThreadId": "268012",
+    "Html": "<p>Great news! And good for you for pursuing the problem. Also much appreciate documentation of the various solutions that helped you solve your issues.</p>\r\n<p>I too was amazed that a Word .doc (or .docx) file is really a zip archive, and saving it as a .zip file allows you to view the underlying XML file which instructs Word how to format the document. The XML in Word is so complex, and easily broken, eh? And so your Word templates must be formatted carefully to not create problems.</p>\r\n<p>You might experiment by modifying the Template.php code with the suggestion on this page: <a href=\"http://phpword.codeplex.com/workitem/15\">http://phpword.codeplex.com/workitem/15</a></p>\r\n<p>There is a big need for reliable template code, so you do us all a service to test and report back.</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> setValue($search, $replace) {\r\n<span style=\"color: blue;\">if</span>(substr($search, 0, 2) !== <span style=\"color: #a31515;\">'${'</span> &amp;&amp; substr($search, -1) !== <span style=\"color: #a31515;\">'}'</span>) {\r\n$search = <span style=\"color: #a31515;\">'/\\${.*?'</span>.$search.<span style=\"color: #a31515;\">'.*?}/'</span>;\r\n}\r\n\r\n<span style=\"color: blue;\">if</span>(!is_array($replace)) {\r\n$replace = utf8_encode($replace);\r\n}\r\n\r\n$this-&gt;_documentXML = preg_replace($search, $replace, $this-&gt;_documentXML,1);\r\n}\r\n\r\n</pre>\r\n</div>\r\nThank you.</p>",
+    "PostedDate": "2011-08-09T19:37:02.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "661495",
+    "ThreadId": "268012",
+    "Html": "<p>I solve this problem next way. I add in function setValue some code</p>\n<p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> setValue($search, $replace) {\n        <span style=\"color: blue;\">if</span>(substr($search, 0, 2) !== <span style=\"color: #a31515;\">'${'</span> &amp;&amp; substr($search, -1) !== <span style=\"color: #a31515;\">'}'</span>) {\n            $search = <span style=\"color: #a31515;\">'${'</span>.$search.<span style=\"color: #a31515;\">'}'</span>;\n        }\n\t\t\n        preg_match_all(<span style=\"color: #a31515;\">'/\\$[^\\$]+?}/'</span>, $this-&gt;_documentXML, $matches);\n\t\t\n\t\t<span style=\"color: blue;\">for</span> ($i=0;$i&lt;count($matches[0]);$i++){\n\n\t\t$matches_new[$i] = preg_replace(<span style=\"color: #a31515;\">'/(&lt;[^&lt;]+?&gt;)/'</span>,<span style=\"color: #a31515;\">''</span>, $matches[0][$i]);\n\t\t\n\t\t$this-&gt;_documentXML = str_replace($matches[0][$i], $matches_new[$i], $this-&gt;_documentXML);\n\t\t}\n\n\n\t\t\t\t\n\t\t\n\t$this-&gt;_documentXML = str_replace($search, $replace, $this-&gt;_documentXML);\n\t\t\n\t\t\n\t\t\n    }\n</pre>\n</div>\n</p>\n<div style=\"color: black; background-color: white;\">\n<pre><pre><span style=\"font-family: 'Segoe UI', 'Microsoft Sans Serif', Arial, Geneva, sans-serif;\"><span style=\"white-space: normal;\"><br /></span></span></pre>\n</pre>\n</div>\n<p>Inserting code deletes xml-tags inside ${}.&nbsp;</p>\n<p>For example, we create template Template.docx and insert ${Value1}. In document.xml&nbsp;Template.docx we can see ...${Val&lt;....&gt;u&lt;....&gt;e1}... Using regular expressions function setValue find construction ${} and deletes tags. Finnally, we get in&nbsp;document.xml&nbsp;&nbsp;...${Value1}...  and it can replace correctly.</p>",
+    "PostedDate": "2011-08-22T05:24:47.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "945405",
+    "ThreadId": "268012",
+    "Html": "\r\n<p>He tenido problema con &#65279;PhpWord, en este momento me reemplaza las variables en el cuerpo del documento de la Plantilla Word&nbsp;pero no en los encabezados, me pueden ayudar gracias</p>\r\n",
+    "PostedDate": "2012-11-21T16:34:43.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "945408",
+    "ThreadId": "268012",
+    "Html": "\r\n<p>He tenido problema con &#65279;PhpWord, en este momento me reemplaza las variables en el cuerpo del documento de la Plantilla Word&nbsp;pero las variables que estan&nbsp; en los encabezados No las reemplaza, me pueden ayudar gracias</p>\r\n",
+    "PostedDate": "2012-11-21T16:37:51.073-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "945409",
+    "ThreadId": "268012",
+    "Html": "\r\n<blockquote style=\"padding-bottom:0px; font-style:italic; margin:0.25em 1em 0px; padding-left:0.25em; padding-right:0.25em; padding-top:0px; border:#ccc 0.1em solid\">\r\n<strong>yurygarin wrote:</strong><br>\r\n<p>He tenido problema con &#65279;PhpWord, en este momento me reemplaza las variables en el cuerpo del documento de la Plantilla Word&nbsp;pero no en los encabezados, me pueden ayudar gracias</p>\r\n</blockquote>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-11-21T16:38:32.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "945777",
+    "ThreadId": "268012",
+    "Html": "\r\n<p>Si lo puedes explicar en inglés, tal vez podemos ayudar ;)</p>\r\n",
+    "PostedDate": "2012-11-22T10:23:15.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951115",
+    "ThreadId": "268012",
+    "Html": "\r\n<p>An question, Is posible to change an color for setValue ? thx</p>\r\n",
+    "PostedDate": "2012-12-04T05:27:18.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952477",
+    "ThreadId": "268012",
+    "Html": "\r\n<p>sorry for mi broken english, but i have the same problem, Setvalue is not working for ${Value} in Header Section!.</p>\r\n",
+    "PostedDate": "2012-12-06T11:58:09.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952486",
+    "ThreadId": "268012",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>mic_programator wrote:</strong><br>\r\n<p>An question, Is posible to change an color for setValue ? thx</p>\r\n</blockquote>\r\n<p>There is no need to change the color within the code. Just use the color you like in your word template! Only the variables will be replaced, the color will remain the same.</p>\r\n",
+    "PostedDate": "2012-12-06T12:26:04.763-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "952492",
+    "ThreadId": "268012",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>Beyonder wrote:</strong><br>\r\n<p>sorry for mi broken english, but i have the same problem, Setvalue is not working for ${Value} in Header Section!.</p>\r\n</blockquote>\r\n<p>If some variables are replaced there is most likely no problem in the code.</p>\r\n<p>Look for the problem in your word file! I had the same problem and it was driving me crazy! Until I realized that docx files are zip archives...</p>\r\n<p>Take your template.docx, rename it to template.zip, then extract it to a new folder. Open the folder and you will find a subfolder called &quot;word&quot; and in there you will find an xml file document.xml. Open this file in your favorite text editor and have a very\r\n close look... Somewhere in there you can find the text of your word document as an xml structure.&nbsp;</p>\r\n<p>For example:<span style=\"white-space:pre\"> &lt;w:t&gt;</span>${<span style=\"white-space:pre\">test</span>}<span style=\"white-space:pre\">&lt;/w:t&gt;</span></p>\r\n<p>If your Variables look like this, setValue will work fine...&nbsp;</p>\r\n<p>But for several reasons your variable could also look like this:</p>\r\n<p>&lt;w:t&gt;${&lt;/w:t&gt;&lt;/w:r&gt;&lt;w:r w:rsidR=&quot;009D2466&quot;&gt;&lt;w:t&gt;test&lt;/w:t&gt;&lt;/w:r&gt;&lt;w:r&gt;&lt;w:t&gt;}&lt;/w:t&gt;</p>\r\n<p>Of yourse this will not work, because setValue will search for &quot;${test}&quot; but can't find anything...</p>\r\n<p>&nbsp;</p>\r\n<p>First of all you should turn off your spellchecker ;) THis caused most of the problems I had. In some cases you might also have to change the format. Just try a few things until it works. It will always be helpful to look at document.xml!</p>\r\n",
+    "PostedDate": "2012-12-06T12:39:25.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "981260",
+    "ThreadId": "268012",
+    "Html": "\r\n<p>I had the exact problem as some people above, after completing the template and testing it all variables were successfully replaced. But after reopening the template, edit and saving it no variables were replaced.</p>\r\n<p>I inserted the code from <span>2tamara into the file </span>PHPWord/template.php and now it works like a charm :)</p>\r\n<p>Thanks alot ! really helpfull thread</p>\r\n",
+    "PostedDate": "2012-12-28T05:20:37.083-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1069330",
+    "ThreadId": "268012",
+    "Html": "To get something like this\r<br />\n<strong>$document-&gt;setValue('Value3', $Classificazione2);</strong> to work.\r<br />\n<br />\nIn your word document (not template file - no need) and filling in the values\r<br />\nyou must type straight. ${Value3}.\r<br />\n<br />\nIf you are like me and you do something like ${}, come back to fill the Value3, it would not work.\r<br />\njust type ${Value3} continuously, without using the back space, back space has a way of messing up the variable. <br />\n",
+    "PostedDate": "2013-07-16T21:39:51.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1234193",
+    "ThreadId": "268012",
+    "Html": "Yes it works! \r<br />\n<br />\nThanks a lot, man. It really make me confued for a long time.<br />\n",
+    "PostedDate": "2014-04-14T23:54:10.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

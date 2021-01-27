@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "465333",
+    "ThreadId": "218901",
+    "Html": "<p>I'm using php://output as filename because I rather not save any files on the server. However doing so gives me two problems:</p>\r\n<p>1. The name of the file becomes the name of the php script that creates it<br>2. The extension becomes .zip in the IE save as box</p>\r\n<p>Are these problems possible to overcome or do I have to save the file on the server first?</p>",
+    "PostedDate": "2010-07-09T04:40:06.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "468124",
+    "ThreadId": "218901",
+    "Html": "<p>Ok so I solved this by saving the doc as a file to&nbsp;a temp directory and imediately set header(&quot;Location&quot;) to that document. Next time a report is generated I delete all previously generated documents before I generate a new one.</p>\r\n<p>It would have been nicer to set the name and extension using php://output though</p>\r\n<p>Thanks for a great extension, really nice work!</p>",
+    "PostedDate": "2010-07-16T01:16:41.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

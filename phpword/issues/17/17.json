@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "See comment from Matthias.",
+    "ClosedDate": "2011-05-23T10:44:16.297-07:00",
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "If I try to apply a paragraph style to a cell addText() call, the paragraph style is ignored.  When I update the Cell.php file such that the addText() function matches the Section.php addText() function, the paragraph style is honored:\r\n\r\n        public function addText($text, $styleFont = null, $styleParagraph = null) {\r\n                $text = utf8_encode($text);\r\n                $text = new PHPWord_Section_Text($text, $styleFont, $styleParagraph);\r\n                $this->_elementCollection[] = $text;\r\n                return $text;\r\n        }\r\n ",
+    "LastUpdatedDate": "2011-05-23T10:44:16.297-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-11-10T20:51:08.373-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Cell addText() function doesn't support paragraph style",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 17
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks for your bug report. Will be fixed in the next release.\n\nBest regards,\nMatthias",
+      "PostedDate": "2011-05-23T10:44:01.723-07:00",
+      "Id": 36253
+    }
+  ]
+}

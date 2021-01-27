@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1087408",
+    "ThreadId": "455193",
+    "Html": "hi, i am unable to style the actual list number to bold when using addListItem() eg.\r<br />\ni want \r<br />\n<strong>1.</strong>  &lt;- the list number in bold\r<br />\ninstead of the default <br />\n<ol>\n<li>\n&lt;- the list number in normal, i want to style to bold<br />\n</li>\n</ol>\nany help will be appreciated please<br />\n",
+    "PostedDate": "2013-09-02T10:21:30.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

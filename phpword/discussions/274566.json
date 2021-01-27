@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "679245",
+    "ThreadId": "274566",
+    "Html": "<p>Hi guys!</p>\n<p>I want to change from COM to this libary to create an invoice with PHP. In the invoice I use a table for a detailed position of the costs. But, because they aren't constant, the number of rows varies each time. Therefore I have to add a Row in the table and write the text in it. Unfortunatly I couldn't manage to add a row in my template.</p>\n<p>I have already tried some things to make this thing working, and I've looked into the documentation but I still don't know where to start with... .</p>\n<p>Am I blind and didn't see the documentation? Do you have any suggestinos?</p>\n<p>&nbsp;</p>\n<p>so far</p>\n<p>choallin</p>",
+    "PostedDate": "2011-10-03T00:21:25.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

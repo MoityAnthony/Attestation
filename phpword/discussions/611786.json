@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1393836",
+    "ThreadId": "611786",
+    "Html": "Does it support filed replacement? For example, I have a custom field in a docx file, and I want to replace it with a user input from a form. \r<br />\n<br />\nOr does it support a kind of grammar (like the other PHPOffice/PHPWord) so that I can use <code>setValue</code> to assign the variable?<br />\n",
+    "PostedDate": "2015-03-24T16:17:38.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

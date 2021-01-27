@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "997341",
+    "ThreadId": "432206",
+    "Html": "Hi all\r<br />\n<br />\nI have been tasked with creating a very large word document from user input on a local webpage. We have a server running PHP and PHPWord, and the sample scripts seem to function quite well.\r<br />\n<br />\nBefore I heavily invest a lot of time trying to learn the PHPWord system, I need to know if it can do the following:<br />\n<ul>\n<li>Load a document as a template</li>\n<li>Make many changes to that document (add sections or pages, etc. depending on user input from a form)</li>\n<li>\nChange fields, or certain parts of the document, using regular expressions, or something similar<br />\n</li>\n</ul>\nMany thanks in advance\r<br />\nAaron<br />\n",
+    "PostedDate": "2013-02-06T07:41:49.093-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "572117",
+    "ThreadId": "247569",
+    "Html": "\r\n<p>Are there any plans for continued development and enhancements to this project?&nbsp; If so, some great features would be (if they don't already exist):</p>\r\n<p>Mail Merge Like Functionality</p>\r\n<p>1) multi-line support (e.g. Address Block)</p>\r\n<p>2) create large mailing documents from a template (e.g. create one document of thousands of pages from a single or multi page template)</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks and look forward to your response on future plans for this project.</p>\r\n<p>Mike</p>\r\n",
+    "PostedDate": "2011-02-25T06:18:47.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "572555",
+    "ThreadId": "247569",
+    "Html": "<p>Regarding Mail Merge, does the existing template feature provide what you're looking for or are you looking for something more complicated than search/replace</p>",
+    "PostedDate": "2011-02-26T07:03:59.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

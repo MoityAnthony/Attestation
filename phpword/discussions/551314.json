@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1264941",
+    "ThreadId": "551314",
+    "Html": "Hi everyone,\r<br />\n<br />\nFirst I would like thank you guys for the incredible work you have done with this framework !\r<br />\nMy question is how I do a line break into a setValue ?\r<br />\n<br />\nIn my document, I have something like that :\r<br />\n${Value1}\r<br />\n<br />\nAnd I want it to become something like this :\r<br />\nFirst sentence\r<br />\nSecond sentence\r<br />\n<br />\nBut it's just a line break, not an array and the string would be &quot;First sentence&lt;br/&gt;Second sentence&quot; or something like that.\r<br />\n<br />\nMaybe it's not possible yet but if someone has a solution, it would be nice !\r<br />\nThanks !<br />\n",
+    "PostedDate": "2014-07-11T11:59:06.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1264945",
+    "ThreadId": "551314",
+    "Html": "I answer myself finally. I found a way to do it on the website : <a href=\"https://phpword.codeplex.com/workitem/23\" rel=\"nofollow\">https://phpword.codeplex.com/workitem/23</a>\r<br />\n Just remplacing the line breaks by &quot;&lt;w:br/&gt;&quot; and it works !\r<br />\n<br />\nBye !<br />\n",
+    "PostedDate": "2014-07-11T12:14:11.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

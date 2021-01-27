@@ -1,0 +1,61 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "I have rewritten the template.php code so that it can create a new page from a single page/document, for when a user has to create a page for each loop. My code is not great, but it seems functional. Please feel free to use it, if it helps in anyway\r\n\r\nUSAGE:\r\nrequire_once '../classes/PHPWord/PHPWord.php';\r\n$PHPWord = new PHPWord();\r\n$document = $PHPWord->loadTemplate($template_path);\r\n\r\n$j = 0;\r\nforeach( $tenant_arr as $value)\r\n{\r\nif($j > 0){$document->AddPage();}\r\n$document->setValue('name', $tenant_arr[$j]['name']);\r\n$document->setValue('email', $tenant_arr[$j]['email']);\r\n$document->setValue('phone', $tenant_arr[$j]['phone']);\r\n$j++;\r\n} \r\netc...........",
+    "LastUpdatedDate": "2015-12-17T14:25:25.827-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-01-09T14:07:12.287-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Use template to create sequential pages",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 51
+  },
+  "FileAttachments": [
+    {
+      "FileId": 599988,
+      "FileName": "TemplateSEQ.rar",
+      "DownloadUrl": ".\\599988"
+    },
+    {
+      "FileId": 724723,
+      "FileName": "Template.php",
+      "DownloadUrl": ".\\724723"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I refactored a bit your function AddPage, because each time we loop it was also adding new empty page.\r\nSo, here is how the new method looks like :\r\n\r\n/**\r\n * Adds new page in the document\r\n */\r\npublic function addPage() {\r\n\t$this->_documentXMLFINAL .=\t$this->_documentXML;\r\n\t$this->_documentXML = $this->_documentXMLSEQ;\r\n}\r\n\r\nFor those who wanna use it, override the old function Addpage by this new one and you will be able to add page properly using one single template.\r\nYou will notice that the function is called addPage instead of AddPage, the rename it also everywhere it's called.\r\n",
+      "PostedDate": "2013-09-05T07:19:01.313-07:00",
+      "Id": 112579
+    },
+    {
+      "Message": "Hiiii, thank you very much for this code, i spent a long time searching a solution for \"clone part or clone block\", this is a better solution... thanksss again :)",
+      "PostedDate": "2015-12-17T14:25:25.827-08:00",
+      "Id": 194663
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1340782",
+    "ThreadId": "577394",
+    "Html": "I use the  Sample_07_TemplateCloneRow.php  to load the  Template ，but it can't set bgcolor ，\r<br />\nand  i want  one  row has one bgcolor  or  like this to set color<br />\n<pre><code>$document -&gt;setValue('rowValue#1', 'Sun', array(&quot;color&quot;=&gt;&quot;0000ff&quot;, &quot;bgColor&quot; =&gt; &quot;fbbb10&quot;));</code></pre>\n\nhow should i  do？\r<br />\nthanks！thanks！thanks！thanks！<br />\n",
+    "PostedDate": "2015-01-11T02:49:37.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

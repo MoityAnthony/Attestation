@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "690595",
+    "ThreadId": "277499",
+    "Html": "\r\n<p>I cannot get the basic example to work. &nbsp;I've unzipped the files to my site folder. &nbsp;I made a new folder in the root directory of my site called &quot;phpword&quot;. &nbsp;So inside of phpword is the contents of the zip file which are the PHPWord folder\r\n and PHPWord.php. &nbsp;Ok, so the only change I made to the basic example was to the require_once line:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">require_once</span>(<span style=\"color:#a31515\">'phpword/PHPWord.php'</span>);\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>I then changed the base path in the PHPWord.php file to reflect my site directory:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:green\">/** PHPWORD_BASE_PATH */</span>\r\n\r\n<span style=\"color:blue\">if</span>(!defined(<span style=\"color:#a31515\">'PHPWORD_BASE_PATH'</span>)) {\r\n\r\n\tdefine(<span style=\"color:#a31515\">'PHPWORD_BASE_PATH'</span>, dirname(<span style=\"color:blue\">__FILE__</span>) . <span style=\"color:#a31515\">'/'</span>);\r\n\r\n\t<span style=\"color:blue\">require</span> PHPWORD_BASE_PATH . <span style=\"color:#a31515\">'phpword/PHPWord/Autoloader.php'</span>;\r\n\r\n\tPHPWord_Autoloader::Register();\r\n\r\n}\r\n</pre>\r\n</div>\r\n<p>When I try to run the example, I get two errors:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>Warning: <span style=\"color:blue\">require</span>(C:\\wamp\\www\\mysite\\phpword/phpword/PHPWord/Autoloader.php) [<span style=\"color:blue\">function</span>.<span style=\"color:blue\">require</span>]: failed to open stream: No such <span style=\"color:blue\">file</span> <span style=\"color:blue\">or</span> directory in C:\\wamp\\www\\mysite\\phpword\\PHPWord.php on line 31\r\n\r\nFatal error: <span style=\"color:blue\">require</span>() [<span style=\"color:blue\">function</span>.<span style=\"color:blue\">require</span>]: Failed opening required <span style=\"color:#a31515\">'C:\\wamp\\www\\mysite\\phpword/phpword/PHPWord/Autoloader.php'</span> (include_path=<span style=\"color:#a31515\">'.;c:\\ZendFramework\\library'</span>) in C:\\wamp\\www\\mysite\\phpword\\PHPWord.php on line 31\r\n</pre>\r\n</div>\r\n<p>One thing I noticed is that there is a mix of / and \\ in the path. &nbsp;I have no idea why it would be doing this. &nbsp;In any case I can't even get the basic example to work. &nbsp;If someone could help I'd appreciate it.</p>\r\n",
+    "PostedDate": "2011-10-27T19:57:44.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "690599",
+    "ThreadId": "277499",
+    "Html": "<p>Well I figured out part of it at least. &nbsp;I noticed that phpword was getting called twice in the path. &nbsp;So I just decided to take everything out of the folder and put it right in the site root. &nbsp;It actually ran this time, but I got a new error:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>Fatal error: Call to undefined method PHPWord_Section_Text::setBold() in C:\\wamp\\www\\mysite\\test.php on line 24</pre>\r\n</div>\r\n</p>\r\n<p>Underneath the example are newer examples for working with text. &nbsp;So I got rid of any lines styling text in the basic example and replaced them with:</p>\r\n<p>$styleFont = array('bold'=&gt;true, 'size'=&gt;16, 'name'=&gt;'Calibri');</p>\r\n<p>So I finally got it to run, however the .docx file that is created does not open.</p>",
+    "PostedDate": "2011-10-27T20:36:39.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "690609",
+    "ThreadId": "277499",
+    "Html": "<p>Ok, I was running open office 3.2. &nbsp;Upgraded to 3.3 and it works great. &nbsp;It would be nice if the basic example was updated to reflect the newer changes though.</p>",
+    "PostedDate": "2011-10-27T21:32:30.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

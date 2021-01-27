@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1058657",
+    "ThreadId": "447545",
+    "Html": "How can I save a document word of Polish characters?\r<br />\nI will be grateful for your help<br />\n",
+    "PostedDate": "2013-06-19T06:53:11.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058827",
+    "ThreadId": "447545",
+    "Html": "\r\n<div>On 19/06/2013 14:53, darteye wrote:<br>\r\n</div>\r\n<blockquote type=\"cite\">How can I save a document word of Polish characters? <br>\r\n<div id=\"ThreadNotificationPostBody\">I will be grateful for your help<br>\r\n</div>\r\n</blockquote>\r\nUse UTF-8<br>\r\n<br>\r\n<pre cols=\"72\">-- \r\nMark Baker</pre>\r\n",
+    "PostedDate": "2013-06-19T12:39:38.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058893",
+    "ThreadId": "447545",
+    "Html": "<strong>MarkBaker wrote:</strong><br />\n<blockquote>\nOn 19/06/2013 14:53, darteye wrote:  How can I save a document word of Polish characters?  I will be grateful for your help   Use UTF-8  -- Mark Baker<br />\n</blockquote>\nI have utf-8<br />\nand collected data from a mysql database to utf-8<br />\n<br />\n&lt;?php<br />\nmysql_query(&quot;SET NAMES 'utf8'&quot;);<br />\n?&gt;<br />\n&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;<a href=\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\" rel=\"nofollow\">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</a>&quot;&gt;<br />\n&lt;html xmlns=&quot;<a href=\"http://www.w3.org/1999/xhtml\" rel=\"nofollow\">http://www.w3.org/1999/xhtml</a>&quot; lang=&quot;pl&quot; xml:lang=&quot;pl&quot;&gt;<br />\n&lt;head&gt;<br />\n&lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;<br />\n<br />\n<strong>or anywhere else you need to set utf-8?</strong><br />\n<br />\nI found yet: <a href=\"http://www.example.com\" rel=\"nofollow\">https://phpword.codeplex.com/discussions/431281</a><br />\nbut it also does not work<br />\n<br />\nreturn html_entity_decode(iconv('UTF-8', 'UTF-8',$texto));<br />\nreturn html_entity_decode(iconv('UTF-8', 'ISO-8859-2',$texto));<br />\nreturn html_entity_decode(iconv('UTF-8', 'windows-1250',$texto));<br />\nreturn html_entity_decode(iconv('ISO-8859-2', 'UTF-8',$texto));<br />\n<br />\n<strong>no way did not work</strong><br />\n",
+    "PostedDate": "2013-06-19T15:09:16.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

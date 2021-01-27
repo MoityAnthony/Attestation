@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "472527",
+    "ThreadId": "221382",
+    "Html": "<p>Is it possible to create a carriage return (rather than&nbsp;new paragraph)&nbsp;using PHPWord?</p>",
+    "PostedDate": "2010-07-26T01:38:55.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "666858",
+    "ThreadId": "221382",
+    "Html": "<p>I'd like to do this too: \\r\\n clearly doesn't work....</p>",
+    "PostedDate": "2011-09-02T07:37:01.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1243331",
+    "ThreadId": "221382",
+    "Html": "This gives a line feed (not carriage return) if helpful: &lt;w:br/&gt;<br />\n",
+    "PostedDate": "2014-05-08T18:06:16.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

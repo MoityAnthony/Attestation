@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "\r\nHello!\r\n\r\nI try add image from my site (http://mysite/image.php).\r\ncode:\r\n\r\n```\r\n<?php \r\nrequire_once '../PHPWord.php';\r\n$PHPWord = new PHPWord();\r\n$section = $PHPWord->createSection();\r\n$section->addMemoryImage('http://mysite/image.php');//<---\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r\n$objWriter->save('Image.docx');\r\n?>\r\n\r\n```\r\n\r\n___Fatal error: Uncaught exception 'Exception' with message 'Could not close zip file Image.docx.' in /PHPWord_0.6.2_Beta/PHPWord/Writer/Word2007.php:158\r\nStack trace: #0 /PHPWord_0.6.2_Beta/Examples/Image.php(36):\r\nPHPWord_Writer_Word2007->save('Image.docx') #1 {main} thrown in/PHPWord_0.6.2_Beta/PHPWord/Writer/Word2007.php on line 158___ \r\n\r\nWhen I use: __$section->addImage('image.jpg');__ script it works.\r\n\r\nCan you help me please.\r\nThanks for your answer.",
+    "LastUpdatedDate": "2014-01-08T20:30:27.42-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-03-02T15:50:22.44-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to add image from url?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 52
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Well I'm having the same problem . Seems like the only possibility is to download the file using curl, put it on a temp folder a add it to the zip, witch is totally useless and unsafe. Any updates, please let me know",
+      "PostedDate": "2013-12-30T04:03:38.123-08:00",
+      "Id": 128659
+    },
+    {
+      "Message": "addMemoryImage() is meant for PHP generated images, such as those created or modified by the GD library, or its analogs.  If you're up for handling your file types on your own JPG,GIF and PNG, this would probably help:\n\nhttp://www.php.net/manual/en/function.imagecreatefromjpeg.php#22783\n\nIt shows how to use imagecreatefromjpeg() to fetch the image data from a URL via \"fopen()\" using a temp file until loaded into memory via the \"$imageData = LoadJPEG(\"http://www.example.com/example.jpg\");\" call.  Your next step should be \"addMemoryImage($imageData,.........\"\n\ncURL is just as capable of handling the transmission.",
+      "PostedDate": "2014-01-08T20:30:27.42-08:00",
+      "Id": 129898
+    }
+  ]
+}

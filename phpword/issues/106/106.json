@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "here is my code : \r\n\r\n\r\n        $phpWord = new \\PhpOffice\\PhpWord\\PhpWord();\r\n        $phpWord->getCompatibility()->setOoxmlVersion(15);\r\n\r\n        $phpWord->setDefaultFontSize(10);\r\n        $sectionRun = $phpWord->addSection(array('marginLeft'=>\"900\",'marginRight'=>\"900\"));\r\n       $section= $sectionRun->addTextRun();\r\n        $filename = \"Arrete-Renouvellement.docx\";\r\n\r\n        $objWriter = \\PhpOffice\\PhpWord\\IOFactory::createWriter($phpWord, 'Word2007');\r\n        $objWriter->save($webPath . '/courrier/renouvellement/'.$filename);\r\n       \r\nwhen I open the saved file it 's corrupted, i'm on symfony2 \r\n\r\nI dont know what is the problem can you help me \r\n\r\nthank you \r\n\r\nmy file on the attachment\r\n",
+    "LastUpdatedDate": "2016-09-08T00:51:17.12-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2016-09-08T00:51:16.95-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "after save i have a corrupted file ",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 106
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1605513,
+      "FileName": "Arrete-Renouvellement208.docx",
+      "DownloadUrl": ".\\1605513"
+    }
+  ],
+  "Comments": []
+}

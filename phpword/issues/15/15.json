@@ -1,0 +1,80 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "You have to be careful when doing copy+paste some text in Word that you have marked and formatted individually.\n\nFor example:\n- You want your wildcard to appear yellow color so mark the wildcard but missing the closing bracket }.\n- After you realised that you missed the closing bracket to be yellow colored you get this later but now MS Word is creating a separate TextRun with a separate style and do color to yellow\n\nIt appears right, but the XML source in the background is now upset and so the wildcard can't be found.",
+    "ClosedDate": "2011-05-23T10:52:53.36-07:00",
+    "CommentCount": 8,
+    "Custom": null,
+    "Description": "I have a problem using the template function.\r\n\r\nThe code of my PHP script is:\r\n\r\n \r\n\r\nrequire_once 'Classes/PHPWord.php';\r\n\t\r\n$PHPWord = new PHPWord();\r\n\t\r\n$document = $PHPWord->loadTemplate($Template);\r\n\r\n$document->setValue('Value1', $Cliente.' ('.$CodiceFiscale.')');\r\n$document->setValue('Value2', $Classificazione1);\r\n$document->setValue('Value3', $Classificazione2);\r\n$document->setValue('Value4', $Classificazione3);\r\n$document->setValue('Value5', $PianoFabbisogni1);\r\n$document->setValue('Value6', $PianoFabbisogni2);\r\n$document->setValue('Value7', $NotePianoFabbisogni);\r\n$document->setValue('Value8', $ContrattoFornitura1);\r\n$document->setValue('Value9', $ContrattoFornitura2);\r\n$document->setValue('Value10', $NoteContrattoFornitura);\r\n$document->setValue('Value11', $AltraDocumentazione);\r\n$document->setValue('Value12', $Intranet1);\r\n$document->setValue('Value13', $Infranet1);\r\n$document->setValue('Value14', $Internet1);\r\n$document->setValue('Value15', $TipologiaServizi);\r\n$document->setValue('Value16', $CanoneAnnuo);\r\n$document->setValue('Value17', $UnaTantum);\r\n$document->setValue('Value18', $NumeroServizi);\r\n$document->setValue('Value19', $DataContratto);\r\n$document->setValue('Value20', $Difformita1);\r\n$document->setValue('Value21', $Difformita2);\r\n$document->setValue('Value22', $AltreNote);\r\n$document->setValue('Value23', $RisultatoRiesame1);\r\n$document->setValue('Value24', $RisultatoRiesame2);\r\n$document->setValue('Value25', $Funzione1);\r\n$document->setValue('Value26', $Data1);\r\n$document->setValue('Value27', $NomeCognome1);\r\n$document->setValue('Value28', $Funzione2);\r\n$document->setValue('Value29', $Data2);\r\n$document->setValue('Value30', $NomeCognome2);\r\n\r\n$document->save($NomeFile);\r\n\r\n \r\n\r\nI've modified the word template and now the values are from \"Value1\" to \"Value30\".\r\n\r\nThe output file is saved but, when I open that, only values from 1 to 10 are modified.\r\n\r\nPlease.....help me\r\n",
+    "LastUpdatedDate": "2013-07-16T21:37:39.06-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-10-26T01:08:21.28-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "problem with template",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 15
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I encountered a very similar problem when I copied and pasted the same structure and then modified the indices to create extra Value fields (11-20). None of these fields would be printed. I then deleted each of the pasted and modified tags and then manually re-wrote it. I then tested the template and the information was printed correctly for fields 11-20. \n\nI suggest you try this a solution if you copied and pasted structure in any way. I imagine there is something in document.xml that is kept when something is copied and pasted.\n\nHope this helps.",
+      "PostedDate": "2010-12-07T04:32:24.017-08:00",
+      "Id": 19631
+    },
+    {
+      "Message": "I have now checked the underlying word/document.xml within the docx file created and any copied and pasted ${Value} tags are saved as:\n<w:t>${Value11</w:t></w:r><w:r w:rsidRPr=\"00CE0864\"><w:rPr><w:rFonts w:ascii=\"Calibri\" w:hAnsi=\"Calibri\" w:cs=\"Calibri\"/><w:b/><w:bCs/></w:rPr><w:t>}</w:t> in the XML file.\n\nAnd not as the original values in the file are:\n<w:t>${Value1}</w:t>\n\nBecause the closing parenthesis } appears within a new tag the str_replace function will not pick this up not work. You have to make sure you write the tag yourself to stop this from happening.",
+      "PostedDate": "2010-12-07T05:04:56.89-08:00",
+      "Id": 19634
+    },
+    {
+      "Message": "I encountered similar problem, I try to modify, rewrite my template but nothing. So I changed the Template.php code, and I used regex in setValue function\npublic function setValue($search, $replace) {\n        if(substr($search, 0, 2) !== '${' && substr($search, -1) !== '}') {\n            $search = '/\\${.*?'.$search.'.*?}/';\n        }\n        \n        if(!is_array($replace)) {\n            $replace = utf8_encode($replace);\n        }\n        \n        $this->_documentXML = preg_replace($search, $replace, $this->_documentXML,1);\n    }",
+      "PostedDate": "2011-06-29T03:30:28.077-07:00",
+      "Id": 38533
+    },
+    {
+      "Message": "Hello. Write Russian words, modifier Template.php greate work\n\n public function setValue($search, $replace) {\n        if(substr($search, 0, 2) !== '${' && substr($search, -1) !== '}') {\n            $search = '/\\$\\{.*?'.$search.'.*?\\}/is';\n        }\n        \n        //if(!is_array($replace)) {\n       //     $replace = utf8_encode($replace);\n       // }\n\n        $this->_documentXML = preg_replace($search, $replace, $this->_documentXML);\n    }\n\nused with files encoded in utf-8.\n\nMaybe, You add params on|off autoencoding? \n\nIt may be useful to someone. Thanks.",
+      "PostedDate": "2011-11-06T12:17:22.503-08:00",
+      "Id": 48490
+    },
+    {
+      "Message": "I've had the same problem. The library itself works fine for me, but working with the template was pain.\n\nIt was much easier when i deactivated the \"auto spelling correction\" in microsoft word. After disabling this feature, all my placeholders worked fine.",
+      "PostedDate": "2012-04-23T02:46:19.727-07:00",
+      "Id": 63025
+    },
+    {
+      "Message": "I had to add a new function to Template.php, as my replacement names were totaly splitted in the XML source.\nThis function gives me an associative array with the replacement variable as key and the \"true\" string in the XML as value - In the setValue call i then replace this \"true\" string (there are no changes to the setValue function):\n\npublic function getReplacements() {\n\t$search = '/\\${.*?.*?}/';\n\n\t$matches = array();\n\tpreg_match_all($search, $this->_documentXML, $matches);\n\n\t$result = array();\n\tforeach($matches as $match) {\n\t\tforeach($match as $key => $value) {\n\n\t\t\t$result[trim(strip_tags($value), '${}')] = $value;\n\n\t\t}\n\t}\n\t\n\treturn $result;\n\n}\n\n",
+      "PostedDate": "2012-05-21T09:04:15.987-07:00",
+      "Id": 66326
+    },
+    {
+      "Message": "Hi,\n\nIt was a problem for me that I could not do search and replace on strings inside paragraphs.  I removed the check for the {} braces around the keyword search and instead use a unique prefix (in my case zzz<fieldname>).  It's working perfectly for me.\n\nso my template looks something like this:\n\nDear zzzFullName,\n\nYour letter dated zzletterdate, with reference zzreference ....\n\n----------------------\nworks like a charm.\n\nUsing the SearchReplace image routine that somebody else made, also allowed me to add a signature to the template that I was using.  \n\nBoth of these things have made phpWord successful in my testing.\n\nThanks.",
+      "PostedDate": "2013-02-18T04:59:55.51-08:00",
+      "Id": 90643
+    },
+    {
+      "Message": "To get something like this\n$document->setValue('Value3', $Classificazione2);  to work.\n\nIn your word document (not template file - no need) and filling in the values \nyou must type straight. ${Value3}.\n\nIf you are like me and you do something like ${}, come back to fill the Value3, it would not work.\njust type ${Value3} continuously, without using the back space, back space has a way of messing up the variable. ",
+      "PostedDate": "2013-07-16T21:37:39.06-07:00",
+      "Id": 106250
+    }
+  ]
+}

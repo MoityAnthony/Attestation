@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "636074",
+    "ThreadId": "263582",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Is it possible to place an image beyond the page margins? I have a banner image for my 1st page that I would like to extend all the way to my page border. However, my page margins prevent image from being placed beyond the left margin. I could reduce my\r\n margins, however then all of my text is right against my page border, and it looks funny. I tried using a&nbsp;separate&nbsp;section for the image, however it appears that I can not have multiple sections per page- the new section just creates a new page in\r\n the word doc.&nbsp;</p>\r\n<p>Is this possible to do? How should I do it?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-07-01T09:05:17.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "645815",
+    "ThreadId": "263582",
+    "Html": "<p>An update:</p>\n<p>I have not gotten it working, but I think I made progress. I placed my header content into a table, and then set&nbsp;cellMarginLeft to -1440. This did not work, but I dug a little deeper. When I looked at the margins for the table (in word 2010), the Left margin  was indeed set at -1\". However, when I tried to change it to another negative value, Word gave me an error. So it looks like that while a negative value is set, it won't actually go there.</p>\n<p>I dug a little more, and noticed that my table indent was set at .5\", exactly half of the absolute value of&nbsp;cellMarginLeft. Playing around with this number (in Word), I <span style=\"text-decoration: underline;\">can</span>&nbsp;get the table to move into the margin space by setting a negative value. So it looks like if I can somehow set the table left indent to a negative number, I can place the table in the margins, and then my header  image will extend into the margins.&nbsp;</p>\n<p>Does anyone know how I would go about doing this? I've started to look into the PHPWord source and see how it sets options. I've also started looking at the openXML specs, but I haven't turned up anything yet.</p>\n<p>Edit:</p>\n<p><a href=\"https://openxmldeveloper.org/discussions/formats/f/13/p/838/2093.aspx#2093\">https://openxmldeveloper.org/discussions/formats/f/13/p/838/2093.aspx#2093</a></p>\n<p>It looks like this might be how to do it. Now to somehow get php to do it....</p>",
+    "PostedDate": "2011-07-21T14:59:42.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "645939",
+    "ThreadId": "263582",
+    "Html": "<p>Yet another update!</p>\n<p>I figured out how to do it! I had to modify 2 or 3 core PHPWord files, but what I basically did was add a new table style property, 'tableIndent' to the code. This sets the \"w:tblInd\" field in the XML files.&nbsp;When this is set to a value (in twips) the table is indented from the margins. This works for positive  AND negative values, so I can now indent my table (with images) into the margins!</p>\n<p>I am working on a writeup on how to do this, and double checking my code for any errors. I will post it here in the next couple of days.</p>\n<p>Hopefully people find this helpful!</p>",
+    "PostedDate": "2011-07-22T00:27:34.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "707225",
+    "ThreadId": "263582",
+    "Html": "<p>Hi Agaz623</p>\r\n<p>Same problem here. Would be thankful for the code modifications.<br />Otherwise I have to figure it out again. &nbsp;</p>\r\n<p>Thx!</p>",
+    "PostedDate": "2011-12-04T11:28:16.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "708560",
+    "ThreadId": "263582",
+    "Html": "<p>Sure thing. It has been a while since I made the modifications, but I'm going to try to track down the modifications and I'll post what I changed.</p>",
+    "PostedDate": "2011-12-06T20:52:26.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "708564",
+    "ThreadId": "263582",
+    "Html": "<p>Ok, I think I have all of the files I modified. I have attached them in a .zip file. Here is what is modified and where it should go.</p>\r\n<p>PHPWord/writer/Word2007/base.php<br />PHPWord/writer/Word2007/styles.php<br />PHPWord/Style/Table.php<br />PHPWord/Style/TableFull.php<br /><br />The \"tableIndent\" property of the table style is what I added. Setting that to a negative value should shift it into the margins. The value is in TWIPs Here is an example of it in use:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>$header = $body-&gt;createHeader();\r\n\t\t$hTable = $header-&gt;addTable(<span style=\"color: blue;\">array</span>(<span style=\"color: #a31515;\">'cellMarginRight'</span> =&gt; 300, <span style=\"color: #a31515;\">'tableIndent'</span>=&gt;-1000));\r\n\t\t$hTable-&gt;addRow();\r\n\t\t$hCellL = $hTable-&gt;addCell(2500);\r\n\t\t$hCellL-&gt;addImage(<span style=\"color: #a31515;\">'images/standard/logo_footer.jpg'</span>, <span style=\"color: #a31515;\">'alignRns'</span>);\r\n\t\t$hCellR = $hTable-&gt;addCell(5000, <span style=\"color: blue;\">array</span>(<span style=\"color: #a31515;\">'valign'</span> =&gt; <span style=\"color: #a31515;\">'center'</span>));\r\n\t\t$propText = $hCellR-&gt;createTextRun(<span style=\"color: #a31515;\">'alignR'</span>);\r\n\t\t$propText-&gt;addText(<span style=\"color: #a31515;\">'System Proposal '</span>, $bold);\r\n\t\t$propText-&gt;addText($proposalNum);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;I think I have included all of the files I modified. If this doesn't work, let me know, and I can try to track down how the files interact with each other and figure out what I missed. There should be comments where I inserted changes.</p>\r\n<p>Download the files here: http://agprojects.net/phpword_indent_mod.zip</p>",
+    "PostedDate": "2011-12-06T21:13:05.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "710116",
+    "ThreadId": "263582",
+    "Html": "<p>Thank you agaz623. No time to try it right now, and I will ;)</p>",
+    "PostedDate": "2011-12-09T14:26:34.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "728084",
+    "ThreadId": "263582",
+    "Html": "<p>Right click the picture. Then from drop down menu select Text Wrapping &gt; Through. Now you'll be able to move the image beyond margins.</p>",
+    "PostedDate": "2012-01-20T02:58:56.717-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

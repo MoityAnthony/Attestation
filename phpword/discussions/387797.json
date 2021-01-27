@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "889091",
+    "ThreadId": "387797",
+    "Html": "\r\n<p>I'm trying to populate documents with information from a database that stores the information on utf-8 encoding. The thing is that the information is correctly sotred but when I output the data to PHPWord, the quotations are converted to its html equivalent\r\n &amp;quot. I already tried the solution to handle utf-8 with no luck. Any ideas?</p>\r\n",
+    "PostedDate": "2012-07-23T08:38:52.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

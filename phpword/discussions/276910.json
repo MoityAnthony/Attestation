@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "688142",
+    "ThreadId": "276910",
+    "Html": "\r\n<p>I'd like to insert a hyperlink without having to go to a new line, e.g. instead of</p>\r\n<p>Do you like the</p>\r\n<p><span style=\"text-decoration:underline\"><span style=\"color:#0000ff\">Google</span></span></p>\r\n<p>search engine?</p>\r\n<p>I'd like:</p>\r\n<p>Do you like the <span style=\"text-decoration:underline\"><span style=\"color:#0000ff\">Google</span></span> search engine?</p>\r\n<p>Is this possible?&nbsp; I haven't been able to get it to work.</p>\r\n",
+    "PostedDate": "2011-10-23T14:51:46.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "688170",
+    "ThreadId": "276910",
+    "Html": "<p>ok I'm an idiot - this is what textRun is for ...</p>",
+    "PostedDate": "2011-10-23T18:11:58.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

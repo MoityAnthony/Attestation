@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "854855",
+    "ThreadId": "361246",
+    "Html": "\r\n<p>Dear All,</p>\r\n<p>We are using PHPword in our project to generate word document, we are facing a problem regarding with text direction (left to right or right to left), when we write our utf-8 formated text which is in RTL format, it mixes and display in wrong order.</p>\r\n<p>But the alignment can be done with the cell, unfortunately it does not support right to left text direction where, MS-Office word does have and support.</p>\r\n<p>There is a text direction in Cell but its for rotating not for right to left text direction.</p>\r\n<p>&nbsp;</p>\r\n<p>for example if we write our text&nbsp;</p>\r\n<p>one two three, phpword generate for us &nbsp;three two one, but when we open with microsoft word app. and click on rtl text direction, than it will be fixed and would display what we want &nbsp;one two three.</p>\r\n<p>where one two three is in Persian Afghanistan Language.</p>\r\n<p>Exact phrase: &nbsp; &nbsp; &nbsp; &nbsp;یک دو سه</p>\r\n<p>phpword wrong generated: سه دو یک</p>\r\n<p>Any idea?</p>\r\n<p>Regards</p>\r\n",
+    "PostedDate": "2012-06-28T02:40:12.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

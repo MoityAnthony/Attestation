@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It seems like whenever I attach an PHPWord generated document to an email, and try to read this doc on an Android device, it will not work. I use an Samsung S3, and always get \"Polaris Viewer 4.1 has stopped\".\r\nOther Android devices get the same error.\r\n\r\nWord documents saved from original MS-Word will open without problem as email attachemts, so I think its related to the way PHPWord encodes the document.",
+    "LastUpdatedDate": "2014-02-06T00:38:09.173-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-02-06T00:38:09.173-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "PHPWord docs can't be opened on Android",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 70
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

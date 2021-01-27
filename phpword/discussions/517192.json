@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1187367",
+    "ThreadId": "517192",
+    "Html": "Hi!\r<br />\n<br />\nI'm looking for a good tool for generating docx-files. Because PHPExcel works very well, PHPWord would be a good choice. However I have one question: is it possible to define, per section, the paper tray to be used when printing, just as in de page settings dialog in Word?\r<br />\n<br />\nThanks in advance for your reactions.\r<br />\n<br />\nThijs-jan<br />\n",
+    "PostedDate": "2014-01-21T05:39:49.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

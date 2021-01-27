@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "577145",
+    "ThreadId": "248853",
+    "Html": "\r\n<p>Please help me how to create content of tabel in docx using phpword</p>\r\n",
+    "PostedDate": "2011-03-08T05:26:44.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578970",
+    "ThreadId": "248853",
+    "Html": "<p>$section = $PHPWord-&gt;createSection();</p>\r\n<p>$table = $section-&gt;addTable();</p>\r\n<p>$table-&gt;addRow();</p>\r\n<p>$table-&gt;addCell(1750)-&gt;addText(\"testxtsdsdsd\");</p>",
+    "PostedDate": "2011-03-11T04:31:29.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

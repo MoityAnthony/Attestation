@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "499404",
+    "ThreadId": "228842",
+    "Html": "<p>Anyone know where to get this two files &amp; make it working?</p>\r\n<p>Files Required:</p>\r\n<p>1) PHP Extension ZipArchive</p>\r\n<p>2) PHP Extension xmllib</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you very much. =)</p>",
+    "PostedDate": "2010-09-28T03:47:46.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "508546",
+    "ThreadId": "228842",
+    "Html": "<p>I have some problem :(</p>\r\n<p><strong>Fatal error</strong>:  Class 'ZipArchive' not found in <strong>.../phpword/PHPWord/Writer/Word2007.php</strong> on line <strong>70</strong></p>\r\n<p><strong>help please.<br></strong></p>",
+    "PostedDate": "2010-10-17T15:08:00.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "508562",
+    "ThreadId": "228842",
+    "Html": "<p>try enable this in your php.ini file by remove &quot;;&quot;</p>\r\n<p>extension=php_zip.dll</p>",
+    "PostedDate": "2010-10-17T16:41:43.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "508603",
+    "ThreadId": "228842",
+    "Html": "<p>in windows</p>\r\n<p>extension=php_zip.dll</p>\r\n<p>in linux</p>\r\n<p>install&nbsp; modulo zip de php and recompiler the server</p>",
+    "PostedDate": "2010-10-17T20:28:22.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529860",
+    "ThreadId": "228842",
+    "Html": "\r\n<p>Hosted services, even the big ones, don't always include ZipArchive in their PHP compilation. Dreamhost, for instance, does not want to compile it into their PHP. They allow you to compile your own PHP (pretty unique), but that creates a whole big can of\r\n worms of maintenance, of course.</p>\r\n<p>That makes PHPWord pretty much unusable, it seems, since it - according to the documentation - only can use 'docx' templates, etc, which rely on zip-action for native support of that format. In PHPExcel, it's still possible to use the original 'xls' format,\r\n so you can bypass that hurdle, but apparently PHPword can't.</p>\r\n<p>Or does it still support the older 'doc' format. that doesn't rely on ZipArchive?&nbsp; It would open up the tool for loads of people that use hosted solutions (a good sized target group I would imagine).</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-01T22:03:36.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

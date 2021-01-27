@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "473250",
+    "ThreadId": "221573",
+    "Html": "<p>Hi,</p>\r\n<p>I just start using PHPWord.</p>\r\n<p>Could anyone manage to use tab in their document?</p>\r\n<p>I read the classes and it setTabPos() in PHPWord/Writer/Word2007/Document.php and Style/TOC.php</p>\r\n<p>and I am wondering can I use setTabPos() and how do I use it?</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-27T08:54:36.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "473309",
+    "ThreadId": "221573",
+    "Html": "<p>I'm sorry, but tab handling isn't implented yet.</p>\r\n<p>The only part where tabs are used is the TOC (table of content) part, to align the page numbers.</p>",
+    "PostedDate": "2010-07-27T11:18:21.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

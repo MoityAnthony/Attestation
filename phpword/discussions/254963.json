@@ -1,0 +1,178 @@
+[
+  {
+    "Id": "601612",
+    "ThreadId": "254963",
+    "Html": "\r\n<p>Hey:</p>\r\n<p>Is there any way to add HTML to a PHPWord object and have it rendered? I've tried adding HTML via the addText method, but it shows up as HTML source instead of rendered HTML.</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-04-22T10:01:03.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601901",
+    "ThreadId": "254963",
+    "Html": "<p>Why put HTML in a Word document?&nbsp; Post a sample of the HTML you want to use.</p>",
+    "PostedDate": "2011-04-23T09:33:07.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "602133",
+    "ThreadId": "254963",
+    "Html": "<p>It was more of a question of \"how could I\" as opposed to \"should I\" :)</p>\n<p>As far as a sample:</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">div</span> <span style=\"color: red;\">style</span><span style=\"color: blue;\">=</span><span style=\"color: blue;\">\"float:left; background-color: white; margin: 2px;\"</span><span style=\"color: blue;\">&gt;</span>\n   <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">h1</span><span style=\"color: blue;\">&gt;</span>Test HTML<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">h1</span><span style=\"color: blue;\">&gt;</span>\n   <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">p</span><span style=\"color: blue;\">&gt;</span>test content title<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">p</span><span style=\"color: blue;\">&gt;</span>\n   <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">table</span> <span style=\"color: red;\">style</span><span style=\"color: blue;\">=</span><span style=\"color: blue;\">\"font-family: Arial\"</span><span style=\"color: blue;\">&gt;</span>\n      <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">tr</span><span style=\"color: blue;\">&gt;</span>\n          <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span>test1<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span>\n          <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">td</span> <span style=\"color: red;\">style</span><span style=\"color: blue;\">=</span><span style=\"color: blue;\">\"color: red\"</span><span style=\"color: blue;\">&gt;</span>test2<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span>\n          <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span>test3<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span>\n          <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">td</span> <span style=\"color: red;\">style</span><span style=\"color: blue;\">=</span><span style=\"color: blue;\">\"color: red\"</span><span style=\"color: blue;\">&gt;</span>test4<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">td</span><span style=\"color: blue;\">&gt;</span>\n      <span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">tr</span><span style=\"color: blue;\">&gt;</span>\n   <span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">table</span><span style=\"color: blue;\">&gt;</span>\n<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">div</span><span style=\"color: blue;\">&gt;</span>\n</pre>\n</div>\n<p>The actual code I'm using is much, much longer, but the content is similar: a pretty straight forward div containing some header and p tags w/ inline styles throughout.&nbsp;</p>",
+    "PostedDate": "2011-04-24T09:34:44.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "602136",
+    "ThreadId": "254963",
+    "Html": "<p>I asked 'why do it' because I was curious. Still am. :-)</p>\r\n<p>Most formatting that one can do with HTML can be done with XML , though PHPWord may not yet have all possible styles developed yet. Lots of room for new features.</p>\r\n<p>In any case, as you've already discovered, PHPWord does not render HTML, nor does Word.</p>",
+    "PostedDate": "2011-04-24T09:48:34.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "602152",
+    "ThreadId": "254963",
+    "Html": "<p>I have some data that I need to export from PHP to a Word document, and it would look MUCH better (and be a lot easier) if I can just take the generated HTML and dump it into a word document. I did this the quick, easy, and incorrect way already using headers, but I also need images exported as well. PHPWord handles the images great.&nbsp;</p>",
+    "PostedDate": "2011-04-24T10:20:54.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "602457",
+    "ThreadId": "254963",
+    "Html": "<p>So basically, the answer I'm seeing is \"No, there is no way to pass HTML into the PHPWord object and have it rendered the resulting Word document\", yes? If so, are there any plans to implement this feature in future versions?&nbsp;</p>",
+    "PostedDate": "2011-04-25T09:04:06.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "602935",
+    "ThreadId": "254963",
+    "Html": "<p>I am not a PHPWord developer, just a user trying to help in the forum. I don't know what, if any, plans there are for future iterations of PHPWord. I do know that several users are working on code to improve &amp; expand PHPWord.</p>",
+    "PostedDate": "2011-04-26T06:57:14.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "644035",
+    "ThreadId": "254963",
+    "Html": "<p>I am wondering the same things. Does anyone know if this is still being developed? I am trying to do exactly the same thing...</p>",
+    "PostedDate": "2011-07-18T16:59:52.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "671841",
+    "ThreadId": "254963",
+    "Html": "<p>Hi,</p>\r\n<p>to&nbsp;<a class=\"UserProfileLink\" href=\"http://www.codeplex.com/site/users/view/lavelle568\">lavelle568</a>, I don't think it is possible.</p>\r\n<p>But I'd be interested in a way to mimic html style float left, to display a sequence of images side by side, with a description just under each image and a fixed space width between each image.<br />They might have diferent size, so putting it in a table would not be a good idea.</p>",
+    "PostedDate": "2011-09-14T11:19:21.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "695370",
+    "ThreadId": "254963",
+    "Html": "<p>I have written some code which is capable of handling simple HTML (the sort that you might find in a blog post say). It recursively steps through the dom tree created by&nbsp;<a href=\"http://simplehtmldom.sourceforge.net/\">PHP Simple HTML Dom</a>&nbsp;creating elements in PHPWord as it does so. It handles HTML elements including tables, paragraphs, links, images, lists, it could also handle some basic CSS. In using such a converter it is necessary to make decisions about how you want the HTML to be converted into the Word document - for example in my set up paragraphs are converted to a text run followed by a text break, words within PHPWord list elements don't seem to be separately stylable (important for our use), so I create text runs beginning with a number or bullet as required.</p>",
+    "PostedDate": "2011-11-08T08:17:52.073-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "695543",
+    "ThreadId": "254963",
+    "Html": "<p>Hi neilt17.</p>\r\n<p>I got a lot of feature requests about adding HTML Code to PHPWord Objects.<br />If you can share the code i can try to implement it in PHPWord.</p>\r\n<p>Thanks,</p>\r\n<p>Raw</p>",
+    "PostedDate": "2011-11-08T13:32:42.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "695809",
+    "ThreadId": "254963",
+    "Html": "<p>Hi Raw,</p>\r\n<p>I'm happy to do that, what's the best way to share the code with you?</p>\r\n<p>neilt17</p>",
+    "PostedDate": "2011-11-09T05:26:44.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "698978",
+    "ThreadId": "254963",
+    "Html": "<p>Hello neilt17.</p>\r\n<p>Unfortunatly I don't know how to share the code with CodePlex.<br />So, please send your code to matthias.backhaus (at) gmx.de&nbsp;&nbsp; (replace (at) with @).</p>\r\n<p>Thx alot!</p>\r\n<p>Raw</p>",
+    "PostedDate": "2011-11-16T06:51:07.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "700756",
+    "ThreadId": "254963",
+    "Html": "<p>Omg! So brilliant to read that someone already did this! Thanks alot Neilt17!</p>\r\n<p>@raw_venture_ad: any ideas when this will be available to the public?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-11-20T00:04:05.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "701374",
+    "ThreadId": "254963",
+    "Html": "<p>I havent received the code from neilt17. No news so far, sry. :)</p>",
+    "PostedDate": "2011-11-21T11:19:35.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "701378",
+    "ThreadId": "254963",
+    "Html": "<p>I'm on to it. :-)</p>",
+    "PostedDate": "2011-11-21T11:27:46.863-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "702644",
+    "ThreadId": "254963",
+    "Html": "<p>I thought the best way to share the code was to put it in a project - so I have uploaded it here:&nbsp;<a href=\"http://htmltodocx.codeplex.com/\">http://htmltodocx.codeplex.com/</a>&nbsp;with a bit of explanation.</p>",
+    "PostedDate": "2011-11-23T14:29:00.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "702986",
+    "ThreadId": "254963",
+    "Html": "<p>First test looks pretty awesome, dude!! =)</p>",
+    "PostedDate": "2011-11-24T07:39:02.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "703636",
+    "ThreadId": "254963",
+    "Html": "<p>Thank you :-)</p>",
+    "PostedDate": "2011-11-26T07:02:02.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "808964",
+    "ThreadId": "254963",
+    "Html": "<p><a class=\"UserProfileLink\" href=\"http://www.codeplex.com/site/users/view/raw_venture_ad\">raw_venture_ad</a>, hello! were the plans to implement htmltodocx to PHPWord realized?</p>\r\n<p>i ask because it's really great script - but i can't use cyrillic symbols(( i'm using utf-8... english, tags, images - great! but i need russian... &nbsp;i tried to use iconv function - like iconv(\"utf-8\",\"windows-1251\",$data) but it doesn't help...</p>\r\n<p>i would be very pleases if someone has the advice or solution....&nbsp;</p>\r\n<p>p.s. PHPWord (clean) works with utf-8 and cyrillic normally</p>",
+    "PostedDate": "2012-03-12T01:15:18.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "809435",
+    "ThreadId": "254963",
+    "Html": "<p>i've solved the problem almost... utf_decode() helped</p>",
+    "PostedDate": "2012-03-12T23:26:44.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "990943",
+    "ThreadId": "254963",
+    "Html": "\r\n<p>Hello everyone,</p>\r\n<p>I know that this topic is quite old, but is it still under development?</p>\r\n<p>When I study the previous posts (&quot;First test looks pretty awesome, dude!! =)&quot;), it makes me hopeful - but that was long ago ...</p>\r\n<p>(And I can't find any support in the actual beta release) :-(</p>\r\n<p>&nbsp;</p>\r\n<p>Anyway: GREAT WORK!</p>\r\n",
+    "PostedDate": "2013-01-23T06:09:09.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

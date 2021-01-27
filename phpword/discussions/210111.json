@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "433898",
+    "ThreadId": "210111",
+    "Html": "<p>Hello: When I put a image in a document, if &nbsp;I open the document generated i got an error in Office 2007, but fixes it (but don't gives nothing of information about the error) and shows &nbsp;fine. But I don't find where is the error, I thought that was the piece of code generated in Base.php, but no. &nbsp;Can help me???</p>",
+    "PostedDate": "2010-04-21T14:52:00.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "433914",
+    "ThreadId": "210111",
+    "Html": "<p>Finally I could resolve the error, but i don't know the cause, when is uses a jpeg image it send a error, when it uses jpg works fine...I hope this info can help to another one...</p>\r\n<p>&nbsp;</p>\r\n<p>Grettings...</p>",
+    "PostedDate": "2010-04-21T16:06:10.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434297",
+    "ThreadId": "210111",
+    "Html": "<p>Hello yoyitonin,</p>\r\n<p>thanks for your bug report. I added a work item to solve the problem in the next release.</p>\r\n<p><a href=\"http://phpword.codeplex.com/WorkItem/View.aspx?WorkItemId=1\">http://phpword.codeplex.com/WorkItem/View.aspx?WorkItemId=1</a></p>\r\n<p><br>Best regards</p>\r\n<p>raw</p>",
+    "PostedDate": "2010-04-22T11:19:30.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

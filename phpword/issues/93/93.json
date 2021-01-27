@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Converting a word document with a 'title' style (not heading) results in the title being rendered as a paragraph element.",
+    "LastUpdatedDate": "2015-01-06T09:45:05.933-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2015-01-06T09:39:21.237-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Word titles converted to HTML paragraphs",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 93
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Pull request fixing this issue\n\nhttps://github.com/PHPOffice/PHPWord/pull/465",
+      "PostedDate": "2015-01-06T09:45:05.933-08:00",
+      "Id": 169557
+    }
+  ]
+}

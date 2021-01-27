@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Hello,\r\n\r\nI'd like to use UTF-8 with phpword ... but\r\n```\r\nheader('content-type: text/html; charset: utf-8'); \r\n```\r\ndoesn't work ...\r\nHow can I use it (for the french language like 'é' or 'à' ...) ?\r\nThanks\r\n\r\n",
+    "LastUpdatedDate": "2013-07-28T10:55:15.27-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-07-25T15:17:09.367-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to use UTF-8",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 59
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Have you seen this post?\nhttps://phpword.codeplex.com/discussions/261365\nAlso, this discussion?\nhttps://htmltodocx.codeplex.com/discussions/348216",
+      "PostedDate": "2013-07-28T10:55:15.27-07:00",
+      "Id": 107725
+    }
+  ]
+}

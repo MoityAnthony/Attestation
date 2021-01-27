@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\n\r\nfirst of all thanks for the really nice and usefull library :)\r\n\r\nIf have some problems with the alignment of text in the footer. I need three columns in the footer so I added a table to the footer.\r\nWithin the cells of the table I want to align the text, that the text in the left column is aligned left, the text in the middle column shall be centered and the text in the right column is aligned right.\r\nAlignment works correct for the first two cells but not for the third one. Even if I add a cell after the third one the alignment isn't done correct.\r\n\r\nHere if part of my code:\r\n```\r\n$styleFooter1 = array('align'=>'left', 'valign'=>'top');\r\n$styleFooter2 = array('width'=>$f_logo_prescaler*365, 'height'=>$f_logo_prescaler*17,'align'=>'center', 'valign'=>'top');\r\n$styleFooter3 = array('align'=>'right', 'valign'=>'top');\r\n...\r\n$footer = $section->createFooter();\r\n$f_table = $footer->addTable('top');\r\n$f_table->addRow();\r\n...\r\n$f_table->addCell($helper->centimeterSizeToTwips(6))->addText($text, $styleFooter1);\r\n$f_table->addCell($helper->centimeterSizeToTwips(9))->addImage('../logo.jpg', $styleFooter2);\r\n$f_table->addCell($helper->centimeterSizeToTwips(6))->addPreserveText('Seite: {PAGE} von {NUMPAGES}', $styleFooter3);\r\n```\r\nIs anyone else experiencing the same Issue?\r\n\r\nBest regards\r\nFlorian",
+    "LastUpdatedDate": "2014-03-12T16:16:51.16-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-03-12T16:16:51.16-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Alginment of Text in Tables in Footer",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 74
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

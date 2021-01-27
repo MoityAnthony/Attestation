@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1241500",
+    "ThreadId": "544310",
+    "Html": "Hi all\r<br />\n<br />\nFirst of all i want to apologize for my bad english ^^. I will try to make myself clear.\r<br />\n<br />\nI encounter a problem since this morning.\r<br />\n<br />\nI create two rows an a table, on this two row i have 5 cell. Cell 1 on Row 1 and Cell 1 and Row 2 are merged. \r<br />\nAll is working fine till this but : when there is a new page sometimes rows are on different page so my merged cells are split in two. \r<br />\n<br />\n<br />\n<br />\nI try to add this : addRow(250, array(<strong>'cantSplit' =&gt; true</strong>));\r<br />\n<br />\nBut there is now effect because i have two rows.\r<br />\n<br />\nI see that cantSplit is only for rows but i'm looking for the same for merge cell.\r<br />\n<br />\nDo you have some ideas to avoid this issue ?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-05-05T05:23:06.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

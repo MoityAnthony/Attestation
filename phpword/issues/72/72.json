@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When creating a Word 2007 document with PHPWord, the files are opening in Word in \"Compatibility Mode' (displayed in the title bar of Word).  This wouldn't be a big deal, but when I add page breaks with $section->addPageBreak(), it adds a extra line at the top of the next page.  When I do a Save As in Word as a \"Word Document\" (docx), the extra line goes away.  Sure would be nice to make it a native .docx file from the start.",
+    "LastUpdatedDate": "2014-02-24T08:42:05.783-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-02-24T08:42:05.783-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Word 2007 docs are opening in Compatibility Mode",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 72
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

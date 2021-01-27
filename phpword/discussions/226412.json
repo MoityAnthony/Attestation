@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "490505",
+    "ThreadId": "226412",
+    "Html": "<p>Hello,</p>\r\n<p>I've downloaded the classes, and run the 'Basic example' from the documentation.&nbsp; I'm getting an error on these three lines:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><br>$myTextElement-&gt;setBold();\r\n$myTextElement-&gt;setName(<span style=\"color:#a31515\">'Verdana'</span>);\r\n$myTextElement-&gt;setSize(22);\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>The error is: &quot;Call to undefined method PHPWord_Section_Text::setBold()&quot; for each one.&nbsp; If they are commented out the document is written and saved with no error.</p>\r\n<p>&nbsp;</p>\r\n<p>Then, when I try to open the document, I can't since it is &quot;corrupted&quot;.&nbsp; Details&gt;&gt;&gt; says &quot;A document must contain exactly one root element.&quot;</p>\r\n<p>&nbsp;</p>\r\n<p>Similar problem in 'Examples' folder: I can open 'test.docx' just fine.&nbsp; Then run the 'test.php' script in the 'Examples' folder with no error.&nbsp; Then re-open 'test.docx' -&gt; file corrupted. Details&gt;&gt;&gt;Incorrect Processing Instruction Syntax.</p>\r\n<p>&nbsp;</p>\r\n<p>I'm working with Word 2010 x64.&nbsp; Any insights?&nbsp; Thanks in advance.</p>\r\n<p>&nbsp;</p>\r\n<p>(Running PHP 5.2.8 on an Apache 2.2, Win 7 Ultimate x64)</p>",
+    "PostedDate": "2010-09-08T00:19:04.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "498966",
+    "ThreadId": "226412",
+    "Html": "<p>Hi Hermes,</p>\r\n<p>The example is almost complete. It's just that in one class the Style object is not defined properly. My bugfix was to:</p>\r\n<p>- Edit Section/Text.php and replace line 77 with:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;_styleFont = new PHPWord_Style_Font('text');<br>- Edit PHPWord.php and replace all occurencese of $myTextElement with $myTextElement-&gt;getFontStyle() to get the Style object, so the line you are complaining about would become:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $myTextElement-&gt;getFontStyle()-&gt;setBold();</p>\r\n<p>Best regards,</p>\r\n<p>&nbsp;</p>\r\n<p>Danny</p>",
+    "PostedDate": "2010-09-27T07:57:48.013-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

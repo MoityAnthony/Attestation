@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2011-07-08T03:57:23.607-07:00",
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "When adding a font style to a ListItem in addListItem-method it is getting ignored. This is due to passing an unknown parameter to the constructor of the ListItem (the parameter is called $styleFont but $styleText is passed).\r\n\r\nI suggest to change line 183 of Section.php:\r\n\r\n$listItem = new PHPWord_Section_ListItem($text, $depth, $styleText, $styleList, $styleParagraph);\r\n\r\nto\r\n\r\n$listItem = new PHPWord_Section_ListItem($text, $depth, $styleFont, $styleList, $styleParagraph);",
+    "LastUpdatedDate": "2011-07-08T03:57:23.607-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-11-23T22:40:51.487-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Wrong parameter-name for font style when creating new ListItem",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 19
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks for your bug report, will be fixed in next release.\n\nBest regards,\nMatthias",
+      "PostedDate": "2011-05-23T10:38:44.383-07:00",
+      "Id": 36251
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "See comment from Matthias.",
+    "ClosedDate": "2011-05-23T11:07:35.59-07:00",
+    "CommentCount": 3,
+    "Custom": null,
+    "Description": "Hi all, phpword works perfectly great when the php file which calls phpword, the template & the output file are in the same directory..\r\n\r\nBut, when I try to save the output file in a different location other than where the template & php file is, it throws the following exception.:\r\n\r\nUncaught exception 'Exception' with message 'Could not close zip file.' in C:\\Users\\Pratyush\\Zend\\workspaces\\DefaultWorkspace7\\a9project\\a9project\\library\\PHPWord\\Template.php:109 Stack trace: #0 C:\\Users\\Pratyush\\Zend\\workspaces\\DefaultWorkspace7\\a9project\\a9project\\includes\\generate_word.php(259): PHPWord_Template->save('C:\\foo.docx') #1 C:\\Users\\Pratyush\\Zend\\workspaces\\DefaultWorkspace7\\a9project\\a9project\\admin\\facturar.php(83): createFactura(Array, Array, Array) #2 {main} thrown in C:\\Users\\Pratyush\\Zend\\workspaces\\DefaultWorkspace7\\a9project\\a9project\\library\\PHPWord\\Template.php on line 109\r\n\r\nAny ideas??\r\n\r\n",
+    "LastUpdatedDate": "2011-08-01T22:41:19.233-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-10-07T02:35:51.28-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Could not close zip file",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 14
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Try a absolut path, that worked fine for me:\n\n$document->save('/use/absolut/path/here/Solarsystem.docx');\n\nBest regards,\nMatthias",
+      "PostedDate": "2011-05-23T11:07:23.703-07:00",
+      "Id": 36257
+    },
+    {
+      "Message": "I am also getting that error. This worked fine on my other host, but now that I've switched to a Windows host it is giving me problems..\nI tried both of these lines, errors for both.\n$objWriter->save(dirname(__FILE__).'\\\\'.\"$filename\");\nand\n$objWriter->save(\"$filename\");\n\nAny suggestions?\n\n",
+      "PostedDate": "2011-08-01T22:15:01.72-07:00",
+      "Id": 41029
+    },
+    {
+      "Message": "Actually, nevermind I figured it out. I needed to set the permissions for the folder, and I couldn't do it via ftp (since it's a Windows host...).",
+      "PostedDate": "2011-08-01T22:41:19.233-07:00",
+      "Id": 41034
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+<html>
+<body>
+<head>
+<title>Status Letter</title>
+
+<link href="css/menu_assets/styles.css" rel="stylesheet" type="text/css">	
+
+</head>
+
+<!-- Meta Tags -->
+<meta charset="utf-8">
+<meta name="generator" content="Wufoo">
+<meta name="robots" content="index, follow">
+
+<!-- CSS -->
+<link href="css/structure1.css" rel="stylesheet">
+<link href="css/form.css" rel="stylesheet">
+
+<!-- JavaScript -->
+<script src="scripts/wufoo.js"></script>
+
+<!--[if lt IE 10]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body id="public">
+<div id="container" class="ltr">
+
+<h1 id="logo">
+<a href="" title="Bringing Learning To Life">Cosmopoint</a>
+</h1>
+<?
+$id=$_GET['id'];
+?>
+<div id='cssmenu'>
+<ul>
+   <li class='active '><?php echo"<a href='AdminForm.php?id=$id'><span>"?>Home</span></a></li>
+      <li class='has-sub '> <?php echo "<a href='ContactUs.php?id=$id'><span>"?>Contact Us</span></a>
+   <li><a href='LogoutPage.php'><span>Logout</span></a></li>
+   </li>
+</ul>
+</div>
+
+<form id="form56" name="form56" class="wufoo topLabel page" autocomplete="off" enctype="multipart/form-data" method="post" novalidate
+action="">
+
+<header id="header" class="info">
+<div style="float:left;width:50%;"><h2>Status Letter Listed</h2></div>
+<div style="float:right;width:30%;"><script language = "JavaScript">
+var now = new Date();
+var dayNames = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+var monNames = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+document.write(dayNames[now.getDay()] + " " + monNames[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear());
+</script></div>
+<div></div>
+<br>
+</header>
+
+<?php
+	$host_name = "localhost";
+	$user_name = "root";
+	$password = "";
+	$db_name = "finalproject";
+
+mysql_connect("$host_name" , "$user_name" , "$password");
+mysql_select_db("$db_name");
+
+$sql = "SELECT * FROM student,surat WHERE student.student_id AND student.student_id=surat.student_id";
+
+$query = mysql_query($sql) or die("Error: " . mysql_error() . "<br />In Query: " . $sql);
+
+while ($row = mysql_fetch_array($query)){
+
+
+	echo 'Bil	: '.$row['id_surat'];
+    echo '<br>Student ID	: '.$row['student_id'];
+    echo '<br> Fullname	: '.$row['fullname'];
+    echo '<br> IC No.	: '.$row['ic_number'];
+    echo '<br> Course	: '.$row['course'];
+    echo '<br> Type Of Letter	: '.$row['jenissurat'];
+	echo '<br> Status	: <font color="#FF0000"> '.$row['status'];?></font><?
+    echo '<br><br>';
+
+    }
+
+?>
+
+</table>
+
+</body>
+<html>

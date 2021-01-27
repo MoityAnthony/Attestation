@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "692392",
+    "ThreadId": "277955",
+    "Html": "\r\n<p>I'm having an issue here where docx files created by PHPWord appear identical on Mac Word 2011 and Windows Word 2010, except that the Mac images appear slightly (20%?) larger.</p>\r\n<p>If the Windows machine opens the PHPWord docx file (Word 2007, presumably), saves it as a Word 2010 docx file, and then is opened by Mac Word 2011, the file appears normally.</p>\r\n<p>Ideally it would be perfect to scale images by inches like everything else, instead of by pixels.</p>\r\n<p>Any ideas what might be wrong, or what potential solutions I could use?&nbsp; I'd rather not do a &quot;If browser client is a mac, scale images 20% smaller&quot;.</p>\r\n",
+    "PostedDate": "2011-11-01T14:26:22.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "692415",
+    "ThreadId": "277955",
+    "Html": "<p>OK, fixed this... In Writer's Base.php, I've changed:</p>\r\n<p>$objWriter-&gt;writeAttribute('style', 'width:'.$width.'px;height:'.$height.'px');</p>\r\n<p>to</p>\r\n<p>$objWriter-&gt;writeAttribute('style', 'width:'.$width.'in;height:'.$height.'in');</p>\r\n<p>This should lead to a much more consistent experience across different versions of Word, but will break things horribly for existing code.&nbsp; Windows Word 2010 appears to scale 96 pixels to an inch, and taking a wild guess I'd say Mac Word 2011 scales 72 pixels to an inch.</p>\r\n<p><br />Would a more sensible approach be to print in inches, but to do a 96px = 1in conversion in Style/Image.php?</p>",
+    "PostedDate": "2011-11-01T14:47:46.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

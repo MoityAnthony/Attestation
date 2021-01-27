@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "925668",
+    "ThreadId": "399071",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I want to use PHPWord to create a serial letter. I have a template for the letter, but how can I include it several times. But I dont want to have generated x single files, I want to append it all into one file. I think about something like this.</p>\r\n<p></p>\r\n<pre>$sql = &quot;SEELECT Name, street, plz, town .... From adresses&quot;;\r\n$result = mysql_query($sql);\r\n\r\n$PHPWord = new PHPWord();\r\n\r\nwhile ($person = mysql_fetch_array($result))\r\n{\r\n  $document = $PHPWord-&gt;loadTemplate('Template.docx');\r\n\r\n  $document-&gt;setValue('Value1', $person['Name']);\r\n  $document-&gt;setValue('Value2', $person['street']);\r\n  $document-&gt;setValue('Value3', $person['plz']);\r\n  $document-&gt;setValue('Value4', $person['town']);\r\n  $document-&gt;setValue('Value5', $person['country']);\r\n}\r\n\r\n\r\n$document-&gt;save('SerialLetter1.docx');<br><br>Is it possible with PHPWord?<br>It would also be possible to generate singele files, if it is possible <br>to connect them afterwards to one WORD-file.<br>Thanks for answering.<br><br>Thami</pre>\r\n<p></p>\r\n",
+    "PostedDate": "2012-10-12T00:46:20.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

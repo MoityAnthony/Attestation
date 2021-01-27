@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "984033",
+    "ThreadId": "428868",
+    "Html": "\r\n<p>I'm looking at using PHPWord for a project that will need to include hundreds of word docs as part of a search engine query. &nbsp;Can PHPWord be used for this? &nbsp;I've looked through the documentation but can't seem to find anything that would help me\r\n do this.</p>\r\n<p>Can anyone provide any example code for this?</p>\r\n",
+    "PostedDate": "2013-01-08T03:15:59.557-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "989427",
+    "ThreadId": "428868",
+    "Html": "\r\n<p>What do you want to do? Do you mean for a search engine to be able to index Word documents? If so, search engines already do that: you would not need to do anything special.</p>\r\n",
+    "PostedDate": "2013-01-20T13:47:58.293-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "989808",
+    "ThreadId": "428868",
+    "Html": "\r\n<p>I'm looking after a site which is pretty much a document repository. &nbsp;There's a search facility which currently just searches title and description (user entered data). &nbsp;They want it to be able to search through the documents that are stored on the server.\r\n &nbsp;Is PHPWord something that would be able to help with that? &nbsp;And can you point me in the direction of any example code as I've struggled to find much on this.</p>\r\n",
+    "PostedDate": "2013-01-21T08:32:09.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

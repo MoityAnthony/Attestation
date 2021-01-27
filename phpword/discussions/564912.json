@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1297978",
+    "ThreadId": "564912",
+    "Html": "hi there i've got a problem that is i need to creat a string with different size of word here is example<br />\n<pre><code>\n$section-&gt;addText(&quot;               &quot;);\n$section-&gt;addText(&quot;a&quot;,array('size'=&gt;15));\n$section-&gt;addText(&quot;               &quot;);</code></pre>\n\nand what i expect is like this<br />\n<pre><code>          a              and with bigger &quot;a&quot;</code></pre>\n\nbut this is what really show<br />\n<pre><code>              \na\n              \nand with bigger &quot;a&quot; too </code></pre>\n\nso how can i concatenation few string with different size of word without line break or creat one string that can show different size of word <br />\n<br />\nthanks!<br />\n",
+    "PostedDate": "2014-09-01T20:59:01.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

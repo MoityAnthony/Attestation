@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1288802",
+    "ThreadId": "560833",
+    "Html": "Hi\r<br />\n<br />\nI'm having trouble getting PHPWord to work on my webserver. I have the correct version of PHP and the ZipArchive extension appears to be present, but I'm confused about the &quot;xmllib&quot; extension. How can I check if this is present and is &quot;xmllib&quot; the same as &quot;libxml&quot;? The documentation is pretty vague on all of this.\r<br />\n<br />\nAny help greatly appreciated.<br />\n",
+    "PostedDate": "2014-08-11T03:26:37.167-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

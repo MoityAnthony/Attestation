@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "\r\n\r\n$PHPWord = new PHPWord();\r\n$document = $PHPWord->loadTemplate('./documents/invoice1.docx');\r\n$section = $PHPWord->createSection();\r\n$section->addText( $invname);\r\n$section->addText( $organization_link_record['organization_link_address_1'] );\r\n$section->addText( $organization_link_record['organization_link_address_2'] );\r\nif (!empty( $organization_link_record['organization_link_address_3']))\r\n{$section->addText( $organization_link_record['organization_link_address_3'] );}\r\nif (!empty( $organization_link_record['organization_link_address_4']))\r\n{$section->addText( $organization_link_record['organization_link_address_4'] );}\r\n$$section->addText($city);\r\n$document->save('invoice/'.$invoicedoc);\r\n\r\nwhat am i doing wrong?\r\n",
+    "LastUpdatedDate": "2015-02-12T02:51:01.673-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-11-21T10:03:47.843-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Get a blank word document ",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 86
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Same here.\n\nI had been struggling with OpenTBS, and managed to generate .odt docs, although not achieveing exactaly what I wanted. So I've changed to PHPWord, but all I got is a blank screen. Besides, PHP debugging is kind of hell, so I don't truly know what's wrong with my code. As far as I know, if you are using a template, you won't need to add sections. My code looks like this:\n\n```\n<?php\n\n      //Retrieve posted data\n      $title = $_POST['title'];\n      $msg = $_POST['msg'];  \n      $name = $_POST['name'];\n      $format = $_POST['format'];\n\n      //check if retrieved data is ok\n      echo (\"<p> title: \" + $title + \"</p>\");\n      echo (\"<p> msg: \" + $msg + \"</p>\");\n      echo (\"<p> name: \" + $name + \"</p>\");  \n\n      //Include PHPWord\n      $require = require_once '../librerias/PHPWord/PHPWord.php';\n\n      //Instance PHPWord object\n      $PHPWord = new PHPWord();\n\n      //Load Template (same directory as this .php file)\n      $document = $PHPWord->loadTemplate('test.docx');\n\n      //Replace template fields \n      $document->setValue('title', $title);\n      $document->setValue('msg', $msg);\n      $document->setValue('name', $name);\n      $document->setValue('weekday', date('l')); \n   \n      $document->save('show.docx');\n   ?> \n```",
+      "PostedDate": "2015-02-12T02:51:01.673-08:00",
+      "Id": 174466
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "509326",
+    "ThreadId": "231472",
+    "Html": "<div style=\"color:black;background-color:white\">\r\n<pre>&lt;?php\r\n<span style=\"color:blue\">require_once</span> <span style=\"color:#a31515\">'../PHPWord.php'</span>;\r\n\r\n$filename = date(<span style=\"color:#a31515\">'Y-m-d-H-i-s'</span>,time()).<span style=\"color:#a31515\">'.doc'</span>;\t\t\t<span style=\"color:green\">//filename</span>\r\n\r\n$PHPWord  = <span style=\"color:blue\">new</span> PHPWord();\r\n$document = $PHPWord-&gt;loadTemplate(<span style=\"color:#a31515\">'Template.docx'</span>);\r\n\r\n\r\n$programme_name=iconv(<span style=\"color:#a31515\">&quot;GB2312&quot;</span>,<span style=\"color:#a31515\">&quot;UTF-8&quot;</span>,<span style=\"color:#a31515\">&quot;中国&quot;</span>);\r\n\r\n\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value1'</span>, $programme_name);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value2'</span>, <span style=\"color:#a31515\">'Benjing'</span>);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value3'</span>, <span style=\"color:#a31515\">'Venus'</span>);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value4'</span>, <span style=\"color:#a31515\">'Earth'</span>);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value5'</span>, <span style=\"color:#a31515\">'Mars'</span>);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value6'</span>, <span style=\"color:#a31515\">'Jupiter'</span>);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value7'</span>, <span style=\"color:#a31515\">'Saturn'</span>);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value8'</span>, <span style=\"color:#a31515\">'Uranus'</span>);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value9'</span>, <span style=\"color:#a31515\">'Neptun'</span>);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value10'</span>, <span style=\"color:#a31515\">'Pluto'</span>);\r\n\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'weekday'</span>, date(<span style=\"color:#a31515\">'l'</span>));\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'time'</span>, date(<span style=\"color:#a31515\">'H:i'</span>));\r\n\r\n$document-&gt;save($filename);\r\n?&gt;\r\n</pre>\r\n<pre>it can not write Chinese charater into the .docx  file</pre>\r\n<pre>can some body tell me </pre>\r\n<pre>how to solve this problem</pre>\r\n<pre>I have fix the code with this way  <a href=\"http://phpword.codeplex.com/workitem/8\">http://phpword.codeplex.com/workitem/8</a> </pre>\r\n<pre>but it still can not work</pre>\r\n</div>",
+    "PostedDate": "2010-10-19T05:44:17.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "606757",
+    "ThreadId": "231472",
+    "Html": "<p>did you found a way ? i looking all so for this issue ... thanks</p>",
+    "PostedDate": "2011-05-03T16:38:12.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612760",
+    "ThreadId": "231472",
+    "Html": "<p>hello</p>\n<p>add :</p>\n<p>header('Content-type: text/html; charset=UTF-8');</p>\n<p>and remove all the utf-8 info in the php files... it work fine for me in arabic.</p>",
+    "PostedDate": "2011-05-14T09:21:14.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "613123",
+    "ThreadId": "231472",
+    "Html": "<p>我也遇到了这个问题，求解。</p>",
+    "PostedDate": "2011-05-15T22:38:07.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "613149",
+    "ThreadId": "231472",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>bg6aer wrote:</strong><br />\n<div style=\"color: black; background-color: white;\">\n<pre>&lt;?php\n<span style=\"color: blue;\">require_once</span> <span style=\"color: #a31515;\">'../PHPWord.php'</span>;\n\n$filename = date(<span style=\"color: #a31515;\">'Y-m-d-H-i-s'</span>,time()).<span style=\"color: #a31515;\">'.doc'</span>;\t\t\t<span style=\"color: green;\">//filename</span>\n\n$PHPWord  = <span style=\"color: blue;\">new</span> PHPWord();\n$document = $PHPWord-&gt;loadTemplate(<span style=\"color: #a31515;\">'Template.docx'</span>);\n\n\n$programme_name=iconv(<span style=\"color: #a31515;\">\"GB2312\"</span>,<span style=\"color: #a31515;\">\"UTF-8\"</span>,<span style=\"color: #a31515;\">\"中国\"</span>);\n\n\n$document-&gt;setValue(<span style=\"color: #a31515;\">'Value1'</span>, $programme_name);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'Value2'</span>, <span style=\"color: #a31515;\">'Benjing'</span>);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'Value3'</span>, <span style=\"color: #a31515;\">'Venus'</span>);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'Value4'</span>, <span style=\"color: #a31515;\">'Earth'</span>);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'Value5'</span>, <span style=\"color: #a31515;\">'Mars'</span>);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'Value6'</span>, <span style=\"color: #a31515;\">'Jupiter'</span>);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'Value7'</span>, <span style=\"color: #a31515;\">'Saturn'</span>);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'Value8'</span>, <span style=\"color: #a31515;\">'Uranus'</span>);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'Value9'</span>, <span style=\"color: #a31515;\">'Neptun'</span>);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'Value10'</span>, <span style=\"color: #a31515;\">'Pluto'</span>);\n\n$document-&gt;setValue(<span style=\"color: #a31515;\">'weekday'</span>, date(<span style=\"color: #a31515;\">'l'</span>));\n$document-&gt;setValue(<span style=\"color: #a31515;\">'time'</span>, date(<span style=\"color: #a31515;\">'H:i'</span>));\n\n$document-&gt;save($filename);\n?&gt;\n</pre>\n<pre>it can not write Chinese charater into the .docx  file</pre>\n<pre>can some body tell me </pre>\n<pre>how to solve this problem</pre>\n<pre>I have fix the code with this way  <a href=\"http://phpword.codeplex.com/workitem/8\">http://phpword.codeplex.com/workitem/8</a> </pre>\n<pre>but it still can not work</pre>\n</div>\n</blockquote>\n<p>解决方法：<a title=\"How to write Chinese charater with PHPWord\" href=\"http://fav100.info/archives/PHPWord-Chinese-charater/\" target=\"_blank\">http://fav100.info/archives/PHPWord-Chinese-charater/</a></p>\n<p>找到 setValue方法,把里面 的 $replace = utf8_encode($replace); 换成 iconv('gbk','utf-8',$replace); 即可。如果需要还可以修改此方法，以便根据不同的需要设置编码。</p>\n<pre class=\"scheme\"><div style=\"color: black; background-color: white;\"><pre><span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> setValue($search, $replace) {\n        <span style=\"color: blue;\">if</span>(substr($search, 0, 2) !== <span style=\"color: #a31515;\">'${'</span> &amp;&amp; substr($search, -1) !== <span style=\"color: #a31515;\">'}'</span>) {\n            $search = <span style=\"color: #a31515;\">'${'</span>.$search.<span style=\"color: #a31515;\">'}'</span>;\n        }\n \n        <span style=\"color: blue;\">if</span>(!is_array($replace)) {\n           <span style=\"color: green;\">// $replace = utf8_encode($replace);</span>\n           $replace =iconv(<span style=\"color: #a31515;\">'gbk'</span>, <span style=\"color: #a31515;\">'utf-8'</span>, $replace);\n        }\n</pre>\n</div>\n<br /></pre>",
+    "PostedDate": "2011-05-15T23:36:08.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

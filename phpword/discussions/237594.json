@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "532899",
+    "ThreadId": "237594",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>Does someone know how to insert a euro sign in PHPWord?<br>\r\nThe dollar sign works fine, but the euro sign not (&euro;).</p>\r\n<p>I've been looking for an answer for hours, but I couldn't find one.</p>\r\n<p>Thank you!</p>\r\n",
+    "PostedDate": "2010-12-08T07:22:19.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "533185",
+    "ThreadId": "237594",
+    "Html": "\r\n<p>Maybe the ascii will work: chr(8364)</p>\r\n<p><a href=\"http://php.net/manual/en/function.chr.php\" target=\"_blank\">http://php.net/manual/en/function.chr.php</a></p>\r\n<p>The problem is that this won't work if your font does not have a euro symbol, so use newer fonts in your docx.</p>\r\n<p><a href=\"http://www.cs.tut.fi/~jkorpela/html/euro.html\" target=\"_self\">http://www.cs.tut.fi/~jkorpela/html/euro.html</a></p>\r\n<p>More information about ascii here: <a href=\"http://en.wikipedia.org/wiki/ASCII\" target=\"_blank\">\r\nhttp://en.wikipedia.org/wiki/ASCII</a></p>\r\n",
+    "PostedDate": "2010-12-08T17:16:54.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "683412",
+    "ThreadId": "237594",
+    "Html": "<p>I have a solution but we have to change the source code of PHPWord.<br />The problem is the use of utf8_encode (for example in Section.php file).</p>\r\n<pre>\t\r\npublic function addText($text, $styleFont = null, $styleParagraph = null) {\r\n    $givenText = utf8_encode($text);\r\n    $text = new PHPWord_Section_Text($givenText, $styleFont, $styleParagraph);\r\n    $this-&gt;_elementCollection[] = $text;\r\n    return $text;\r\n}\r\n</pre>\r\n<p>utf8_encode() take an&nbsp;ISO-8859-1 encoded string as parameter. But euro sign exists in ISO-8859-15 but not in&nbsp;ISO-8859-1.<br /><a href=\"http://en.wikipedia.org/wiki/ISO/IEC_8859-15\">http://en.wikipedia.org/wiki/ISO/IEC_8859-15</a>&nbsp;</p>\r\n<p>If we send a&nbsp;ISO-8859-15, we have the&nbsp;&curren;&nbsp;sign by using utf8_encode() and not &euro;.<br />The solution is to remove the utf8_encode() and use a utf8 encoded string as parameter of addText().</p>",
+    "PostedDate": "2011-10-12T15:22:49.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "699526",
+    "ThreadId": "237594",
+    "Html": "<p>Hi,</p>\r\n<p>Could you give an example how to fix it? I removed the utf8_encode in Section.php. But how further??</p>\r\n<p>Thanx</p>",
+    "PostedDate": "2011-11-17T04:55:40.76-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "844917",
+    "ThreadId": "237594",
+    "Html": "<p>Hi,<br />I've found another solution modifying the source code (adding a code line that implements the php function '<strong>str_replace</strong>').</p>\r\n<p>Go to the function 'addText' in the file that corresponds.</p>\r\n<p>In my case (cause I'm creating a table), I added the code line in this function in: PHPWord\\Section\\Table\\<strong>Cell.php</strong><br /><br />public function addText ($text, $styleFont = null, $styleParagraph = null)<br />&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $text = utf8_encode($text);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong> $text = str_replace(array(\"&amp;euro;\",\"&acirc;&not;\"),\"&euro;\",$text);</strong> // The line added<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $text = new PHPWord_Section_Text($text, $styleFont, $styleParagraph);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $this-&gt;_elementCollection [] = $text;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return $text;<br />&nbsp;&nbsp;&nbsp; }<br /><br />Notes: '&amp;euro;' is if the source is HTML<br />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; '&acirc;&not;'&nbsp; is if the source is utf8_unicode</p>\r\n<p><span id=\"result_box\" lang=\"en\"><span class=\"hps\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Depending on where</span> <span class=\"hps\">it</span> <span class=\"hps\">is used</span><span>,</span> <span class=\"hps\">the '</span></span>addText'<span id=\"result_box\" lang=\"en\"><span class=\"hps\"></span> <span class=\"hps\">function</span> <span class=\"hps\">can be found in : Cell.php , Footer.php , Header.php , Section.php , TextRun.php .<br /></span></span></p>\r\n<p>Regards.</p>",
+    "PostedDate": "2012-06-05T04:07:37.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150265",
+    "ThreadId": "237594",
+    "Html": "Got the same problem and tried the code of Eclectic.\r<br />\n<br />\nIt didn't worked for me and so i modified it a little bit ... \r<br />\n<br />\nI added this line: <br />\n<pre><code> $text = str_replace(&quot;E_U_R_O&quot;, &quot;€&quot; ,$text); \n</code></pre>\n\nOn the same position and in my Text i use now E_U_R_O when i want to create a € sign in my word document. \r<br />\n<br />\nPoor i know, but it works and maybe its a solution for someone else.  \r<br />\n",
+    "PostedDate": "2014-01-06T23:30:55.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224663",
+    "ThreadId": "237594",
+    "Html": "The <a href=\"https://github.com/PHPOffice/PHPWord\" rel=\"nofollow\">latest version</a> of PHPWord can add utf8 character.<br />\n",
+    "PostedDate": "2014-03-19T22:21:11.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

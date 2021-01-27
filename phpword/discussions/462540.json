@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1108598",
+    "ThreadId": "462540",
+    "Html": "Hi all,\r<br />\n<br />\nI'm generating a report and need to flick between portrait and landscape. The header/footer is the correct size in portrait but when I switch to landscape it doesn't adjust.\r<br />\n<br />\nIs this a design issue or am I just using the lib wrong?<br />\n",
+    "PostedDate": "2013-10-16T22:15:24.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

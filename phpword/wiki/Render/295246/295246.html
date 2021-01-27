@@ -1,0 +1,55 @@
+<div class="wikidoc"><h1>Requirements</h1>
+<ul><li>PHP 5.2.x or newer</li>
+<li>PHP Extension ZipArchive</li>
+<li>PHP Extension xmllib</li>
+<li>For opening by PHPWord created files in Microsoft Office &lt; 2007 you need the &quot;Microsoft Office Compatibility Pack&quot;. You can get it here for free: <a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=941b3470-3ae9-4aee-8f43-c6bb74cd1466">Microsoft Office Compability Pack</a></li></ul>
+
+<h1>Installation and configuration</h1>
+Installation and configuration is very easy:<br />
+<ul><li>Extract the ZIP-Archive</li>
+<li>Copy the source files to your webserver</li>
+<li>If your PHPWord working directory isn&#39;t your PHP include path you can set the PHPWord base path. To set the PHPWord base path open the PHPWord.php inside the root folder and edit the value of PHPWORD_BASE_PATH constant.</li></ul>
+
+<h1>Basic example</h1>
+<div style="color:Black;background-color:White;"><pre>
+<span style="color:Green;">// Include the PHPWord.php, all other classes were loaded by an autoloader</span>
+<span style="color:Blue;">require_once</span> <span style="color:#A31515;">&#39;PHPWord.php&#39;</span>;
+
+<span style="color:Green;">// Create a new PHPWord Object</span>
+$PHPWord = <span style="color:Blue;">new</span> PHPWord();
+
+<span style="color:Green;">// Every element you want to append to the word document is placed in a section. So you need a section:</span>
+$section = $PHPWord-&gt;createSection();
+
+<span style="color:Green;">// After creating a section, you can append elements:</span>
+$section-&gt;addText(<span style="color:#A31515;">&#39;Hello world!&#39;</span>);
+
+<span style="color:Green;">// You can directly style your text by giving the addText function an array:</span>
+$section-&gt;addText(<span style="color:#A31515;">&#39;Hello world! I am formatted.&#39;</span>, <span style="color:Blue;">array</span>(<span style="color:#A31515;">&#39;name&#39;</span>=&gt;<span style="color:#A31515;">&#39;Tahoma&#39;</span>, <span style="color:#A31515;">&#39;size&#39;</span>=&gt;16, <span style="color:#A31515;">&#39;bold&#39;</span>=&gt;true));
+
+<span style="color:Green;">// If you often need the same style again you can create a user defined style to the word document</span>
+<span style="color:Green;">// and give the addText function the name of the style:</span>
+$PHPWord-&gt;addFontStyle(<span style="color:#A31515;">&#39;myOwnStyle&#39;</span>, <span style="color:Blue;">array</span>(<span style="color:#A31515;">&#39;name&#39;</span>=&gt;<span style="color:#A31515;">&#39;Verdana&#39;</span>, <span style="color:#A31515;">&#39;size&#39;</span>=&gt;14, <span style="color:#A31515;">&#39;color&#39;</span>=&gt;<span style="color:#A31515;">&#39;1B2232&#39;</span>));
+$section-&gt;addText(<span style="color:#A31515;">&#39;Hello world! I am formatted by a user defined style&#39;</span>, <span style="color:#A31515;">&#39;myOwnStyle&#39;</span>);
+
+<span style="color:Green;">// You can also putthe appended element to local object an call functions like this:</span>
+$myTextElement = $section-&gt;addText(<span style="color:#A31515;">&#39;Hello World!&#39;</span>);
+$myTextElement-&gt;setBold();
+$myTextElement-&gt;setName(<span style="color:#A31515;">&#39;Verdana&#39;</span>);
+$myTextElement-&gt;setSize(22);
+
+<span style="color:Green;">// At least write the document to webspace:</span>
+$objWriter = PHPWord_IOFactory::createWriter($PHPWord, <span style="color:#A31515;">&#39;Word2007&#39;</span>);
+$objWriter-&gt;save(<span style="color:#A31515;">&#39;helloWorld.docx&#39;</span>);
+</pre></div>
+<h1>Documentation</h1>You can download examples and a full documentation of PHPWord <a href="http://phpword.codeplex.com/releases/view/49543">here</a><br />
+<h1>Font Style changes between 0.6.1 and 0.6.2:</h1>With the release 0.6.2 the paragraph properties has been moved into a separate Class!<br />So, every text element now has two style properties: FONT and PARAGRAPH. See the following example for more information:<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Green;">// OLD release, 0.6.1:</span>
+$styleFont = <span style="color:Blue;">array</span>(<span style="color:#A31515;">&#39;bold&#39;</span>=&gt;true, <span style="color:#A31515;">&#39;size&#39;</span>=&gt;16, <span style="color:#A31515;">&#39;name&#39;</span>=&gt;<span style="color:#A31515;">&#39;Calibri&#39;</span>, <span style="color:#A31515;">&#39;align&#39;</span>=&gt;<span style="color:#A31515;">&#39;center&#39;</span>, <span style="color:#A31515;">&#39;spaceAfter&#39;</span>=&gt;100);
+$section-&gt;addText(<span style="color:#A31515;">&#39;Hello World&#39;</span>, $styleFont);
+
+<span style="color:Green;">// NEW release, 0.6.2:</span>
+$styleFont = <span style="color:Blue;">array</span>(<span style="color:#A31515;">&#39;bold&#39;</span>=&gt;true, <span style="color:#A31515;">&#39;size&#39;</span>=&gt;16, <span style="color:#A31515;">&#39;name&#39;</span>=&gt;<span style="color:#A31515;">&#39;Calibri&#39;</span>);
+$styleParagraph = <span style="color:Blue;">array</span>(<span style="color:#A31515;">&#39;align&#39;</span>=&gt;<span style="color:#A31515;">&#39;center&#39;</span>, <span style="color:#A31515;">&#39;spaceAfter&#39;</span>=&gt;100);
+$section-&gt;addText(<span style="color:#A31515;">&#39;Hello World&#39;</span>, $styleFont, $styleParagraph);
+</pre></div></div><div class="ClearBoth"></div>

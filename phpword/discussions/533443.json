@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1211847",
+    "ThreadId": "533443",
+    "Html": "I need either nested tables or a way to place multiple images in a single table cell.  I have a report to generate, but I can't figure out how to have multiple images in a single table cell.  If I can't have multiple images in one cell of a table, then I would need to nest a sub-table with a single image in each of those cells.\r<br />\n<br />\nThis post (<a href=\"https://phpword.codeplex.com/discussions/245828\" rel=\"nofollow\">https://phpword.codeplex.com/discussions/245828</a>) had code mods on table nesting, but no explanation on how to implement it.  I'd pay $ to get this working.<br />\n",
+    "PostedDate": "2014-02-21T10:59:41.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224399",
+    "ThreadId": "533443",
+    "Html": "I REALLY need to be able to add multiple photos in a single table cell.  Anyone?<br />\n",
+    "PostedDate": "2014-03-19T05:51:18.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224554",
+    "ThreadId": "533443",
+    "Html": "Ok, I figured out how to add multiple images in a single table cell, however, it inserts a paragraph tag (¶) after each image.  Since I want the images side by side, this presents a problem.  Surely there's a line in the PHPword code that adds this paragraph tag that I can comment out.  Better yet, it would be great if it were something I could switch on/off in the addImage command.<br />\n<pre><code>$table = $section-&gt;addTable();\n$table-&gt;addRow();\n$cell = $table-&gt;addCell(8000);\n$cell-&gt;addImage('photos/image1.JPG');\n$cell-&gt;addImage('photos/image2.JPG');\n$cell-&gt;addImage('photos/image3.JPG');</code></pre>\n\n",
+    "PostedDate": "2014-03-19T12:31:11.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224638",
+    "ThreadId": "533443",
+    "Html": "Unfortunately, there's no way to do that on PHPWord 0.6.2 (CodePlex). But you can do that using Text Run on PHPWord 0.8 (<a href=\"https://github.com/PHPOffice/PHPWord\" rel=\"nofollow\">GitHub</a>).<br />\n<pre><code>$table = $section-&gt;addTable();\n$table-&gt;addRow();\n$cell = $table-&gt;addCell(8000);\n$textrun = $cell-&gt;createTextRun();\n$textrun-&gt;addImage('photos/image1.JPG');\n$textrun-&gt;addImage('photos/image2.JPG');\n$textrun-&gt;addImage('photos/image3.JPG');</code></pre>\n\nThe development of PHPWord continues on GitHub. You can try the 0.8 version. It should be compatible with 0.6.2 plus tons of additional features.<br />\n",
+    "PostedDate": "2014-03-19T20:11:54.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224821",
+    "ThreadId": "533443",
+    "Html": "That's really cool that you're continuing to develop this.  Thanks!!\r<br />\n<br />\nHowever, I've been running version 0.6.3 of PHPWord for a while now and have it doing mostly what I want it to do, but I see there are new features in version 0.8 that would completely do what I need. I downloaded the zip file from GitHub and replaced my /classes folder with the new /classes folder and even with the most basic of test files, I immediately get this error: Fatal error: Class 'PHPWord_DocumentProperties' not found in E:\\Inetpub\\wwwroot\\mysite\\Classes\\PHPWord.php on line 99.<br />\n",
+    "PostedDate": "2014-03-20T07:12:45.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224885",
+    "ThreadId": "533443",
+    "Html": "I think it's the PHP version. You should use 5.3. Sorry about that, but the team decided to move forward and use all the good stuffs on 5.3.<br />\n",
+    "PostedDate": "2014-03-20T09:14:14.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

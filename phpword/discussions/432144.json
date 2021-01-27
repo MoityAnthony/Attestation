@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "997086",
+    "ThreadId": "432144",
+    "Html": "Hi guys,\r<br />\n<br />\nI use PHPword within a new client application, this to print invoices. I develop on a mac and using Office 2011 for Mac. Works perfectly, nice clean document. But if I print the same document in Office 2010 on PC, it's totally different. It adds an extra space between every line I add, using the AddText function.<br />\n<pre><code>&lt;?\n$section-&gt;addText('Factuurnummer: '.$invoicenumber, array('bold'=&gt;false, 'italic'=&gt;false, 'size'=&gt;8 , 'spaceAfter' =&gt; 0, 'spacing' =&gt; 0));\n\n$section-&gt;addText('Ordernummer: '.$invoicedetails-&gt;ordernumber, array('bold'=&gt;false, 'italic'=&gt;false, 'size'=&gt;8 , 'spaceAfter' =&gt; 0, 'spacing' =&gt; 0));\n?&gt;</code></pre>\n\nIn Office 2011 it shows what I need:\r<br />\n<br />\nFactuurnummer: 12345\r<br />\nOrdernummer: 12345\r<br />\n<br />\nIf Office 2010 it shows:\r<br />\n<br />\nFactuurnummer: 12345\r<br />\n<br />\nOrdernummer: 12345\r<br />\n<br />\n<br />\nI have tried to add spaceAfter after reading one of the discussions, but no luck. Any ideas what it can be? Is it a PhpWord thing, or a setting in word perhaps? \r<br />\n<br />\nHope someone can help me! Thanks.\r<br />\n<br />\nRobbert<br />\n",
+    "PostedDate": "2013-02-06T00:04:54.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "999397",
+    "ThreadId": "432144",
+    "Html": "Hello WeeRab,<br />\n<br />\nI encounter exactly the same problem, in Word 2008 for Mac everything ok, in Windows Word 2010 version 14.0.6129.5100 (32 bits) this problem occurs. It appears, but I must be confirmed about that, that older Windows Word versions do not show the problem. This leads to the thought that it is something in Word causing it.<br />\n[later edit: Windows Word 2007 also goes wrong.]<br />\n<br />\nThere is some recognition with problems in e-mail with \\r versus \\n, or better, using both causing extra linefeeds in some e-mailclients.. but this is different. It also strikes me that this obvious issue is not often mentioned in this board.<br />\n<br />\nI searched the PHPWord source code files to find the spot where line ends are defined but not yet found. Also I had the thought that using textRun instead of addText may clear the issue.  My encounter with PHPWord is only 3 days old, must experiment with textRun yet.<br />\n<br />\nFor the moment &quot;heb ik nog geen idee&quot;.. I really don't know.<br />\n<br />\nAlso I wonder if this great product, I have respect for the builders who did their job in beautiful object orientated php, is still supported.<br />\n<br />\nIf I find something I will keep you informed.<br />\nHarry<br />\n",
+    "PostedDate": "2013-02-10T20:30:16.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083605",
+    "ThreadId": "432144",
+    "Html": "Hello,\r<br />\n<br />\nhere we had the same problems. Do you have a solution?\r<br />\n<br />\n<a href=\"https://phpword.codeplex.com/discussions/361377\" rel=\"nofollow\">https://phpword.codeplex.com/discussions/361377</a> \r<br />\n<br />\n<a href=\"https://phpword.codeplex.com/discussions/454183\" rel=\"nofollow\">https://phpword.codeplex.com/discussions/454183</a>\r<br />\n<br />\nGreetz<br />\n",
+    "PostedDate": "2013-08-22T05:55:14.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1331553",
+    "ThreadId": "432144",
+    "Html": "Hi,<br />\n<br />\na little bit late, but I faced this problem yesterday (and as I still didn't find a solution on the internet...).<br />\nIt seemed, that on Word for Windows and Word for Mac OS there are different default settings for the space after a paragraph.<br />\nEven if I specified them while adding some text it didn't work for me.<br />\n<br />\nThe solution for me was to set the general 'spaceAfter' of a paragraph to some value:<br />\n<br />\n$PHPWord-&gt;setDefaultParagraphStyle(array(&quot;spaceAfter&quot;=&gt;20.0*8,&quot;spaceBefore&quot;=&gt;0, &quot;lineHeight&quot;=&gt;1.084));<br />\n<br />\n8Pt spaceAfter and 1,08 lineheight on both Word 2013 Windows and Word 2011 Mac OS.<br />\n<br />\nBest regards<br />\nFlorian<br />\n",
+    "PostedDate": "2014-12-12T22:43:50.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

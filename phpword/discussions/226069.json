@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "489263",
+    "ThreadId": "226069",
+    "Html": "<p>Few days ago I sent an email, most probably to a wrong address, asking for how one can use PHPWord with a language other than english. I am mainly interested in Greek. I have seen in this discussion a post describing how one managed to use East Asian languages. However to modify things inside the PHPWord class is not the best solution, at least for me. Is there any more general method to make PHPWord to create and use word files written in Greek or other similar languages ?</p>\r\n<p>Thanks in advance for any comment on this.</p>\r\n<p>Angelos</p>",
+    "PostedDate": "2010-09-04T10:25:20.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

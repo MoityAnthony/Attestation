@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1255949",
+    "ThreadId": "548564",
+    "Html": "I'd like change default width &quot;word cards&quot; ( I want little &quot;word cards&quot;)<br />\n<br />\nI do<br />\n<pre><code>$sectionSettings = array(\n//'orientation' =&gt; 'landscape',\n'pageSizeW'=&gt;308.4,\n'pageSizeH'=&gt;487.04\n);\n$section = $phpWord-&gt;createSection($sectionSettings);</code></pre>\n\nbut this code not working. The &quot;word card&quot; is  default size, still.  (dimesion of &quot;word card&quot; not change. ) How to do it?<br />\nPlease help <br />\n<br />\nbest regards<br />\nbogdan<br />\n",
+    "PostedDate": "2014-06-13T04:05:03.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1255972",
+    "ThreadId": "548564",
+    "Html": "Hi,\r<br />\n<br />\nThe development of PHPWord is continued on GitHub. The ability to set custom page size has just added in the current development branch of PHPWord (0.12): <a href=\"https://github.com/PHPOffice/PHPWord/tree/develop\" rel=\"nofollow\">https://github.com/PHPOffice/PHPWord/tree/develop</a><br />\n",
+    "PostedDate": "2014-06-13T05:09:13.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256107",
+    "ThreadId": "548564",
+    "Html": "thanks for your reply.  Couldn'nt give me example $sectionSettings?\r<br />\n<br />\nI've  tried in development version<br />\n<pre><code>$sectionSettings = array(\n//'orientation' =&gt; 'landscape',\n//'pageSizeW'=&gt;308.4,\n//'pageSizeH'=&gt;487.04,\n'paper'=&gt;'A5'\n);\n$section = $phpWord-&gt;createSection($sectionSettings);\n</code></pre>\n\nbut width page is not change. : (  I'd like 5,5x5,5 &quot;word unit&quot;  please see <a href=\"http://webweave.pl/other/5i5.jpg\" rel=\"nofollow\">http://webweave.pl/other/5i5.jpg</a>\r<br />\n<br />\nbest regards\r<br />\nbogdan<br />\n",
+    "PostedDate": "2014-06-13T10:04:10.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256232",
+    "ThreadId": "548564",
+    "Html": "I've found solve.  This script  <a href=\"http://sigma-scripts.de/phprtflite/docs/\" rel=\"nofollow\">http://sigma-scripts.de/phprtflite/docs/</a> is perfect for me.  Thanks a lot, bogdan<br />\n",
+    "PostedDate": "2014-06-13T18:42:18.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256954",
+    "ThreadId": "548564",
+    "Html": "Ok. Glad that RTF is working for you.<br />\n",
+    "PostedDate": "2014-06-17T02:34:19.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

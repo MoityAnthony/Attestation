@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "532116",
+    "ThreadId": "237382",
+    "Html": "\r\n<p>is it possible to use ${my_footer_variable} in the footer part of the docx template?</p>\r\n",
+    "PostedDate": "2010-12-06T22:02:49.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "532310",
+    "ThreadId": "237382",
+    "Html": "\r\n<p>Yes, you can put a variable in the footer, but you must use the correct syntax.</p>\r\n<p>variable syntax = $my_variable&nbsp;&nbsp;&nbsp;&nbsp; ........&nbsp; NOT ${my_variable}</p>\r\n<p>footer autotext = {PAGE}&nbsp;</p>\r\n<p>A sample code snippet:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:green\">// report footer</span>\r\n$paraStyle = array('align' =&gt; 'center');\r\n$testVariable = <span style=\"color:#a31515\">'My Test Variable '</span>;\r\n$footer = $section-&gt;createFooter();<br><br>$footer-&gt;addPreserveText( $testVariable.<span style=\"color:#a31515\">'{ DATE \\@&quot;MMMM d, yyyy&quot; }               Page {PAGE} of {NUMPAGES}'</span>, null, $paraStyle );<br><span style=\"color:green\">//can't seem to insert other 'autotext' like {FILENAME} and {AUTHOR}</span>\r\n</pre>\r\n</div>\r\n<p>Results (centered in the footer):</p>\r\n<p>My Test Variable December 7, 2010&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Page 1 of 1</p>\r\n",
+    "PostedDate": "2010-12-07T07:27:38.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "596322",
+    "ThreadId": "237382",
+    "Html": "<p>See my comment regarding this here:&nbsp;<a href=\"http://phpword.codeplex.com/discussions/236472\">http://phpword.codeplex.com/discussions/236472</a></p>",
+    "PostedDate": "2011-04-12T20:51:17.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

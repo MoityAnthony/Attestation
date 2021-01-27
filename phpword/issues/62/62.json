@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "my code is:\r\nif(isset($_POST['submit']))\r\n    {    \r\nrequire_once 'PHPWord.php';\r\n$PHPWord = new PHPWord();\r\n$section = $PHPWord->createSection();\r\n$section->addText($_POST['editor1']); ///textarea content\r\n $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r\n\r\n// Save File\r\n$temp_file_uri = tempnam('', 'xyz');\r\n$objWriter->save($temp_file_uri);\r\n\r\n// Download the file:\r\nheader('Content-Description: File Transfer');\r\nheader('Content-Type: application/octet-stream');\r\nheader('Content-Disposition: attachment; filename=myfile.docx');\r\nheader('Content-Transfer-Encoding: binary');\r\nheader('Expires: 0');\r\nheader('Cache-Control: must-revalidate, post-check=0, pre-check=0');\r\nheader('Pragma: public');\r\nheader('Content-Length: ' . filesize($temp_file_uri));\r\nflush();\r\nreadfile($temp_file_uri);\r\nunlink($temp_file_uri); // deletes the temporary file\r\n}",
+    "LastUpdatedDate": "2013-09-28T05:19:59.83-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-09-24T10:54:41.927-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "the phpword does not display text but page code!",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 62
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "please help\nand thank you very much (:",
+      "PostedDate": "2013-09-24T10:55:57.837-07:00",
+      "Id": 115504
+    },
+    {
+      "Message": "__Update:__\nI found what the problem was that was only because I don't have office 2007 sorry but the file was open as word file even if I wasn't have office so I thought that will not be the problem maker :( sorry for bothering you\n\nbut still there is problems before opening the file I receive warning message \"said that the content are corrupted and if I'm not ensure from the source I shoudn't open it!\" also there is no breaks between lines (as if I wrote all words in one paragraph! ",
+      "PostedDate": "2013-09-28T05:19:59.83-07:00",
+      "Id": 115894
+    }
+  ]
+}

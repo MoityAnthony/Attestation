@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "667913",
+    "ThreadId": "271573",
+    "Html": "\r\n<p>add code ：</p>\r\n<p>$objWriter-&gt;startElement('w:ind');<br>\r\n<br>\r\n$objWriter-&gt;writeAttribute('w:firstLine', 450);<br>\r\n<br>\r\n$objWriter-&gt;endElement();</p>\r\n<p>into branch:</p>\r\n<p>/phpword/writer/word2007/base.php</p>\r\n<p>function name:</p>\r\n<p>_writeParagraphStyle()</p>\r\n",
+    "PostedDate": "2011-09-05T19:56:29.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

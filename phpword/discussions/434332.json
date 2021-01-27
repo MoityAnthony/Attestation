@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1005984",
+    "ThreadId": "434332",
+    "Html": "I've successfully managed to use PHPWord and FTP when using Templates.  It's pretty easy since you can pass in the FTP connection string and it works fine.\r<br />\n<br />\nMy question is on the Save of the new file (Template.PHP).\r<br />\n<br />\nIt will do a close on $this-&gt;objZip but fails.\r<br />\nSo I removed the close piece and everything works fine.  It opens the template, sets all the values and saves it to a new file.\r<br />\n<br />\nMy question is do I really need the close?  What is actually closing?  The new file created from the template?  PHP says it does this automatically though.\r<br />\n<br />\nAny help would be appreciated!<br />\n",
+    "PostedDate": "2013-02-24T12:14:42.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

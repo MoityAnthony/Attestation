@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "624833",
+    "ThreadId": "260643",
+    "Html": "\r\n<p>I've got my code the create a doc and i'm able to write in text but when i try add an image i dont receive an error but when i open the .doc the image hasn't been added, code below, any ideas?</p>\r\n<p>&nbsp;</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>          $docx = <span style=\"color:blue\">new</span> word();\r\n          $section = $docx-&gt;createSection();\r\n          $section-&gt;addText(<span style=\"color:#a31515\">'Hello world!'</span>);\r\n          $section-&gt;addText(<span style=\"color:#a31515\">'Hello world! I am formatted.'</span>, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'name'</span>=&gt;<span style=\"color:#a31515\">'Tahoma'</span>, <span style=\"color:#a31515\">'size'</span>=&gt;16, <span style=\"color:#a31515\">'bold'</span>=&gt;true));\r\n          $section-&gt;addImage(<span style=\"color:#a31515\">'http://localhost/label_creator/wp-content/media/Become-a-friend_small.jpg'</span>);\r\n          $objWriter = PHPWord_IOFactory::createWriter($docx, <span style=\"color:#a31515\">'Word2007'</span>);\r\n          $objWriter-&gt;save(<span style=\"color:#a31515\">'helloWorld2.docx'</span>);\r\n</pre>\r\n</div>\r\nall lines work apart from addImage, and that is defo the correct image path\r\n<p></p>\r\n",
+    "PostedDate": "2011-06-08T09:54:36.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "624845",
+    "ThreadId": "260643",
+    "Html": "<p>The path to the image should be full path from the root of the web server as specified in httpd.conf</p>\r\n<pre>$section-&gt;addImage(<span style=\"color: #a31515;\">'/label_creator/wp-content/media/Become-a-friend_small.jpg'</span>);</pre>",
+    "PostedDate": "2011-06-08T10:18:55.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "624862",
+    "ThreadId": "260643",
+    "Html": "<p>thanks Jillelaine, i'll try that. Maybe the docs need updating if this is the case</p>\r\n<table border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"624\">\r\n<tbody>\r\n<tr>\r\n<td width=\"140\" valign=\"top\">\r\n<p>Parameters</p>\r\n</td>\r\n<td width=\"105\" valign=\"top\">\r\n<p>Type</p>\r\n</td>\r\n<td width=\"379\" valign=\"top\">\r\n<p>Description</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"140\" valign=\"top\">\r\n<p>$src</p>\r\n</td>\r\n<td width=\"105\" valign=\"top\">\r\n<p>String</p>\r\n</td>\r\n<td width=\"379\" valign=\"top\">\r\n<p>Path to the image on the web server. The   path can be a relative or a absolute path.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "PostedDate": "2011-06-08T10:57:33.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "624867",
+    "ThreadId": "260643",
+    "Html": "<p>The docs are correct, and I should have been more clear in my post. A relative path to the image will also work. So, if your image is in the same directory as your PHPWord code that creates the doc, you can use:</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>$section-&gt;addImage(<span style=\"color: #a31515;\">'Become-a-friend_small.jpg'</span>);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>But, as far as I know, you should not use the http:// protocol to define the path to the image.</p>",
+    "PostedDate": "2011-06-08T11:03:45.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "624886",
+    "ThreadId": "260643",
+    "Html": "<p>thanks for clearing that up. Still no luck though i've tried relative, absolute, same folder, from the gd library but no images output onto the doc, it might have something to do with using the class as part of a wordpress plugin library. I had the same  probs with phpdocx although i'm getting them in a pdf through fpdf library, very strange. Is there any error handling i can use?</p>",
+    "PostedDate": "2011-06-08T11:27:19.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "912067",
+    "ThreadId": "260643",
+    "Html": "<div style=\"color: black; background-color: white;\">\r\n<pre>$docx = <span style=\"color: blue;\">new</span> word();\r\n\r\nisn't <span style=\"color: blue;\">new</span>  PHPWord()?\r\n</pre>\r\n</div>",
+    "PostedDate": "2012-09-13T01:32:40.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "924450",
+    "ThreadId": "260643",
+    "Html": "<p>if i have this folder structure :</p>\r\n<p>project_name/</p>\r\n<p><span>&nbsp;</span>..........................app/</p>\r\n<p><span>&nbsp;</span>.......................................vendors/phpdocx -&gt; phpword source file</p>\r\n<p><span>&nbsp;</span>........................................views/events/documents/word_template.ctp -&gt; this contains the code and layout<span> </span><span>&nbsp;</span>&nbsp;<span> </span>of my&nbsp;generated document</p>\r\n<p>.......................................webroot/img/image.png -&gt; the image i would like to add</p>\r\n<p>&nbsp;</p>\r\n<p>how can i insert an image on the document.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-10-09T21:13:36.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

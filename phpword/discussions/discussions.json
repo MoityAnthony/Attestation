@@ -1,0 +1,1862 @@
+[
+  {
+    "Id": "209526",
+    "Title": "A few fixs",
+    "LatestDate": "2010-04-16T07:54:54.797-07:00"
+  },
+  {
+    "Id": "210111",
+    "Title": "Problem with image",
+    "LatestDate": "2010-04-22T11:19:30.633-07:00"
+  },
+  {
+    "Id": "210852",
+    "Title": "Calling addText() method gives a line break at the end of string",
+    "LatestDate": "2014-10-08T00:41:21.63-07:00"
+  },
+  {
+    "Id": "211493",
+    "Title": "Why can't I put link tag in header/footer",
+    "LatestDate": "2010-05-04T04:53:04.92-07:00"
+  },
+  {
+    "Id": "211886",
+    "Title": "Is there way to set margin for the doc?",
+    "LatestDate": "2010-05-07T01:30:41.263-07:00"
+  },
+  {
+    "Id": "212106",
+    "Title": "Modify a template",
+    "LatestDate": "2010-08-03T01:51:02.603-07:00"
+  },
+  {
+    "Id": "213736",
+    "Title": "Attribute ‘barred’",
+    "LatestDate": "2014-02-06T23:23:05.373-08:00"
+  },
+  {
+    "Id": "215859",
+    "Title": "Error!! (Can anyone help?)",
+    "LatestDate": "2010-07-25T17:28:03.647-07:00"
+  },
+  {
+    "Id": "216360",
+    "Title": "Error opening file",
+    "LatestDate": "2010-06-17T04:57:31.863-07:00"
+  },
+  {
+    "Id": "216611",
+    "Title": "Direction",
+    "LatestDate": "2010-07-15T09:08:52.31-07:00"
+  },
+  {
+    "Id": "216740",
+    "Title": "Nested tables",
+    "LatestDate": "2013-09-25T04:58:14.65-07:00"
+  },
+  {
+    "Id": "217763",
+    "Title": "Modify Existing Docs",
+    "LatestDate": "2010-07-24T07:03:21.127-07:00"
+  },
+  {
+    "Id": "218106",
+    "Title": "how to add space before the text  when i use function of addtext",
+    "LatestDate": "2010-07-24T07:03:54.297-07:00"
+  },
+  {
+    "Id": "218122",
+    "Title": "Merge table cell？",
+    "LatestDate": "2011-02-13T07:41:23.07-08:00"
+  },
+  {
+    "Id": "218901",
+    "Title": "Stream naming issue",
+    "LatestDate": "2010-07-16T01:16:41.627-07:00"
+  },
+  {
+    "Id": "218902",
+    "Title": "TOC not working?",
+    "LatestDate": "2014-10-03T00:53:53.317-07:00"
+  },
+  {
+    "Id": "221382",
+    "Title": "Carriage Return",
+    "LatestDate": "2014-05-08T18:06:16.593-07:00"
+  },
+  {
+    "Id": "221487",
+    "Title": "How to set a double-line border?",
+    "LatestDate": "2014-10-28T00:29:07.383-07:00"
+  },
+  {
+    "Id": "221573",
+    "Title": "tabs",
+    "LatestDate": "2010-07-27T11:18:21.1-07:00"
+  },
+  {
+    "Id": "222522",
+    "Title": "How to write word in other language?",
+    "LatestDate": "2010-08-04T21:21:54.593-07:00"
+  },
+  {
+    "Id": "222572",
+    "Title": "Margin around a table",
+    "LatestDate": "2010-08-05T05:55:40.873-07:00"
+  },
+  {
+    "Id": "222575",
+    "Title": "Text alignment in a cell included in a header or footer",
+    "LatestDate": "2014-01-31T05:50:12.273-08:00"
+  },
+  {
+    "Id": "223137",
+    "Title": "Page Columns?",
+    "LatestDate": "2010-08-12T12:02:30.317-07:00"
+  },
+  {
+    "Id": "223142",
+    "Title": "Bug in $styleFont at addListItem",
+    "LatestDate": "2010-08-11T08:58:39.957-07:00"
+  },
+  {
+    "Id": "223224",
+    "Title": "ListItem with text in differents formats",
+    "LatestDate": "2010-08-11T08:57:23.36-07:00"
+  },
+  {
+    "Id": "223300",
+    "Title": "how to encryption for word2007 ",
+    "LatestDate": "2010-08-12T23:49:57.43-07:00"
+  },
+  {
+    "Id": "223661",
+    "Title": "addlistitem in a table?",
+    "LatestDate": "2013-08-21T16:03:27.883-07:00"
+  },
+  {
+    "Id": "225616",
+    "Title": "Save in another format (Word 2003)?",
+    "LatestDate": "2010-12-12T15:06:37.28-08:00"
+  },
+  {
+    "Id": "225901",
+    "Title": "How to output the docx file after using the template  ",
+    "LatestDate": "2013-07-14T02:57:44.043-07:00"
+  },
+  {
+    "Id": "226069",
+    "Title": "PHPWord and non english languages",
+    "LatestDate": "2010-09-04T10:25:20.66-07:00"
+  },
+  {
+    "Id": "226412",
+    "Title": "'Basic example' not so basic...?",
+    "LatestDate": "2010-09-27T07:57:48.013-07:00"
+  },
+  {
+    "Id": "227861",
+    "Title": "utf8_encode function in addText",
+    "LatestDate": "2010-09-20T07:50:59.86-07:00"
+  },
+  {
+    "Id": "228842",
+    "Title": "Php Extension",
+    "LatestDate": "2010-12-01T22:03:36.077-08:00"
+  },
+  {
+    "Id": "228959",
+    "Title": "Retrieving dimensions from a text and generally element positioning",
+    "LatestDate": "2010-09-29T00:45:48.44-07:00"
+  },
+  {
+    "Id": "229470",
+    "Title": "More than 1 Site in Word Dokument",
+    "LatestDate": "2011-07-19T20:47:27.277-07:00"
+  },
+  {
+    "Id": "229836",
+    "Title": "Adding HTML / Adding Line Breaks",
+    "LatestDate": "2010-10-19T08:05:25.41-07:00"
+  },
+  {
+    "Id": "231169",
+    "Title": "Fatal error: Class 'ZipArchive' not found in phpword/PHPWord/Writer/Word2007.php on line 70",
+    "LatestDate": "2010-10-16T11:48:16.087-07:00"
+  },
+  {
+    "Id": "231472",
+    "Title": "How to write Chinese charater with PHPWord",
+    "LatestDate": "2011-05-15T23:36:08.237-07:00"
+  },
+  {
+    "Id": "232319",
+    "Title": "problem with template",
+    "LatestDate": "2010-10-26T00:02:03.83-07:00"
+  },
+  {
+    "Id": "232470",
+    "Title": "inserting table into the template",
+    "LatestDate": "2012-10-14T10:09:45.887-07:00"
+  },
+  {
+    "Id": "232549",
+    "Title": "Table cell - horizontal align?",
+    "LatestDate": "2013-12-18T01:04:57.873-08:00"
+  },
+  {
+    "Id": "232636",
+    "Title": "template not finding strings with spellcheck?",
+    "LatestDate": "2013-03-02T17:56:42.573-08:00"
+  },
+  {
+    "Id": "232684",
+    "Title": "Line breaks after image.",
+    "LatestDate": "2014-08-20T00:56:40.763-07:00"
+  },
+  {
+    "Id": "233001",
+    "Title": "Images from Absolute URL and Indent Suggestion",
+    "LatestDate": "2010-10-31T21:56:14.553-07:00"
+  },
+  {
+    "Id": "234371",
+    "Title": "Error when open the document",
+    "LatestDate": "2011-06-30T01:42:43.043-07:00"
+  },
+  {
+    "Id": "234844",
+    "Title": "Open-Office hangs while opening",
+    "LatestDate": "2010-11-16T06:30:31.563-08:00"
+  },
+  {
+    "Id": "235377",
+    "Title": "Combine Template and Sections",
+    "LatestDate": "2010-11-19T13:44:17.857-08:00"
+  },
+  {
+    "Id": "236156",
+    "Title": "hebrew problem",
+    "LatestDate": "2011-05-14T09:20:24.34-07:00"
+  },
+  {
+    "Id": "236364",
+    "Title": "Colspan and Rowspan",
+    "LatestDate": "2013-12-02T00:25:00.577-08:00"
+  },
+  {
+    "Id": "236472",
+    "Title": "Variable on Footer of Docx Template",
+    "LatestDate": "2014-03-19T22:08:08.453-07:00"
+  },
+  {
+    "Id": "236500",
+    "Title": "Need to add/remove bulleted text and rows in a table, dynamically",
+    "LatestDate": "2010-11-30T22:09:59.897-08:00"
+  },
+  {
+    "Id": "236799",
+    "Title": "phpword alert box",
+    "LatestDate": "2010-12-07T07:34:35.79-08:00"
+  },
+  {
+    "Id": "237382",
+    "Title": "${my_footer_variable} in Docx Template",
+    "LatestDate": "2011-04-12T20:51:17.053-07:00"
+  },
+  {
+    "Id": "237594",
+    "Title": "Euro sign",
+    "LatestDate": "2014-03-19T22:21:11.757-07:00"
+  },
+  {
+    "Id": "237838",
+    "Title": "How can i use phpword to get the text out of a docx file into a php variable",
+    "LatestDate": "2010-12-10T00:21:37.62-08:00"
+  },
+  {
+    "Id": "238464",
+    "Title": "Saving docx to pdf",
+    "LatestDate": "2010-12-15T06:44:32.653-08:00"
+  },
+  {
+    "Id": "242997",
+    "Title": "Doc file is not been generated in basic example",
+    "LatestDate": "2011-01-25T08:34:18.587-08:00"
+  },
+  {
+    "Id": "243459",
+    "Title": "Replace a variable or create a footer text doesn't work for me.",
+    "LatestDate": "2011-02-28T07:20:53.287-08:00"
+  },
+  {
+    "Id": "243652",
+    "Title": "Document does not open in Open office 3.2",
+    "LatestDate": "2011-01-29T06:51:42.267-08:00"
+  },
+  {
+    "Id": "243931",
+    "Title": "How to do Indentation Right or left in phpword",
+    "LatestDate": "2011-11-13T14:35:53.423-08:00"
+  },
+  {
+    "Id": "245728",
+    "Title": "What is the correct syntax of using page size command",
+    "LatestDate": "2014-08-10T07:53:55.503-07:00"
+  },
+  {
+    "Id": "245759",
+    "Title": "Line break",
+    "LatestDate": "2011-03-15T23:04:11.853-07:00"
+  },
+  {
+    "Id": "245828",
+    "Title": "Table in a cell?",
+    "LatestDate": "2014-03-19T20:55:38.17-07:00"
+  },
+  {
+    "Id": "245848",
+    "Title": "Headers until the 2nd Page?",
+    "LatestDate": "2014-06-17T02:39:15.687-07:00"
+  },
+  {
+    "Id": "247569",
+    "Title": "Project Updates",
+    "LatestDate": "2011-02-26T07:03:59.827-08:00"
+  },
+  {
+    "Id": "248850",
+    "Title": "Can I Edit my existing Document to insert Image in any desired position?",
+    "LatestDate": "2011-03-08T05:07:59.823-08:00"
+  },
+  {
+    "Id": "248853",
+    "Title": "How to create content of table",
+    "LatestDate": "2011-03-11T04:31:29.827-08:00"
+  },
+  {
+    "Id": "248969",
+    "Title": "How to open a .doc remove header and save them",
+    "LatestDate": "2011-03-09T00:38:09.06-08:00"
+  },
+  {
+    "Id": "249089",
+    "Title": "Inserting multi-line text in table cell",
+    "LatestDate": "2013-06-06T11:33:00.353-07:00"
+  },
+  {
+    "Id": "249315",
+    "Title": "addRow height",
+    "LatestDate": "2011-12-04T12:04:38.943-08:00"
+  },
+  {
+    "Id": "249452",
+    "Title": "Prompted for Download",
+    "LatestDate": "2011-03-13T23:19:37.523-07:00"
+  },
+  {
+    "Id": "249908",
+    "Title": "German characters ",
+    "LatestDate": "2011-03-16T03:48:16.263-07:00"
+  },
+  {
+    "Id": "249914",
+    "Title": "PHPWORD Style",
+    "LatestDate": "2011-03-26T07:55:41.98-07:00"
+  },
+  {
+    "Id": "250781",
+    "Title": "OpenOffice with Word 2003 and Word 2007",
+    "LatestDate": "2011-04-08T03:32:07.077-07:00"
+  },
+  {
+    "Id": "251270",
+    "Title": "paragraph style missing from cell()->addText()",
+    "LatestDate": "2011-03-26T07:51:57.11-07:00"
+  },
+  {
+    "Id": "254789",
+    "Title": "manipulate template",
+    "LatestDate": "2017-01-31T02:38:20.347-08:00"
+  },
+  {
+    "Id": "254963",
+    "Title": "Adding HTML",
+    "LatestDate": "2013-01-23T06:09:09.453-08:00"
+  },
+  {
+    "Id": "258942",
+    "Title": "Source Code",
+    "LatestDate": "2012-08-03T00:09:08.447-07:00"
+  },
+  {
+    "Id": "260069",
+    "Title": "Read/Edit CustomProperties",
+    "LatestDate": "2011-06-03T04:30:09.553-07:00"
+  },
+  {
+    "Id": "260166",
+    "Title": "Trouble with line heights (spacing, spaceBefore, spaceAfter)",
+    "LatestDate": "2011-06-03T15:40:00.053-07:00"
+  },
+  {
+    "Id": "260643",
+    "Title": "addImage not working",
+    "LatestDate": "2012-10-09T21:13:36.403-07:00"
+  },
+  {
+    "Id": "260753",
+    "Title": "image not showing in the doc",
+    "LatestDate": "2011-06-09T05:45:25.367-07:00"
+  },
+  {
+    "Id": "261365",
+    "Title": "how to properly handle UTF-8 ? (UTF8)",
+    "LatestDate": "2014-03-24T04:13:30.31-07:00"
+  },
+  {
+    "Id": "262402",
+    "Title": "TOC not working",
+    "LatestDate": "2011-06-22T13:00:33.983-07:00"
+  },
+  {
+    "Id": "262435",
+    "Title": "how to generate list of tables and list of figures",
+    "LatestDate": "2011-06-22T20:03:29.993-07:00"
+  },
+  {
+    "Id": "262437",
+    "Title": "how to make sure the figure title and figure are in the same page",
+    "LatestDate": "2011-06-22T20:05:10.253-07:00"
+  },
+  {
+    "Id": "262438",
+    "Title": "Is it possible to get a running header for a table",
+    "LatestDate": "2011-08-08T18:42:30.67-07:00"
+  },
+  {
+    "Id": "262976",
+    "Title": "Images in Templates",
+    "LatestDate": "2015-07-07T10:06:30.99-07:00"
+  },
+  {
+    "Id": "263387",
+    "Title": "empty template on Linux",
+    "LatestDate": "2011-06-30T03:09:01.793-07:00"
+  },
+  {
+    "Id": "263582",
+    "Title": "Placing an image beyond the page margins",
+    "LatestDate": "2012-01-20T02:58:56.717-08:00"
+  },
+  {
+    "Id": "263854",
+    "Title": "Is there a way to add a Paragraph Style to Titles?",
+    "LatestDate": "2011-07-04T11:59:43.243-07:00"
+  },
+  {
+    "Id": "264518",
+    "Title": "Even distribution of columns in a table",
+    "LatestDate": "2011-07-09T05:47:15.583-07:00"
+  },
+  {
+    "Id": "265227",
+    "Title": "Line height wrong",
+    "LatestDate": "2011-07-14T14:28:27.977-07:00"
+  },
+  {
+    "Id": "265500",
+    "Title": "phpword does not work in linux OC",
+    "LatestDate": "2012-03-05T23:26:03.663-08:00"
+  },
+  {
+    "Id": "267216",
+    "Title": "Multiple sets of listItems ?",
+    "LatestDate": "2012-07-09T13:13:10.973-07:00"
+  },
+  {
+    "Id": "268012",
+    "Title": "Template setValue doesn't work proberly",
+    "LatestDate": "2014-04-14T23:54:10.277-07:00"
+  },
+  {
+    "Id": "268457",
+    "Title": "Center Table on page",
+    "LatestDate": "2012-04-27T08:27:05.063-07:00"
+  },
+  {
+    "Id": "268538",
+    "Title": "bug in first line of addText",
+    "LatestDate": "2011-08-11T08:09:14.557-07:00"
+  },
+  {
+    "Id": "268562",
+    "Title": "Is it possible to merge word documents",
+    "LatestDate": "2011-09-02T07:22:21.513-07:00"
+  },
+  {
+    "Id": "269095",
+    "Title": "multiple format in a cell",
+    "LatestDate": "2011-08-15T02:59:11.963-07:00"
+  },
+  {
+    "Id": "269242",
+    "Title": "How do i load the word document and embed image in it",
+    "LatestDate": "2011-08-16T04:58:03.1-07:00"
+  },
+  {
+    "Id": "269408",
+    "Title": "include php-files",
+    "LatestDate": "2011-09-09T22:56:47.433-07:00"
+  },
+  {
+    "Id": "270211",
+    "Title": "Different Header on first page",
+    "LatestDate": "2011-08-24T05:23:10.87-07:00"
+  },
+  {
+    "Id": "271146",
+    "Title": "adding hyperlinks to other parts of the document",
+    "LatestDate": "2012-09-25T00:23:39.05-07:00"
+  },
+  {
+    "Id": "271573",
+    "Title": "Indent the first line ",
+    "LatestDate": "2011-09-05T19:56:29.717-07:00"
+  },
+  {
+    "Id": "272135",
+    "Title": "list styles",
+    "LatestDate": "2011-09-09T22:53:10.033-07:00"
+  },
+  {
+    "Id": "272143",
+    "Title": "Is it possible to convert doc to text?",
+    "LatestDate": "2011-09-10T01:03:48.987-07:00"
+  },
+  {
+    "Id": "272163",
+    "Title": "Is it possible to convert doc to docx?",
+    "LatestDate": "2015-02-26T02:26:12.673-08:00"
+  },
+  {
+    "Id": "272726",
+    "Title": "Table cell width",
+    "LatestDate": "2011-09-15T11:41:41.677-07:00"
+  },
+  {
+    "Id": "272857",
+    "Title": "Table fixed",
+    "LatestDate": "2011-09-16T09:05:37.147-07:00"
+  },
+  {
+    "Id": "273295",
+    "Title": "Image & Text on the same line, is it possilbe?",
+    "LatestDate": "2011-09-21T07:24:36.823-07:00"
+  },
+  {
+    "Id": "273546",
+    "Title": "config problem",
+    "LatestDate": "2011-10-22T16:55:14.42-07:00"
+  },
+  {
+    "Id": "274566",
+    "Title": "Adding a cell in a Template",
+    "LatestDate": "2011-10-03T00:21:25.667-07:00"
+  },
+  {
+    "Id": "275905",
+    "Title": "Implemention of Graphs",
+    "LatestDate": "2011-10-14T05:34:21.087-07:00"
+  },
+  {
+    "Id": "276046",
+    "Title": "Continuous sections",
+    "LatestDate": "2011-10-19T02:58:09.607-07:00"
+  },
+  {
+    "Id": "276207",
+    "Title": "Embed Excel2007 in PHPWord doc",
+    "LatestDate": "2012-10-05T20:22:19.967-07:00"
+  },
+  {
+    "Id": "276303",
+    "Title": "PHP SOURCE for the docx documentation file",
+    "LatestDate": "2011-10-18T06:44:16.14-07:00"
+  },
+  {
+    "Id": "276323",
+    "Title": "Â£ being displayed instead of £",
+    "LatestDate": "2011-10-19T00:56:33.417-07:00"
+  },
+  {
+    "Id": "276434",
+    "Title": "Embed file.txt",
+    "LatestDate": "2011-11-02T11:09:48.513-07:00"
+  },
+  {
+    "Id": "276472",
+    "Title": "addMemoryImage ",
+    "LatestDate": "2011-10-19T08:56:40.03-07:00"
+  },
+  {
+    "Id": "276910",
+    "Title": "Add a link without adding a new line",
+    "LatestDate": "2011-10-23T18:11:58.88-07:00"
+  },
+  {
+    "Id": "277499",
+    "Title": "Basic Example Not Working",
+    "LatestDate": "2011-10-27T21:32:30.063-07:00"
+  },
+  {
+    "Id": "277955",
+    "Title": "Images in Windows Word 2010, Mac Word 2011 scale differently",
+    "LatestDate": "2011-11-01T14:47:46.603-07:00"
+  },
+  {
+    "Id": "278281",
+    "Title": "How do I get SubScript / SuperScript to work?",
+    "LatestDate": "2011-11-03T15:36:36.797-07:00"
+  },
+  {
+    "Id": "278282",
+    "Title": "Page Break Adds New Line?",
+    "LatestDate": "2014-05-18T08:51:10.873-07:00"
+  },
+  {
+    "Id": "278567",
+    "Title": "Support for tab stops?",
+    "LatestDate": "2011-11-07T02:39:41.883-08:00"
+  },
+  {
+    "Id": "282759",
+    "Title": "loadTemplate and addImage",
+    "LatestDate": "2012-11-14T22:35:26.597-08:00"
+  },
+  {
+    "Id": "283443",
+    "Title": "addWatermark within existing document file",
+    "LatestDate": "2011-12-19T02:36:40.657-08:00"
+  },
+  {
+    "Id": "283923",
+    "Title": "Insert image into Template",
+    "LatestDate": "2011-12-22T09:15:44.33-08:00"
+  },
+  {
+    "Id": "283957",
+    "Title": "Automatic Different header on 2nd page and further",
+    "LatestDate": "2011-12-22T15:39:10.4-08:00"
+  },
+  {
+    "Id": "284200",
+    "Title": "How to adding a table into cell",
+    "LatestDate": "2012-02-11T15:21:25.153-08:00"
+  },
+  {
+    "Id": "285543",
+    "Title": "styleLastRow  is not work",
+    "LatestDate": "2012-01-09T18:39:00.16-08:00"
+  },
+  {
+    "Id": "285826",
+    "Title": "support for wmf and emf image formats",
+    "LatestDate": "2012-01-11T13:58:04.95-08:00"
+  },
+  {
+    "Id": "286643",
+    "Title": "Openoffice crash",
+    "LatestDate": "2012-01-19T02:02:57.217-08:00"
+  },
+  {
+    "Id": "286644",
+    "Title": "Conservation of RAM",
+    "LatestDate": "2012-01-19T02:04:49.817-08:00"
+  },
+  {
+    "Id": "286666",
+    "Title": "Text horizontal align in table does not work",
+    "LatestDate": "2012-01-19T04:40:06.543-08:00"
+  },
+  {
+    "Id": "287733",
+    "Title": "Updating a template not working with .doc file",
+    "LatestDate": "2012-01-28T05:47:20.04-08:00"
+  },
+  {
+    "Id": "297458",
+    "Title": "Insert Symbol",
+    "LatestDate": "2012-02-16T06:53:48.72-08:00"
+  },
+  {
+    "Id": "297595",
+    "Title": "Table width problem",
+    "LatestDate": "2012-02-07T11:35:29.957-08:00"
+  },
+  {
+    "Id": "298920",
+    "Title": "Is this project still alive ?",
+    "LatestDate": "2012-02-08T07:49:29.53-08:00"
+  },
+  {
+    "Id": "302469",
+    "Title": "Removing blank elements",
+    "LatestDate": "2012-02-10T02:05:13.99-08:00"
+  },
+  {
+    "Id": "316482",
+    "Title": "Is there a way to import multiple docx into the same document?",
+    "LatestDate": "2012-09-07T02:54:29.093-07:00"
+  },
+  {
+    "Id": "316726",
+    "Title": "Height header",
+    "LatestDate": "2012-07-26T22:31:21.703-07:00"
+  },
+  {
+    "Id": "325331",
+    "Title": "Cols Number",
+    "LatestDate": "2012-07-26T22:45:59.84-07:00"
+  },
+  {
+    "Id": "346174",
+    "Title": "Different Header",
+    "LatestDate": "2012-02-27T00:20:58.99-08:00"
+  },
+  {
+    "Id": "346562",
+    "Title": "Numbering (lvlText)",
+    "LatestDate": "2012-02-28T05:06:23.93-08:00"
+  },
+  {
+    "Id": "346564",
+    "Title": "Support for .doc",
+    "LatestDate": "2012-02-28T05:36:23.987-08:00"
+  },
+  {
+    "Id": "347453",
+    "Title": "How to format text with smallcaps",
+    "LatestDate": "2012-03-08T12:57:42.433-08:00"
+  },
+  {
+    "Id": "349184",
+    "Title": "nested objects",
+    "LatestDate": "2012-03-19T07:04:11.007-07:00"
+  },
+  {
+    "Id": "350033",
+    "Title": "Justified Text",
+    "LatestDate": "2012-07-01T01:49:18.987-07:00"
+  },
+  {
+    "Id": "350176",
+    "Title": "display query results",
+    "LatestDate": "2012-03-27T02:55:12.82-07:00"
+  },
+  {
+    "Id": "350734",
+    "Title": "Setting text direction ",
+    "LatestDate": "2013-01-03T16:01:18.46-08:00"
+  },
+  {
+    "Id": "352149",
+    "Title": "The file sample.docx cannot be opened because there are problems with the contents.",
+    "LatestDate": "2012-08-10T01:06:32.047-07:00"
+  },
+  {
+    "Id": "352633",
+    "Title": "Loading a docx template into TextArea(HTML element)",
+    "LatestDate": "2012-04-17T19:51:58.06-07:00"
+  },
+  {
+    "Id": "353822",
+    "Title": "Memory Usage",
+    "LatestDate": "2012-04-27T08:25:18-07:00"
+  },
+  {
+    "Id": "353960",
+    "Title": "{PAGE} and {NUMPAGES} dont work",
+    "LatestDate": "2012-04-29T11:49:16.827-07:00"
+  },
+  {
+    "Id": "354142",
+    "Title": "tabulation in phpword ",
+    "LatestDate": "2012-05-01T11:12:13.27-07:00"
+  },
+  {
+    "Id": "354547",
+    "Title": "Would someone be interested in working on this for $",
+    "LatestDate": "2012-05-04T07:44:03.337-07:00"
+  },
+  {
+    "Id": "354631",
+    "Title": "How can set one picture and words in one cell?",
+    "LatestDate": "2012-05-05T05:31:02.637-07:00"
+  },
+  {
+    "Id": "357926",
+    "Title": "is possible to set margin to paragraph ?",
+    "LatestDate": "2016-11-02T16:43:25.59-07:00"
+  },
+  {
+    "Id": "358528",
+    "Title": "Count a word in docx format",
+    "LatestDate": "2012-06-07T23:15:01.12-07:00"
+  },
+  {
+    "Id": "360030",
+    "Title": "Save as .doc file compatable with 2003 Word",
+    "LatestDate": "2012-06-18T11:46:02.567-07:00"
+  },
+  {
+    "Id": "360085",
+    "Title": "Directory page number is not correct",
+    "LatestDate": "2012-06-18T22:48:37.797-07:00"
+  },
+  {
+    "Id": "360101",
+    "Title": "The pagenumbers in the TOC doesnt refresh automatically",
+    "LatestDate": "2012-06-19T01:20:06.597-07:00"
+  },
+  {
+    "Id": "361246",
+    "Title": "Text direction RTL problem",
+    "LatestDate": "2012-06-28T02:40:12.587-07:00"
+  },
+  {
+    "Id": "361367",
+    "Title": "Downloading doc file without saving file on server",
+    "LatestDate": "2013-05-22T02:27:38.92-07:00"
+  },
+  {
+    "Id": "361377",
+    "Title": "Default spacing",
+    "LatestDate": "2013-08-22T05:39:52.967-07:00"
+  },
+  {
+    "Id": "361874",
+    "Title": "how to do same as style='text-indent:-.5in; for the Paragraf?",
+    "LatestDate": "2012-07-03T13:30:53.27-07:00"
+  },
+  {
+    "Id": "361940",
+    "Title": "add image to template?",
+    "LatestDate": "2012-11-22T08:27:28.227-08:00"
+  },
+  {
+    "Id": "366588",
+    "Title": "Total number of pages",
+    "LatestDate": "2012-07-13T11:26:43.507-07:00"
+  },
+  {
+    "Id": "387797",
+    "Title": "how to handle quotations",
+    "LatestDate": "2012-07-23T08:38:52.283-07:00"
+  },
+  {
+    "Id": "387937",
+    "Title": "image in header problem",
+    "LatestDate": "2012-11-13T06:00:04.71-08:00"
+  },
+  {
+    "Id": "388873",
+    "Title": "Table cellspacing",
+    "LatestDate": "2012-07-24T22:32:18.3-07:00"
+  },
+  {
+    "Id": "389111",
+    "Title": "table does not work in header",
+    "LatestDate": "2012-07-31T05:04:45.23-07:00"
+  },
+  {
+    "Id": "389837",
+    "Title": "styles for table - how to set background",
+    "LatestDate": "2013-06-19T01:29:58.583-07:00"
+  },
+  {
+    "Id": "390431",
+    "Title": "ADDING 1 CHECK INTO SOURCECODE...",
+    "LatestDate": "2012-08-08T13:32:23.63-07:00"
+  },
+  {
+    "Id": "391465",
+    "Title": "Can we read word document file and show its header, footer, content separately using php?",
+    "LatestDate": "2012-08-14T03:09:15.893-07:00"
+  },
+  {
+    "Id": "391688",
+    "Title": "\"illegal qualified name character\"/\"missing semi-colon\" (problem & solution)",
+    "LatestDate": "2012-08-15T22:08:25.38-07:00"
+  },
+  {
+    "Id": "392290",
+    "Title": "how to add an image and text in one line by using PHPWord?",
+    "LatestDate": "2012-08-21T20:40:13.59-07:00"
+  },
+  {
+    "Id": "393213",
+    "Title": "$table->addcell(500) Not changing width?",
+    "LatestDate": "2012-10-09T10:33:44.707-07:00"
+  },
+  {
+    "Id": "395320",
+    "Title": "is it possible to save the file in pdf format?",
+    "LatestDate": "2013-01-03T16:01:54.057-08:00"
+  },
+  {
+    "Id": "395921",
+    "Title": "How to add link to the other part of the document?",
+    "LatestDate": "2012-09-18T04:13:18.783-07:00"
+  },
+  {
+    "Id": "396086",
+    "Title": "Word Checkbox status changing issue",
+    "LatestDate": "2012-09-19T07:08:09.873-07:00"
+  },
+  {
+    "Id": "396532",
+    "Title": "Create document issue",
+    "LatestDate": "2012-09-23T19:55:53.373-07:00"
+  },
+  {
+    "Id": "396753",
+    "Title": "求助！如何给word文档添加封面",
+    "LatestDate": "2012-09-24T19:15:27.14-07:00"
+  },
+  {
+    "Id": "396766",
+    "Title": "Can't figure out paragraph align justify",
+    "LatestDate": "2012-09-24T22:12:20.667-07:00"
+  },
+  {
+    "Id": "397352",
+    "Title": "How to create an index ",
+    "LatestDate": "2015-07-01T08:05:12.867-07:00"
+  },
+  {
+    "Id": "397489",
+    "Title": "How to read doc, docx files",
+    "LatestDate": "2012-10-07T23:42:54.79-07:00"
+  },
+  {
+    "Id": "397684",
+    "Title": "Link PHPWord with MySQL data",
+    "LatestDate": "2012-10-08T21:02:59.493-07:00"
+  },
+  {
+    "Id": "397834",
+    "Title": "Save as .doc file compatible with 2003 Word",
+    "LatestDate": "2012-10-03T01:05:19.423-07:00"
+  },
+  {
+    "Id": "398126",
+    "Title": "Undeclared prefix",
+    "LatestDate": "2012-10-04T19:17:37.637-07:00"
+  },
+  {
+    "Id": "398577",
+    "Title": "How can I make Template.doc Variables..... Variable",
+    "LatestDate": "2012-10-08T16:14:30.287-07:00"
+  },
+  {
+    "Id": "398756",
+    "Title": "[HELP]CakePHP addImage not working",
+    "LatestDate": "2012-11-15T01:31:39.56-08:00"
+  },
+  {
+    "Id": "399071",
+    "Title": "Serial Letter",
+    "LatestDate": "2012-10-12T00:46:20.843-07:00"
+  },
+  {
+    "Id": "399090",
+    "Title": "Configure PHPWord using XAMPP",
+    "LatestDate": "2012-10-14T09:57:59.33-07:00"
+  },
+  {
+    "Id": "399124",
+    "Title": "How do Icreate a line break",
+    "LatestDate": "2012-10-16T07:30:39.24-07:00"
+  },
+  {
+    "Id": "399148",
+    "Title": "problems with addImage/addMemoryImage",
+    "LatestDate": "2012-10-14T22:09:02.883-07:00"
+  },
+  {
+    "Id": "399295",
+    "Title": "Create a product with inserted tabel",
+    "LatestDate": "2012-10-14T09:09:54.26-07:00"
+  },
+  {
+    "Id": "399559",
+    "Title": "height of table row",
+    "LatestDate": "2012-10-16T04:33:33.967-07:00"
+  },
+  {
+    "Id": "399916",
+    "Title": "text ole object",
+    "LatestDate": "2012-10-18T07:44:11.467-07:00"
+  },
+  {
+    "Id": "400702",
+    "Title": "setValue and addImage",
+    "LatestDate": "2014-08-11T20:15:04.143-07:00"
+  },
+  {
+    "Id": "400950",
+    "Title": "How to make a column in my table?",
+    "LatestDate": "2012-10-26T13:25:46.813-07:00"
+  },
+  {
+    "Id": "401304",
+    "Title": "How do set a Password to Modify on a document",
+    "LatestDate": "2012-10-30T14:32:48.14-07:00"
+  },
+  {
+    "Id": "401606",
+    "Title": "addValue problems",
+    "LatestDate": "2012-11-21T05:17:00.803-08:00"
+  },
+  {
+    "Id": "402512",
+    "Title": "How to set a double-line?",
+    "LatestDate": "2012-11-08T23:45:46.533-08:00"
+  },
+  {
+    "Id": "403188",
+    "Title": "Template save problem",
+    "LatestDate": "2012-11-14T08:13:46.74-08:00"
+  },
+  {
+    "Id": "403286",
+    "Title": "Convert docx to doc",
+    "LatestDate": "2012-11-14T23:49:45.62-08:00"
+  },
+  {
+    "Id": "403792",
+    "Title": "Template and set value",
+    "LatestDate": "2012-11-19T05:52:20.64-08:00"
+  },
+  {
+    "Id": "404966",
+    "Title": "How Can I get line break in word",
+    "LatestDate": "2012-11-28T18:32:23.343-08:00"
+  },
+  {
+    "Id": "405294",
+    "Title": "The Office Open XML file cannot be opened  because there are problems with the contents.",
+    "LatestDate": "2013-08-02T03:15:02.853-07:00"
+  },
+  {
+    "Id": "405967",
+    "Title": "PHP Versión problem",
+    "LatestDate": "2013-01-20T14:27:44.183-08:00"
+  },
+  {
+    "Id": "406008",
+    "Title": "How to add intent or Tab",
+    "LatestDate": "2012-12-07T13:09:43.843-08:00"
+  },
+  {
+    "Id": "406335",
+    "Title": "hi i have a problem while i using the phpword",
+    "LatestDate": "2012-12-10T20:43:00.03-08:00"
+  },
+  {
+    "Id": "406621",
+    "Title": "cell text direction",
+    "LatestDate": "2012-12-13T01:37:41.757-08:00"
+  },
+  {
+    "Id": "415323",
+    "Title": "Cell widths of tables not kept in Libreoffice",
+    "LatestDate": "2013-01-31T03:50:17.083-08:00"
+  },
+  {
+    "Id": "427833",
+    "Title": "Template SetValue not replacing in Word 2010",
+    "LatestDate": "2014-12-17T11:34:19.057-08:00"
+  },
+  {
+    "Id": "427978",
+    "Title": "save as and save location",
+    "LatestDate": "2013-01-20T14:13:09.51-08:00"
+  },
+  {
+    "Id": "428138",
+    "Title": "xml from table or section object",
+    "LatestDate": "2012-12-31T11:26:52.227-08:00"
+  },
+  {
+    "Id": "428209",
+    "Title": "Using one template file for multiple pages???",
+    "LatestDate": "2014-01-11T02:35:59.19-08:00"
+  },
+  {
+    "Id": "428868",
+    "Title": "Searching a Word doc",
+    "LatestDate": "2013-01-21T08:32:09.933-08:00"
+  },
+  {
+    "Id": "429401",
+    "Title": "pages format in multiples columns",
+    "LatestDate": "2014-03-19T22:03:39.887-07:00"
+  },
+  {
+    "Id": "429448",
+    "Title": "how to insert dashes of 6 in each end of a paragraph (remove white a word document) ",
+    "LatestDate": "2013-01-13T04:00:34.523-08:00"
+  },
+  {
+    "Id": "430295",
+    "Title": "Templates : Closing file without saving",
+    "LatestDate": "2013-01-21T06:28:58.74-08:00"
+  },
+  {
+    "Id": "430322",
+    "Title": "Extracting text from a Word document",
+    "LatestDate": "2013-01-21T10:09:23.64-08:00"
+  },
+  {
+    "Id": "430457",
+    "Title": "addListItem in the tempalte - Help!",
+    "LatestDate": "2013-01-22T08:25:47.323-08:00"
+  },
+  {
+    "Id": "430933",
+    "Title": "How can I wrap text around image?",
+    "LatestDate": "2013-01-26T04:34:56.817-08:00"
+  },
+  {
+    "Id": "431166",
+    "Title": "Convert Docx to Doc",
+    "LatestDate": "2013-01-28T13:40:26.45-08:00"
+  },
+  {
+    "Id": "431281",
+    "Title": "Fix problem utf8 caracters special accents and ñ",
+    "LatestDate": "2014-10-07T23:01:40.62-07:00"
+  },
+  {
+    "Id": "432144",
+    "Title": "Difference with Word 2011 (MAC) and Word 2010 (PC) --> Linebreak?",
+    "LatestDate": "2014-12-12T22:43:50.283-08:00"
+  },
+  {
+    "Id": "432206",
+    "Title": "Capability",
+    "LatestDate": "2013-02-06T07:41:49.093-08:00"
+  },
+  {
+    "Id": "432940",
+    "Title": "PHPWord htmltodocx template",
+    "LatestDate": "2013-02-13T01:27:37.957-08:00"
+  },
+  {
+    "Id": "433489",
+    "Title": "Use .dotx (format file)",
+    "LatestDate": "2013-02-17T21:48:36.017-08:00"
+  },
+  {
+    "Id": "434332",
+    "Title": "Templates and FTP - Question on Zip Close",
+    "LatestDate": "2013-02-24T12:14:42.817-08:00"
+  },
+  {
+    "Id": "434435",
+    "Title": "Uncaught exception 'Exception'",
+    "LatestDate": "2013-02-25T08:37:44.507-08:00"
+  },
+  {
+    "Id": "434943",
+    "Title": "Add image doesn't work?",
+    "LatestDate": "2013-02-28T14:37:11.537-08:00"
+  },
+  {
+    "Id": "435459",
+    "Title": "Problem with the character \"&\"",
+    "LatestDate": "2013-03-05T08:27:13.877-08:00"
+  },
+  {
+    "Id": "435730",
+    "Title": "how to use phpword",
+    "LatestDate": "2013-03-07T04:05:45.723-08:00"
+  },
+  {
+    "Id": "436644",
+    "Title": "Embedding excel files generated with PHPExcel",
+    "LatestDate": "2013-08-14T06:13:21.737-07:00"
+  },
+  {
+    "Id": "437084",
+    "Title": "PHPWord version capable of embedding docx. pptx and xlsx files into Word files",
+    "LatestDate": "2013-04-08T08:04:16.047-07:00"
+  },
+  {
+    "Id": "438548",
+    "Title": "Image behind of text for header",
+    "LatestDate": "2013-03-30T14:16:01.197-07:00"
+  },
+  {
+    "Id": "439233",
+    "Title": "GITHUB? -> Library seems to be moved to github",
+    "LatestDate": "2013-04-05T05:25:55.133-07:00"
+  },
+  {
+    "Id": "440933",
+    "Title": "FIXED:  Table Height Problems",
+    "LatestDate": "2014-05-07T20:19:55.147-07:00"
+  },
+  {
+    "Id": "441146",
+    "Title": "Internal links",
+    "LatestDate": "2013-04-22T12:29:15.19-07:00"
+  },
+  {
+    "Id": "441368",
+    "Title": "delete number in front of ${Value1} in the template.",
+    "LatestDate": "2013-04-23T16:50:14.243-07:00"
+  },
+  {
+    "Id": "441522",
+    "Title": "about phpword work in linux",
+    "LatestDate": "2013-04-25T23:09:41.32-07:00"
+  },
+  {
+    "Id": "441619",
+    "Title": "Way to specify location of a table?",
+    "LatestDate": "2013-04-29T14:33:50.54-07:00"
+  },
+  {
+    "Id": "442476",
+    "Title": "Fatal error: Call to a member function loadTemplate() on a non-object in..",
+    "LatestDate": "2013-12-20T03:49:28.207-08:00"
+  },
+  {
+    "Id": "442534",
+    "Title": "Problem w/ Template.docx",
+    "LatestDate": "2013-05-14T23:58:54.527-07:00"
+  },
+  {
+    "Id": "442757",
+    "Title": "How to solve this problem? Thank you",
+    "LatestDate": "2013-05-06T19:04:51.88-07:00"
+  },
+  {
+    "Id": "443782",
+    "Title": "How to divide long code into sections?",
+    "LatestDate": "2013-05-15T11:27:12.213-07:00"
+  },
+  {
+    "Id": "443967",
+    "Title": "How to use MS Word built in style sheet with PHPWord template",
+    "LatestDate": "2013-05-16T13:34:30.653-07:00"
+  },
+  {
+    "Id": "444663",
+    "Title": "Pb with $document->setValue(‘Value1′, ‘Name on the first row’);",
+    "LatestDate": "2013-06-03T05:14:35.49-07:00"
+  },
+  {
+    "Id": "445167",
+    "Title": "How to create fields in Word for PHPWord template",
+    "LatestDate": "2013-05-28T00:54:21.563-07:00"
+  },
+  {
+    "Id": "445538",
+    "Title": "How to add a table where img",
+    "LatestDate": "2013-05-30T19:59:37.393-07:00"
+  },
+  {
+    "Id": "446339",
+    "Title": "Row index Reset",
+    "LatestDate": "2013-06-07T06:49:51.997-07:00"
+  },
+  {
+    "Id": "446448",
+    "Title": "add header in current word file",
+    "LatestDate": "2013-06-08T21:37:22.927-07:00"
+  },
+  {
+    "Id": "447545",
+    "Title": "Polish characters in PHPWord",
+    "LatestDate": "2013-06-19T15:09:16.273-07:00"
+  },
+  {
+    "Id": "447873",
+    "Title": "Duplicate Part of an document",
+    "LatestDate": "2013-06-26T07:04:54.023-07:00"
+  },
+  {
+    "Id": "448005",
+    "Title": "Cell and Tabel Width fluid",
+    "LatestDate": "2013-06-23T20:31:33.897-07:00"
+  },
+  {
+    "Id": "448712",
+    "Title": "How to add Image for template?",
+    "LatestDate": "2013-07-01T07:27:01.97-07:00"
+  },
+  {
+    "Id": "448713",
+    "Title": "how to merge the two file in PHPword? ",
+    "LatestDate": "2013-07-01T07:29:20.887-07:00"
+  },
+  {
+    "Id": "448871",
+    "Title": "Load Preformatted File and Enter Data",
+    "LatestDate": "2013-07-02T11:57:23.207-07:00"
+  },
+  {
+    "Id": "448887",
+    "Title": "setValue() broken",
+    "LatestDate": "2013-07-05T06:02:08.343-07:00"
+  },
+  {
+    "Id": "449292",
+    "Title": "add checkbox?",
+    "LatestDate": "2013-07-10T06:45:03.343-07:00"
+  },
+  {
+    "Id": "449368",
+    "Title": "What are all the available file extensions?",
+    "LatestDate": "2013-07-08T15:18:35.477-07:00"
+  },
+  {
+    "Id": "449853",
+    "Title": "Unable to Open PHPWord Documents on Mac Computers and iPads",
+    "LatestDate": "2013-08-22T05:07:07.007-07:00"
+  },
+  {
+    "Id": "450251",
+    "Title": "How to merge several files into one docx?",
+    "LatestDate": "2013-07-16T14:01:42.04-07:00"
+  },
+  {
+    "Id": "450300",
+    "Title": "I can't install PHPWORD on my website and make a little script working...",
+    "LatestDate": "2013-07-17T01:59:08.91-07:00"
+  },
+  {
+    "Id": "451721",
+    "Title": "Undeclared Prefix",
+    "LatestDate": "2013-07-28T23:50:53.737-07:00"
+  },
+  {
+    "Id": "451791",
+    "Title": "Help needed on addText()",
+    "LatestDate": "2013-07-30T10:02:10.513-07:00"
+  },
+  {
+    "Id": "452424",
+    "Title": "How to convert Word .doc 2007 to 2003 using phpword?",
+    "LatestDate": "2013-08-05T03:00:53.213-07:00"
+  },
+  {
+    "Id": "453259",
+    "Title": "Problem with PHPWord not adding text to a document",
+    "LatestDate": "2013-08-13T04:37:43-07:00"
+  },
+  {
+    "Id": "453666",
+    "Title": "Is it possible to convert an existing doc file to html?",
+    "LatestDate": "2013-08-16T19:48:27.467-07:00"
+  },
+  {
+    "Id": "453757",
+    "Title": "Insert Image in to Word document",
+    "LatestDate": "2013-08-18T16:40:59.75-07:00"
+  },
+  {
+    "Id": "454183",
+    "Title": "docx looks different in different word versions",
+    "LatestDate": "2013-08-22T05:40:21.903-07:00"
+  },
+  {
+    "Id": "455193",
+    "Title": "addListItem()",
+    "LatestDate": "2013-09-02T10:21:30.713-07:00"
+  },
+  {
+    "Id": "455343",
+    "Title": "Unable to do a hanging indent",
+    "LatestDate": "2013-09-03T12:03:26.11-07:00"
+  },
+  {
+    "Id": "456166",
+    "Title": "Is it possible to embed images and/or tables in templates",
+    "LatestDate": "2013-09-08T12:20:53.817-07:00"
+  },
+  {
+    "Id": "456256",
+    "Title": "Split word pages and save each page seperatly",
+    "LatestDate": "2013-09-09T09:52:41.807-07:00"
+  },
+  {
+    "Id": "459579",
+    "Title": "Header Witdh",
+    "LatestDate": "2013-09-28T13:57:24.337-07:00"
+  },
+  {
+    "Id": "459757",
+    "Title": "Multiple addText in a table cell",
+    "LatestDate": "2013-09-30T16:10:58.427-07:00"
+  },
+  {
+    "Id": "460860",
+    "Title": "Make DOCX file read-only?",
+    "LatestDate": "2013-10-01T14:12:54.057-07:00"
+  },
+  {
+    "Id": "462540",
+    "Title": "Header and footer size in landscape?",
+    "LatestDate": "2013-10-16T22:15:24.967-07:00"
+  },
+  {
+    "Id": "462723",
+    "Title": "PHPWord/Writer/Word2007.php on line 70 in a Hosted WebPage",
+    "LatestDate": "2013-10-18T07:40:34.537-07:00"
+  },
+  {
+    "Id": "467260",
+    "Title": "Table row hide at bottom of every page in a doc",
+    "LatestDate": "2013-11-08T22:09:46.817-08:00"
+  },
+  {
+    "Id": "469241",
+    "Title": "Using PHPWord to insert equations?",
+    "LatestDate": "2013-11-16T12:29:18.69-08:00"
+  },
+  {
+    "Id": "470853",
+    "Title": " how can I join two or more pieces with others. docx whit PHPWord",
+    "LatestDate": "2013-11-22T08:44:39.757-08:00"
+  },
+  {
+    "Id": "471174",
+    "Title": "Separating the controller and the view",
+    "LatestDate": "2013-11-26T02:45:06.697-08:00"
+  },
+  {
+    "Id": "472252",
+    "Title": "PHPWord cloning template variables",
+    "LatestDate": "2013-12-08T21:40:13.253-08:00"
+  },
+  {
+    "Id": "474342",
+    "Title": "how to add new line same shift+enter ",
+    "LatestDate": "2013-12-17T00:47:05.227-08:00"
+  },
+  {
+    "Id": "478006",
+    "Title": "when adding a table to doc - unable to view file in google docs/drive",
+    "LatestDate": "2013-12-25T23:19:18.783-08:00"
+  },
+  {
+    "Id": "479289",
+    "Title": "Change word format",
+    "LatestDate": "2014-01-02T05:50:02.597-08:00"
+  },
+  {
+    "Id": "484080",
+    "Title": "word save as",
+    "LatestDate": "2014-01-08T08:25:44.743-08:00"
+  },
+  {
+    "Id": "484085",
+    "Title": "Apply style to a table borderRightSize only affects the first row",
+    "LatestDate": "2014-01-08T08:53:56.45-08:00"
+  },
+  {
+    "Id": "497277",
+    "Title": "PHPWord Template looping through query results not populating Values",
+    "LatestDate": "2014-01-14T10:00:44.483-08:00"
+  },
+  {
+    "Id": "517192",
+    "Title": "Paper tray selection",
+    "LatestDate": "2014-01-21T05:39:49.877-08:00"
+  },
+  {
+    "Id": "525807",
+    "Title": "Right-to-Left languages",
+    "LatestDate": "2014-01-25T03:28:44.623-08:00"
+  },
+  {
+    "Id": "525827",
+    "Title": "Smallcaps",
+    "LatestDate": "2014-03-19T22:24:46.773-07:00"
+  },
+  {
+    "Id": "528391",
+    "Title": "Font embedding",
+    "LatestDate": "2014-01-30T00:44:32.707-08:00"
+  },
+  {
+    "Id": "528737",
+    "Title": "Changing Color of text in setValue()",
+    "LatestDate": "2014-03-19T22:18:14.153-07:00"
+  },
+  {
+    "Id": "528928",
+    "Title": "Disallow PHPWord to break tables rows between pages",
+    "LatestDate": "2014-03-19T22:05:15.14-07:00"
+  },
+  {
+    "Id": "531455",
+    "Title": "How to add Image to template?",
+    "LatestDate": "2015-07-07T10:04:53.77-07:00"
+  },
+  {
+    "Id": "531512",
+    "Title": "How print a docx that has 8 cards per page",
+    "LatestDate": "2014-02-12T06:16:35.993-08:00"
+  },
+  {
+    "Id": "533443",
+    "Title": "Nested tables and/or multiple images in a single table cell",
+    "LatestDate": "2014-03-20T09:14:14.767-07:00"
+  },
+  {
+    "Id": "536549",
+    "Title": "Crate docx from html",
+    "LatestDate": "2014-03-02T09:47:23.607-08:00"
+  },
+  {
+    "Id": "538209",
+    "Title": "create document with $_POST results",
+    "LatestDate": "2014-03-06T11:21:06.143-08:00"
+  },
+  {
+    "Id": "538802",
+    "Title": "phpWord file growth issue when adding images",
+    "LatestDate": "2014-05-21T08:20:21.69-07:00"
+  },
+  {
+    "Id": "540326",
+    "Title": "Adding custom foreground colors",
+    "LatestDate": "2014-03-27T06:00:13.017-07:00"
+  },
+  {
+    "Id": "541933",
+    "Title": "How to insert Horizontal line",
+    "LatestDate": "2014-04-10T21:15:46.973-07:00"
+  },
+  {
+    "Id": "542366",
+    "Title": "PhpWord Clone Row Fatal Error",
+    "LatestDate": "2014-04-15T21:29:46.093-07:00"
+  },
+  {
+    "Id": "543267",
+    "Title": "big differences",
+    "LatestDate": "2014-04-24T18:22:45.397-07:00"
+  },
+  {
+    "Id": "544310",
+    "Title": "Vertical Cell Merge split in two on a new page",
+    "LatestDate": "2014-05-05T05:23:06.01-07:00"
+  },
+  {
+    "Id": "544459",
+    "Title": "word to html",
+    "LatestDate": "2014-05-06T08:26:11.147-07:00"
+  },
+  {
+    "Id": "546089",
+    "Title": "Full documentation?",
+    "LatestDate": "2014-05-21T07:12:11.007-07:00"
+  },
+  {
+    "Id": "547197",
+    "Title": "New release on GitHub",
+    "LatestDate": "2014-06-01T08:15:16.973-07:00"
+  },
+  {
+    "Id": "547620",
+    "Title": "create .docx in php",
+    "LatestDate": "2014-06-17T03:33:09.45-07:00"
+  },
+  {
+    "Id": "547657",
+    "Title": "File.docx corrupt",
+    "LatestDate": "2014-10-16T00:47:34.13-07:00"
+  },
+  {
+    "Id": "547707",
+    "Title": "May I use PHPWord_Template class within a website, which I'll be selling?",
+    "LatestDate": "2014-06-06T17:32:04.43-07:00"
+  },
+  {
+    "Id": "548433",
+    "Title": "Insert paragraph on a specific location",
+    "LatestDate": "2014-06-17T02:34:53.01-07:00"
+  },
+  {
+    "Id": "548564",
+    "Title": "pageSize",
+    "LatestDate": "2014-06-17T02:34:19.727-07:00"
+  },
+  {
+    "Id": "550798",
+    "Title": "How can we add a horizontal rule inside docx file",
+    "LatestDate": "2014-07-28T20:56:12.177-07:00"
+  },
+  {
+    "Id": "551314",
+    "Title": "setValue and line breaks",
+    "LatestDate": "2014-07-11T12:14:11.913-07:00"
+  },
+  {
+    "Id": "552389",
+    "Title": "get page number",
+    "LatestDate": "2014-07-21T20:56:00.517-07:00"
+  },
+  {
+    "Id": "554139",
+    "Title": "Generating html and Docx at the same time",
+    "LatestDate": "2014-07-25T02:56:40.613-07:00"
+  },
+  {
+    "Id": "554773",
+    "Title": "Table Align",
+    "LatestDate": "2014-08-04T13:24:37.373-07:00"
+  },
+  {
+    "Id": "554815",
+    "Title": "Template setValue with caractère \"&\" - File corrupt",
+    "LatestDate": "2014-08-29T03:04:00.563-07:00"
+  },
+  {
+    "Id": "554848",
+    "Title": "SetValue and Space",
+    "LatestDate": "2014-08-01T07:03:38.54-07:00"
+  },
+  {
+    "Id": "560833",
+    "Title": "Check system requirements are met",
+    "LatestDate": "2014-08-11T03:26:37.167-07:00"
+  },
+  {
+    "Id": "561093",
+    "Title": "How to merge two word documents with pictures?",
+    "LatestDate": "2014-08-13T13:01:02.57-07:00"
+  },
+  {
+    "Id": "564912",
+    "Title": "how to let line not breaks after addtext",
+    "LatestDate": "2014-09-01T20:59:01.673-07:00"
+  },
+  {
+    "Id": "566810",
+    "Title": "layout text in  Vertical with addtext( )",
+    "LatestDate": "2014-09-08T10:46:57.907-07:00"
+  },
+  {
+    "Id": "568004",
+    "Title": "default grammar language",
+    "LatestDate": "2014-09-21T04:49:34.013-07:00"
+  },
+  {
+    "Id": "568400",
+    "Title": "TOC spacing",
+    "LatestDate": "2015-07-01T09:19:36.623-07:00"
+  },
+  {
+    "Id": "568948",
+    "Title": "How can I open an existing word doc?",
+    "LatestDate": "2014-10-08T08:07:00.263-07:00"
+  },
+  {
+    "Id": "569727",
+    "Title": "Can't save text in Herew ",
+    "LatestDate": "2014-10-13T23:44:19.227-07:00"
+  },
+  {
+    "Id": "570347",
+    "Title": "Help with PHPword coding",
+    "LatestDate": "2014-10-21T07:52:46.307-07:00"
+  },
+  {
+    "Id": "570353",
+    "Title": "copy(): The first argument to copy() function cannot be a directory",
+    "LatestDate": "2014-10-21T12:58:18.943-07:00"
+  },
+  {
+    "Id": "570754",
+    "Title": "Transparency or background color in Textbox",
+    "LatestDate": "2014-10-28T09:48:48.043-07:00"
+  },
+  {
+    "Id": "571216",
+    "Title": "How can i open a file in append mode and change the body content",
+    "LatestDate": "2014-11-03T23:05:31.433-08:00"
+  },
+  {
+    "Id": "572930",
+    "Title": "pattern substitution problem",
+    "LatestDate": "2014-12-18T00:58:43.907-08:00"
+  },
+  {
+    "Id": "573515",
+    "Title": "Load template, update its contents AND meta, then save",
+    "LatestDate": "2014-11-29T19:13:06.337-08:00"
+  },
+  {
+    "Id": "575673",
+    "Title": "${replace-me} Pattern substitution not really working... ",
+    "LatestDate": "2014-12-17T11:40:04.723-08:00"
+  },
+  {
+    "Id": "576943",
+    "Title": "can we pre-populate / Prefill legacy form fields with PHPWord",
+    "LatestDate": "2015-01-05T22:35:00.49-08:00"
+  },
+  {
+    "Id": "577381",
+    "Title": "new line in cell",
+    "LatestDate": "2015-01-10T16:44:02.313-08:00"
+  },
+  {
+    "Id": "577394",
+    "Title": "TemplateCloneRow  setValue  with  row  bgcolor",
+    "LatestDate": "2015-01-11T02:49:37.253-08:00"
+  },
+  {
+    "Id": "580744",
+    "Title": "Prevent title being on last line of page",
+    "LatestDate": "2015-02-14T04:44:08.247-08:00"
+  },
+  {
+    "Id": "584424",
+    "Title": "Text before addListItem on same line",
+    "LatestDate": "2015-03-03T10:33:28.383-08:00"
+  },
+  {
+    "Id": "611786",
+    "Title": "Does it support field replacement?",
+    "LatestDate": "2015-03-24T16:17:38.76-07:00"
+  },
+  {
+    "Id": "636672",
+    "Title": "PDF writer cell styles gridspan and bgcolor are not interpreted",
+    "LatestDate": "2015-05-04T09:22:39.35-07:00"
+  },
+  {
+    "Id": "636908",
+    "Title": "Issues in mobile to download docx",
+    "LatestDate": "2015-05-06T04:11:06.847-07:00"
+  },
+  {
+    "Id": "639070",
+    "Title": "How to integrate PHPWord with CodeIgniter",
+    "LatestDate": "2015-06-02T08:17:35.833-07:00"
+  },
+  {
+    "Id": "639703",
+    "Title": "Edit header/footer of an existing document through PHPWord.",
+    "LatestDate": "2015-06-09T03:36:28.423-07:00"
+  },
+  {
+    "Id": "639704",
+    "Title": "Edit header/footer of an existing document through PHPWord.",
+    "LatestDate": "2015-06-09T03:41:44.62-07:00"
+  },
+  {
+    "Id": "640791",
+    "Title": "Copy a Table from an Excel file and Paste it onto a Word file",
+    "LatestDate": "2015-06-30T13:22:49.4-07:00"
+  },
+  {
+    "Id": "640833",
+    "Title": "Style Separator",
+    "LatestDate": "2015-07-01T08:51:50.893-07:00"
+  },
+  {
+    "Id": "641878",
+    "Title": "Adding Tab-spaces to Word documents",
+    "LatestDate": "2015-07-24T03:37:39.553-07:00"
+  },
+  {
+    "Id": "645337",
+    "Title": "Create a text with a newspaper style (sample 05 is not working)?",
+    "LatestDate": "2015-09-22T11:16:22.173-07:00"
+  },
+  {
+    "Id": "647126",
+    "Title": "Html to .docx (ol, li, p, span)",
+    "LatestDate": "2015-11-09T03:59:20.73-08:00"
+  },
+  {
+    "Id": "648161",
+    "Title": "how to read a word file and save him in pdf?",
+    "LatestDate": "2015-11-30T06:45:26.69-08:00"
+  },
+  {
+    "Id": "649577",
+    "Title": "TemplateProcessor -> Set Checkbox Value",
+    "LatestDate": "2016-01-04T08:55:37.673-08:00"
+  },
+  {
+    "Id": "650138",
+    "Title": "break line in table",
+    "LatestDate": "2016-01-17T13:59:33.303-08:00"
+  },
+  {
+    "Id": "651898",
+    "Title": "Help ADDCHART",
+    "LatestDate": "2016-02-29T07:42:24.29-08:00"
+  },
+  {
+    "Id": "654283",
+    "Title": "PHP - replace strings in .doc file",
+    "LatestDate": "2016-05-03T20:17:54.41-07:00"
+  },
+  {
+    "Id": "654561",
+    "Title": "Templates, tegs",
+    "LatestDate": "2016-05-11T05:58:49.717-07:00"
+  },
+  {
+    "Id": "655957",
+    "Title": "Some issues in exporting",
+    "LatestDate": "2016-06-28T11:47:43.457-07:00"
+  },
+  {
+    "Id": "657322",
+    "Title": "tblHeader",
+    "LatestDate": "2016-08-21T14:47:09.44-07:00"
+  },
+  {
+    "Id": "658328",
+    "Title": "Template problem",
+    "LatestDate": "2016-09-28T08:43:24.62-07:00"
+  },
+  {
+    "Id": "659333",
+    "Title": "Getting started from zero knowledge",
+    "LatestDate": "2016-11-11T02:55:53.93-08:00"
+  },
+  {
+    "Id": "660083",
+    "Title": "Example template add rows from mysql database",
+    "LatestDate": "2016-12-12T03:07:58.687-08:00"
+  },
+  {
+    "Id": "660088",
+    "Title": "Can i save to pdf ?",
+    "LatestDate": "2016-12-12T03:53:05.283-08:00"
+  },
+  {
+    "Id": "660217",
+    "Title": "PDF",
+    "LatestDate": "2016-12-18T19:02:53.427-08:00"
+  },
+  {
+    "Id": "661165",
+    "Title": "Image Template ",
+    "LatestDate": "2017-02-05T22:58:50.94-08:00"
+  }
+]

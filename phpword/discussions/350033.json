@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "815454",
+    "ThreadId": "350033",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I am getting an error when attempting to set text to be justified:</p>\r\n<p>$PHPWord-&gt;addParagraphStyle('pJustify', array('align' =&gt; 'justify', 'spaceBefore' =&gt; 0, 'spaceAfter' =&gt; 0, 'spacing' =&gt; 0));</p>\r\n<p>Has anyone else managed to get justified text?</p>\r\n<p>Many thanks</p>\r\n",
+    "PostedDate": "2012-03-26T02:34:17.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "855918",
+    "ThreadId": "350033",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>This post is a bit old and i'm sure you finally found a solution, but it might help someone :</p>\r\n<p>try :</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$PHPWord-&gt;addParagraphStyle(<span style=\"color:#a31515\">'pJustify'</span>, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'align'</span> =&gt; <span style=\"color:#a31515\">'<span style=\"text-decoration:underline\"><strong>both</strong></span>'</span>, <span style=\"color:#a31515\">'spaceBefore'</span> =&gt; 0, <span style=\"color:#a31515\">'spaceAfter'</span> =&gt; 0, <span style=\"color:#a31515\">'spacing'</span> =&gt; 0));\n</pre>\r\n</div>\r\n<p>instead of :</p>\r\n<pre>$PHPWord-&gt;addParagraphStyle(<span style=\"color:#a31515\">'pJustify'</span>, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'align'</span> =&gt; <span style=\"color:#a31515\">'<span style=\"text-decoration:underline\"><strong>justify</strong></span>'</span>, <span style=\"color:#a31515\">'spaceBefore'</span> =&gt; 0, <span style=\"color:#a31515\">'spaceAfter'</span> =&gt; 0, <span style=\"color:#a31515\">'spacing'</span> =&gt; 0));</pre>\r\n",
+    "PostedDate": "2012-07-01T01:49:18.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

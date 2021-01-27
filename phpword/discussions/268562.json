@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "655937",
+    "ThreadId": "268562",
+    "Html": "\r\n<p>I'm doing a project at the moment on our intranet (windows server/PHP/mssql) where I need to collate several MS Word/pdf documents into a single document.</p>\r\n<p>e.g. standard front page, custom form, standard final page with custom header &amp; footer (e.g. with patient details on them) on each page.</p>\r\n<p>Can this be done?</p>\r\n<p>I'm thinking that I could create a new document with header &amp; footer, then embed the standard documents as objects, create the custom &amp; spit out as a composite doc. All I need (really) is how to EMBED rather than LINK objects in a new doc.</p>\r\n<p>phpword fully installed &amp; working, etc - I just lack the relevant knowledge of how to use the tool to full effect ;-)</p>\r\n<p>Many thanks in anticipation for any help given!<br>\r\njude</p>\r\n",
+    "PostedDate": "2011-08-10T08:50:38.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "656630",
+    "ThreadId": "268562",
+    "Html": "<p>It's possible to use ImageMagick and other such apps to convert PDF to an image. An image of the PDF can be then added to your Word doc.</p>\r\n<p>Or perhaps you could create a PDF instead of a Word doc? For creating PDFs, I like tcpdf <a href=\"http://www.tcpdf.org/index.php\">http://www.tcpdf.org/index.php</a>&nbsp;</p>\r\n<p>tcpdf does not read PDFs, but I found this page: <a href=\"http://solaajayi.wordpress.com/2010/06/02/pdf-templates-using-tcpdf/\">http://solaajayi.wordpress.com/2010/06/02/pdf-templates-using-tcpdf/</a> which has information about an extension for tcpdf that provides a way to read a PDF and then add the contents to a new PDF.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-08-11T08:43:49.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "666848",
+    "ThreadId": "268562",
+    "Html": "<p>Thank you for your response.</p>\r\n<p>However, I want to be able to combine 2 word documents and end up with a word document, preserving formatting. The intention is to combine a standard part 1, custom-built (from database elements) part 2 and an optional part 3 and end up with one document with common headers and correct page numbers through the doc.</p>\r\n<p>I want to end up with a word document as this is being used to create a standard document for a research study: one per participant/subject, which can then be updated with the participant's details (to avoid illegible handwriting issues!) and printed out to put in a study file.</p>\r\n<p>Ideas, anyone?<br />many thanks<br />jude</p>",
+    "PostedDate": "2011-09-02T07:22:21.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

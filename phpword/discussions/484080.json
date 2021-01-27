@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1150925",
+    "ThreadId": "484080",
+    "Html": "Hi, i test the phpword, it's work but i have a question, it's possible when we make the word document to save as in my desktop and not in the server?\r<br />\n<br />\nthanks<br />\n",
+    "PostedDate": "2014-01-08T07:34:35.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150948",
+    "ThreadId": "484080",
+    "Html": "lo que yo he echo es esto\r<br />\n<br />\nGuardo en una carpeta del servidor\r<br />\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r<br />\n$objWriter-&gt;save('Ruta_carpeta_escribible/temp/Text.docx');\r<br />\n<br />\ny doy un link pra que lo puedan descargar\r<br />\n<br />\necho '&lt;a href=&quot;Ruta_carpeta_escribible/temp/Text.docx&quot;&gt;descargar&lt;/a&gt;';<br />\n",
+    "PostedDate": "2014-01-08T08:25:44.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

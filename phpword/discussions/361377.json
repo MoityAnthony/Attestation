@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "855338",
+    "ThreadId": "361377",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I was wondering if there's a way to define a default spacing, spaceBefore and spaceAfter.<br>\r\nThe problem is the following:</p>\r\n<p>I'm working on a Mac using Word. The exported document looks fine, but my collegue is working on a PC.<br>\r\nWhen he opened de the document it was allmost twice as long.<br>\r\nBy adding spaceAfter this problem was solved for the most part, but not completely.<br>\r\n(my document is 18 pages, his 22).</p>\r\n<p>The main reason is the 'addTextBreak'. As far as I know you can't give this function a spacing, so it uses the default word settinga (on a mac: spacing: 1, spaceAfter: 0&nbsp; - on a PC: spacing: 1.15, spaceafter 10).</p>\r\n<p>Now it's 'fixed' by manually changing the spacing and spaceafter in Word, but this is not a workable solution.<br>\r\nHow can this problem be 'really' solved?<br>\r\n<br>\r\nIf it can't be solved in PHPWord, maybe it's possible to change de default spacing and spaceafter value's in word? You can change them from the 'line-height-menu', but these changes are only saved to the default template (new document), but when I open a 'phpword\r\n document' (in which these settings are not defined) Word loads the default setting again (1.15 spacing / 10 spaceAfter).</p>\r\n<p>Thanks,</p>\r\n<p>Marc.</p>\r\n",
+    "PostedDate": "2012-06-29T01:55:33.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083597",
+    "ThreadId": "361377",
+    "Html": "Hello,\r<br />\n<br />\ndo you found a solution? I have the same problem. \r<br />\n<br />\nSee here: <a href=\"https://phpword.codeplex.com/discussions/454183\" rel=\"nofollow\">https://phpword.codeplex.com/discussions/454183</a>\r<br />\n<br />\nGreetz<br />\n",
+    "PostedDate": "2013-08-22T05:39:52.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

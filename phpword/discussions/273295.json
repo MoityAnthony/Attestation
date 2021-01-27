@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "674610",
+    "ThreadId": "273295",
+    "Html": "<p>Hello everybody,</p>\n<p>First thing I must say that, PHPWord helps me out of the hell!!</p>\n<p>But I'm stuck with PHPWord now :(, do we have any way to add an image on the same line with the text, just like the textrun?</p>\n<p>Help me dev team :((!!</p>",
+    "PostedDate": "2011-09-21T03:29:58.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "674721",
+    "ThreadId": "273295",
+    "Html": "<p>There is a ticket to add this functionality: <a title=\"Issue Tracker\" href=\"http://phpword.codeplex.com/workitem/16\" target=\"_blank\">http://phpword.codeplex.com/workitem/16</a></p>\r\n<p>And there is a discussion here: <a title=\"Discussion\" href=\"http://phpword.codeplex.com/discussions/232684\" target=\"_blank\">http://phpword.codeplex.com/discussions/232684</a></p>\r\n<p>And more discussion here (with some code): <a title=\"More Discussion\" href=\"http://phpword.codeplex.com/discussions/210852?ProjectName=phpword\" target=\"_blank\">http://phpword.codeplex.com/discussions/210852?ProjectName=phpword</a></p>\r\n<p>But, as far as I know, no one has solved this task.</p>\r\n<p>Anyone out there have a solution? :-)</p>",
+    "PostedDate": "2011-09-21T07:24:36.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

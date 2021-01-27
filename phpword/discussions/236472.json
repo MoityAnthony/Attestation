@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "528644",
+    "ThreadId": "236472",
+    "Html": "\r\n<p>Before Anything else, I would like to congratulate the developers of PHPWord for a very useful Framework that you have made. I am a developer of a Document Processing System, And I was able to used the docx template by inseritng variables to the body of\r\n the template. But what I&nbsp; also need to work is to put variables on footer, I've tried it already a couple of times but it dont work. any help will be deeply appreciated. Thanks in&nbsp; Advance!</p>\r\n",
+    "PostedDate": "2010-11-29T23:12:54.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "528782",
+    "ThreadId": "236472",
+    "Html": "\r\n<p>Here is the footer I use. As you can see, I discovered some 'autotext' worked, and some did not. Is this what you mean by variables?</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$paraStyle = array('align' =&gt; 'center');<br><span style=\"color:green\">// report footer</span>\r\n$footer = $section-&gt;createFooter();\r\n$footer-&gt;addPreserveText(<span style=\"color:#a31515\">'{ DATE \\@&quot;MMMM d, yyyy&quot; }               Page {PAGE} of {NUMPAGES}'</span>, null, $paraStyle ); <br><span style=\"color:green\">//can't seem to insert other 'autotext' like {FILENAME} and {AUTHOR}</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2010-11-30T06:18:42.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "529922",
+    "ThreadId": "236472",
+    "Html": "\r\n<p>uhmm sorry to bother you again. thanks for the quick reply! What I mean is that I already have a docx template but when I am trying to put a ${variable}&nbsp; on the footer, it dont work,</p>\r\n",
+    "PostedDate": "2010-12-02T00:59:42.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "596321",
+    "ThreadId": "236472",
+    "Html": "<p>The problem is the template system in PHPWord only looks in the main document, not the header or footer. I customized the Beta 0.6.2, 24.07.2010 version of the PHPWord/Template.php file which contains the PHPWord_Template class to get around this problem. Here's the entire file with my comments (noted by comments with my name in them.</p>\r\n<p>-Matt Bowden</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>&lt;?php\r\n<span style=\"color: green;\">/**\r\n * PHPWord\r\n *\r\n * Copyright (c) 2010 PHPWord\r\n *\r\n * This library is free software; you can redistribute it and/or\r\n * modify it under the terms of the GNU Lesser General Public\r\n * License as published by the Free Software Foundation; either\r\n * version 2.1 of the License, or (at your option) any later version.\r\n *\r\n * This library is distributed in the hope that it will be useful,\r\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\r\n * Lesser General Public License for more details.\r\n *\r\n * You should have received a copy of the GNU Lesser General Public\r\n * License along with this library; if not, write to the Free Software\r\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\r\n *\r\n * @category   PHPWord\r\n * @package    PHPWord\r\n * @copyright  Copyright (c) 010 PHPWord\r\n * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL\r\n * @version    Beta 0.6.2, 24.07.2010\r\n */</span>\r\n\r\n\r\n<span style=\"color: green;\">/**\r\n * PHPWord_DocumentProperties\r\n *\r\n * @category   PHPWord\r\n * @package    PHPWord\r\n * @copyright  Copyright (c) 2009 - 2010 PHPWord (http://www.codeplex.com/PHPWord)\r\n */</span>\r\n<span style=\"color: blue;\">class</span> PHPWord_Template {\r\n    \r\n    <span style=\"color: green;\">/**\r\n     * ZipArchive\r\n     * \r\n     * @var ZipArchive\r\n     */</span>\r\n    <span style=\"color: blue;\">private</span> $_objZip;\r\n    \r\n    <span style=\"color: green;\">/**\r\n     * Temporary Filename\r\n     * \r\n     * @var string\r\n     */</span>\r\n    <span style=\"color: blue;\">private</span> $_tempFileName;\r\n    \r\n    <span style=\"color: green;\">/**\r\n     * Document XML\r\n     * \r\n     * @var string\r\n     */</span>\r\n    <span style=\"color: blue;\">private</span> $_documentXML;\r\n    \r\n\t<span style=\"color: green;\">/**\r\n     * Header1 XML\r\n\t * Custom code by Matt Bowden (blenderstyle) 04/12/2011\r\n     * \r\n     * @var string\r\n     */</span>\r\n    <span style=\"color: blue;\">private</span> $_header1XML;\r\n\t\r\n\t<span style=\"color: green;\">/**\r\n     * Header2 XML\r\n\t * Custom code by Matt Bowden (blenderstyle) 04/12/2011\r\n     * \r\n     * @var string\r\n     */</span>\r\n    <span style=\"color: blue;\">private</span> $_header2XML;\r\n\t\r\n\t<span style=\"color: green;\">/**\r\n     * Header3 XML\r\n\t * Custom code by Matt Bowden (blenderstyle) 04/12/2011\r\n     * \r\n     * @var string\r\n     */</span>\r\n    <span style=\"color: blue;\">private</span> $_header3XML;\r\n    \r\n\t<span style=\"color: green;\">/**\r\n     * Footer1 XML\r\n\t * Custom code by Matt Bowden (blenderstyle) 04/12/2011\r\n     * \r\n     * @var string\r\n     */</span>\r\n    <span style=\"color: blue;\">private</span> $_footer1XML;\r\n\t\r\n\t<span style=\"color: green;\">/**\r\n     * Footer2 XML\r\n\t * Custom code by Matt Bowden (blenderstyle) 04/12/2011\r\n     * \r\n     * @var string\r\n     */</span>\r\n    <span style=\"color: blue;\">private</span> $_footer2XML;\r\n\t\r\n\t<span style=\"color: green;\">/**\r\n     * Footer3 XML\r\n\t * Custom code by Matt Bowden (blenderstyle) 04/12/2011\r\n     * \r\n     * @var string\r\n     */</span>\r\n    <span style=\"color: blue;\">private</span> $_footer3XML;\r\n\t\r\n    <span style=\"color: green;\">/**\r\n     * Create a new Template Object\r\n     * \r\n     * @param string $strFilename\r\n     */</span>\r\n    <span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> __construct($strFilename) {\r\n        $path = dirname($strFilename);\r\n        <span style=\"color: green;\">//$this-&gt;_tempFileName = $path.time().'.docx';</span>\r\n        $this-&gt;_tempFileName = $path.DIRECTORY_SEPARATOR.time().<span style=\"color: #a31515;\">'.docx'</span>; <span style=\"color: green;\">// $path doesn't include the trailing slash - Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t\r\n        copy($strFilename, $this-&gt;_tempFileName); <span style=\"color: green;\">// Copy the source File to the temp File</span>\r\n\r\n        $this-&gt;_objZip = <span style=\"color: blue;\">new</span> ZipArchive();\r\n        $this-&gt;_objZip-&gt;open($this-&gt;_tempFileName);\r\n        \r\n        $this-&gt;_documentXML = $this-&gt;_objZip-&gt;getFromName(<span style=\"color: #a31515;\">'word/document.xml'</span>);\r\n\t\t$this-&gt;_header1XML = $this-&gt;_objZip-&gt;getFromName(<span style=\"color: #a31515;\">'word/header1.xml'</span>); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_header2XML = $this-&gt;_objZip-&gt;getFromName(<span style=\"color: #a31515;\">'word/header2.xml'</span>); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_header3XML = $this-&gt;_objZip-&gt;getFromName(<span style=\"color: #a31515;\">'word/header3.xml'</span>); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_footer1XML = $this-&gt;_objZip-&gt;getFromName(<span style=\"color: #a31515;\">'word/footer1.xml'</span>); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_footer2XML = $this-&gt;_objZip-&gt;getFromName(<span style=\"color: #a31515;\">'word/footer2.xml'</span>); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_footer3XML = $this-&gt;_objZip-&gt;getFromName(<span style=\"color: #a31515;\">'word/footer3.xml'</span>); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n    }\r\n    \r\n    <span style=\"color: green;\">/**\r\n     * Set a Template value\r\n     * \r\n     * @param mixed $search\r\n     * @param mixed $replace\r\n     */</span>\r\n    <span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> setValue($search, $replace) {\r\n        <span style=\"color: blue;\">if</span>(substr($search, 0, 2) !== <span style=\"color: #a31515;\">'${'</span> &amp;&amp; substr($search, -1) !== <span style=\"color: #a31515;\">'}'</span>) {\r\n            $search = <span style=\"color: #a31515;\">'${'</span>.$search.<span style=\"color: #a31515;\">'}'</span>;\r\n        }\r\n        \r\n        <span style=\"color: blue;\">if</span>(!is_array($replace)) {\r\n            $replace = utf8_encode($replace);\r\n        }\r\n        \r\n        $this-&gt;_documentXML = str_replace($search, $replace, $this-&gt;_documentXML);\r\n\t\t$this-&gt;_header1XML = str_replace($search, $replace, $this-&gt;_header1XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_header2XML = str_replace($search, $replace, $this-&gt;_header2XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_header3XML = str_replace($search, $replace, $this-&gt;_header3XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_footer1XML = str_replace($search, $replace, $this-&gt;_footer1XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_footer2XML = str_replace($search, $replace, $this-&gt;_footer2XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_footer3XML = str_replace($search, $replace, $this-&gt;_footer3XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n    }\r\n    \r\n    <span style=\"color: green;\">/**\r\n     * Save Template\r\n     * \r\n     * @param string $strFilename\r\n     */</span>\r\n    <span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> save($strFilename) {\r\n        <span style=\"color: blue;\">if</span>(file_exists($strFilename)) {\r\n            unlink($strFilename);\r\n        }\r\n        \r\n        $this-&gt;_objZip-&gt;addFromString(<span style=\"color: #a31515;\">'word/document.xml'</span>, $this-&gt;_documentXML);\r\n\t\t$this-&gt;_objZip-&gt;addFromString(<span style=\"color: #a31515;\">'word/header1.xml'</span>, $this-&gt;_header1XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_objZip-&gt;addFromString(<span style=\"color: #a31515;\">'word/header2.xml'</span>, $this-&gt;_header2XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_objZip-&gt;addFromString(<span style=\"color: #a31515;\">'word/header3.xml'</span>, $this-&gt;_header3XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_objZip-&gt;addFromString(<span style=\"color: #a31515;\">'word/footer1.xml'</span>, $this-&gt;_footer1XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_objZip-&gt;addFromString(<span style=\"color: #a31515;\">'word/footer2.xml'</span>, $this-&gt;_footer2XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n\t\t$this-&gt;_objZip-&gt;addFromString(<span style=\"color: #a31515;\">'word/footer3.xml'</span>, $this-&gt;_footer3XML); <span style=\"color: green;\">// Custom code by Matt Bowden (blenderstyle) 04/12/2011</span>\r\n        \r\n        <span style=\"color: green;\">// Close zip file</span>\r\n        <span style=\"color: blue;\">if</span>($this-&gt;_objZip-&gt;close() === false) {\r\n            <span style=\"color: blue;\">throw</span> <span style=\"color: blue;\">new</span> Exception(<span style=\"color: #a31515;\">'Could not close zip file.'</span>);\r\n        }\r\n        \r\n        rename($this-&gt;_tempFileName, $strFilename);\r\n    }\r\n}\r\n?&gt;\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2011-04-12T20:50:06.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1013262",
+    "ThreadId": "236472",
+    "Html": "Great Matt!!!\r<br />\n<br />\nWorks fine!<br />\n",
+    "PostedDate": "2013-03-11T07:12:10.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1038460",
+    "ThreadId": "236472",
+    "Html": "This works excellently for me.\r<br />\n<br />\nAnyone know how to add x number of headers without having to add each one?<br />\n",
+    "PostedDate": "2013-05-02T02:38:19.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151185",
+    "ThreadId": "236472",
+    "Html": "Thanks for you code I used it and add some.\r<br />\n<br />\nNow you can read all headers and footers.\r<br />\n<br />\n<a href=\"https://phpword.codeplex.com/workitem/69\" rel=\"nofollow\">https://phpword.codeplex.com/workitem/69</a>\r<br />\n<br />\nif anyone is interested .<br />\n",
+    "PostedDate": "2014-01-08T20:54:53.503-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1151186",
+    "ThreadId": "236472",
+    "Html": "Hi you can try this \r<br />\n<br />\n<a href=\"https://phpword.codeplex.com/workitem/69\" rel=\"nofollow\">https://phpword.codeplex.com/workitem/69</a><br />\n",
+    "PostedDate": "2014-01-08T20:55:23.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1214660",
+    "ThreadId": "236472",
+    "Html": "hi,\r<br />\n<br />\nI'm utilized the code customized by Matt. But not works for me.\r<br />\nI try define a variable at the header unsuccessfully.\r<br />\nsee:\r<br />\n<br />\nrequire_once 'PHPWord/PHPWord.php';\r<br />\n<br />\n$PHPWord = new PHPWord();\r<br />\n<br />\n$document = $PHPWord-&gt;loadTemplate('Planejamento_frete.docx');\r<br />\n$document-&gt;setValue('Header1', 'Eduardo Antonio Alves de Souza');\r<br />\n$document-&gt;save('/home/sgi3/src/intra/share/SWorkspace/AWorkflamma/ClassTemplate/blocos/SGDN/Novediacv.docx');\r<br />\n<br />\ncould help me<br />\n",
+    "PostedDate": "2014-02-25T08:43:55.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224659",
+    "ThreadId": "236472",
+    "Html": "The permanent solution <a href=\"https://github.com/PHPOffice/PHPWord/issues/50\" rel=\"nofollow\">will be integrated in the next version of PHPWord</a>. Thanks.<br />\n",
+    "PostedDate": "2014-03-19T22:08:08.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1473141",
+    "ThreadId": "654561",
+    "Html": "Hallo,\r<br />\n<br />\nI have a .doc template file.  there are tegs in this file, for example {{Adresse}} or &lt;adresse&gt;. I upload the file to the server. There i need to read file, fill tegs and save.\r<br />\n<br />\nThe question is: how can i parse File and fill tegs and is there any standart tags  in the library?\r<br />\n<br />\nThanks in advice<br />\n",
+    "PostedDate": "2016-05-11T05:58:49.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

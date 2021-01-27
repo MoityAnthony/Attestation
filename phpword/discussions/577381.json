@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1340745",
+    "ThreadId": "577381",
+    "Html": "Goodnight everyone.\r<br />\nAnyone know why the phpword v0.12.0 not accept \\ n in the table cell?\r<br />\nI'm trying this, but does not work:\r<br />\n$query\r<br />\n$string = &quot;&quot;;\r<br />\nwhile ($query) {\r<br />\n$string .= $me[0].;\r<br />\n$string .= '\\ r \\ n';\r<br />\n}\r<br />\n$table-&gt;addCell(1398)-&gt;addText(htmlspecialchars ($string), $ fontStyle);<br />\n",
+    "PostedDate": "2015-01-10T16:44:02.313-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

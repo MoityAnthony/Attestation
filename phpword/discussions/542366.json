@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1234553",
+    "ThreadId": "542366",
+    "Html": "Hi Guys, \r<br />\n<br />\nJust want to ask about this fatal error:\r<br />\n<br />\n&quot;<strong>Fatal error</strong>: Uncaught exception 'PhpOffice\\PhpWord\\Exceptions\\Exception' with message 'Can not clone row, template variable not found or variable contains markup.' in &quot;\r<br />\n<br />\nnot sure how to go about this. the sample files seem to work on my server but not on my own project. \r<br />\n<br />\ncan anybody direct me to the right direction on how to fix this.\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2014-04-15T21:29:46.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

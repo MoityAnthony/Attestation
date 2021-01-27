@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "901442",
+    "ThreadId": "392290",
+    "Html": "\r\n<p>Just now, I want to create a word which include text, images and hyperlinks. Then I want to insert the text, images and hyperlinks in one line. How can I do? Looking forward to your help and thanks very much.</p>\r\n",
+    "PostedDate": "2012-08-20T00:50:38.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "901789",
+    "ThreadId": "392290",
+    "Html": "<p>Maybe you can use table to make them in one line.</p>",
+    "PostedDate": "2012-08-20T23:28:29.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "902299",
+    "ThreadId": "392290",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>wanglei_estar wrote:</strong><br />\r\n<p>Maybe you can use table to make them in one line.</p>\r\n</blockquote>\r\n<p>&nbsp;    Thanks for your help. The problem has been solved. See&nbsp;<span style=\"font-size: 12pt; font-family: &quot;Calibri&quot;, &quot;sans-serif&quot;; font-style: normal; font-variant: normal; font-weight: 400; line-height: normal;\" lang=\"EN-US\"><a href=\"http://phpword.codeplex.com/discussions/232684\">http://phpword.codeplex.com/discussions/232684</a></span>.</p>\r\n<div id=\"main_box\">\r\n<div id=\"dict_main\">\r\n<div id=\"xiaobai_head\" class=\"dictbar\">\r\n<div id=\"current_word\" class=\"title\">\r\n<h1>&nbsp;<span> \r\n<ul class=\"star\" style=\"background-image: url(./css/star.gif); width: 88px; height: 16px;\">\r\n</ul>\r\n</span></h1>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+    "PostedDate": "2012-08-21T20:40:13.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

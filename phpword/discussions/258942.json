@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "617967",
+    "ThreadId": "258942",
+    "Html": "\r\n<p>Hi the PHPWord Team,</p>\r\n<p>&nbsp; In this link (<a href=\"http://phpword.codeplex.com/SourceControl/list/changesets\">http://phpword.codeplex.com/SourceControl/list/changesets</a>), we can't access to PHPWork mercurial repository.</p>\r\n<p>&nbsp; Is there something in action ? Can we access to the source code with a tool like SVN, HG or Git, soon ?</p>\r\n<p>Thanks for your reply</p>\r\n",
+    "PostedDate": "2011-05-25T05:16:08.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "682011",
+    "ThreadId": "258942",
+    "Html": "<p>I come back 5 months after.</p>\r\n<p>No news on versionning this tool ?</p>\r\n<p>An advantage will be the evolution of this powerful tool, and more easy bugfixes by contributors.</p>",
+    "PostedDate": "2011-10-10T03:01:20.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "828838",
+    "ThreadId": "258942",
+    "Html": "<p>I come back 6 months, again after.</p>\r\n<p>No new on versionning ?</p>\r\n<p>If no news, i will create a github repository for PHPWord and implement some readers and writers (like ODT (i currently implement it) and RTF (the same))</p>",
+    "PostedDate": "2012-04-26T03:14:02.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "828925",
+    "ThreadId": "258942",
+    "Html": "<p>I also have code to contribute and would appreciate an opportunity to work with others to improve the code.</p>",
+    "PostedDate": "2012-04-26T07:30:46.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829056",
+    "ThreadId": "258942",
+    "Html": "<p>I agree, this project should be on GitHub because it asks for contributions.</p>",
+    "PostedDate": "2012-04-26T12:22:47.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829921",
+    "ThreadId": "258942",
+    "Html": "<p>Note there are already two versions of phpWord on GitHub - both recently active.</p>\r\n<p><a title=\"GitHub phpWord search results\" href=\"https://github.com/search?utf8=%E2%9C%93&amp;q=phpword&amp;type=Everything&amp;repo=&amp;langOverride=&amp;start_value=1\" target=\"_blank\">https://github.com/search?utf8=%E2%9C%93&amp;q=phpword&amp;type=Everything&amp;repo=&amp;langOverride=&amp;start_value=1</a></p>\r\n<p><a href=\"https://github.com/tristanbes/PHPWord\" target=\"_blank\">https://github.com/tristanbes/PHPWord</a></p>\r\n<p><a href=\"https://github.com/Voziv/PHPWord\" target=\"_blank\">https://github.com/Voziv/PHPWord</a></p>",
+    "PostedDate": "2012-04-29T08:34:19.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "830059",
+    "ThreadId": "258942",
+    "Html": "<p>Awesome! Voziv's repo seems to be more up-to-date so I forked and cloned his. Will send pull requests whenever I do any improvements.</p>",
+    "PostedDate": "2012-04-30T00:19:21.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "834416",
+    "ThreadId": "258942",
+    "Html": "<p>I have made my own fork : https://github.com/Progi1984/PHPWord</p>\r\n<p>In the next, my first additions will be about ODT Format...</p>",
+    "PostedDate": "2012-05-10T00:14:24.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "894491",
+    "ThreadId": "258942",
+    "Html": "<p>The URL is https://github.com/PHPOffice/PHPWord</p>\r\n<p>PHPWord (fork) is managed by the same team than PHPExcel &amp; PHPPowerPoint... and we have two new projects : PHPVisio &amp; PHPProject.</p>\r\n<p>So we accept all your issues and patches (as pull requests).</p>",
+    "PostedDate": "2012-08-02T00:32:49.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "894541",
+    "ThreadId": "258942",
+    "Html": "<p>thanks, it's a great&nbsp;library.</p>\r\n<p>Does it support for colspan and rowspan for table?</p>",
+    "PostedDate": "2012-08-02T02:37:49.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "894580",
+    "ThreadId": "258942",
+    "Html": "<p>For the moment, I implement ODT &amp; RTF writers. After that, i will see all github issues and implement most asked issues.</p>\r\n<p>So create an issue.</p>",
+    "PostedDate": "2012-08-02T03:52:47.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "895010",
+    "ThreadId": "258942",
+    "Html": "<p>thanks,i need to use this library to generate word document. Header ,Footer ,TitleTOC,Table and Images are nessesary, But the current version of the library does not support all of them.I hope you&nbsp;implete &nbsp;it as soon as possible, thans again!</p>",
+    "PostedDate": "2012-08-03T00:09:08.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

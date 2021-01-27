@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": " I wnat to repeat my watermark , but it not work,How to set the number in the foot of the page in center(the default position is on the left) ,How to use the title . please give me a example,When i added the footer or header , there will be a error as followings : can not open office word XML ,because of the error content.\r\n\r\nThank you~.",
+    "LastUpdatedDate": "2014-10-23T00:02:31.99-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-10-23T00:02:31.99-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "export word error",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 84
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

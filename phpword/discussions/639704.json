@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1429676",
+    "ThreadId": "639704",
+    "Html": "Sorry, I posted this query in the issues section as well. I don't really think its an issue with PHPWord. But its something need to figure out and need help on it.\r<br />\n<br />\nCould somebody please help me out with this? I need to add a functionality to my web application that enables the user to replace the content of header/footer of a existing Word document with some other content. In other words, I need to edit the header/footer of a document.\r<br />\n<br />\nA solution with an example would be very much appreciated.\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2015-06-09T03:41:44.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

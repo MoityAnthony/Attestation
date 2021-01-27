@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "462494",
+    "ThreadId": "218106",
+    "Html": "Now , I hava a problem ,I don't know how to add spaces before text , when I use $section-&gt;addText($text) , these spaces must be need , who could help me ,???Thank you very much!!",
+    "PostedDate": "2010-07-01T23:26:37.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467867",
+    "ThreadId": "218106",
+    "Html": "<p>This feature will be implemented in the next release. I you need it right now, go into the file Writer/Word2007/Base.php and insert the following line:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>$objWriter-&gt;writeAttribute(<span style=\"color:#a31515\">'xml:space'</span>, <span style=\"color:#a31515\">'preserve'</span>);\r\n</pre>\r\n</div>\r\nInsert this new line right BEFORE the line 66 where the code &quot;$objWriter-&gt;writeRaw($text);&quot; is placed.</p>",
+    "PostedDate": "2010-07-15T09:03:26.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "472101",
+    "ThreadId": "218106",
+    "Html": "<p>Fixed in PHPWord 0.6.2 Beta. See current release.</p>",
+    "PostedDate": "2010-07-24T07:03:54.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

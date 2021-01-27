@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "717275",
+    "ThreadId": "284200",
+    "Html": "\r\n<p><span id=\"result_box\" lang=\"en\"><span>I'm trying to</span> <span>aggregate</span>\r\n<span>a subtable</span> <span>within a cell, </span></span><span id=\"result_box\" lang=\"en\"><span>any ideas ??</span></span></p>\r\n<p>$table-&gt;addCell(6000)-&gt;addTable();</p>\r\n",
+    "PostedDate": "2011-12-26T14:57:57.407-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "757668",
+    "ThreadId": "284200",
+    "Html": "<p>Did you find a solution?</p>",
+    "PostedDate": "2012-02-11T15:14:08.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "757678",
+    "ThreadId": "284200",
+    "Html": "<p>I did found a simular discussion, actualy, two: <a href=\"http://phpword.codeplex.com/discussions/245828\">http://phpword.codeplex.com/discussions/245828</a></p>\r\n<p>Conclusion: it's not possible, yet.</p>\r\n<p>Shame, I do need it. Could somebody make it?</p>",
+    "PostedDate": "2012-02-11T15:21:25.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

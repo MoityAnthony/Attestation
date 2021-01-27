@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello Support,\r\n\r\nI am trying to merge image in Sample_07_TemplateCloneRow.php demo but can't get success? How can i merge images in doc file?\r\n\r\nExample:\r\n\r\n$phpWord = new \\PhpOffice\\PhpWord\\PhpWord();\r\n$document = $phpWord->loadTemplate('resources/Sample_07_TemplateCloneRow.docx');\r\n$section = $phpWord->addSection();\r\n$WebsiteThumb = $_SERVER[\"DOCUMENT_ROOT\"] . \"/PHPWord-master/crm_141114081216.jpg\";\r\n$document->setValue('weekday', $section->addImage($WebsiteThumb));\r\n\r\nI am trying to setValue but it returns blank in doc. Is there any method to merge images?\r\n\r\nPlease help me out to solve this issue.\r\n\r\n\r\n\r\n",
+    "LastUpdatedDate": "2014-11-18T23:37:13.44-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-11-18T23:37:13.44-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How can i replace constant with image in PHPWork?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 85
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

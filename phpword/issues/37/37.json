@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": null,
+    "Description": "Is it possible to use the loadtemplate function and use addImage at the same time. Mine template is working great but when i use the addImage function the template isn't working any more. Is there some one who can help me......\r\n\r\n$document = $PHPWord->loadTemplate('Template.docx');\r\n\r\n$document->addImage('myimage.jpg');\r\n",
+    "LastUpdatedDate": "2012-01-02T06:57:31.113-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-12-13T04:16:47.923-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "loadTemplate and addImage function ",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 37
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Is it possible to set the Impact level to very high :) If this works it would be a great tool :)",
+      "PostedDate": "2011-12-14T23:31:19.537-08:00",
+      "Id": 51125
+    },
+    {
+      "Message": "I'am getting this error?\nPHP Fatal error: Call to undefined method PHPWord_Template::addImage() ",
+      "PostedDate": "2011-12-19T07:50:10.987-08:00",
+      "Id": 51327
+    },
+    {
+      "Message": "I was wondering if and when this can be made......",
+      "PostedDate": "2012-01-02T06:57:31.113-08:00",
+      "Id": 51894
+    }
+  ]
+}

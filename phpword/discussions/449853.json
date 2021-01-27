@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1067694",
+    "ThreadId": "449853",
+    "Html": "I can't seem to open PHPWord generated documents on Mac computers. I have no problem opening them on PCs. Any idea why?<br />\n",
+    "PostedDate": "2013-07-12T13:33:36.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083585",
+    "ThreadId": "449853",
+    "Html": "On the iPad I am also not able to open the docx file. I get the error message (OfficeImportErrorDomain) Error 912\r<br />\nWhat can I do?<br />\n",
+    "PostedDate": "2013-08-22T05:07:07.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

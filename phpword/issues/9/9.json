@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "See comment from Matthias.",
+    "ClosedDate": "2011-05-23T11:53:51.473-07:00",
+    "CommentCount": 3,
+    "Custom": "",
+    "Description": "When i create a word document i want every chapter numberd automaticly (i dont mean the table of contents).\r\nIn the example file TitleTOC.docx on page 2 i want to see  1. I am Title 1\r\nIs this possible?",
+    "LastUpdatedDate": "2013-02-21T02:42:02.007-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-06-04T00:23:27.987-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add titles but can't automatic number the titles ",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 9
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I have meetting this problem . who could help us resolve this issue.",
+      "PostedDate": "2010-07-01T20:05:32.243-07:00",
+      "Id": 13771
+    },
+    {
+      "Message": "I think this is possible. In XML its a combined ListItem and Title source.\n\nIt will be implemented in the next release I think.\n\nBest regards,\nMatthias",
+      "PostedDate": "2011-05-23T11:53:41.59-07:00",
+      "Id": 36262
+    },
+    {
+      "Message": "Hi,\nI have the same problem (there is no automatic numbering of the chapters and subchapters).\nIf it was fixed, then I don't understand the answer from Matthias. \nThank you for your help!",
+      "PostedDate": "2013-02-21T02:42:02.007-08:00",
+      "Id": 91059
+    }
+  ]
+}

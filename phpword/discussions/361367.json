@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "855276",
+    "ThreadId": "361367",
+    "Html": "\r\n<p>Hi everyone,</p>\r\n<p>I was trying to write a code that accepts inputs from users, writes the inputs to doc, prompts download window WITHOUT saving any file on the server. I already checked the discussion board and every source code that prompts download window makes a copy of\r\n file on the server.&nbsp;</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>&lt;?\r\n<span style=\"color:blue\">require_once</span> <span style=\"color:#a31515\">'PHPWord.php'</span>;\r\n$PHPWord = <span style=\"color:blue\">new</span> PHPWord();\r\n$section = $PHPWord-&gt;createSection();\r\n$section-&gt;addText(<span style=\"color:#a31515\">'Hello World'</span>);\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, <span style=\"color:#a31515\">'Word2007'</span>);\t\r\n\r\n\r\n\r\n<span style=\"color:green\">// This will save file on the server. Is there any solution???</span>\r\n$objWriter-&gt;save(<span style=\"color:#a31515\">'report.docx'</span>);\r\nheader(<span style=\"color:#a31515\">&quot;location:report.docx&quot;</span>);\r\n?&gt;\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>This is the code that I have and this save file on the server.&nbsp;Is there any way to&nbsp;prompt download without saving anything to the server?</p>\r\n",
+    "PostedDate": "2012-06-28T22:18:17.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992487",
+    "ThreadId": "361367",
+    "Html": "\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><br><span><span>$ Archivo = </span></span><span style=\"color:#a31515\"><span><span>'report.docx'</span></span></span><span><span> ; </span></span><span style=\"color:green\"><span><span>/ / guardar nuestro documento como este nombre de archivo</span></span></span><span><span> \nde encabezado ( </span></span><span style=\"color:#a31515\"><span><span>'Content-Type: application / vnd.openxmlformats-officedocument.wordprocessingml.document'</span></span></span><span><span> ); </span></span><span style=\"color:green\"><span><span>/ / tipo MIME</span></span></span><span><span> \nheader ( </span></span><span style=\"color:#a31515\"><span><span>'Content-Disposition: apego; filename = &quot;'</span></span></span><span><span> $ nombre_archivo.. </span></span><span style=\"color:#a31515\"><span><span>'&quot;'</span></span></span><span><span> ); </span></span><span style=\"color:green\"><span><span>/ / indicarle al navegador cu&aacute;l es el nombre del archivo</span></span></span><span><span> \nde encabezado ( </span></span><span style=\"color:#a31515\"><span><span>&quot;Cache-Control: max-age = 0 '</span></span></span><span><span> ); </span></span><span style=\"color:green\"><span><span>/ / no cache </span></span></span>\n<span style=\"color:green\"><span><span>/ / Guardar archivo</span></span></span><span><span> \nobjWriter $ = PHPWord_IOFactory :: createWriter ($ PHPWord, </span></span><span style=\"color:#a31515\"><span><span>'Word2007'</span></span></span><span><span> );</span></span><span>&nbsp;</span><span><span>\n$ ObjWriter-&gt; save ( </span></span><span style=\"color:#a31515\"><span><span>'php :/ / output'</span></span></span><span><span> );\n</span></span></pre>\r\n</div>\r\n<p><span><span>INSERTA ESTAS lineas de C&oacute;digo y Asunto Resuelto </span></span></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-26T12:50:57.317-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992633",
+    "ThreadId": "361367",
+    "Html": "\r\n<p>ckj12, is saving the file to the server before download a problem? You could save a file to download with a unique name, then delete it after download. For example:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>&lt;?\r\n<span style=\"color:blue\">require_once</span> <span style=\"color:#a31515\">'PHPWord.php'</span>;\r\n$PHPWord = <span style=\"color:blue\">new</span> PHPWord();\r\n$section = $PHPWord-&gt;createSection();\r\n$section-&gt;addText(<span style=\"color:#a31515\">'Hello World'</span>);\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, <span style=\"color:#a31515\">'Word2007'</span>);\r\n\r\n<span style=\"color:green\">// Save File</span>\r\n$temp_file_uri = tempnam(<span style=\"color:#a31515\">''</span>, <span style=\"color:#a31515\">'xyz'</span>);\r\n$objWriter-&gt;save($temp_file_uri);\r\n\r\n<span style=\"color:green\">// Download the file:</span>\r\nheader(<span style=\"color:#a31515\">'Content-Description: File Transfer'</span>);\r\nheader(<span style=\"color:#a31515\">'Content-Type: application/octet-stream'</span>);\r\nheader(<span style=\"color:#a31515\">'Content-Disposition: attachment; filename=myfile.docx'</span>);\r\nheader(<span style=\"color:#a31515\">'Content-Transfer-Encoding: binary'</span>);\r\nheader(<span style=\"color:#a31515\">'Expires: 0'</span>);\r\nheader(<span style=\"color:#a31515\">'Cache-Control: must-revalidate, post-check=0, pre-check=0'</span>);\r\nheader(<span style=\"color:#a31515\">'Pragma: public'</span>);\r\nheader(<span style=\"color:#a31515\">'Content-Length: '</span> . filesize($temp_file_uri));\r\nflush();\r\nreadfile($temp_file_uri);\r\nunlink($temp_file_uri); <span style=\"color:green\">// deletes the temporary file</span>\r\n<span style=\"color:blue\">exit</span>;\r\n?&gt;\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2013-01-27T04:58:02.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "999832",
+    "ThreadId": "361367",
+    "Html": "This code is working with all browsers except IE8. Is there any way to make it possible with IE too??<br />\n",
+    "PostedDate": "2013-02-11T22:01:03.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046963",
+    "ThreadId": "361367",
+    "Html": "$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r<br />\n<br />\n$filename = 'myfile.docx';//krishna\r<br />\n<br />\n$objWriter-&gt;save($filename);\r<br />\n<br />\nheader('Content-Description: File Transfer');\r<br />\nheader('Content-Type: application/octet-stream');\r<br />\nheader('Content-Disposition: attachment; filename='.$filename);\r<br />\nheader('Content-Transfer-Encoding: binary');\r<br />\nheader('Expires: 0');\r<br />\nheader('Cache-Control: must-revalidate, post-check=0, pre-check=0');\r<br />\nheader('Pragma: public');\r<br />\nheader('Content-Length: ' . filesize($filename));\r<br />\nflush();\r<br />\nreadfile($filename);\r<br />\nunlink($filename); // deletes the temporary file\r<br />\nexit;<br />\n",
+    "PostedDate": "2013-05-22T02:26:40.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1046964",
+    "ThreadId": "361367",
+    "Html": "<strong>Krishna-Winnou systems and services</strong><br />\n<blockquote>\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');<br />\n<br />\n$filename = 'myfile.docx';//krishna<br />\n<br />\n$objWriter-&gt;save($filename);<br />\n<br />\nheader('Content-Description: File Transfer');<br />\nheader('Content-Type: application/octet-stream');<br />\nheader('Content-Disposition: attachment; filename='.$filename);<br />\nheader('Content-Transfer-Encoding: binary');<br />\nheader('Expires: 0');<br />\nheader('Cache-Control: must-revalidate, post-check=0, pre-check=0');<br />\nheader('Pragma: public');<br />\nheader('Content-Length: ' . filesize($filename));<br />\nflush();<br />\nreadfile($filename);<br />\nunlink($filename); // deletes the temporary file<br />\nexit;<br />\n</blockquote>\n",
+    "PostedDate": "2013-05-22T02:27:38.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

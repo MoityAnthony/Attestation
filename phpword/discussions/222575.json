@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "476868",
+    "ThreadId": "222575",
+    "Html": "<p>hi,</p>\r\n<p>I have created aheader with cell and images and text inside. Alignement for images works perfeclty well but when I tried to center the text &quot;HERE IS MY TITLE&quot; inside the cell but the text stay on the left.</p>\r\n<p>I am doing something wrong in my code ? I have considered using cellMarginLeft but it would be applied on all the table.</p>\r\n<p>$header_first_page = $section_first_page-&gt;createHeader();<br>$table = $header_first_page-&gt;addTable();<br>$table-&gt;addRow();<br>$table-&gt;addCell(3000,array('valign'=&gt;'bottom'))-&gt;addImage('images/ece logo.jpg', array('width'=&gt;76, 'height'=&gt;32, 'align'=&gt;'<strong>left</strong>'));<br>$table-&gt;addCell(8000,array('valign'=&gt;'center'))-&gt;addText(&quot;<strong>HERE IS MY TITLE</strong>&quot;,array('<strong>bold</strong>'=&gt;true),array('align'=&gt;'<strong>center</strong>'));<br>$table-&gt;addCell(3000)-&gt;addImage('images/small_zodiacaerospace.jpeg', array('width'=&gt;147, 'height'=&gt;50, 'align'=&gt;'<strong>right</strong>'));<br>$table-&gt;addRow();<br>$table-&gt;addCell(4500)-&gt;addText('Reference: '.$ref);<br>$table-&gt;addCell(500)-&gt;addText('Issue: '.$issue);<br>$table-&gt;addCell(4500)-&gt;addText('');</p>",
+    "PostedDate": "2010-08-05T06:12:08.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "478772",
+    "ThreadId": "222575",
+    "Html": "<p><span>I had a similar problem when trying to use the properties spaceBefore and spaceAfter.&nbsp;</span><span>After reviewing the method addText of the cell and compare it to the section I realized that the cell does not have the paragraph style parameters.&nbsp;</span><span>So I copy the method of the section in the cell and it worked perfectly.</span></p>\r\n<p>Before:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">function</span> addText($text, $style = null) {\r\n$text = utf8_encode($text);\r\n$text = <span style=\"color:blue\">new</span> PHPWord_Section_Text($text, $style);\r\n$this-&gt;_elementCollection[] = $text;\r\n<span style=\"color:blue\">return</span> $text;\r\n}\r\n</pre>\r\n</div>\r\n</p>\r\n<p>After:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">function</span> addText($text, $styleFont = null, $styleParagraph = null) \r\n{\r\n$givenText = utf8_encode($text); \r\n$text = <span style=\"color:blue\">new</span> PHPWord_Section_Text($givenText, $styleFont, $styleParagraph); \r\n$this-&gt;_elementCollection[] = $text;</pre>\r\n<pre><span style=\"color:blue\">return</span> $text; </pre>\r\n<pre>}</pre>\r\n</div>\r\n</p>\r\n<p><span>Greetings ...</span></p>",
+    "PostedDate": "2010-08-10T12:43:37.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "479178",
+    "ThreadId": "222575",
+    "Html": "<p>Thanks for the bug report.</p>\r\n<p>Will be fixed in a few days.</p>",
+    "PostedDate": "2010-08-11T08:59:40.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "590783",
+    "ThreadId": "222575",
+    "Html": "<p>Wonderful! It's located in PHPWord/Section/Table/Cell.php.</p>",
+    "PostedDate": "2011-04-02T16:40:49.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1201306",
+    "ThreadId": "222575",
+    "Html": "Hey i want to add header and footer only on first and second page is it possible ....Plz help<br />\n",
+    "PostedDate": "2014-01-31T05:50:12.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

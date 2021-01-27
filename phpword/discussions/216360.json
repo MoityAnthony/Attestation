@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "456624",
+    "ThreadId": "216360",
+    "Html": "<table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<div id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl10_BodyDiv\">\r\n<p>I start a new thread so that you wont miss my questions :)<br>I have some problems with the outcome of PHPWord. When I specify a filename to save as, I get nothing. No error messages in the logs and no file saved in the web directory.</p>\r\n<p>When I specify php://output as filename I get the popup to save a file with the same name as my script and with a zip extension. The file wont open with zip. If I rename the file to docx I get the same error as posted in&nbsp;another thread.</p>\r\n<p>If I specify php://output as filename using NON-IE browser (Safari on my Mac) I don't not get any popup to save, instead I get the raw code-output from the generated file in the window.</p>\r\n<p>I use the example advancedtable.php</p>\r\n</div>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>Also, I have PHP 5.1.6 (and I'm in a position where I can't upgrade PHP due to other dependencies)</p>",
+    "PostedDate": "2010-06-17T04:57:31.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "557852",
+    "ThreadId": "243931",
+    "Html": "\r\n<p>It is possible to do Indentation Right or left in phpword ? i am waiting for u r replay.. please help me ..</p>\r\n",
+    "PostedDate": "2011-01-30T20:46:08.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "594224",
+    "ThreadId": "243931",
+    "Html": "<p>Hello:<br /> I have to work again with this wonderfull library =) and I had to do the same of you. First, I reviewed the library but I didn't found nothing of indentation....<br /> I did some changes to support this, and works with textrun and text:<br /> First you have to modified the file PHPword/Style/Paragraph.php, you have to modified the constructor and you have to added the next attributes and methods:</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">private</span> $_indLeft;\n<span style=\"color: blue;\">private</span> $_indRight;\n\n<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> __construct() {\n\t\t$this-&gt;_align           = null;\n\t\t$this-&gt;_spaceBefore     = null;\n\t\t$this-&gt;_spaceAfter      = null;\n\t\t$this-&gt;_spacing         = null;\n\t\t$this-&gt;_indLeft         = null;\n\t\t$this-&gt;_indRight         = null;\n\t}\n\t\n\n<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> getIndLeft() {\n\t\t<span style=\"color: blue;\">return</span> $this-&gt;_indLeft;\n\t}\n\n<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> setIndLeft($pValue = null) {\n\t   $this-&gt;_indLeft = $pValue;\n\t   <span style=\"color: blue;\">return</span> $this;\n\t}\n\n<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> getIndRight() {\n\t\t<span style=\"color: blue;\">return</span> $this-&gt;_indRight;\n\t}\n\n<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> setIndRight($pValue = null) {\n\t   $this-&gt;_indRight = $pValue;\n\t   <span style=\"color: blue;\">return</span> $this;\n\t}\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>and in the file PHPWord/Writer/Word2007/Base.php in the method&nbsp;_writeParagraphStyle you have to added this at the begining</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre>$indLeft = $style-&gt;getIndLeft();\n$indRight = $style-&gt;getIndRight();\t\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>and modified the next if</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">if</span>(!is_null($align) || !is_null($spacing) || !is_null($spaceBefore) || !is_null($spaceAfter) || !is_null($indLeft) || !is_null($indRight)) </pre>\n</div>\n<p>&nbsp;</p>\n<p>&nbsp;and for last add the next text inside of the if</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">if</span>(!is_null($indLeft))\n            {\n\t\t\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:ind'</span>);\n\t\t\t\t\t$objWriter-&gt;writeAttribute(<span style=\"color: #a31515;\">'w:left'</span>, $indLeft);\n\t\t\t\t$objWriter-&gt;endElement();\n            }\n<span style=\"color: blue;\">if</span>(!is_null($indRight))\n            {\n\t\t\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:ind'</span>);\n\t\t\t\t\t$objWriter-&gt;writeAttribute(<span style=\"color: #a31515;\">'w:right'</span>, $indRight);\n\t\t\t\t$objWriter-&gt;endElement();\n            }\n</pre>\n<pre><br /></pre>\n</div>\n<p>&nbsp;</p>\n<p>and it's done</p>\n<p>&nbsp;</p>\n<p>Greetings...</p>",
+    "PostedDate": "2011-04-08T08:23:29.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "697628",
+    "ThreadId": "243931",
+    "Html": "<p>hi&nbsp;yoyitonin</p>\n<p>i&nbsp;modified file,but how i can use it?</p>",
+    "PostedDate": "2011-11-13T14:35:53.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

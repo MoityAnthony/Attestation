@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1035527",
+    "ThreadId": "441522",
+    "Html": "<strong>Next code work in windows is  ok !</strong>\r<br />\nbut when I put it on the linux ,then tips me error 500,\r<br />\nwhen I notes <strong>$objWriter-&gt;save($filename);</strong>,there is no error ,but no data output,\r<br />\nThankyou very much to give me an answer !!\r<br />\n(there is no change in dir PHPWord)\r<br />\n&lt;?php<br />\n<pre><code>include './source/PHPWord.php';\n$PHPWord = new PHPWord();\n$section = $PHPWord-&gt;createSection();\n$top_txt = iconv('utf-8','gbk','report output time：'.date('Y-m-d H:i:s'));\n$section-&gt;addText($top_txt);    \n\n// Save File\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n$filename = 'T.docx';\nheader ( 'Content-Description: File Transfer' );\nheader(&quot;Content-type: application/vnd.ms-word&quot;);\nheader(&quot;Content-Disposition:attachment;filename=$filename&quot;);\nheader(&quot;Pragma: no-cache&quot;);\n$objWriter-&gt;save($filename);\n</code></pre>\n\n?&gt;<br />\n",
+    "PostedDate": "2013-04-25T02:46:45.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035879",
+    "ThreadId": "441522",
+    "Html": "Sounds like a permissions problem.<br />\n",
+    "PostedDate": "2013-04-25T17:23:38.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035889",
+    "ThreadId": "441522",
+    "Html": "Yestoday night ,I put the code in my other linux OS, works ok !\r<br />\nthen ,I think maybe it's the problem of the LAMP,\r<br />\nwait me set up new LAMP(It's company's Test machine),\r<br />\nwait a moment  ！！！。。。。<br />\n",
+    "PostedDate": "2013-04-25T18:07:18.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035930",
+    "ThreadId": "441522",
+    "Html": "I no set up,I see the error logs ,there is  &quot;Class 'ZipArchive' &quot; not found,\r<br />\nthere is the answer <a href=\"http://hi.baidu.com/cloudwhite/item/719588e3e40f66266cabb84a\" rel=\"nofollow\">http://hi.baidu.com/cloudwhite/item/719588e3e40f66266cabb84a</a> \r<br />\nstrange,in windows there is no need !!\r<br />\n<br />\nnow it's work ok !!<br />\n",
+    "PostedDate": "2013-04-25T23:09:41.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

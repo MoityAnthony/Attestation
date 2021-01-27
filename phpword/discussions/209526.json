@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "431776",
+    "ThreadId": "209526",
+    "Html": "<p>Hello:  I'm starting to use this library and I did some changes because I got some errors.</p>\r\n<p>1) In PHPWord.php I replace PHPWORD_BASE_PATH line for this</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:green\">/** PHPWORD_BASE_PATH */</span>\r\n<span style=\"color:blue\">if</span> (!defined(<span style=\"color:#a31515\">'PHPWORD_BASE_PATH'</span>)) \r\n{ \r\ndefine(<span style=\"color:#a31515\">'PHPWORD_BASE_PATH'</span>, dirname(<span style=\"color:blue\">__FILE__</span>) . <span style=\"color:#a31515\">'/'</span>);\r\n}\r\n</pre>\r\n</div>\r\n</p>\r\n<p>because before changing it I got errors.</p>\r\n<p>2) The option spaceAfter and spaceBefore is not set for PreservedText. That's why, in the file PHPWord/writer/Word2007/Base.php I added to the method _writePreserveText the next piece of code, after the if of align</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>$spaceBefore = $style-&gt;getSpaceBefore();\r\n$spaceAfter = $style-&gt;getSpaceAfter(); \r\n\r\n<span style=\"color:blue\">if</span>(!is_null($spaceBefore) || !is_null($spaceAfter)) \r\n{ \r\n        $objWriter-&gt;startElement(<span style=\"color:#a31515\">'w:spacing'</span>); \r\n        <span style=\"color:blue\">if</span>(!is_null($spaceBefore)) \r\n        { \r\n             $objWriter-&gt;writeAttribute(<span style=\"color:#a31515\">'w:before'</span>, $spaceBefore); \r\n        } \r\n        <span style=\"color:blue\">if</span>(!is_null($spaceAfter)) \r\n        { \r\n             $objWriter-&gt;writeAttribute(<span style=\"color:#a31515\">'w:after'</span>, $spaceAfter);\r\n        } \r\n        $objWriter-&gt;endElement(); \r\n}\r\n</pre>\r\n</div>\r\n</p>\r\n<p>I hope have been clear enough .... sorry for my english.... is not good...</p>\r\n<p>&nbsp;</p>\r\n<p>Grettings</p>",
+    "PostedDate": "2010-04-15T22:14:00.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431949",
+    "ThreadId": "209526",
+    "Html": "<p>Thanks for the editing.</p>\r\n<p>I will apply your changes to the next release.</p>",
+    "PostedDate": "2010-04-16T07:54:54.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

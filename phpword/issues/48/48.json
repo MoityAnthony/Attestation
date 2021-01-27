@@ -1,0 +1,61 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": null,
+    "Description": "It would be a huge improvement to be able to create cells that combine different collumns into 1.",
+    "LastUpdatedDate": "2014-01-08T19:11:03.633-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2012-08-16T08:28:09.523-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "implementation of table - colspan",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 48
+  },
+  "FileAttachments": [
+    {
+      "FileId": 667612,
+      "FileName": "PHPWord_Gridspan_Rowheight.diff",
+      "DownloadUrl": ".\\667612"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I have added this feature along with the ability to set the rowheight to be \"exact\".  Attached is a diff that includes both updates.  The colspan functionality is included in the addCell method and the rowheight functionality is in the addRow method as below:\r\n\r\nBefore:\r\n```\r\n$table->addRow(220);\r\n$cell = $table->addCell(1250)->addText('10410043',$cell_font_style);\r\n```\r\nAfter (same output as above):\r\n```\r\n$table->addRow(220,null);\r\n$cell = $table->addCell(1250,1)->addText('10425333',$cell_font_style);\r\n```\r\nAfter (displaying new output):\r\n```\r\n$table->addRow(220,\"exact\");\r\n$cell = $table->addCell(5000,3)->addText('10425333',$cell_font_style);\r\n```",
+      "PostedDate": "2013-04-23T05:51:19.463-07:00",
+      "Id": 97810
+    },
+    {
+      "Message": "Hi,\nThank you for your work. I applied all the changes as in the diff but nothing works (row height and colspan). Yet I checked the 3 files (base, cell, table) and changed my source code to generate my table as you indicated.\nIs there something I could forget?\n\nIt's the first time I use PHPWord\n\nbest regards \njc",
+      "PostedDate": "2013-09-26T23:56:02.253-07:00",
+      "Id": 115777
+    },
+    {
+      "Message": "Hi jc,\n\nSorry for the delay.  Are you still having issues?  I haven't reviewed the code recently, so I'm a little unfamiliar but I will definitely dig it up and respond as it's been in 'production' for many months.\n\nFor reference, I encountered a need to develop PDF forms and have been spending much of my time developing scripts that work within the OpenDocument specification which I plan to contribute as they mature.\n\nAB",
+      "PostedDate": "2014-01-08T19:11:03.633-08:00",
+      "Id": 129891
+    }
+  ]
+}

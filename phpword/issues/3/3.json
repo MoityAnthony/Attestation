@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "The PreserveText object that can be placed inside the header / footer doesn't support the style properties spaceAfter and spaceBefore. With that properties you can set margins to the previous and next paragraph.\n\nFeature will be implemented in the next release.",
+    "LastUpdatedDate": "2017-12-08T11:20:14.1-08:00",
+    "PlannedForRelease": "PHPWord 0.6.0 Beta",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-04-22T11:26:46.653-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Style property \"spaceAfter\" and \"spaceBefore\" for PreserveText Object",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 1,
+    "Id": 3
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

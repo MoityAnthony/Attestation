@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi all,\r\n\r\nI was trying to add a horizontal rule(horizontal line) inside docx file. I have gone through documentation and tried with the samples provided in github, but I was not able to find a way to add horizontal rule inside docx file, kindly share your thoughts on this. I also tried with adding lines into docx file but addLine function is also not working.\r\n\r\nThank you",
+    "LastUpdatedDate": "2014-07-07T04:33:41.573-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-07-07T04:33:41.573-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How can we create a horizontal rule inside docx file",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 78
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

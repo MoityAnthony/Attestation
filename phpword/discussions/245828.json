@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "565348",
+    "ThreadId": "245828",
+    "Html": "\r\n<p>Hi!<br>\r\n<br>\r\n<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">How</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">can</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">I</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">create</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">a</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">table</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">in\r\n a</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">cell</span><span title=\"Zur Anzeige alternativer Übersetzungen klicken\">?<br>\r\n&nbsp;</span></p>\r\n<p>MFG<br>\r\nderSESO&nbsp;</p>\r\n",
+    "PostedDate": "2011-02-13T03:43:21.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "565425",
+    "ThreadId": "245828",
+    "Html": "<p>Nested tables are not supported at this time. <a href=\"http://phpword.codeplex.com/discussions/216740\">http://phpword.codeplex.com/discussions/216740</a></p>",
+    "PostedDate": "2011-02-13T07:43:10.933-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "565462",
+    "ThreadId": "245828",
+    "Html": "<p><span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">Great</span>&nbsp;<span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">-</span>&nbsp;<span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">thanks for</span>&nbsp;<span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">the tip</span><span title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">.</span>&nbsp;<span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">:</span><span title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">)</span></p>",
+    "PostedDate": "2011-02-13T09:40:43.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098968",
+    "ThreadId": "245828",
+    "Html": "I got this working , please try\r<br />\n<br />\nIn PHPword/Writer/Word2007/base.php\r<br />\n<br />\n<br />\nprotected function _writeTable(PHPWord_Shared_XMLWriter $objWriter = null, PHPWord_Section_Table $table) {<br />\n<pre><code>    $_rows = $table-&gt;getRows();\n    $_cRows = count($_rows);\n\n    if($_cRows &gt; 0) {\n        $objWriter-&gt;startElement('w:tbl');\n            $tblStyle = $table-&gt;getStyle();\n            if($tblStyle instanceof PHPWord_Style_Table) {\n                $this-&gt;_writeTableStyle($objWriter, $tblStyle);\n            } else {\n                if(!empty($tblStyle)) {\n                    $objWriter-&gt;startElement('w:tblPr');\n                        $objWriter-&gt;startElement('w:tblStyle');\n                            $objWriter-&gt;writeAttribute('w:val', $tblStyle);\n                        $objWriter-&gt;endElement();\n                    $objWriter-&gt;endElement();\n                }\n            }\n\n            $_heights = $table-&gt;getRowHeights();\n            for($i=0; $i&lt;$_cRows; $i++) {\n                $row = $_rows[$i];\n                $height = $_heights[$i];\n\n                $objWriter-&gt;startElement('w:tr');\n\n                    if(!is_null($height)) {\n                        $objWriter-&gt;startElement('w:trPr');\n                            $objWriter-&gt;startElement('w:trHeight');\n                                $objWriter-&gt;writeAttribute('w:val', $height);\n                            $objWriter-&gt;endElement();\n                        $objWriter-&gt;endElement();\n                    }\n\n                    foreach($row as $cell) {\n                        $objWriter-&gt;startElement('w:tc');\n\n                            $cellStyle = $cell-&gt;getStyle();\n                            $width = $cell-&gt;getWidth();\n\n                            $objWriter-&gt;startElement('w:tcPr');\n                                $objWriter-&gt;startElement('w:tcW');\n                                    $objWriter-&gt;writeAttribute('w:w', $width);\n                                    $objWriter-&gt;writeAttribute('w:type', 'dxa');\n                                $objWriter-&gt;endElement();\n\n                                if($cellStyle instanceof PHPWord_Style_Cell) {\n                                    $this-&gt;_writeCellStyle($objWriter, $cellStyle);\n                                }\n\n                            $objWriter-&gt;endElement();\n\n                            $_elements = $cell-&gt;getElements();\n                            if(count($_elements) &gt; 0) {\n                                foreach($_elements as $element) {\n                                    if($element instanceof PHPWord_Section_Text) {\n                                        $this-&gt;_writeText($objWriter, $element);\n                                    } elseif($element instanceof PHPWord_Section_TextRun) {\n                                        $this-&gt;_writeTextRun($objWriter, $element);\n                                    } elseif($element instanceof PHPWord_Section_Link) {\n                                        $this-&gt;_writeLink($objWriter, $element);</code></pre>\n\n//ADD<br />\n<pre><code>                                        }elseif($element instanceof PHPWord_Section_Table) {\n                                              $this-&gt;_writeTable($objWriter, $element);</code></pre>\n\n//<br />\n<pre><code>                                    } __elseif($element instanceof PHPWord_Section_TextBreak) {\n                                        $this-&gt;_writeTextBreak($objWriter);\n                                    } elseif($element instanceof PHPWord_Section_ListItem) {\n                                        $this-&gt;_writeListItem($objWriter, $element);\n                                    } elseif($element instanceof PHPWord_Section_Image ||\n                                             $element instanceof PHPWord_Section_MemoryImage) {\n                                        $this-&gt;_writeImage($objWriter, $element);\n                                    } elseif($element instanceof PHPWord_Section_Object) {\n                                        $this-&gt;_writeObject($objWriter, $element);\n                                    } elseif($element instanceof PHPWord_Section_Footer_PreserveText) {\n                                        $this-&gt;_writePreserveText($objWriter, $element);\n                                    }\n                                }\n                            } else {\n                                $this-&gt;_writeTextBreak($objWriter);\n                            }\n\n                        $objWriter-&gt;endElement();\n                    }\n                $objWriter-&gt;endElement();\n            }\n        $objWriter-&gt;endElement();\n    }\n}\n</code></pre>\n\nand see next post<br />\n",
+    "PostedDate": "2013-09-25T04:53:52.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098970",
+    "ThreadId": "245828",
+    "Html": "In PhpWord/Section/Table/Cell.php\r<br />\n<br />\n//Add this at the end of class PHPWord_Section_Table_Cell<br />\n<pre><code>public function addTable($style = null) {\n    $table = new PHPWord_Section_Table('table', $this-&gt;_pCount, $style);\n    $this-&gt;_elementCollection[] = $table;\n    return $table;\n}\n</code></pre>\n\nThanks<br />\n",
+    "PostedDate": "2013-09-25T04:56:52.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1211817",
+    "ThreadId": "245828",
+    "Html": "Theppadon,<br />\n\r<br />\nThanks for the code revisions, but you didn't give us any hints on how to implement it.  Care to share?<br />\n",
+    "PostedDate": "2014-02-21T09:43:49.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1215941",
+    "ThreadId": "245828",
+    "Html": "<strong>Bill_VA wrote:</strong><br />\n<blockquote>\nTheppadon,<br />\n<br />\nThanks for the code revisions, but you didn't give us any hints on how to implement it.  Care to share?<br />\n</blockquote>\nHi Bill\r<br />\n<br />\nOnce you modify the code. You can add Table to cell same way when you add table from section.\r<br />\n<br />\n<br />\n<br />\n<strong>/////////////////Create fest TABLE////////////////////////</strong>\r<br />\n$table = $section-&gt;addTable(array('width' =&gt; 900, 'cellMarginTop' =&gt; 100,<br />\n<pre><code>'cellMarginLeft' =&gt; 0,\n'cellMarginRight' =&gt; 80,\n'cellMarginBottom' =&gt; 80)</code></pre>\n\n);\r<br />\n$textStyleSmall = array('color' =&gt; '000000', 'size' =&gt; 9);\r<br />\n$table-&gt;addRow();\r<br />\n$imageStyle = array('width' =&gt; 330, 'height' =&gt; 890, 'marginBottom' =&gt; 100, 'align' =&gt; 'left');\r<br />\n<br />\n<strong>//////////////////////////////////////  CREATE CELL /////////////////////////////////////</strong>\r<br />\n$cell = $table-&gt;addCell(300);\r<br />\n$cell-&gt;addImage($WORD_TEMPLATE_IMAGE_PATH . 'image3.jpeg', $imageStyle);\r<br />\n$table-&gt;addCell(200);\r<br />\n<br />\n$cell = $table-&gt;addCell(10000);\r<br />\n$cell-&gt;addImage($WORD_TEMPLATE_IMAGE_PATH . 'image4.jpg', array('width' =&gt; 205, 'align' =&gt; 'left'));\r<br />\n$textStyle = array('color' =&gt; '559BA0', 'size' =&gt; 15);\r<br />\n$cell-&gt;addText('Leading the way', $textStyle);\r<br />\n$cell-&gt;addText('GWA Bathrooms &amp; Kitchens is at the forefront of product innovation, incorporating a world-class R&amp;D  centre focused on developing the latest water saving, energy-efficient, and environmentally friendly technology', $textStyleSmall);\r<br />\n<br />\n$cell-&gt;addText('Over the years we have achieved an impressive list of high achieving world firsts:', $textStyleSmall);\r<br />\n$PHPWord-&gt;addFontStyle('ItemListStyle', array('size' =&gt; 8, 'color' =&gt; 'FF0000'));\r<br />\n$PHPWord-&gt;addParagraphStyle('pNormal', array('size' =&gt; 8, 'align' =&gt; 'left', 'spaceBefore' =&gt; 0,<br />\n<pre><code>'spaceAfter' =&gt; 0, 'spacing' =&gt; 0));</code></pre>\n\n$listTable_style = array('cellMarginTop' =&gt; 0,<br />\n<pre><code>'cellMarginLeft' =&gt; 0,\n'cellMarginRight' =&gt; 0,\n'cellMarginBottom' =&gt; 0);\n</code></pre>\n\n$PHPWord-&gt;addParagraphStyle('listTableTextParaStyle', array('align' =&gt; 'left',<br />\n<pre><code>'spaceBefore' =&gt; 0, 'spaceAfter' =&gt; 120, 'spacing' =&gt; 1));\n\n\n</code></pre>\n\n<strong>//////////////////////////////////  THEN CREATE TABLE IN A CELL //////////////////////////////////////////</strong>\r<br />\n$cellTable1 = $cell-&gt;addTable($listTable_style);\r<br />\n$cellTable1-&gt;addRow();<br />\n",
+    "PostedDate": "2014-02-27T20:47:19.557-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1222814",
+    "ThreadId": "245828",
+    "Html": "We're close, but not quite.  Using the following code I get a file formatted just the way I want, but Word gives me an error when I open the file.  After I dismiss the error, it displays correctly.  What am I missing?  I made all the code changes you suggested.<br />\n<pre><code>$section = $PHPWord-&gt;createSection();\n$table_block_format = array( 'borderSize' =&gt;  7,\n                                'cellMarginTop' =&gt;  0,\n                                'cellMarginLeft' =&gt;  100,\n                                'cellMarginRight' =&gt;  100,\n                                'cellMarginBottom' =&gt;  0,\n                                'valign' =&gt;  'top',\n                          );\n$PHPWord-&gt;addTableStyle('myTableBorder', $table_block_format);\n\n$table1 = $section-&gt;addTable('myTableBorder');\n    $table1-&gt;addRow();\n        $table1-&gt;addCell(3750)-&gt;addText(&quot;test&quot;);\n        $table1-&gt;addCell(3750)-&gt;addText(&quot;test&quot;);\n        $table1-&gt;addCell(3750)-&gt;addText(&quot;test&quot;);\n    $table1-&gt;addRow();\n        $table1-&gt;addCell(3750)-&gt;addText(&quot;test&quot;);        \n        $cell1 = $table1-&gt;addCell(3750); \n            $cellTable1 = $cell1-&gt;addTable('myTableBorder');\n            $cellTable1-&gt;addRow();\n                $cellTable1-&gt;addCell(750)-&gt;addText(&quot;1&quot;);\n                $cellTable1-&gt;addCell(750)-&gt;addText(&quot;2&quot;);\n                $cellTable1-&gt;addCell(750)-&gt;addText(&quot;3&quot;);            \n        $table1-&gt;addCell(3750)-&gt;addText(&quot;test&quot;);\n    $table1-&gt;addRow();\n        $table1-&gt;addCell(3750)-&gt;addText(&quot;test&quot;);\n        $table1-&gt;addCell(3750)-&gt;addText(&quot;test&quot;);\n        $table1-&gt;addCell(3750)-&gt;addText(&quot;test&quot;);</code></pre>\n\n",
+    "PostedDate": "2014-03-14T08:42:30.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224646",
+    "ThreadId": "245828",
+    "Html": "Hi all. I've posted the request to <a href=\"https://github.com/PHPOffice/PHPWord/issues/149\" rel=\"nofollow\">GitHub</a>. Nested table should be available on 0.9.<br />\n",
+    "PostedDate": "2014-03-19T20:55:38.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

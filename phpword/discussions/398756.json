@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "924449",
+    "ThreadId": "398756",
+    "Html": "\r\n<p>I'm working with cakephp and i am using this phpword to generate a dynamic document but i have a problem with the addImage function. I can't successfully add an image to the document.</p>\r\n<p>&nbsp;</p>\r\n<p>here is what my directory look like :</p>\r\n<p>project_name/</p>\r\n<p><span style=\"white-space:pre\">&nbsp;</span>..........................app/</p>\r\n<p><span style=\"white-space:pre\">&nbsp;</span>.......................................vendors/phpdocx -&gt; phpword source file</p>\r\n<p><span style=\"white-space:pre\">&nbsp;</span>........................................views/events/documents/word_template.ctp -&gt; this contains the code and layout<span style=\"white-space:pre\">\r\n</span><span style=\"white-space:pre\">&nbsp;</span>&nbsp;<span style=\"white-space:pre\">\r\n</span>of my&nbsp;generated document</p>\r\n<p>.......................................webroot/img/image.png -&gt; the image i would like to add</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"white-space:pre\">e</span>verytime i call this addImage() function the image doesn't insert on the document</p>\r\n<p>a always got an error with this one</p>\r\n<p>&nbsp;</p>\r\n<pre><pre>PHPWord_Section::addImage() - APP\\vendors\\phpword\\PHPWord\\Section.php, line 245</pre>\n</pre>\r\n<p>and it says that :&nbsp;</p>\r\n<pre>Source does not exist or unsupported image type. [<strong>APP\\vendors\\phpword\\PHPWord\\Section.php</strong>, line <strong>245</strong>]</pre>\r\n<p>i really need help on this one.&nbsp;<br>\r\n<br>\r\nThanks!&nbsp;</p>\r\n",
+    "PostedDate": "2012-10-09T21:09:43.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "942022",
+    "ThreadId": "398756",
+    "Html": "\r\n<p>I just figure out what is wrong.. i forgot to use the WWW_ROOT not it works fine...</p>\r\n",
+    "PostedDate": "2012-11-15T01:31:39.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1040180",
+    "ThreadId": "442757",
+    "Html": "Warning: ZipArchive::getFromName() [ziparchive.getfromname]: Invalid or unitialized Zip object in D:\\PHPnow\\htdocs\\tmgc\\admin0\\PHPWord\\PHPWord\\Template.php on line 74\r<br />\n<br />\nWarning: ZipArchive::close() [ziparchive.close]: Invalid or unitialized Zip object in D:\\PHPnow\\htdocs\\tmgc\\admin0\\PHPWord\\PHPWord\\Template.php on line 108<br />\n",
+    "PostedDate": "2013-05-06T19:04:51.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1484876",
+    "ThreadId": "658328",
+    "Html": "Hi\r<br />\n<br />\nUsing your php2excel -&gt; working fine.\r<br />\n<br />\nBut one thing about php2rowd, maybe I havent read documentation properly or something else.\r<br />\nBut anyway.\r<br />\n<br />\nMy problem is.\r<br />\n<br />\nI have a template .docx and some fields marked ${value1}.... Using my template with example tamplete php. works fine, but it saves the new document on server. \r<br />\n<br />\nHow can I get it locally saved like in php2excel, there using template it automatically saves it locally.\r<br />\n<br />\nI have tried different header functions, but when using those I get what I want but the document is EMPTY.\r<br />\n<br />\nregards\r<br />\nPekka R<br />\n",
+    "PostedDate": "2016-09-28T08:43:24.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

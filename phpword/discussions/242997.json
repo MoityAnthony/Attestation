@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "554171",
+    "ThreadId": "242997",
+    "Html": "\r\n<p>hello friends,</p>\r\n<p>&nbsp;&nbsp; I have followed the procedure shown in documentation.I still dont know how to get those two extension</p>\r\n<p>&nbsp;&nbsp;&nbsp; 1)zip Archive</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp; 2)xmllib</p>\r\n<p>But i can extrac the zip file...Does it mean the same extension.When i include the basic e.g and run the code.I get the empty page.I am using openoffice and ubuntu operating system</p>\r\n<p>here goes the code</p>\r\n<p>&lt;?php<br>\r\nrequire_once 'word/PHPWord.php';<br>\r\n<br>\r\n/ New Word Document<br>\r\n$PHPWord = new PHPWord();<br>\r\n<br>\r\n// New portrait section<br>\r\n$section = $PHPWord-&gt;createSection();<br>\r\n<br>\r\n// Add table<br>\r\n$table = $section-&gt;addTable();<br>\r\n<br>\r\nfor($r = 1; $r &lt;= 10; $r&#43;&#43;) { // Loop through rows<br>\r\n&nbsp;&nbsp;&nbsp; // Add row<br>\r\n&nbsp;&nbsp;&nbsp; $table-&gt;addRow();<br>\r\n&nbsp;&nbsp;&nbsp; <br>\r\n&nbsp;&nbsp;&nbsp; for($c = 1; $c &lt;= 5; $c&#43;&#43;) { // Loop through cells<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; // Add Cell<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $table-&gt;addCell(1750)-&gt;addText(&quot;Row $r, Cell $c&quot;);<br>\r\n&nbsp;&nbsp;&nbsp; }<br>\r\n}<br>\r\n// Save File<br>\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');<br>\r\n$objWriter-&gt;save('BasicTable.docx');<br>\r\n?&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>Any help</p>\r\n<p>thanks in advance</p>\r\n",
+    "PostedDate": "2011-01-23T22:43:45.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "555086",
+    "ThreadId": "242997",
+    "Html": "\r\n<p>It is a bit confusing about the requirements. It would be good to see more documentation about them...and how to tell via your phpinfo page whether you have the requirements or not.</p>\r\n<p>Here is the main page for php_zip<br>\r\nhttp://www.php.net/manual/en/book.zip.php</p>\r\n<p>And here is the libxml<br>\r\nhttp://www.php.net/manual/en/book.libxml.php</p>\r\n<p>related discussion<br>\r\nhttp://phpword.codeplex.com/Thread/View.aspx?ThreadId=228842</p>\r\n<p>You might also read the phpExcel discussion board, as the requirements for phpExcel are the same as for phpWord. Good luck!</p>\r\n",
+    "PostedDate": "2011-01-25T08:34:18.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

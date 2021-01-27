@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1334271",
+    "ThreadId": "575673",
+    "Html": "Hi, \r<br />\n<br />\nI've been trying to get the pattern substitution working when using a templates. I've found that, bizzarely, when I type this:\r<br />\n<br />\n${replace-me}\r<br />\n<br />\nIt doesn't replace. But when I copy and paste that text from somewhere else, it does work. So that's good. But I can't achieve it in formatted text in the header and footer. I'm guessing that typing it in causes some kind of extra code behind the scenes, so the pattern replacement doesn't match. But I'm so nearly there I wonder if anyone can help or knows what the real problem is here, because I'm so close to finishing :)\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-12-17T11:40:04.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "829953",
+    "ThreadId": "353960",
+    "Html": "\r\n<p>Ip have this code:</p>\r\n<p>// report footer<br>\r\n$paraStyle = array('align' =&gt; 'center');<br>\r\n$testVariable = 'Imp.02|DAS.CMRB&nbsp;&nbsp;&nbsp;&nbsp; ';<br>\r\n$footer = $section-&gt;createFooter();<br>\r\n$footer-&gt;addPreserveText( $testVariable.'{ DATE \\@&quot;d, MMMM yyyy&quot; }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {PAGE}', null, $paraStyle );</p>\r\n<p>and obtain</p>\r\n<p><span lang=\"EN-US\" style=\"font-size:8pt\">Page $this-&gt;page of $this-&gt;numpages\r\n</span></p>\r\n<p><span lang=\"EN-US\" style=\"font-size:8pt\">why?<br>\r\n</span></p>\r\n",
+    "PostedDate": "2012-04-29T11:49:16.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

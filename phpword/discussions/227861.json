@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "496030",
+    "ThreadId": "227861",
+    "Html": "<p>Hi,</p>\r\n<p>I got weird characters in my Word document. I think it's because my text is already UTF-8. When I remove the utf8_encode function in addText, everything works fine.</p>\r\n<p>Will it be possible to skip the utf8_encode function in future releases or is there another reason why this is not working for me?</p>\r\n<p><br>Regards,</p>\r\n<p>Alexander</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-20T07:50:59.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "920524",
+    "ThreadId": "397684",
+    "Html": "\r\n<p>I am trying to link data from MySQL Database into a Word Document using PHPWord. I've set up the package on my server and examples are working fine. When I use the Simple example Text.php:</p>\r\n<p>&lt;?php<br>\r\nrequire_once 'PHPWord.php';</p>\r\n<p>// New Word Document<br>\r\n$PHPWord = new PHPWord();</p>\r\n<p>// New portrait section<br>\r\n$section = $PHPWord-&gt;createSection();</p>\r\n<p>// Add footer<br>\r\n$footer = $section-&gt;createFooter();<br>\r\n$footer-&gt;addPreserveText('Page {PAGE} of {NUMPAGES}.', array('align'=&gt;'center'));</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><br>\r\n// Add text elements<br>\r\n$section-&gt;addText('Hello World!');<br>\r\n$section-&gt;addTextBreak(2);</p>\r\n<p>$section-&gt;addText('I am inline styled.', array('name'=&gt;'Verdana', 'color'=&gt;'006699'));<br>\r\n$section-&gt;addTextBreak(2);</p>\r\n<p>$PHPWord-&gt;addFontStyle('rStyle', array('bold'=&gt;true, 'italic'=&gt;true, 'size'=&gt;16));<br>\r\n$PHPWord-&gt;addParagraphStyle('pStyle', array('align'=&gt;'center', 'spaceAfter'=&gt;100));<br>\r\n$section-&gt;addText('I am styled by two style definitions.', 'rStyle', 'pStyle');<br>\r\n$section-&gt;addText('I have only a paragraph style definition.', null, 'pStyle');</p>\r\n<p>&nbsp;</p>\r\n<p>// Save File<br>\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');<br>\r\n$objWriter-&gt;save('Text.docx');<br>\r\n?&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>And try to add just before that:</p>\r\n<p>&nbsp;</p>\r\n<p>include(&quot;config.inc.php3&quot;);<br>\r\ninclude(&quot;session.inc.php3&quot;);</p>\r\n<p>$query=&quot;SELECT Opt1,Current_Exm FROM System WHERE Opt1='1'&quot;;<br>\r\n$rbsult=MYSQL_QUERY($query) or redirect(&quot;<a href=\"http://www.cspsopcs.com/portal/eng/error.php3?err=4682\">http://www.cspsopcs.com/portal/eng/error.php3?err=4682</a>&quot;);<br>\r\nif(!$rbw=MYSQL_FETCH_ARRAY($rbsult))<br>\r\n&nbsp; {<br>\r\n&nbsp; redirect(&quot;error.php3?err=4682&quot;);<br>\r\n&nbsp; }</p>\r\n<p>&nbsp;</p>\r\n<p>The word document is not generated. I'd like to simply replace &quot;HELLO WORLD&quot; by a variable $rbw[1]</p>\r\n<p>Is there a way or something I dont understand?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-10-02T05:10:22.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "922205",
+    "ThreadId": "397684",
+    "Html": "<p>Actually mu code looks like this in that order:</p>\r\n<pre><!--p\r\n\r\ninclude(\"config.inc.php3\");\r\ninclude(\"session.inc.php3\");\r\n\r\n$query=\"SELECT Opt1,Current_Exm FROM System WHERE Opt1='1'\";\r\n$rbsult=MYSQL_QUERY($query) or redirect(\"http://www.cspsopcs.com/portal/eng/error.php3?err=4682\");\r\nif(!$rbw=MYSQL_FETCH_ARRAY($rbsult))\r\n  {\r\n  redirect(\"error.php3?err=4682\");\r\n  }\r\n\r\n\r\n\r\n\r\n\r\n\r\nrequire_once 'PHPWord.php';\r\n\r\n//PHP Creation Written English\r\n\r\n\r\n// New Word Document\r\n$PHPWord = new PHPWord();\r\n\r\n// New portrait section\r\n$section = $PHPWor-->createSection();\r\n\r\n\r\n$section-&gt;addTextBreak(8);\r\n$section-&gt;addImage('../common_web_pictures/logo.jpg', array('width'=&gt;210, 'height'=&gt;210, 'align'=&gt;'center'));\r\n\r\n$PHPWord-&gt;addFontStyle('rStyle', array('bold'=&gt;false, 'italic'=&gt;false, 'size'=&gt;16));\r\n$PHPWord-&gt;addParagraphStyle('pStyle', array('align'=&gt;'center', 'spaceAfter'=&gt;'0'));\r\n\r\n$section-&gt;addText('Canadian Ski Patrol', 'rStyle', 'pStyle');\r\n$section-&gt;addText('Advanced First Aid (AFA)', 'rStyle', 'pStyle');\r\n$section-&gt;addText('National Written Exam', 'rStyle', 'pStyle');\r\n$section-&gt;addTextBreak(2);\r\n\r\n//This is the data from my database and table System\r\n$section-&gt;addText($rbw[1]);\r\n\r\n// Add footer\r\n$footer = $section-&gt;createFooter();\r\n$footer-&gt;addPreserveText('Modifications to examinations are not permitted without written approval of the National Vice President of Education.', array('size'=&gt;8, 'align'=&gt;'center'));\r\n\r\n\r\n\r\n// Save File\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r\n$objWriter-&gt;save('Written.docx');\r\n?&gt;</pre>\r\n<pre>So it isnt working, no file, just nothing. I wonder how it can go and get data into a MySQL database.</pre>\r\n<pre>Thanks!</pre>",
+    "PostedDate": "2012-10-04T16:43:48.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "923733",
+    "ThreadId": "397684",
+    "Html": "<p>Found IT......</p>\r\n<pre><!--p\r\n\r\n$host = \"Myserver\"; \r\n$user = \"MyUsername\"; \r\n$pass = \"MyPassword\"; \r\n$database = \"Mydatabase\"; \r\n\r\n$linkID = mysql_connect($host, $user, $pass) or die(\"Could not connect to host.\"); \r\nmysql_select_db($database, $linkID) or die(\"Could not find database.\"); \r\n\r\n$query = \"SELECT * FROM System ORDER BY Opt1\";\r\n$resultID = mysql_query($query, $linkID) or die(\"Data not found.\"); \r\n$raw = mysql_fetch_assoc($resultID); \r\n\r\n\r\nrequire_once 'PHPWord.php';\r\n\r\n$PHPWord = new PHPWord();\r\n\r\n$document = $PHPWor-->loadTemplate('Template.docx');\r\n\r\n$document-&gt;setValue('Value1', $raw['Current_Exm']);\r\n\r\nfor($x = 0 ; $x &lt; mysql_num_rows($resultID) ; $x++)\r\n\t{\r\n</pre>\r\n<p>&nbsp;</p>\r\n<p>It get to my databae.</p>",
+    "PostedDate": "2012-10-08T16:05:38.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "923784",
+    "ThreadId": "397684",
+    "Html": "<p>You just use 'Value1'?</p>",
+    "PostedDate": "2012-10-08T21:02:59.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

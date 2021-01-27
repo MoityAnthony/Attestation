@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "685826",
+    "ThreadId": "276323",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I have some text that includes sterling currency. &nbsp;However, the &pound; sign is being output as\r\n<span style=\"font-size:11pt\">&Acirc;&pound;.&nbsp;Does anyone know if this can be fixed or has a workaround?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-10-18T08:31:47.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "686214",
+    "ThreadId": "276323",
+    "Html": "<p>seems to be an utf8 error.</p>\r\n<p>you should find discussion about encode utf8&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-10-19T00:56:33.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

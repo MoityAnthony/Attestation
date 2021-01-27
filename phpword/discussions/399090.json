@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "925732",
+    "ThreadId": "399090",
+    "Html": "\r\n<p>I got blank page when i tried to run the examples such as the basic table.php.....It seem nothing happen...basically my file i put in the&nbsp;C:\\xampp\\htdocs\\core\\phpword......I already paste all the file in the phpword folder...i also already follow the\r\n requirement needed...Am i missing some requirement?....</p>\r\n",
+    "PostedDate": "2012-10-12T04:09:31.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "926387",
+    "ThreadId": "399090",
+    "Html": "<p>Hello bedebar</p>\r\n<p>Yes, you get only a blank page. You should just chek if the output file has been created at background. I just entered in to file the following echo statement to be suche that the doc is not empty:</p>\r\n<p>echo getcwd() . \"\\n\";</p>\r\n<p>mpol_ch</p>",
+    "PostedDate": "2012-10-14T09:46:05.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "926390",
+    "ThreadId": "399090",
+    "Html": "\r\n<p>Oh thanks <a href=\"http://www.codeplex.com/site/users/view/mpol_ch\">mpol_ch</a>...I&nbsp;just&nbsp;realize now that the file is create new ms word...I&nbsp;thought&nbsp;that we can extract the data in the ms office...So, my problem now how can I manipulate\r\n the library so that I can extract the data in the ms office and display at html?</p>\r\n",
+    "PostedDate": "2012-10-14T09:57:59.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "524548",
+    "ThreadId": "235377",
+    "Html": "\r\n<p>Is there a way to utilize a combination of both a template and add a custom item (such as a footer) to create a new document?&nbsp; I would like to use various documents as a &quot;template&quot; and simply add a standard comment or watermark to the page when a page\r\n is requested for downloading.</p>\r\n<p>I figured out how to add a generic footer to the zipped file, but I am guessing there will need to be a reference to the footer.xml in one of the other files?</p>\r\n<p>By the way, thanks for offering this.</p>\r\n",
+    "PostedDate": "2010-11-19T13:44:17.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

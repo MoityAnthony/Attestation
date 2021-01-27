@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "556761",
+    "ThreadId": "243652",
+    "Html": "\r\n<p>Hello Friends,</p>\r\n<p>My document get generated. But is not opening the document.But it gives me an error saying open office is Corrupt...Any help plz</p>\r\n",
+    "PostedDate": "2011-01-28T02:01:13.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "556885",
+    "ThreadId": "243652",
+    "Html": "\r\n<p>I had a similar problem with Open Office 3.2. I wrote Open Office and they suggested I upgrade to dev version 3.4, which worked. I see OO 3.3 is released. You might try that.</p>\r\n<p>Also, you might look at LibreOffice. http://www.libreoffice.org/</p>\r\n<p>Good luck!</p>\r\n",
+    "PostedDate": "2011-01-28T07:20:12.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "557217",
+    "ThreadId": "243652",
+    "Html": "\r\n<p>hi,</p>\r\n<p>How can i have a pop up which describe to save or open the file.</p>\r\n",
+    "PostedDate": "2011-01-28T21:58:20.737-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "557310",
+    "ThreadId": "243652",
+    "Html": "\r\n<p>I think this is the same question as this thread: http://phpword.codeplex.com/Thread/View.aspx?ThreadId=236799</p>\r\n<p>Try this code at the end:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$fileName = <span style=\"color:#a31515\">'my_file_name'</span>;<br>header(<span style=\"color:#a31515\">'Content-Type: application/vnd.ms-word'</span>);<br>header(<span style=\"color:#a31515\">'Content-Disposition: attachment;filename=&quot;'</span>.$fileName.<span style=\"color:#a31515\">'.docx&quot;'</span>);  <span style=\"color:green\">// set the file name</span><br>header(<span style=\"color:#a31515\">'Cache-Control: max-age=0'</span>);<br><br><span style=\"color:green\">// Save and output file to browser</span><br>$objWriter = PHPWord_IOFactory::createWriter($PHPWord, <span style=\"color:#a31515\">'Word2007'</span>);<br>$objWriter-&gt;save(<span style=\"color:#a31515\">'php://output'</span>);<br><span style=\"color:blue\">exit</span>;     <span style=\"color:green\">//you MUST have the exit!</span><br></pre>\r\n</div>\r\n",
+    "PostedDate": "2011-01-29T06:51:42.267-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

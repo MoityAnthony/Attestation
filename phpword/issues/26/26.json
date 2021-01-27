@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2011-07-08T03:49:39.21-07:00",
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "PHPWord/Section.php\r\n\r\nCode says:\r\n\tpublic function addListItem($text, $depth = 0, $styleFont = null, $styleList = null, $styleParagraph = null) {\r\n\t\t$text = utf8_encode($text);\r\n\t\t$listItem = new PHPWord_Section_ListItem($text, $depth, $styleText, $styleList, $styleParagraph);\r\n\t\t$this->_elementCollection[] = $listItem;\r\n\t\treturn $listItem;\r\n\t}\r\n\r\nline with $listItem var should be:\r\n\r\n\t\t$listItem = new PHPWord_Section_ListItem($text, $depth, $styleFont, $styleList, $styleParagraph);",
+    "LastUpdatedDate": "2011-07-08T03:49:39.21-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-07-06T10:29:15.673-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Wrong variable name",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 26
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks for posting this bug.\nIt will be fixed in next release.",
+      "PostedDate": "2011-07-08T03:49:34.527-07:00",
+      "Id": 39086
+    }
+  ]
+}

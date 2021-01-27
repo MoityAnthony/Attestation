@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "745625",
+    "ThreadId": "297595",
+    "Html": "<p>Hi, is there a way to set the table width, or fixed cell widths?</p>\n<p>I'm having a problem where the width of a table expands to the right (even beyond the margin) based on the text that is in the cells. If there is a long word or number, that is wider than the cell, the cell stretches to accomodate the word that apparently  can't be broken.</p>\n<p>Similarly, if all the content of the cells is shorter than the sum of the cell widths that I have specified the table width shrinks. This happened on a table with 6 columns. A table with only 2 columns didn't shrink.</p>\n<p>I have a page that contains several tables, one under the other. It looks much neater if all the tables are the same width.</p>\n<p>Also, I wasn't able to reuse a table style. I had to replicate the style with a different name for each table on the page.</p>\n<p>I'm adding a list of all the issues I haven't been able to resolve, so they're in one place:</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Can&rsquo;t set minimum table row height.</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Extra lines in table cells.</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A word longer than the cell width expands the table to the right.</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Table width shrinks (apparently can't set fixed cell widths).</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Regular flush left Text occasionally runs beyond specified margins.</p>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Header and footer are inside the page margins.</p>",
+    "PostedDate": "2012-02-07T11:35:29.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

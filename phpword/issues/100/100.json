@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\r\n\r\nCould somebody please help me out with this? I need to add a functionality to my web application that enables the user to replace the content of header/footer of a existing Word document with some other content. In other words, I need to edit the header/footer of a document.\r\n\r\nA solution with an example would be very much appreciated.\r\n\r\nThanks!",
+    "LastUpdatedDate": "2015-06-09T03:34:04.653-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2015-06-09T03:34:04.653-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Edit header/footer of an existing document through PHPWord.",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 100
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

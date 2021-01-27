@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Hi ! \r\nI'm searching how to make things like this : \r\n\r\n```\r\n$phpWord = new \\PhpOffice\\PhpWord\\PhpWord();\r\n$document = $phpWord->loadTemplate(\"template.docx\");\r\n/* NewStyle */\r\n$document->addFontStyle(\"BoldRed\", array('color' => 'red', 'bold' => true));\r\n/* SetValue */ \r\n$document->setFontStyle(\"BoldRed\")->setValue(\"ITEM_TO_CHANGE\", \"Test\");\r\n```\r\n\r\nThis method doesn't work, any idea ? ",
+    "LastUpdatedDate": "2015-01-12T06:17:56.193-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2015-01-12T05:58:05.993-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "[Solved] FontStyle on SetValue Element",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 95
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I found,The style is the same as that of the document ... Thanks ! ",
+      "PostedDate": "2015-01-12T06:17:33.8-08:00",
+      "Id": 169915
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\n      I recently tried to use the PHPWord to fill my docx templates.PHP Word works fine when used in a  template with ordinary fields. (like the one given in Examples) but it has issues when I try to do it on a Microsoft Word 2007 docx file template containing \"__Mail-Merged field__\". It simply doesnt work. It just generates the word file same as template. Please Help. Thank you in advance.",
+    "LastUpdatedDate": "2013-11-25T23:51:37.577-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-11-25T23:51:37.577-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Does it work with a docx file having \"mail-merged\" fields?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 65
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

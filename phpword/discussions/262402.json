@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "631382",
+    "ThreadId": "262402",
+    "Html": "\r\n<p>I tried to use the TitleTOC.php example in the PHPWord but it is not working. If I remove $section-&gt;addTOC($fontStyle); then the rest of the example works. What is the reason? Thank you,</p>\r\n",
+    "PostedDate": "2011-06-22T13:00:33.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

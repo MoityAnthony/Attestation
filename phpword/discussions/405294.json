@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "950172",
+    "ThreadId": "405294",
+    "Html": "\r\n<p>This is my 1st time using PHPWORD and I'm not pretty good about it .. at the same time, I'm just a newbie in PHP and MYSQL.</p>\r\n<p>So I will explain what I'm trying to do :<br>\r\nI'm trying to use data from database phpmyadmin at Microsoft Word with my own Microsoft Word template that called &quot;TamatBelajar.docx&quot;. After that, the file will be saved as &quot;TamatBelajar007.docx&quot;.</p>\r\n<p>I don't know if my code was right or not .. because I getting this error message &quot;The Office Open XML file cannot be opened &nbsp;because there are problems with the contents.&quot; when I try to open &quot;TamatBelajar007.docx&quot;.\r\n<br>\r\n<br>\r\nThis code I take from someone and I change some code based on my database :</p>\r\n<p>If someone out there can help me, please help me because I need to get it done in less than 6 days.</p>\r\n<p>I'm so damn stress.. Thank You for reading . I'll waitting for your reply.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><div style=\"color:black; background-color:white\"><pre>&lt;?php\nsession_start();\n\n<span style=\"color:blue\">require_once</span>(<span style=\"color:#a31515\">'PHPWord.php'</span>);\n\n\t$PHPWord = <span style=\"color:blue\">new</span> PHPWord();\n\t$document = $PHPWord-&gt;loadTemplate(<span style=\"color:#a31515\">'TamatBelajar.docx'</span>);\n\n\t$host=<span style=\"color:#a31515\">&quot;localhost&quot;</span>;\n\t$username=<span style=\"color:#a31515\">&quot;root&quot;</span>;\n\t$password=<span style=\"color:#a31515\">&quot;&quot;</span>;\n\t$database=<span style=\"color:#a31515\">&quot;finalproject&quot;</span>;\n\t$osr = mysql_connect($host, $username, $password) <span style=\"color:blue\">or</span> trigger_error(mysql_error(),E_USER_ERROR); \n\tmysql_select_db(<span style=\"color:#a31515\">&quot;$database&quot;</span>) <span style=\"color:blue\">or</span> <span style=\"color:blue\">die</span> (mysql_error());\n\t\n\t$query_RecordsetFail = &quot;SELECT * FROM admin,student where admin.adminfullname <span style=\"color:blue\">and</span> student.Bil <span style=\"color:blue\">and</span> student.student_id <span style=\"color:blue\">and</span> student.fullname \n\t<span style=\"color:blue\">and</span> student.ic_number <span style=\"color:blue\">and</span> student.course <span style=\"color:blue\">and</span> student.type_of_letter ;\t&quot;;\n\t$RecordsetFail = mysql_query($query_RecordsetFail, $osr) <span style=\"color:blue\">or</span> <span style=\"color:blue\">die</span>(mysql_error());\n\t$row_RecordsetFail = mysql_fetch_assoc($RecordsetFail);\n\t\n\t<span style=\"color:green\">//set value</span>\n\t$document-&gt;setValue(<span style=\"color:#a31515\">'NamaPelajar'</span>, $course);\n\t$document-&gt;setValue(<span style=\"color:#a31515\">'NRIC'</span>, <span style=\"color:#a31515\">'8'</span>);\n\t$document-&gt;setValue(<span style=\"color:#a31515\">'Course'</span>, <span style=\"color:#a31515\">'abc123'</span>);\n\t$document-&gt;setValue(<span style=\"color:#a31515\">'ID'</span>, <span style=\"color:#a31515\">'wan'</span>);\n\n\t$new_file = <span style=\"color:#a31515\">'TamatBelajar007.docx'</span>;\n\t$document-&gt;save($new_file);\n\t\t\n\t\t  \theader(<span style=\"color:#a31515\">'Content-Description: File Transfer'</span>);\n\t\t\theader(<span style=\"color:#a31515\">'Content-type: application/force-download'</span>);\n\t\t\theader(<span style=\"color:#a31515\">'Content-Disposition: attachment; filename='</span>.basename($new_file));\n\t\t\theader(<span style=\"color:#a31515\">'Content-Transfer-Encoding: binary'</span>);\n\t\t\theader(<span style=\"color:#a31515\">'Content-Length: '</span>.filesize($new_file));\n\t\t\treadfile($new_file);\n\n?&gt;</pre>\n</div>\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2012-12-02T07:48:35.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "950174",
+    "ThreadId": "405294",
+    "Html": "\r\n<p>Update : If you can see at //set value ... I only try to change the 1st value as &quot;$course&quot; because I want to try it's working or not with call only 1 data from database ..but looks like there's must have a problem inside this code which I don't know where\r\n it is.</p>\r\n",
+    "PostedDate": "2012-12-02T08:06:46.24-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1074204",
+    "ThreadId": "405294",
+    "Html": "I found it occurs when the template having images.<br />\n",
+    "PostedDate": "2013-07-28T23:53:14.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1075923",
+    "ThreadId": "405294",
+    "Html": "Whats is the value of $course?\r<br />\n<br />\nIn somewhere you have to use iconv() function to convert charset of text you want to write to UTF since PHPWord accept only UTF8 as charset and also you have to change setValue function as below<br />\n<pre><code>public function setValue($search, $replace) {\n    if(substr($search, 0, 2) !== '${' &amp;&amp; substr($search, -1) !== '}') {\n        $search = '${'.$search.'}';\n    }\n\n      preg_match_all('/\\$[^\\$]+?}/', $this-&gt;_documentXML, $matches);\n\n    for ($i=0;$i&lt;count($matches[0]);$i++){\n\n    $matches_new[$i] = preg_replace('/(&lt;[^&lt;]+?&gt;)/','', $matches[0][$i]);\n\n    $this-&gt;_documentXML = str_replace($matches[0][$i], $matches_new[$i], $this-&gt;_documentXML);\n    }        \n\n    /*if(!is_array($replace)) {\n        $replace = utf8_encode($replace);\n    }*/\n\n    $this-&gt;_documentXML = str_replace($search, $replace, $this-&gt;_documentXML);\n}</code></pre>\n\n",
+    "PostedDate": "2013-08-02T03:15:02.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

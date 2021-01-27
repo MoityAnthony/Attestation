@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\n\r\nI came across this when I specified a non-existing template file.\r\nWarning: Invalid error type specified in PHPWord.php on line 226\r\n\r\nOriginal\r\n```PHP\r\ntrigger_error('Template file '.$strFilename.' not found.', E_ERROR);\r\n```\r\n\r\nReplace with\r\n```PHP\r\ntrigger_error('Template file '.$strFilename.' not found.', E_USER_ERROR);\r\n```\r\n\r\nOther instances of E_ERROR found in the files and line numbers listed below.\r\n```\r\nPHPWord\\Section\\Footer.php\r\n     132  \t\t\ttrigger_error('Src does not exist or invalid image type.', E_ERROR);\r\n1 match in D:\\wamp\\www2\\forms\\PHPWord\\Section\\Footer.php\r\nPHPWord\\Section\\Header.php\r\n     132  \t\t\ttrigger_error('Src does not exist or invalid image type.', E_ERROR);\r\n     188  \t\t\ttrigger_error('Src does not exist or invalid image type.', E_ERROR);\r\n2 matches in D:\\wamp\\www2\\forms\\PHPWord\\Section\\Header.php\r\n```\r\n\r\nBy the way... This is a great library! :)",
+    "LastUpdatedDate": "2014-06-23T23:21:03.893-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-06-23T23:21:03.893-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Invalid error type specified in PHPWord.php on line 226",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 77
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

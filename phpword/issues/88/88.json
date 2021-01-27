@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\n\r\nHow to convert <u> tag string in HTML tag string to docx using phpword.\r\n\r\nHTML tag string is:-\r\n\r\n```\r\n$html = \"<p>Here is dummy text</p><u>Here is underline dummy text</u><ul><li>Dummy bullet 1</li><li>Dummy bullet 2</li></ul>\";\r\n```\r\n\r\nPHPWord version 0.11.1.\r\n```\r\n\\PhpOffice\\PhpWord\\Shared\\Html::addHtml($section, $html);\r\n```\r\n\r\nPlease help!\r\n\r\nThanks",
+    "LastUpdatedDate": "2014-12-14T20:49:07.893-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-12-12T02:15:56.907-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "phpword underline <u> is not working in addHtml",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 88
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

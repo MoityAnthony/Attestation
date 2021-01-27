@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1065498",
+    "ThreadId": "449292",
+    "Html": "Hi everyone,\r<br />\n<br />\nI am creating a .docx file automaticaly using PHPWord have several tables. I need add some checkboxes normally i put it from developer menu. How can i add checkboxes using PHPWord?<br />\n",
+    "PostedDate": "2013-07-08T03:16:08.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1066574",
+    "ThreadId": "449292",
+    "Html": "Nobody has any solution?<br />\n",
+    "PostedDate": "2013-07-10T06:45:03.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

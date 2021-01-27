@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1222052",
+    "ThreadId": "538802",
+    "Html": "Ok, here's the scenario.  I need to generate about 200 MS Word documents based off of data collected and stored in my database.  Generating the word docs with or without photos is a user option.  After Word doc generation I then want to create a zip file of all the files generated.  The zip part is done, the word file generation for the most part is done.<br />\n\r<br />\nWhen the user chooses to generate the reports without the photos, the site queries the database and returns about 200 records for the report, and then with a foreach loop I run the PHPWord coding to generate and write the files to a temp folder and then after the foreach loop I'm running code to zip them all up and then delete the temp files.  Works great.  BUT, when the option to generate the reports WITH photos is selected, it starts generating the Word docs, but the file sizes increase every time a file is created.  First file is 70k, the second file is 140k, the third is 210k and so on, where each file should only be 70k each.  The only difference in the two operations in the inclusion of the addImage commands with the table cells like so:<br />\n<pre><code>$table-&gt;addCell()-&gt;addImage('photos/thumb_image.jpg, $imageStyle);\n</code></pre>\n\nHelp please!<br />\n",
+    "PostedDate": "2014-03-12T12:41:38.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1222111",
+    "ThreadId": "538802",
+    "Html": "I probably should add to this a bit. If I modify the initial query that the foreach loop is based on to output only one record at a time and leave the other code exactly the same, the site generates the Word files perfectly. AND, if I compare the files that are supposed to be the same (normal vs inflated file size), they're identical. Same text, same images, same amount of pages, etc. I could post a boatload of code, but I've narrowed the problem to the addImage function of PHPWord. <br />\n",
+    "PostedDate": "2014-03-12T15:10:32.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1222771",
+    "ThreadId": "538802",
+    "Html": "As a followup, I discovered that I was calling the whole document writing process while the same instance of the PHPword class was running.  This resulted in PHPword never closing out the collection of images added, so PHPword kept adding the previous document's image to the end of the document even though they weren't being displayed in the document itself.  I discovered this while opening the generated documents in MS Notepad where I could see all extra images.  I solved my issue by using javascript and cycling through the 200+ documents in a tiny, borderless iframe which ran the PHPword class one at a time.\r<br />\n<br />\nIt would've been nice if I could've found a way to flush the collection of images when the file gets saved.<br />\n",
+    "PostedDate": "2014-03-14T07:10:04.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1248002",
+    "ThreadId": "538802",
+    "Html": "Hi. I've answered your question in stackexchange.<br />\n",
+    "PostedDate": "2014-05-21T08:20:21.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

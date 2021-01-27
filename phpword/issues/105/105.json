@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I started using PHPWORD, it is a nice API to work on. But, I have an issue regarding this. I didn't find the way to __insert an image in a existing word file at a specified position I need.__\r\n\r\nCan anyone help me understanding of how to insert it...",
+    "LastUpdatedDate": "2016-07-08T03:34:43.63-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2016-07-05T02:06:11.63-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to insert an image in existing word file at a specified position?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 105
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

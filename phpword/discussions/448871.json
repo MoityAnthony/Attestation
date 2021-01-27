@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1063758",
+    "ThreadId": "448871",
+    "Html": "I have a client that needs excel files and word files generated dynamically from data in the database. I used PHPExcel for the excel files and it works great.\r<br />\n<br />\nI now need to load a preformatted file just like I did in PHPExcel using the filereaders. Here is my code but it does not load the file.<br />\n<pre><code>//generate word file for gwentries\n$PHPWord = new PHPWord();\n$document = $PHPWord-&gt;loadTemplate(APPPATH.'files/gwsw.doc');\n\n// save file\n$wordWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n$wordWriter-&gt;save('files/test.doc');</code></pre>\n\nAny help would be great. Thanks<br />\n",
+    "PostedDate": "2013-07-02T11:56:43.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1063759",
+    "ThreadId": "448871",
+    "Html": "It does generate the file &quot;test.doc&quot; but the file is completely empty.<br />\n",
+    "PostedDate": "2013-07-02T11:57:23.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Currently it is not possible to set a paragraphStyle for text in table cells. This could be enabled if addText method in cell.php in \\PHPWord\\Section\\Table\\ is modified the following:\r\n\r\npublic function addText($text, $style = null, $styleParagraph = null) {\r\n\t$text = utf8_encode($text);\r\n\t$text = new PHPWord_Section_Text($text, $style, $styleParagraph);\r\n\t$this->_elementCollection[] = $text;\r\n\treturn $text;\r\n}",
+    "LastUpdatedDate": "2011-08-26T04:25:44.713-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-08-26T04:25:44.713-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Table cell addText should support paragraphStyle",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 29
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

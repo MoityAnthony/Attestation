@@ -1,0 +1,193 @@
+Index: C:/Users/aburgett/Desktop/utility/phpoffice/PHPOffice/PHPWord/PHPWord/Writer/Word2007/Base.php
+===================================================================
+--- C:/Users/aburgett/Desktop/utility/phpoffice/PHPOffice/PHPWord/PHPWord/Writer/Word2007/Base.php	(revision 1)
++++ C:/Users/aburgett/Desktop/utility/phpoffice/PHPOffice/PHPWord/PHPWord/Writer/Word2007/Base.php	(revision 2)
+@@ -389,32 +389,46 @@
+ 				}
+ 
+ 				$_heights = $table->getRowHeights();
++				$_height_rule = $table->getRowHeightRules();
++				$_col_span = $table->getColSpan();
+ 				for($i=0; $i<$_cRows; $i++) {
+ 					$row = $_rows[$i];
+ 					$height = $_heights[$i];
++					$rule = $_height_rule[$i];
+ 					
+ 					$objWriter->startElement('w:tr');
+ 					
+ 						if(!is_null($height)) {
+ 							$objWriter->startElement('w:trPr');
+ 								$objWriter->startElement('w:trHeight');
+-									$objWriter->writeAttribute('w:val', $height);
++									if(!is_null($rule)) {
++										$objWriter->startAttribute('w:hRule');
++											$objWriter->text($rule);
++										$objWriter->endAttribute();
++									}
++									$objWriter->startAttribute('w:val');
++										$objWriter->text($height);
++									$objWriter->endAttribute();
+ 								$objWriter->endElement();
+ 							$objWriter->endElement();
+ 						}
+ 						
+ 						foreach($row as $cell) {
+-							$objWriter->startElement('w:tc');
+-								
++							$objWriter->startElement('w:tc');								
+ 								$cellStyle = $cell->getStyle();
+ 								$width = $cell->getWidth();
++								$colspan = $cell->getColspan();
+ 								
+ 								$objWriter->startElement('w:tcPr');
+ 									$objWriter->startElement('w:tcW');
+ 										$objWriter->writeAttribute('w:w', $width);
+ 										$objWriter->writeAttribute('w:type', 'dxa');
+ 									$objWriter->endElement();
+-									
++									if($colspan > 1) {
++										$objWriter->startElement('w:gridSpan');
++										$objWriter->writeAttribute('w:val', $colspan);
++										$objWriter->endElement();
++									}
+ 									if($cellStyle instanceof PHPWord_Style_Cell) {
+ 										$this->_writeCellStyle($objWriter, $cellStyle);
+ 									}
+Index: C:/Users/aburgett/Desktop/utility/phpoffice/PHPOffice/PHPWord/PHPWord/Section/Table.php
+===================================================================
+--- C:/Users/aburgett/Desktop/utility/phpoffice/PHPOffice/PHPWord/PHPWord/Section/Table.php	(revision 1)
++++ C:/Users/aburgett/Desktop/utility/phpoffice/PHPOffice/PHPWord/PHPWord/Section/Table.php	(revision 2)
+@@ -55,6 +55,20 @@
+ 	 * @var array
+ 	 */
+ 	private $_rowHeights = array();
++
++ 	/**
++	 * Row height rule
++	 *
++	 * @var array
++	 */
++	private $_rowHeightRules = array();
++
++ 	/**
++	 * Cell Column Span
++	 *
++	 * @var array
++	 */
++	private $_colspan = array();
+ 	
+ 	/**
+ 	 * Table holder
+@@ -68,9 +82,8 @@
+ 	 *
+ 	 * @var array
+ 	 */
+-	private $_pCount;
++	private $_pCount;	
+ 	
+-	
+ 	/**
+ 	 * Create a new table
+ 	 * 
+@@ -102,10 +115,12 @@
+ 	* Add a row
+ 	*
+ 	* @param int $height
++	* @param string $hRule
+ 	*/
+-	public function addRow($height = null) {
++	public function addRow($height = null,$hRule) {
+ 		$this->_rows[] = array();
+ 		$this->_rowHeights[] = $height;
++		$this->_rowHeightRules[] = $hRule;
+ 	}
+ 	
+ 	/**
+@@ -113,10 +128,11 @@
+ 	*
+ 	* @param int $width
+ 	* @param mixed $style
++	* @param int $colspan
+ 	* @return PHPWord_Section_Table_Cell
+ 	*/
+-	public function addCell($width, $style = null) {
+-		$cell = new PHPWord_Section_Table_Cell($this->_insideOf, $this->_pCount, $width, $style);
++	public function addCell($width, $colspan, $style = null) {
++		$cell = new PHPWord_Section_Table_Cell($this->_insideOf, $this->_pCount, $width, $colspan, $style);
+ 		$i = count($this->_rows) - 1;
+ 		$this->_rows[$i][] = $cell;
+ 		return $cell;
+@@ -139,8 +155,26 @@
+ 	public function getRowHeights() {
+ 		return $this->_rowHeights;
+ 	}
++
++	/**
++	 * Get all row height rules
++	 *
++	 * @return array
++	 */
++	public function getRowHeightRules() {
++			return $this->_rowHeightRules;
++	}
+ 	
+ 	/**
++	 * Get cell column span
++	 *
++	 * @return array
++	 */
++	public function getColSpan() {
++			return $this->_colspan;
++	}
++	
++	/**
+ 	 * Get table style
+ 	 * 
+ 	 * @return PHPWord_Style_Table
+Index: C:/Users/aburgett/Desktop/utility/phpoffice/PHPOffice/PHPWord/PHPWord/Section/Table/Cell.php
+===================================================================
+--- C:/Users/aburgett/Desktop/utility/phpoffice/PHPOffice/PHPWord/PHPWord/Section/Table/Cell.php	(revision 1)
++++ C:/Users/aburgett/Desktop/utility/phpoffice/PHPOffice/PHPWord/PHPWord/Section/Table/Cell.php	(revision 2)
+@@ -70,7 +70,14 @@
+ 	 */
+ 	private $_pCount;
+ 	
++	/**
++	 * Section/Header/Footer count
++	 * 
++	 * @var int
++	 */
++	private $_colspan;
+ 	
++	
+ 	/**
+ 	 * Create a new Table Cell
+ 	 * 
+@@ -79,10 +86,11 @@
+ 	 * @param int $width
+ 	 * @param mixed $style
+ 	 */
+-	public function __construct($insideOf, $pCount, $width = null, $style = null) {
++	public function __construct($insideOf, $pCount, $width = null, $colspan = null, $style = null) {
+ 		$this->_insideOf = $insideOf;
+ 		$this->_pCount = $pCount;
+ 		$this->_width = $width;
++		$this->_colspan = $colspan;
+ 		
+ 		if(!is_null($style)) {
+ 			if(is_array($style)) {
+@@ -315,5 +323,14 @@
+ 	public function getWidth() {
+ 		return $this->_width;
+ 	}
++	
++	/**
++	 * Get Cell colspan
++	 * 
++	 * @return int
++	 */
++	public function getColspan() {
++		return $this->_colspan;
++	}
+ }
+ ?>

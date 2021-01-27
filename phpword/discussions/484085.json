@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1150955",
+    "ThreadId": "484085",
+    "Html": "I'm giving style to a table (all 4 outer edges), but the problem is that it only affects the first row.<br />\n<pre><code>&lt;?php\nrequire_once 'phpword/PHPWord.php';\n$PHPWord = new PHPWord();\n\n$styleTable1 = array('borderSize' =&gt; 16, 'borderColor' =&gt; '1E1E1E',  'cellMargin' =&gt; 25, 'rules' =&gt; 'cols');\n$bordeinferior = array(    'borderRightSize' =&gt; 50, 'borderBottomColor' =&gt; '009900',    'borderBottomSize' =&gt; 50, 'borderRightColor' =&gt; '00CCFF',    'borderTopSize' =&gt; 50, 'borderTopColor' =&gt; '00CCFF',    'borderLeftSize' =&gt; 50, 'borderLeftColor' =&gt; '00CCFF'); \n$styleCell = array('valign' =&gt; 'center');\n\n\n$fontStyle20 = array('bold' =&gt; true, 'align' =&gt; 'left', 'size' =&gt; 20);\n$fontStyle = array('bold' =&gt; true, 'align' =&gt; 'left', 'size' =&gt; 10);\n$PHPWord-&gt;addTableStyle('mibordepersonal', $styleTable1, $bordeinferior);\n \n\n?&gt;\n\n&lt;?php\n$section = $PHPWord-&gt;createSection();\n$table = $section-&gt;addTable('mibordepersonal');\n\n$table-&gt;addRow(300);\n$table-&gt;addCell(6000, $styleCell)-&gt;addText('Font tamaño 20, segunda fila', $fontStyle20);// Add cells\n$table-&gt;addCell(6000, $styleCell)-&gt;addText('Rossssssss s sdf sdssssssw 1', $fontStyle);\n\n\n$table-&gt;addRow(300);\n$table-&gt;addCell(6000, $styleCell)-&gt;addText('Font tamaño 20, segunda fila', $fontStyle20);// Add cells\n$table-&gt;addCell(6000, $styleCell)-&gt;addText('Rossssssss s sdf sdssssssw 1', $fontStyle);\n\n$table-&gt;addRow(300);\n$table-&gt;addCell(6000, $styleCell)-&gt;addText('Font tamaño 20, segunda fila', $fontStyle20);// Add cells\n$table-&gt;addCell(6000, $styleCell)-&gt;addText('Rossssssss s sdf sdssssssw 1', $fontStyle);\n\n\n$table-&gt;addRow(300);\n$table-&gt;addCell(6000, $styleCell)-&gt;addText('Font tamaño 20, segunda fila', $fontStyle20);// Add cells\n$table-&gt;addCell(6000, $styleCell)-&gt;addText('Rossssssss s sdf sdssssssw 1', $fontStyle);\n\n$table-&gt;addRow(300);\n$table-&gt;addCell(6000, $styleCell)-&gt;addListItem('Font tamaño 20, segunda fila', $fontStyle20);// Add cells\n$table-&gt;addCell(6000, $styleCell)-&gt;addListItem('0 - 2 years',0, $fontStyle);\n\n?&gt;</code></pre>\n\n",
+    "PostedDate": "2014-01-08T08:34:24.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1150961",
+    "ThreadId": "484085",
+    "Html": "esta es la tabla\r<br />\n<img src=\"https://www.dropbox.com/s/mhl6cek2xdelrbu/tabla.png\" alt=\"Image\" />\r<br />\nlink\r<br />\n<a href=\"https://www.dropbox.com/s/mhl6cek2xdelrbu/tabla.png\" rel=\"nofollow\">https://www.dropbox.com/s/mhl6cek2xdelrbu/tabla.png</a><br />\n",
+    "PostedDate": "2014-01-08T08:53:56.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

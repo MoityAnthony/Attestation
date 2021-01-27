@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": "",
+    "Description": "PHPWord 0.6.0 Beta doesn't support adding hyperlinks to header/footer parts of the document.",
+    "LastUpdatedDate": "2017-12-08T11:20:14.1-08:00",
+    "PlannedForRelease": "PHPWord 0.6.0 Beta",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Medium",
+      "Severity": 100,
+      "Id": 2
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-05-04T04:48:05.147-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add hyperlinks to header / footer parts",
+    "Type": {
+      "Name": "Feature",
+      "Id": 1
+    },
+    "VoteCount": 2,
+    "Id": 5
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

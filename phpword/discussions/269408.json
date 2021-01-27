@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "659384",
+    "ThreadId": "269408",
+    "Html": "\r\n<p>Hallo</p>\r\n<p>I want to include a php file with prefefined styles.<br>\r\nWhen i use include (&quot;nameOfFile.php&quot;); I get an error.</p>\r\n<p>Is this possible?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-08-17T05:40:10.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "669988",
+    "ThreadId": "269408",
+    "Html": "<p>Hi</p>\r\n<p>I placed the following at the top of the page before any inlude files and it solved the error with inlcude...</p>\r\n<p>require_once '../../Classes/PHPWord.php';<br />$PHPWord = new PHPWord();<br />$PHPWord-&gt;setDefaultFontSize(12);<br />$section = $PHPWord-&gt;createSection();</p>",
+    "PostedDate": "2011-09-09T22:56:47.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

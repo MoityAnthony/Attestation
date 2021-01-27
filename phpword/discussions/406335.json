@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "954293",
+    "ThreadId": "406335",
+    "Html": "\r\n<p>hi i have a problem while i using the phpword.</p>\r\n<p>my code like this:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">require_once</span> <span style=\"color:#a31515\">'../PHPWord.php'</span>;\r\n$value1 = <span style=\"color:#a31515\">'i need break in this paragraph, how can i do it? thanks!'</span>\r\n$PHPWord = <span style=\"color:blue\">new</span> PHPWord();\r\n\r\n$document = $PHPWord-&gt;loadTemplate(<span style=\"color:#a31515\">'Template.docx'</span>);\r\n\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'Value1'</span>, <span style=\"color:#a31515\">'Sun'</span>);\r\n\r\n$document-&gt;save(<span style=\"color:#a31515\">'Solarsystem.docx'</span>);\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>i need wrap in the $value1&nbsp;, who can help me? thank you very much.</p>\r\n",
+    "PostedDate": "2012-12-10T20:40:06.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "954296",
+    "ThreadId": "406335",
+    "Html": "\r\n<p>变量$value1的&#20540;文本很长，需要在里面设置段落和换行，怎样操作啊？</p>\r\n",
+    "PostedDate": "2012-12-10T20:43:00.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

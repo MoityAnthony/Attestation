@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "578967",
+    "ThreadId": "249315",
+    "Html": "\r\n<p>hi all,</p>\r\n<p>How to set row height?</p>\r\n<p>it is taking default height that seems lit bit more, i need lit bit less height.</p>\r\n<p>any help</p>\r\n",
+    "PostedDate": "2011-03-11T04:26:40.983-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "707235",
+    "ThreadId": "249315",
+    "Html": "<p>Same issue here.&nbsp;<br /><br />Table with one row in header is to high. I use the boarderBottom to get a nice horizontal line.&nbsp;<br />The line is about 6 pixels below the image in the left cell of two cells.</p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>$header2 = $section2-&gt;createHeader();\r\n$cellStyle2_1 = <span style=\"color: blue;\">array</span>(<span style=\"color: #a31515;\">'valign'</span>=&gt;<span style=\"color: #a31515;\">'left'</span>, <span style=\"color: #a31515;\">'borderBottomSize'</span>=&gt;<span style=\"color: #a31515;\">'10'</span>, <span style=\"color: #a31515;\">'borderBottomColor'</span>=&gt;<span style=\"color: #a31515;\">'000000'</span>);\r\n$cellStyle2_2 = <span style=\"color: blue;\">array</span>(<span style=\"color: #a31515;\">'valign'</span>=&gt;<span style=\"color: #a31515;\">'right'</span>, <span style=\"color: #a31515;\">'borderBottomSize'</span>=&gt;<span style=\"color: #a31515;\">'10'</span>, <span style=\"color: #a31515;\">'borderBottomColor'</span>=&gt;<span style=\"color: #a31515;\">'000000'</span>);\r\n$tableStyle2 = <span style=\"color: blue;\">array</span>(<span style=\"color: #a31515;\">'cellMarginTop'</span>=&gt;0, <span style=\"color: #a31515;\">'cellMarginLeft'</span>=&gt;0, <span style=\"color: #a31515;\">'cellMarginRight'</span>=&gt;0, <span style=\"color: #a31515;\">'cellMarginBottom'</span>=&gt;0);\r\n$table2_1 = $header2-&gt;addTable($tableStyle2); \r\n$table2_1 -&gt;addRow();\r\n$cell2_1 = $table2_1-&gt;addCell(200 * 20, $cellStyle2_1); $cell2_1-&gt;addImage(<span style=\"color: #a31515;\">'logo.jpg'</span>, <span style=\"color: blue;\">array</span>(<span style=\"color: #a31515;\">'width'</span>=&gt;189<span style=\"color: green;\">/*px*/</span>, <span style=\"color: #a31515;\">'height'</span>=&gt;30<span style=\"color: green;\">/*px*/</span>, <span style=\"color: #a31515;\">'align'</span>=&gt;<span style=\"color: #a31515;\">'left'</span>));\r\n$cell2_2 = $table2_1-&gt;addCell(409 * 20, $cellStyle2_2); $cell2_2-&gt;addText(<span style=\"color: #a31515;\">'woof blubb blubb'</span>, <span style=\"color: blue;\">array</span>(<span style=\"color: #a31515;\">'italic'</span>=&gt;false), <span style=\"color: blue;\">array</span>(<span style=\"color: #a31515;\">'align'</span>=&gt;<span style=\"color: #a31515;\">'right'</span>));\r\n</pre>\r\n</div>\r\n</p>\r\n<p>Help appreciated.</p>",
+    "PostedDate": "2011-12-04T12:04:38.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

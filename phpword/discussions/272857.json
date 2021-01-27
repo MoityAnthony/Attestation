@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "672800",
+    "ThreadId": "272857",
+    "Html": "\r\n<p>Hi ,</p>\r\n<p>Is there anyway to set the table rows and column to fixed?</p>\r\n<p>Since the template doesnt support changing images on it, i build a docx word with phpword, the problem is when im putting the text from an textarea the string goes over the limit of the cell making the cell expand, and i want</p>\r\n<p>the cell to be fixed and the text change line like a carriage return.</p>\r\n<p>I opened the word document and edited the table made by phpword and theres an option in table properties that says &quot;Automatically resize to fit contents&quot; and is checked ,if un check that option MY PROBLEM IS SOLVED :)</p>\r\n<p>Is there a way to make that option unchecked? i know that php word doesnt support that at the time but i think that&acute;s an important feature, does anyone know how to force this value ?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance</p>\r\n<p>&nbsp;</p>\r\n<p>Regards</p>\r\n",
+    "PostedDate": "2011-09-16T09:05:37.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

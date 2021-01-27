@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1359465",
+    "ThreadId": "584424",
+    "Html": "Hey guys,<br />\n<br />\nI've been trying to get this working for a solid 4 hours now.  I'm trying to get something to look like:<br />\n<blockquote>\nExample 1: Test title<br />\n</blockquote>\nbut I need the &quot;1&quot; to be a numbered list so if the item is copy and pasted later, it continues to increment.<br />\n<br />\nMy problem is I've gotten it down to show up like:<br />\n<blockquote>\nExample<br />\n1: Test title<br />\n</blockquote>\nRight now, I have:<br />\n<pre><code> $cell-&gt;addText('Example',$font,$style);\n $cell-&gt;addListItem('Test title', 0, null, 'multilevel');</code></pre>\n\n(plus some attempts at styling)<br />\n<br />\n<br />\n<br />\nIs this possible?  Or am I wasting my time?<br />\n",
+    "PostedDate": "2015-03-03T10:33:28.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

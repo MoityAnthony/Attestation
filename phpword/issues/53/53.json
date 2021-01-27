@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Hello, \r\n\r\nI am getting some permission related errors with this library. I noticed the following line in the constructor of PHPWord_Template (line 67 of Template.php in my version): \r\n\r\n$this->_tempFileName = $path.DIRECTORY_SEPARATOR.time().'.docx';\r\n\r\nI am not sure if this is the best way to create temp files. Not to mention if two php requests are made in less than one seconds the created temp files will colide.\r\n\r\nPHP has the native functionality to create temp files: \r\nhttp://php.net/manual/en/function.tmpfile.php\r\n\r\nThe created files are unique with \"tmpfile\" and have write access mode. Shall we use this instead? Would save me some trouble running the library on a linux server with a lot of concurrent users. \r\n\r\nAppreciate it,\r\n\r\nSeyed. ",
+    "LastUpdatedDate": "2013-03-29T11:15:42.067-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-03-29T11:02:58.35-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "temp file creation",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 53
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "instead of this line: \n\n  $this->_tempFileName = $path.DIRECTORY_SEPARATOR.time().'.docx'; \n\nusing the following line solves the problem on my system: \n\n  $this->_tempFileName = tempnam( sys_get_temp_dir() , 'PHPWord' ) . '.docx';\n\nSeyed.",
+      "PostedDate": "2013-03-29T11:15:42.067-07:00",
+      "Id": 95293
+    }
+  ]
+}

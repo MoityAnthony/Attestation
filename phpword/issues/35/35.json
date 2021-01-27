@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 7,
+    "Custom": null,
+    "Description": "If you can find the time it would be nice if you could include something along the lines of \"marginHeader\" and \"marginFooter\" in the section styles, so that we could offset the headers and footers.\r\n\r\nFrom what I can see that is where theese settings would belong, seeing '<w:pgMar w:top=\"5100\" w:right=\"1250\" w:bottom=\"900\" w:left=\"1250\" w:header=\"720\" w:footer=\"720\" w:gutter=\"0\"/>' (word/document.xml). I got as far as the properties in Settigns.php but couldnt find my way around the writer to see the settings get used.\r\n\r\nThanks\r\nzan-",
+    "LastUpdatedDate": "2012-02-16T11:28:54.277-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-10-28T10:54:08.72-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Header and footer margins",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 35
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Ok, i did it myself. really just a little copypasta wherever the other margins come up, but it would still be nice if you could add the functionallity.\n\nThanks in advance",
+      "PostedDate": "2011-10-28T11:05:14.887-07:00",
+      "Id": 48121
+    },
+    {
+      "Message": "PPS: in the Documentation under 'Style Tables' it says that for the cell style property 'valign' you should use 'left', 'center' or 'right' even though the propper values for the VERTICAL alignment are of course 'top', 'center', and 'bottom'.",
+      "PostedDate": "2011-10-28T12:18:03.733-07:00",
+      "Id": 48124
+    },
+    {
+      "Message": "Hi Zanjor,\n\nWould you please tell me how you have accomplished this? I need to position where the footer is coming at because currently the footer appears too high from the bottom than we need in the documents. \n\nThank you.\n\nBest regards,\nTony.",
+      "PostedDate": "2011-12-17T10:13:57.01-08:00",
+      "Id": 51277
+    },
+    {
+      "Message": "Hi Tony\n\nI cant give you a solution because I do not have acess to my own code anymore, but I remember that I found, that the header and footer 'margins' belong with the normal page margins(top left bottom right) in the xml.\n\nI think what I did to allow this was to add variables and functions following the naming scheme for header and footer wherever I came across the other page margins in the phpword code and somehow the writer class managed to understand my new variables magicly. Most of the time all I did was follow the margin function and variable definitions and usages to make my way through phpword.\n\nI know that this will probably not be very helpfull to you, but i recomend you 'track' the margins through the sourcecode and add functions and variables as you go. I remember that it was a lot less complex than i thgught when I dug throuigh the sourcecode (judging from my posts the magic happend in about 15 minutes and then I spent over an hour cleaning it up and using it:-)\n\nUnfortunately I do not have a lot of time right now, but i could try to have a look at phpword in the next few days (I will try to remember, I promise)\n\nIf it is urgent give me a knock and I will see if i can figure it out tomorrow (dont expect me to find it though)\n\nHave a nice day (sorry for all the reading)\n\nZanj",
+      "PostedDate": "2011-12-17T11:16:08.41-08:00",
+      "Id": 51278
+    },
+    {
+      "Message": "Hello Zanjor,\n\nThank you very much for your quick reply with explanations. Let me check if I can figure it out from the XML. Otherwise, I will come back to you.\n\nBest regards,\nTony.",
+      "PostedDate": "2011-12-18T18:04:12.07-08:00",
+      "Id": 51306
+    },
+    {
+      "Message": "Here is a possible solution: http://phpword.codeplex.com/discussions/316726",
+      "PostedDate": "2012-02-16T09:00:43.173-08:00",
+      "Id": 56103
+    },
+    {
+      "Message": "Here is some code that will make the header & footer configurable. \nhttp://phpword.codeplex.com/discussions/316726\n",
+      "PostedDate": "2012-02-16T11:28:34.697-08:00",
+      "Id": 56116
+    }
+  ]
+}

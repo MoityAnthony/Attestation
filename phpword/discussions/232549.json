@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "513531",
+    "ThreadId": "232549",
+    "Html": "\r\n<div style=\"color:black; background-color:white\">In a section, the code below makes the font bold and 'horizontally aligns' the text in the center of the section.<br>\r\n<br>\r\n<pre>$fontStyle = <span style=\"color:blue\">array</span> (<span style=\"color:#a31515\">'bold'</span> =&gt; true);\r\n$paraStyle = <span style=\"color:blue\">array</span> (<span style=\"color:#a31515\">'align'</span> =&gt; <span style=\"color:#a31515\">'center'</span>);\r\n$section-&gt;addText( <span style=\"color:#a31515\">'Hello World'</span>, $fontStyle, $paraStyle );\r\n</pre>\r\n</div>\r\n<p>But in a table, the code below makes the font bold, 'vertically aligns' the text in the center of the cell, but does not 'horizontally align' the text in the center of the cell.</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$table = $section-&gt;addTable();\r\n$table-&gt;addRow();\r\n\r\n$cellStyle = <span style=\"color:blue\">array</span> (<span style=\"color:#a31515\">'valign'</span> =&gt; <span style=\"color:#a31515\">'center'</span>);\r\n\r\n$fontStyle = <span style=\"color:blue\">array</span> (<span style=\"color:#a31515\">'bold'</span> =&gt; true);\r\n$paraStyle = <span style=\"color:blue\">array</span> (<span style=\"color:#a31515\">'align'</span> =&gt; <span style=\"color:#a31515\">'center'</span>);\r\n\r\n$table-&gt;addCell(2000, $cellStyle)-&gt;addText(<span style=\"color:#a31515\">'Hello World'</span>, $fontStyle, $paraStyle );\r\n<br></pre>\r\nWhat is the right way to horizontally align the contents of a table cell?</div>\r\n",
+    "PostedDate": "2010-10-27T10:54:13.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513561",
+    "ThreadId": "232549",
+    "Html": "\r\n<p>Oh, I see this is a known bug in PHPWord/Section/Table/Cell.php addText function line 110.</p>\r\n<p><a title=\"Related thread\" href=\"http://phpword.codeplex.com/Thread/View.aspx?ThreadId=222575\" target=\"_blank\">http://phpword.codeplex.com/Thread/View.aspx?ThreadId=222575</a></p>\r\n",
+    "PostedDate": "2010-10-27T12:07:52.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1137399",
+    "ThreadId": "232549",
+    "Html": "I was able to center the contents of my table cells like this:<br />\n<pre><code>$center = array('spaceAfter' =&gt; 0, 'align' =&gt; 'center');\n\n$table_block_format = array(    'borderSize'        =&gt;  7,\n                                'cellMarginTop'     =&gt;  0,\n                                'cellMarginLeft'    =&gt;  100,\n                                'valign'            =&gt;  'center',\n                                                                );\n\n$cellTextStyleBig = array(      'bold'  =&gt;  false, \n                                'size'  =&gt;  22, \n                                'name'  =&gt;  'Calibri'\n                                                        );\n\n$cellTextStyleBigBold = array(  'bold'  =&gt;  true, \n                                'size'  =&gt;  22, \n                                'name'  =&gt;  'Calibri'   \n                                                        );      \n\n$PHPWord-&gt;addTableStyle('myTable', $table_block_format, array('align' =&gt; 'center'));\n\n$table = $section-&gt;addTable('myTable');\n$table-&gt;addRow();\n$table-&gt;addCell(1460)-&gt;addText('Size:', $cellTextStyleBigBold, $center);\n$table-&gt;addCell(3560)-&gt;addText('Text Is Centered', $cellTextStyleBig, $center);</code></pre>\n\n",
+    "PostedDate": "2013-12-18T01:04:57.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

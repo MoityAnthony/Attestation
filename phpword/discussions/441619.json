@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1035880",
+    "ThreadId": "441619",
+    "Html": "Is there a way to move a table to a particular location on the page?  I tried the following:\r<br />\n<br />\n$styleTable = array('borderSize'=&gt;6, 'left'=&gt;3000, 'top'=&gt;3000, 'borderColor'=&gt;'006699', 'cellMargin'=&gt;80);\r<br />\n<br />\nIt didn't change anything.  I'm trying to place text at a specific location on the page, like writing to pdf docs allows you to do.  I was planning on using a 1 cell table if it worked.<br />\n\r<br />\nWhat I'd really like is a TextBox field.  If it's not available and someone could give me some ideas on where to start, I could maybe hack one in if it's not too complex.  The one complexity seems to be in the fact that it needs to be embedded in a drawing area, so you'd need a drawing area object as well.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-04-25T17:29:55.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1037372",
+    "ThreadId": "441619",
+    "Html": "I tested a  bit of positioning code.  This is for a hard coded position, but it's easy enough to make the positions variables.  It's inside _writeTable inside Base.php.\r<br />\n2419 and 1239 are 1.68 inches and .86 inches, so the multiplier at least in my doc seems to be about 1440 to convert from inches.  I still want to add a TextBox field.<br />\n<pre><code>                if(!empty($tblStyle)) {\n                    $objWriter-&gt;startElement('w:tblPr');\n                        $objWriter-&gt;startElement('w:tblStyle');\n                            $objWriter-&gt;writeAttribute('w:val', $tblStyle);\n                        $objWriter-&gt;endElement();\n\n                        $objWriter-&gt;startElement('w:tblpPr');\n                        $objWriter-&gt;writeAttribute(&quot;w:leftFromText&quot;,&quot;180&quot;);\n                        $objWriter-&gt;writeAttribute(&quot;w:rightFromText&quot;,&quot;180&quot;);\n                        $objWriter-&gt;writeAttribute(&quot;w:vertAnchor&quot;,&quot;page&quot;);\n                        $objWriter-&gt;writeAttribute(&quot;w:horzAnchor&quot;,&quot;page&quot;);\n                        $objWriter-&gt;writeAttribute(&quot;w:tblpX&quot;,&quot;2419&quot;);\n                        $objWriter-&gt;writeAttribute(&quot;w:tblpY&quot;,&quot;1239&quot;);\n                        $objWriter-&gt;endElement();\n\n                    $objWriter-&gt;endElement();\n                }</code></pre>\n\n",
+    "PostedDate": "2013-04-29T14:33:50.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

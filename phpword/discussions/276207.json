@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "685464",
+    "ThreadId": "276207",
+    "Html": "\r\n<p>It looks like PHPWord only supports Excel 97-2003.&nbsp; Excel files saved in Excel 2007 format fail to embed.&nbsp; The error log shows:</p>\r\n<p>PHP Notice:&nbsp; Source does not exist or unsupported object type. in F:\\development\\workspace\\php_includes\\php_includes\\PHPWord\\Section.php on line 224<br>\r\n[17-Oct-2011 15:37:08] PHP Fatal error:&nbsp; Uncaught exception 'Exception' with message 'Could not close zip file f:/development/workspace/capacityplanning/doc/biannual/customerletters/2012TrueUp/ac/10000/ac_10000.docx.' in F:\\development\\workspace\\php_includes\\php_includes\\PHPWord\\Writer\\Word2007.php:158<br>\r\nStack trace:<br>\r\n#0 F:\\development\\workspace\\capacityplanning\\batch\\biannual\\letter.php(215): PHPWord_Writer_Word2007-&gt;save('f:/development/...')<br>\r\n#1 {main}<br>\r\n&nbsp; thrown in F:\\development\\workspace\\php_includes\\php_includes\\PHPWord\\Writer\\Word2007.php on line 158</p>\r\n<p>We are generating the Excel using PHPExcel, so I can save the workbooks in a format acceptable to PHPWord - but - 1) Could this be a configuration issue on my end?&nbsp; 2) If not - are there plans to fix this in a future release?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks ...</p>\r\n",
+    "PostedDate": "2011-10-17T15:39:21.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "922697",
+    "ThreadId": "276207",
+    "Html": "<p>Hey,</p>\r\n<p>any news about that ? <br /><br />I also want to integrate an excel tab generated with phpexcel into a phpword document...</p>\r\n<p>If you succeded in doin' this I'll appreciate your share .</p>\r\n<p>&nbsp;</p>\r\n<p>All the best.</p>",
+    "PostedDate": "2012-10-05T20:22:19.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

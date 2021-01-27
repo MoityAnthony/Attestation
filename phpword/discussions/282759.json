@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "711350",
+    "ThreadId": "282759",
+    "Html": "\r\n<p>Is it possible to use the loadtemplate function and use addImage at the same time. Mine template is working great but when i use the addImage function the template isn't working any more. Is there some one who can help me......</p>\r\n<p>$document = $PHPWord-&gt;loadTemplate('Template.docx');</p>\r\n<p>$document-&gt;addImage('myimage.jpg');</p>\r\n",
+    "PostedDate": "2011-12-13T03:24:02.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "860251",
+    "ThreadId": "282759",
+    "Html": "<p><span id=\"result_box\" lang=\"en\"><span class=\"hps\">Did</span> <span class=\"hps\">you know</span> <span class=\"hps\">the solution?</span> </span></p>\r\n<p><span id=\"result_box\" lang=\"en\"><span class=\"hps\">that's my</span> <span class=\"hps\">problem</span> now :(</span></p>\r\n<p><span lang=\"en\">can you help me!?<br /></span></p>",
+    "PostedDate": "2012-07-11T04:38:19.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "890898",
+    "ThreadId": "282759",
+    "Html": "<p>currently, the version can ONLY replace keywords into templates...but there is a trick: from your template, insert \"blank\" images where you want.</p>\r\n<p>Then, load the template and make the replacements.</p>\r\n<p>Then, save the docx generated from the template: open it with zlib, replace the imagexx.jpg</p>",
+    "PostedDate": "2012-07-24T22:40:44.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "941971",
+    "ThreadId": "282759",
+    "Html": "\r\n<p>Like kiminox said, it's not possible. Here it is a function that will replace the image. You must put it on PHPWord/Template.php.</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">function</span> replaceImage($path,$imageName){\n        $this-&gt;_objZip-&gt;deleteName(<span style=\"color:#a31515\">'word/media/'</span>.$imageName);\n        $this-&gt;_objZip-&gt;addFile($path,<span style=\"color:#a31515\">'word/media/'</span>.$imageName);\n    }\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>$path='path/to/your/image'</p>\r\n<p>$imageName='imagexx.png'</p>\r\n<p>to find out wich one is the image you want to replace, open the docx file with winrar or something similar and take a look a t word/media directory.</p>\r\n",
+    "PostedDate": "2012-11-14T22:35:26.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

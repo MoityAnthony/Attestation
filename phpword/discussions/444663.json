@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1047379",
+    "ThreadId": "444663",
+    "Html": "Hi every body,\r<br />\n<br />\nThis evening i'am in trouble with the flwg :\r<br />\n<br />\ninstead of using <br />\n<pre><code>$document-&gt;setValue(‘Value1′, ‘Name on the first row’);</code></pre>\n\ni want to change to <br />\n<pre><code>$document-&gt;setValue(‘first_name′, ‘Name on the first row’);</code></pre>\n\nand i put in the template ${first_name}  ==&gt; error and no word document save!\r<br />\n<br />\nHow can i circumnavigate this pb to achieve what i  want, i've a doc in which i include (i want to) about 190 MySql column data i'd prefer to use, in php script, the native MySql column name instead of value1... value190 !<br />\n",
+    "PostedDate": "2013-05-22T14:21:22.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1047931",
+    "ThreadId": "444663",
+    "Html": "Any one to give me a hand ? <br />\n",
+    "PostedDate": "2013-05-23T13:11:17.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048397",
+    "ThreadId": "444663",
+    "Html": "I am a bit confused as to what your problem is. Is it that your word document does not save? Or is it that there is no output?<br />\n",
+    "PostedDate": "2013-05-24T12:23:56.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052105",
+    "ThreadId": "444663",
+    "Html": "how do I create the field in word ?\r<br />\ni have tried to set a DOCPROPERTY, DOCVARIABLE.\r<br />\nthe phpword does not declare what is required exactly so left a bit uncertain.<br />\n",
+    "PostedDate": "2013-06-03T05:14:35.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

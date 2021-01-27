@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1044029",
+    "ThreadId": "443782",
+    "Html": "My word document is usually 5 pages  sometimes it is longer. When I create my word document my code gets messy. I am trying to divide my code into sections but it doesn't seem to work. This is what I am doing.ing.<br />\n<pre><code>public function createProposalDocument($p) {\n        require (__INCLUDE__ . 'PHPWord.php');\n        $PHPWord = new PHPWord();\n        ... // Rest of the codes it is very long\n        \n        // Insert Descriptions\n        $this-&gt;insertProposalDocumentDescription($PHPWord, $myStyle)\n\n        // Insert Types\n        $this-&gt;insertProposalDocumentTypes($PHPWord, $myStyle)\n}</code></pre>\n\nNow my word document consists of sections. I would like to separate these sections by calling them different methods as shown above. For example I have a Descriptions section in my word document, in the createProposalDocument($p) method I would like to call $this-&gt;insertProposalDocumentDescription($PHPWord) I tried to add $section but it didn't insert into the word document. Here is the code<br />\n<pre><code>private function insertProposalDocumentDescription(PHPWord $PHPWord, $style) {\n        $PHPWord-&gt;addTitleStyle(1, $style['title'], array('spaceAfter' =&gt; 0));\n        $section = $PHPWord-&gt;createSection();\n        return $section-&gt;addTitle(&quot;DESCRIPTIONSECTION&quot;);\n    }</code></pre>\n\nCould you please tell me why this is not working? Thanks<br />\n",
+    "PostedDate": "2013-05-15T11:27:12.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

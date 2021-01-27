@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1255624",
+    "ThreadId": "548433",
+    "Html": "Is there a way to edit/add a paragraph at a specific line of the document?\r<br />\nIf yes, is it possible to use ${this} to give me the location of it? (Guessing it would be quicker)\r<br />\n<br />\ndocument example:<br />\n<pre><code>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.\n\n${this}\n\nVivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</code></pre>\n\nIntended result:<br />\n<pre><code>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.\n\nnew paragraph 1\nnew paragraph 2\nnew paragraph 3\nnew paragraph 4\n\nVivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</code></pre>\n\ncheers :)<br />\n",
+    "PostedDate": "2014-06-12T08:27:49.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1255977",
+    "ThreadId": "548433",
+    "Html": "Hi,\r<br />\n<br />\nYou can use the template. Here's the doc: <a href=\"http://phpword.readthedocs.org/en/develop/templates.html\" rel=\"nofollow\">http://phpword.readthedocs.org/en/develop/templates.html</a><br />\n",
+    "PostedDate": "2014-06-13T05:26:35.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256094",
+    "ThreadId": "548433",
+    "Html": "I'm assuming it's with &quot;cloneRow&quot;... if it is, where can I find &quot;Sample_07_TemplateCloneRow.php&quot;?\r<br />\n<br />\n<br />\nCheers :)<br />\n",
+    "PostedDate": "2014-06-13T09:31:34.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256955",
+    "ThreadId": "548433",
+    "Html": "Here: <a href=\"https://github.com/PHPOffice/PHPWord\" rel=\"nofollow\">https://github.com/PHPOffice/PHPWord</a><br />\n",
+    "PostedDate": "2014-06-17T02:34:53.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-06-18T03:37:37.037-07:00"
+  }
+]

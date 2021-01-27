@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "555992",
+    "ThreadId": "243459",
+    "Html": "\r\n<p>Hello there,</p>\r\n<p>I've just started using PHPWord. I have a template file that contains variables to be replaced. But I also want to replace a part of the current footer, but I think setValue() doesn't work for footers right?</p>\r\n<p>So I tried to create the footer using PHPWord. Here is the code I used which still doesn't work. (note that I am using a template file, not creating a new file)</p>\r\n<p>&nbsp;</p>\r\n<p></p>\r\n<pre><span style=\"white-space:pre\">\t</span>$anlasma_temp= 'form_template.docx';</pre>\r\n<p></p>\r\n<p><span style=\"white-space:pre\"></span></p>\r\n<pre>\t$PHPWord = new PHPWord();\r\n\t$document = $PHPWord-&gt;loadTemplate($anlasma_temp);</pre>\r\n<p></p>\r\n<p></p>\r\n<pre><span style=\"white-space:pre\">\t</span>$section = $PHPWord-&gt;createSection();\r\n<span style=\"white-space:pre\">\t</span>$footer = $section-&gt;createFooter();\r\n<span style=\"white-space:pre\">\t</span>$footer-&gt;addPreserveText('hi this is a text message', array('align'=&gt;'center'));\r\n<span style=\"white-space:pre\">\t</span>$olustur = $document-&gt;save('new.docx');</pre>\r\n<pre><br></pre>\r\n<pre>I was hoping to see my message on the footer :( Any ideas?</pre>\r\n<p></p>\r\n",
+    "PostedDate": "2011-01-26T19:42:36.557-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "573284",
+    "ThreadId": "243459",
+    "Html": "<p>use addText &nbsp;instead of&nbsp;<span style=\"font-family: Consolas, 'Courier New', Courier, monospace; white-space: pre;\">addPreserveText</span></p>",
+    "PostedDate": "2011-02-28T07:20:53.287-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

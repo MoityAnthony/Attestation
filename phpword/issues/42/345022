@@ -1,0 +1,58 @@
+diff --git a/PHPWord/Style/Paragraph.php b/PHPWord/Style/Paragraph.php
+index 55b8d2d..f532504 100644
+--- a/PHPWord/Style/Paragraph.php
++++ b/PHPWord/Style/Paragraph.php
+@@ -71,6 +71,7 @@ class PHPWord_Style_Paragraph {
+ 		$this->_spaceBefore     = null;
+ 		$this->_spaceAfter      = null;
+ 		$this->_spacing         = null;
++        $this->_indentation     = null;
+ 	}
+ 	
+ 	/**
+@@ -169,5 +170,15 @@ class PHPWord_Style_Paragraph {
+ 	   $this->_spacing = $pValue;
+ 	   return $this;
+ 	}
++
++    public function setIndentation($indentation)
++    {
++        $this->_indentation = $indentation;
++    }
++
++    public function getIndentation()
++    {
++        return $this->_indentation;
++    }
+ }
+ ?>
+\ No newline at end of file
+diff --git a/PHPWord/Writer/Word2007/Base.php b/PHPWord/Writer/Word2007/Base.php
+index c62b5cb..dc639ae 100644
+--- a/PHPWord/Writer/Word2007/Base.php
++++ b/PHPWord/Writer/Word2007/Base.php
+@@ -113,9 +113,9 @@ class PHPWord_Writer_Word2007_Base extends PHPWord_Writer_Word2007_WriterPart {
+ 		$spaceBefore = $style->getSpaceBefore();
+ 		$spaceAfter = $style->getSpaceAfter();
+ 		$spacing = $style->getSpacing();
+-		
++		$indentation = $style->getIndentation();
+         
+-		if(!is_null($align) || !is_null($spacing) || !is_null($spaceBefore) || !is_null($spaceAfter)) {
++		if(!is_null($align) || !is_null($spacing) || !is_null($spaceBefore) || !is_null($spaceAfter) || !is_null($indentation)) {
+ 			
+             if(!$withoutPPR) {
+                 $objWriter->startElement('w:pPr');
+@@ -126,6 +126,12 @@ class PHPWord_Writer_Word2007_Base extends PHPWord_Writer_Word2007_WriterPart {
+ 					$objWriter->writeAttribute('w:val', $align);
+ 				$objWriter->endElement();
+ 			}
++
++            if(!is_null($indentation)) {
++                $objWriter->startElement('w:ind');
++                    $objWriter->writeAttribute('w:left', $indentation);
++                $objWriter->endElement();
++            }
+ 			
+ 			if(!is_null($spaceBefore) || !is_null($spaceAfter) || !is_null($spacing)) {
+ 				

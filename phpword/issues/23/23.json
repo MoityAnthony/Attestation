@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 7,
+    "Custom": null,
+    "Description": "Hi,\r\n\r\nI desparately need to add new line within a template entry, for example in my word document I have ${full_address} and the address in about 3-4 lines. I want to add new line after each address line, I am trying to do it this way:\r\n\r\n$document->setValue('full_address',\"Address Line 1\\n, Address Line 2\\n Address Line 3\");\r\n\r\nbut that is showing everything in one line, like Address Line 1 Address Line 2, Address Line 3.\r\n\r\nWould really appreciate if some one could help.\r\n\r\nMany Thanks!",
+    "LastUpdatedDate": "2013-09-03T10:05:08.45-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-05-20T08:38:37.21-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "setValue() and new line",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 23
+  },
+  "FileAttachments": [
+    {
+      "FileId": 346192,
+      "FileName": "Template.php",
+      "DownloadUrl": ".\\346192"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I'm sorry this isn't possible right now. You can only search-replace inline text elements.\n\nMy plans are an advanced template engine in the future, that can search for wildcards and then replace with complex PHPWord Objects (TextRun, Table, ListItems, ...).",
+      "PostedDate": "2011-07-08T03:52:50.85-07:00",
+      "Id": 39087
+    },
+    {
+      "Message": "I also desperately need this feature. I tried injecting </w:p><w:p> tags, but it loses the font styling, etc. What would it take to make this happen?",
+      "PostedDate": "2011-07-25T11:49:45.107-07:00",
+      "Id": 40347
+    },
+    {
+      "Message": "I also am having problems need to add a new line in the setValue.\n\nAdding a new line in the template setValue would make this so much better and could be used for so much!\n\nAnyone witha solution for this yet\n\nThanks all Look forward to seeing a fix for this, any news on the advance templete engine??? ",
+      "PostedDate": "2011-10-12T03:43:17.71-07:00",
+      "Id": 46764
+    },
+    {
+      "Message": "This seems to work :\n\n$template = str_replace(\"\\n\",\"<w:br/>\",$template);\n",
+      "PostedDate": "2012-02-18T06:13:47.437-08:00",
+      "Id": 56219
+    },
+    {
+      "Message": "@zenobee - Nice!  Thanks for that!  My setValue() function now looks like this:\n\npublic function setValue($search, $replace) {\n\t$tagPattern = '(\\<[^\\>]+\\>)*';\n\t//Sorry about the name setValuea8s73ujik5.  Didn't want to interfere with any currently defined global variables.  Yes, I know... this is sloppy.\n\t$GLOBALS['setValuea8s73ujik5'] = $replace;\n\t$count = 0;\n\t$this->_documentXML = preg_replace_callback(\n\t\t'/\\$\\{('.$tagPattern.')'.preg_quote($search).'('.$tagPattern.')\\}/',\n\t\t//Don't forget that we need htmlspecialchars just in case...\n\t\tcreate_function('$matches', '$value = htmlspecialchars($matches[1] . \n\t\t$GLOBALS[\\'setValuea8s73ujik5\\'].$matches[3]);\n\t\treturn str_replace(\"\\n\", \"<w:br/>\", $value);'),\n\t\t$this->_documentXML, -1, $count);\n\tunset($GLOBALS['setValuea8s73ujik5']);\n\treturn $count;\n}",
+      "PostedDate": "2012-02-22T10:36:57.75-08:00",
+      "Id": 56411
+    },
+    {
+      "Message": "Actually... I just attach my fix here... hope someone out there finds it useful. :)",
+      "PostedDate": "2012-02-22T10:39:34.97-08:00",
+      "Id": 56412
+    },
+    {
+      "Message": "@bminer: excellent. <w:br/> trick worked.",
+      "PostedDate": "2013-09-03T10:05:08.45-07:00",
+      "Id": 111935
+    }
+  ]
+}

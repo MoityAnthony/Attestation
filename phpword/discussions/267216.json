@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "650262",
+    "ThreadId": "267216",
+    "Html": "\r\n<p>I've got multiple sections in my document and I'm calling $section-&gt;addListItem() within each of them, using the TYPE_NUMBER bullet type.&nbsp; It appears that successive calls to addListItem(), even across sections, appears to just continue the same\r\n numeric sequence.&nbsp; Eg:</p>\r\n<p>&nbsp;</p>\r\n<p>$word = new PHPWord;</p>\r\n<p>$section1 = $word-&gt;createSection();</p>\r\n<p>$section1-&gt;addListItem(&quot;First Item, first list&quot;, 0, 'fNormal', array('listType' =&gt; 7), 'pNormal');</p>\r\n<p>$section1-&gt;addListItem(&quot;Second Item, first list&quot;, 0, 'fNormal', array('listType' =&gt; 7), 'pNormal');</p>\r\n<p>$section2 = $word-&gt;createSection();</p>\r\n<p>$section2-&gt;addListItem(&quot;First Item, second list&quot;, 0, 'fNormal', array('listType' =&gt; 7), 'pNormal');</p>\r\n<p>$section2-&gt;addListItem(&quot;Second Item, second list&quot;, 0, 'fNormal', array('listType' =&gt; 7), 'pNormal');</p>\r\n<p>&nbsp;</p>\r\n<p>This appears to generate:</p>\r\n<p>1. First item, first list</p>\r\n<p>2. Second item, first list</p>\r\n<p>3. First item, second list</p>\r\n<p>4. Second item, second list</p>\r\n<p>&nbsp;</p>\r\n<p>I am hoping to achieve:</p>\r\n<p>1. First item, first list</p>\r\n<p>2. Second item, first list</p>\r\n<p>1. First item, second list</p>\r\n<p>2. Second item, second list</p>\r\n<p>&nbsp;</p>\r\n<p>Is this possible?</p>\r\n",
+    "PostedDate": "2011-07-31T11:12:47.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "650623",
+    "ThreadId": "267216",
+    "Html": "<p>Add a text break between lists:</p>\r\n<p>\r\n<pre>$section-&gt;addTextBreak(2);</pre>\r\n</p>",
+    "PostedDate": "2011-08-01T09:33:30.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "859341",
+    "ThreadId": "267216",
+    "Html": "<p>The above comment did not fix this issue. &nbsp;Has anyone figured out a solution to this problem?</p>",
+    "PostedDate": "2012-07-09T13:13:10.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "666246",
+    "ThreadId": "271146",
+    "Html": "\r\n<h2>PHPWord 0.6.2-1 Beta doesn't support adding hyperlinks to other parts of the document,such as other session or other page.what can i do?</h2>\r\n<p>thks!</p>\r\n",
+    "PostedDate": "2011-09-01T06:27:22.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "917066",
+    "ThreadId": "271146",
+    "Html": "<p>Did you solove&nbsp; your problem?</p>",
+    "PostedDate": "2012-09-25T00:23:39.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

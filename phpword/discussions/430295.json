@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "989727",
+    "ThreadId": "430295",
+    "Html": "\r\n<p>Hi all,</p>\r\n<p>I've been working on template files for one of my websites and have in the process updated some of the code of the setValue function to throw exceptions.</p>\r\n<p>Now here's my question : when an exception is thrown I stop the modification of my template file and therefore wish to close it without saving. If I simply end my program there and then, a default file is created in the same directory as the template file\r\n and there is, to my knowledge, no built-in method to close the template file opened with loadTemplate.</p>\r\n<p>I've been trying to create my own close method for the PHPWord_Template object but I'm not familiar with such systems. Could anybody point me in the right direction?</p>\r\n",
+    "PostedDate": "2013-01-21T06:28:58.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

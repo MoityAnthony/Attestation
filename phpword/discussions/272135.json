@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "669987",
+    "ThreadId": "272135",
+    "Html": "\r\n<p>I have need to use the following list styles<br>\r\n<br>\r\nAlphabetically ordered list, lowercase (a, b, c, d)<br>\r\nAlphabetically ordered list, uppercase (A, B, C, D)<br>\r\nRoman numbers, lowercase (i, ii, iii, iv)<br>\r\nRoman numbers, uppercase (I, II, III, IV)<br>\r\n<br>\r\nI cannot locate the 'PHPWord_Style_ListItem::TYPE...' for these options.<br>\r\n<br>\r\nIs there a workaround available please?</p>\r\n",
+    "PostedDate": "2011-09-09T22:53:10.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

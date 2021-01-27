@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "727462",
+    "ThreadId": "286644",
+    "Html": "\r\n<p>We are trialing PHPWord on our process control systems, which run on small embedded industrial PCs. We'd like to conserve RAM by writing the docx file on the fly, rather than building it entirely in RAM then writing to hdd. Is this possible?</p>\r\n<p>Are there any other approaches to minimizing RAM usage?</p>\r\n<p>Regards</p>\r\n",
+    "PostedDate": "2012-01-19T02:04:49.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

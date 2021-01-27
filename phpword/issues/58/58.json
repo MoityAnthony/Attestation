@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "here my php code \r\n\r\n$PHPWord = new PHPWord();\r\n\r\n$section = $PHPWord->createSection();\r\n\r\n$PHPWord->addParagraphStyle('pJustify', array('align' => 'justify', 'spaceBefore' => 0, 'spaceAfter' => 0, 'spacing' => 0));\r\n$section->addText('I am styled by two style definitions.', 'pJustify', 'pJustify');\r\n$section->addText('I have only a paragraph style definition.', null, 'pJustify')\r\n\r\n.......\r\nbut when i open word file this warning below image\r\n\r\n",
+    "LastUpdatedDate": "2013-07-15T21:53:09.563-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-07-15T21:53:09.393-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Paragraph \"justify\" not working ",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 58
+  },
+  "FileAttachments": [
+    {
+      "FileId": 704897,
+      "FileName": "Untitled.png",
+      "DownloadUrl": ".\\704897"
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1207153",
+    "ThreadId": "531455",
+    "Html": "Hi all,\r<br />\nI need add image to doc template. Who can help me?\r<br />\nThanks.<br />\n",
+    "PostedDate": "2014-02-11T23:41:55.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224661",
+    "ThreadId": "531455",
+    "Html": "Currently you can't do that. We're working on <a href=\"https://github.com/PHPOffice/PHPWord/issues/70\" rel=\"nofollow\">DOCX Reader</a>. Once this is completed, you can manipulate the template easier.<br />\n",
+    "PostedDate": "2014-03-19T22:12:38.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1433410",
+    "ThreadId": "531455",
+    "Html": "<pre><code>add in Template.php class :\n\npublic function replaceStrToImg( $strKey, $arrImgPath ){\n        $strKey = '${'.$strKey.'}';\n        if( !is_array($arrImgPath) )\n            $arrImgPath = array($arrImgPath);\n        \n        $rels = $this-&gt;_objZip-&gt;getFromName('word/_rels/document.xml.rels'); \n        $types = $this-&gt;_objZip-&gt;getFromName('[Content_Types].xml'); \n        \n        $count =  substr_count($rels, 'Relationship') - 1;\n        $relationTmpl = '&lt;Relationship Id=&quot;RID&quot; Type=&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/image&quot; Target=&quot;media/IMG&quot;/&gt;';\n        $imgTmpl = '&lt;w:pict&gt;&lt;v:shape type=&quot;#_x0000_t75&quot; style=&quot;width:289px;height:108px&quot;&gt;&lt;v:imagedata r:id=&quot;RID&quot; o:title=&quot;&quot;/&gt;&lt;/v:shape&gt;&lt;/w:pict&gt;';\n        $typeTmpl = ' &lt;Override PartName=&quot;/word/media/IMG&quot; ContentType=&quot;image/EXT&quot;/&gt;';\n        $toAdd = $toAddImg = $toAddType = '';\n        $aSearch = array('RID', 'IMG');\n        $aSearchType = array('IMG', 'EXT');\n        \n        foreach($arrImgPath as $index =&gt; $img ){\n            $imgExt = array_pop( explode('.', $img) );\n            if( in_array($imgExt, array('jpg', 'JPG') ) )\n                $imgExt = 'jpeg';\n            $imgName = 'img' . ( time() + $index ) . '.' . $imgExt;\n            $rid = 'rId' . ($count + $index);\n            \n            $this-&gt;_objZip-&gt;addFile($img, 'word/media/' . $imgName);\n            \n            $toAddImg .= str_replace('RID', $rid, $imgTmpl) ;\n            \n            $aReplace = array($imgName, $imgExt);\n            $toAddType .= str_replace($aSearchType, $aReplace, $typeTmpl) ;\n            \n            $aReplace = array($rid, $imgName);\n            $toAdd .= str_replace($aSearch, $aReplace, $relationTmpl);\n        }\n        \n        $this-&gt;_documentXML = str_replace( '&lt;w:t&gt;' . $strKey . '&lt;/w:t&gt;', $toAddImg, $this-&gt;_documentXML);\n        $types = str_replace('&lt;/Types&gt;', $toAddType, $types) . '&lt;/Types&gt;';\n        $rels = str_replace('&lt;/Relationships&gt;', $toAdd, $rels) . '&lt;/Relationships&gt;';\n       \n        $this-&gt;_objZip-&gt;addFromString('word/_rels/document.xml.rels', $rels);\n        $this-&gt;_objZip-&gt;addFromString('[Content_Types].xml', $types);\n        $this-&gt;_objZip-&gt;addFromString('word/document.xml', $this-&gt;_documentXML);\n    }\n\n\nuse example:\n\n$PHPWord = new PHPWord();\n$document = $PHPWord-&gt;loadTemplate($template);\n$arrImagenes =  array(\n    '../../images/mc.png',\n    '../../images/logo.png',\n    '../../mineria/image/logo.jpg',\n    '../../images/draw-icon.png'\n    \n);\n$document-&gt;replaceStrToImg('AreaImg', $arrImagenes);\n$documentName = 'Concepto_Tecnico_' . date('Ymd_His') . '.docx';\n$document-&gt;save( $documentName);</code></pre>\n\n",
+    "PostedDate": "2015-07-07T10:04:53.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

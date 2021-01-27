@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "767600",
+    "ThreadId": "316482",
+    "Html": "<p>I am trying to create a \"mail merge\" and I'm running into an issue. At first I had my code generate multiple .docx files based on templates and that worked fine. However I can't find an easy way to take all of those docx files and convert them to 1 pdf to  be able to be printed.&nbsp;So now I'm trying another method and I'm not having luck. I am trying to import multiple docx files into one PHPWord file. The code is something like this:</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre>$PHPWord = <span style=\"color: blue;\">new</span> PHPWord();\n\n<span style=\"color: blue;\">foreach</span> ($_POST[<span style=\"color: #a31515;\">'survey'</span>] <span style=\"color: blue;\">as</span> $key =&gt; $value) {\n$section = $PHPWord-&gt;createSection();\n$document = $PHPWord-&gt;loadTemplate(<span style=\"color: #a31515;\">'../images/uploaded/word/'</span>. $survey_type[$value]);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'date'</span>, $the_date);\n$document-&gt;setValue(<span style=\"color: #a31515;\">'clientname1'</span>, $client_name);\n$section-&gt;addPageBreak;\n\n\n}\n$document-&gt;save(<span style=\"color: #a31515;\">'../images/uploaded/tmp/test.docx'</span>);\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>However that still only makes one page. Am I doing something wrong with the createSection? Or can PHPWord not do this?</p>\n<p>Anyone have a solution for this?</p>",
+    "PostedDate": "2012-02-15T06:43:02.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "909524",
+    "ThreadId": "316482",
+    "Html": "<p>$section-&gt;addPageBreak();</p>",
+    "PostedDate": "2012-09-07T02:54:29.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

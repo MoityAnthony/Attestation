@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1422783",
+    "ThreadId": "636672",
+    "Html": "Maybe this is a known issue, but I didn't see any other posts on PDF and gridspan.<br />\n<br />\nI have a table with multiple gridspan and bgcolor properties applied.  When I export to docx format it looks okay, but when I switch the export over to PDF, neither of these properties appear to be interpreted correctly.  I've tested with all 3 PDF libraries (DomPDF, TCPDF, and MPDF).  Gridspan and alignment results are inconsistent, bgcolor doesn't appear in any of them.<br />\n<br />\nThis is the CORRECT docx result viewed through libreoffice (ubuntu):<br />\n<a href=\"https://www.dropbox.com/s/44pn40pnc2zu3lc/Screenshot%20from%202015-05-04%2011%3A49%3A25.png?dl=0\" rel=\"nofollow\">Screenshot1</a><br />\n<br />\nThis is what BOTH DomPDF and MPDF produce:<br />\n<a href=\"https://www.dropbox.com/s/7vglui961sz44in/Screenshot%20from%202015-05-04%2011%3A48%3A25.png?dl=0\" rel=\"nofollow\">Screenshot2</a><br />\n<br />\nThis is what TCPDF produce:<br />\n<a href=\"https://www.dropbox.com/s/6sjk0my0uy5dw21/Screenshot%20from%202015-05-04%2011%3A49%3A53.png?dl=0\" rel=\"nofollow\">Screenshot3</a><br />\nIts hard to see in this one, but basically the 3rd row became the 1st 2 columns (column 3 and 4 were dropped entirely)<br />\n<br />\nThe correct format is as follows:<br />\nRow 1: Firstname1 (gridspan:2) Firstname2 (gridspan:2) <br />\nRow 2: Lastname1 (gridspan:2) Lastname2 (gridspan:2) <br />\nRow 3: Room1 Group 1 Room2 Group2<br />\nRow 4: (empty, gridspan: 4) <br />\n<br />\nAny thoughts/suggestions?<br />\n<br />\nThanks.<br />\n<br />\nPS  I'm a big fan of this product.  Hope your good work continues.<br />\n",
+    "PostedDate": "2015-05-04T09:22:39.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1310194",
+    "ThreadId": "568948",
+    "Html": "I'd like to know how to open an existing word document and edit it...<br />\n<br />\nSomeone can help me?<br />\n",
+    "PostedDate": "2014-10-03T04:50:00.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1311579",
+    "ThreadId": "568948",
+    "Html": "Hi, \r<br />\n<br />\nyou can use template Class\r<br />\n<br />\nas this example\r<br />\n<br />\n $PHPWord = new \\PhpOffice\\PhpWord\\PhpWord();\r<br />\n $document = $PHPWord-&gt;loadTemplate(&quot;example.docx&quot;);\r<br />\n<br />\nafter open you can change values inside doc (but every item to change in the original docs must to be ${ITEM_TO_CHANGE}) with this command:\r<br />\n<br />\n$document-&gt;setValue(&quot;ITEM_TO_CHANGE&quot;,&quot;New value&quot;);\r<br />\n<br />\nto Save new File :\r<br />\n<br />\n$document-&gt;saveAs(&quot;newfile.docx&quot;);\r<br />\n<br />\ni hope was helpful<br />\n",
+    "PostedDate": "2014-10-08T08:07:00.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

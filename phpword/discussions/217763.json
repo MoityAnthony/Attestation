@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "461305",
+    "ThreadId": "217763",
+    "Html": "<p>Hi,</p>\r\n<p>Is there a way to open / modify existing documents?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-06-29T11:47:20.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461782",
+    "ThreadId": "217763",
+    "Html": "Actually, there is no way to modify existing documents. Sorry.",
+    "PostedDate": "2010-06-30T12:32:23.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "472100",
+    "ThreadId": "217763",
+    "Html": "<p>PHPWord Beta 0.6.2 includes a really simple template system.</p>\r\n<p>See current release examples for more information.</p>",
+    "PostedDate": "2010-07-24T07:03:21.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

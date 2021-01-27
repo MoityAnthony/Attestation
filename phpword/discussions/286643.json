@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "727460",
+    "ThreadId": "286643",
+    "Html": "<p>Is PHPWord known to work with Openoffice 3.2? docx files created by PHPWord cause it to crash on my Ubunut 10.04, the same file opens fine in MS Word. Files created by MSWord open fine in the Openoffice.</p>\n<p>Regards</p>\n<p>More info: I've just installed Libreoffice. It doesn't crash, it does display the table and the cell text. However, the table columns widths are all 7\" rather than the specified widths, and using Libreoffice to adjust them the widths keep bouncing back to 7\" (but that might be a Libreoffice issue).</p>",
+    "PostedDate": "2012-01-19T02:02:57.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

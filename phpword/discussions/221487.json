@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "472926",
+    "ThreadId": "221487",
+    "Html": "<p>How to set a double-line , dot-line, or none-line border&nbsp;after I create a table with PHPWord?</p>",
+    "PostedDate": "2010-07-26T19:32:18.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1316942",
+    "ThreadId": "221487",
+    "Html": "I found that.\r<br />\n<br />\nYou must found a base.php file in PHPWord/Writer/Word2007.\r<br />\n<br />\nNext Go to line 568, 577, 586, 595. [4 times replace].\r<br />\n<br />\nReplace 'single' to 'double'\r<br />\n<br />\n<br />\n$objWriter-&gt;writeAttribute('w:val', 'single');\r<br />\n<br />\nto \r<br />\n<br />\n$objWriter-&gt;writeAttribute('w:val', 'double');\r<br />\n<br />\n<br />\nNext to use it You must use borderSize in Cell Style, not table tyle.\r<br />\n<br />\nIt Works! :)<br />\n",
+    "PostedDate": "2014-10-28T00:29:07.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

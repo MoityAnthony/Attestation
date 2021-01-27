@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "is it possible change page orientation?",
+    "LastUpdatedDate": "2013-06-28T02:09:49.593-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-05-06T02:54:40.05-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "page orientation",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 54
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "$section = $PHPWord->createSection(array('orientation'=>'landscape'));",
+      "PostedDate": "2013-06-28T02:09:49.593-07:00",
+      "Id": 104499
+    }
+  ]
+}

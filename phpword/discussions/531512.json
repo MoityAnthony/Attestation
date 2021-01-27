@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1207302",
+    "ThreadId": "531512",
+    "Html": "Hi all,\r<br />\n<br />\nI got a word template where I have 8 repeated cards for page.\r<br />\nI need to print it using names and details coming from a mySQL select.\r<br />\nEach card is a record so it will have associated name, id, and so on.\r<br />\nHow can I do it ?\r<br />\nMany thanks\r<br />\nJovannino<br />\n",
+    "PostedDate": "2014-02-12T06:16:35.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

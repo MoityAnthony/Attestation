@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "981584",
+    "ThreadId": "427978",
+    "Html": "\r\n<p>Hi guys, I wanna ask how to save as the docx file with my own file name? instead of $objWriter-&gt;save('document.docx');</p>\r\n<p>and how to set the generated docx location? such as my desktop..</p>\r\n<p>thanks! :)</p>\r\n",
+    "PostedDate": "2012-12-29T03:02:41.11-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "989434",
+    "ThreadId": "427978",
+    "Html": "\r\n<p>File name: Change 'document.docx' to whatever you want to name the file;</p>\r\n<p>Location: Do you mean server side or client side? Server side: just enter the document name with path as the argument to save, e.g. save('examples/mydocument.docx') - you need to be aware of the restrictions your server (e.g. apache) and its php setup will\r\n place on this in order to maintain the security of your server. Client side: you would probably use\r\n<a href=\"http://php.net/manual/en/function.header.php\">header()</a> to prompt someone to save a document somewhere on their computer - you will have no control of the location though.</p>\r\n",
+    "PostedDate": "2013-01-20T14:13:09.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

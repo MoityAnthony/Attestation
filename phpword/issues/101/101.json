@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I use TemplateProcessor class\r\n```\r\n$templateProcessor = new \\PhpOffice\\PhpWord\\TemplateProcessor('PhpWord/doc/temp/test.docx');\r\n\t\t$templateProcessor->setValue('test','თბილსერვის' );\r\n. . . \r\n```\r\nand ${test} field in the output file looks run down like it is in the image. How can I fix this?",
+    "LastUpdatedDate": "2015-07-30T06:20:21.51-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2015-07-30T06:19:39.423-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Georgian characters in a template",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 101
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1476241,
+      "FileName": "test.JPG",
+      "DownloadUrl": ".\\1476241"
+    }
+  ],
+  "Comments": []
+}

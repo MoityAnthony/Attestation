@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "745429",
+    "ThreadId": "297458",
+    "Html": "\r\n<p>Hi, anyone know how to insert a symbol alongside text? I need to make a checkbox list. This is the tag that ends up in the xml file when you do it from within Word: &lt;w:sym w:font=&quot;Wingdings&quot; w:char=&quot;F06F&quot;/&gt;.</p>\r\n<p>I thought of a textrun, but the place I need it is in a multi-line cell in a table. I am using multi-line cells because of the minimum row height problem. Using 'spaceAfter'=&gt;0 in the cell paragraph style lets me do multiple lines without all the extra\r\n space.</p>\r\n",
+    "PostedDate": "2012-02-07T09:25:25.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "769687",
+    "ThreadId": "297458",
+    "Html": "<p>The template worked as a good solution for this. I just put a placeholder for the box in the Word document template which I was building with PHPWord. Then the program that is using the template to load all the variable data just replaces it.</p>\r\n<p>Excerpt from template builder program:</p>\r\n<p>$table6-&gt;addCell(5300, $styleCell)-&gt;addText('${box}&nbsp;&nbsp; Purchase Order # ______________________________<br /><br />${box}&nbsp;&nbsp; Check # _____________________________________<br /><br />${box}&nbsp;&nbsp; Circle One: Visa/MC/AE&nbsp;&nbsp;&nbsp;&nbsp; Exp. _________________<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Card # ______________________________________','RegText', 'ltStyle');</p>\r\n<p>&nbsp;</p>\r\n<p>One statement in my make_word.php program replaces all 3 boxes:</p>\r\n<p>$template-&gt;setValue('box','&lt;w:sym w:font=\"Wingdings\" w:char=\"F06F\"/&gt;');</p>",
+    "PostedDate": "2012-02-16T06:53:48.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

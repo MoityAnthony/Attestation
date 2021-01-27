@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1277643",
+    "ThreadId": "554139",
+    "Html": "Hello there.\r<br />\n<br />\nI want to be able to generate a docx document and an html preview of the document at the same time, with the same code for sustainability purpose.\r<br />\n<br />\nThe generated docx document works well. However, when I generate html from it doesn't put any class inside the html lines, just the css.\r<br />\n<br />\n$objWriter = \\PhpOffice\\PhpWord\\IOFactory::createWriter($phpWord, 'HTML');\r<br />\n$objWriter-&gt;save('CRR.html');\r<br />\n<br />\nDo I have to add the classes manually inside my text or can I do it by using the addText() argument?<br />\n",
+    "PostedDate": "2014-07-25T02:56:40.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

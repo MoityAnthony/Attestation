@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "513203",
+    "ThreadId": "232470",
+    "Html": "\r\n<p>Could anybody tell, what would be the best solution for inserting a table into the template? I have to insert table with some data from MySQL database between word document paragraphs. As far as I can't read word document, to parse those paragraphs I have\r\n to do it with word templates?</p>\r\n",
+    "PostedDate": "2010-10-27T00:20:47.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "926391",
+    "ThreadId": "232470",
+    "Html": "<p>Hello</p>\r\n<p>have you find a solution for your question? If yes could you please it with us? I am looking for for the same issue.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>mpol_ch</p>",
+    "PostedDate": "2012-10-14T10:09:45.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

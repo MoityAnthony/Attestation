@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 4,
+    "Custom": null,
+    "Description": "When started using Phpword it saved me a lot of time as i needed to replace a template in docx using php. I had a minor issue when started using the setValue method. I found that using Word, the program creates some tags that the str_replace couldn't detect.\r\n\r\nI cracked a little bit the function, using some regular expressions in order to:\r\n1. Find the regular expressions commencing with '${' and ending with '}' (in my case i dropped the $ sign cause i needed to use the $ sign in my word file)\r\n2. With only that string, find and eliminate all the opening tags\r\n3. find and eliminate the closing tags in that string\r\n4. replace the old string (with garbage code) with the cleaned string\r\n5. output the _documentXML\r\n\r\nthis is the piece of code I implemented if anyone is interested\r\n\r\nBtw, great job with this tool it saved me a lot of time!\r\n\r\n    public function setValue($search, $replace) {\r\n\t\t$pattern = '|\\{([^\\}]+)\\}|U'; //if you need the $, use: '|\\$\\{([^\\}]+)\\}|U''\r\n\t\tpreg_match_all($pattern, $this->_documentXML, $matches);\r\n\t\t$openedTagPattern= '/<[^>]+>/';\r\n\t\t$closedTagPattern= '/<\\/[^>]+>/';\r\n\t\tforeach ($matches[0] as $value) {\r\n\t\t\t$modificado = preg_replace($openedTagPattern, '', $value);\r\n\t\t\t$modificado = preg_replace($closedTagPattern, '', $modificado);\r\n\t\t\t$this->_documentXML = str_replace($value, $modificado, $this->_documentXML);\r\n\t\t}\r\n\t\t\r\n\t\tif(substr($search, 0, 1) !== '{' && substr($search, -1) !== '}') { //change to: substr($search, 0, 2) !== '${' if you need the $ character\r\n            $search = '{'.$search.'}'; //change to '${'.$search.'}' if $ needed\r\n        }\r\n        \r\n        if(!is_array($replace)) {\r\n            $replace = utf8_encode($replace);\r\n        }\r\n        \r\n        $this->_documentXML = str_replace($search, $replace, $this->_documentXML);\r\n\t}",
+    "LastUpdatedDate": "2014-01-20T08:25:23.07-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2012-11-20T15:08:04.13-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Advanced string replace in setValue",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 49
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thank you for this, it's saved me loads of hassle.\nThe original SetValue function seemed to be very random in the way it worked in my documents - I now understand it was tags in Word that were confusing it.\n\nAll you need to do is replace the existing function in Template.php (line 83) with this new one.",
+      "PostedDate": "2013-03-20T06:12:22.5-07:00",
+      "Id": 93769
+    },
+    {
+      "Message": "Thanks a lot . I  wondering what is happens on the templates i have created. Word copied from demo template works , but word typed not works. I wondering about this and almost mad in those things. But here is the answer. Here is the answer. Thanks a lot....",
+      "PostedDate": "2013-04-22T23:56:21.357-07:00",
+      "Id": 97789
+    },
+    {
+      "Message": "Hey !!\n\nThanks a lot for this.  \n\nstill , I have a problem with the new line ('\\n') character.\n\nI tried to replace '\\n' with word break - \n \n            $template = str_replace(\"\\n\",\"<w:br/>\",$template);\n\nbut i think it wouldn't match with above changes. \n\nDo you have any solution for the new line ? ",
+      "PostedDate": "2013-06-29T23:47:52.96-07:00",
+      "Id": 104672
+    },
+    {
+      "Message": "Can you give an example of a broken and working version of your document?",
+      "PostedDate": "2014-01-08T20:34:05.167-08:00",
+      "Id": 129899
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "670124",
+    "ThreadId": "272163",
+    "Html": "\r\n<p>&nbsp;Hello, I want to convert doc file into docx. Is it possible? And can i count number of words using PHPWORD? Thanks</p>\r\n",
+    "PostedDate": "2011-09-10T11:08:11.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "687952",
+    "ThreadId": "272163",
+    "Html": "<p>Hi - did you try loading the current file as a template (use loadTemplate() ) and then saving it as Word2007?</p>\r\n<p>require_once '../PHPWord.php';</p>\r\n<p>$PHPWord = new PHPWord();</p>\r\n<p>$document = $PHPWord-&gt;loadTemplate('Excel2003.doc');</p>\r\n<p>// Save File<br />$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');<br />$objWriter-&gt;save('Excel2007.docx');</p>",
+    "PostedDate": "2011-10-22T16:59:53.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1104361",
+    "ThreadId": "272163",
+    "Html": "hi ,\r<br />\ni trying but I have the following problem \r<br />\n<br />\n( ! ) Warning: ZipArchive::getFromName(): Invalid or unitialized Zip object in C:\\wamp\\www\\doctest\\class\\PHPWord\\Template.php on line 76\r<br />\nCall Stack<br />\n<h1>Time\tMemory\tFunction\tLocation</h1>\n1\t0.0020\t143864\t{main}( )\t..\\index2.php:0\r<br />\n2\t0.0080\t190104\tPHPWord-&gt;loadTemplate( )\t..\\index2.php:5\r<br />\n3\t0.0090\t200512\tPHPWord_Template-&gt;__construct( )\t..\\PHPWord.php:223\r<br />\n4\t0.0210\t200984\tgetFromName ( )\t..\\Template.php:76\r<br />\n<br />\nso it seems here the problem\r<br />\n $this-&gt;_documentXML = $this-&gt;_objZip-&gt;getFromName('word/document.xml');\r<br />\n<br />\nI'm looking for ('word/document.xml') in phpword folder but it is not here.\r<br />\nsome suggestions about, please?<br />\n",
+    "PostedDate": "2013-10-06T22:57:06.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1144606",
+    "ThreadId": "272163",
+    "Html": "I have tried cindydolan's answer but all it is doing is creating a blank file.\r<br />\n<br />\nIt is not getting the text from the original .doc file.\r<br />\n<br />\nAny ideas?\r<br />\n<br />\nThanks, <br />\n",
+    "PostedDate": "2014-01-02T05:55:11.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1283192",
+    "ThreadId": "272163",
+    "Html": "cindydolan's answer will not work because the loadTemplate uses xml and which is contained in docx file and not doc file.\r<br />\n<br />\nCindydolan I suggest you test code before posting it.\r<br />\n<br />\nAny working ideas?<br />\n",
+    "PostedDate": "2014-08-03T03:12:44.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1287911",
+    "ThreadId": "272163",
+    "Html": "Hi i was tried much but it was not working working there was blank docx file created..<br />\n",
+    "PostedDate": "2014-08-08T00:12:02.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1355907",
+    "ThreadId": "272163",
+    "Html": "Hi I am also tried but I got empty file only please any one give me idea else provide code.....<br />\n",
+    "PostedDate": "2015-02-26T02:26:12.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

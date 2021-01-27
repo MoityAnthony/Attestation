@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1280007",
+    "ThreadId": "554848",
+    "Html": "Dears,<br />\n<br />\nI'm trying to use SetValue to replace a string with one or double spaces, for example:<br />\n<pre><code>$vazio = &quot;  &quot;;\n$document-&gt;setValue('EXAMPLE', $vazio);</code></pre>\n\nBut, in the Word file it generates a null char.<br />\nFor example:<br />\n<pre><code>(${example})</code></pre>\n\nIt should be:<br />\n<pre><code>(  )</code></pre>\n\nAlthough, it generates:<br />\n<pre><code>()</code></pre>\n\nAnyone capable of helping me?<br />\n<br />\nThanks :)<br />\n<br />\nBTW, I had to use a &quot;fix&quot; for template.php from phpword, because it was not replacing anything (I think it was generating a wrong XML file and PHPWord couldn't find the necessary string to replace):<br />\n<pre><code>public function setValue($search, $replace) {\n        if(substr($search, 0, 2) !== '${' &amp;&amp; substr($search, -1) !== '}') {\n            $search = '${'.$search.'}';\n        }\n        \n        preg_match_all('/\\$[^\\$]+?}/', $this-&gt;_documentXML, $matches);\n        \n        for ($i=0;$i&lt;count($matches[0]);$i++){\n\n        $matches_new[$i] = preg_replace('/(&lt;[^&lt;]+?&gt;)/','', $matches[0][$i]);\n        \n        $this-&gt;_documentXML = str_replace($matches[0][$i], $matches_new[$i], $this-&gt;_documentXML);\n        }\n\n\n                \n        \n    $this-&gt;_documentXML = str_replace($search, $replace, $this-&gt;_documentXML);\n        \n        \n        \n    }</code></pre>\n\n",
+    "PostedDate": "2014-08-01T07:03:38.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1459577",
+    "ThreadId": "650138",
+    "Html": "I have difficulty putting line break in a text within a table \r<br />\n<br />\n$section-&gt;addTextBreak(8);\r<br />\n<br />\n<br />\nand to use within the table would look like ?<br />\n",
+    "PostedDate": "2016-01-17T13:59:33.303-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

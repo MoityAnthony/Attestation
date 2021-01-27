@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, PHPWord has been working wonderfully for me for last couple of years but I am running into an issue now. I have to use an external font into the document. \r\nPHPWord allows me to set the font name which is great as far as the computer the word document is being opened has the said font installed. \r\n\r\nMS Word allows to embed the font being used into the document so that it loads the font correctly even if the font used does not exist on the system (see attached). \r\n\r\nHow can I use PHPWord library to embed the font into the doc? I don't mind making changes to the library if needed.\r\n\r\nThanks.",
+    "LastUpdatedDate": "2017-07-31T08:00:03.78-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2017-07-31T08:00:03.31-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to embed and external font into the Word doc",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 109
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1671943,
+      "FileName": "embedding.ext.font.PNG",
+      "DownloadUrl": ".\\1671943"
+    }
+  ],
+  "Comments": []
+}

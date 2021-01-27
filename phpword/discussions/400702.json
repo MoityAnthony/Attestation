@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "932070",
+    "ThreadId": "400702",
+    "Html": "\r\n<p>Sorry if this has been asked before.&nbsp; I couldn't find anything so...</p>\r\n<p>Is there anyway to use setValue and do a replace with an image.&nbsp; Something like</p>\r\n<p></p>\r\n<pre>$document-&gt;setValue('Value1', addImage('image.jpg'));</pre>\r\nProbably need to change some of the PHPWord code, if it's even possible.&nbsp; Thanks!\r\n<p></p>\r\n",
+    "PostedDate": "2012-10-24T17:54:39.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1289092",
+    "ThreadId": "400702",
+    "Html": "Excuse,have you solved it? I need this. Thanks!<br />\n",
+    "PostedDate": "2014-08-11T20:15:04.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

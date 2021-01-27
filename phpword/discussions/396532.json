@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "916152",
+    "ThreadId": "396532",
+    "Html": "\r\n<p>I just downloaded the code what would make me happy if I could get it to work. So I'm trying to make&nbsp; a word document on flow wit posted php variables using a template and my php code as it follows</p>\r\n<p>&nbsp;</p>\r\n<p></p>\r\n<pre>require_once 'PHPWord.php';\r\n\r\n$PHPWord = new PHPWord();\r\n\r\n$document = $PHPWord-&gt;loadTemplate('praemie.docx');\r\n\r\n$document-&gt;setValue('Name', utf8_encode($_POST['name']));\r\n$document-&gt;setValue('Vorname', utf8_encode($_POST['vorname']));\r\n$document-&gt;setValue('Street', $_POST['street']);\r\n$document-&gt;setValue('Zip', $_POST['zip']);\r\n$document-&gt;setValue('City', $_POST['city']);<br><br>and in the template docx I call those variabes as ${Name} ${Vorname} but they don't display. What I makeing wrong</pre>\r\n<p></p>\r\n",
+    "PostedDate": "2012-09-22T13:17:13.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "916441",
+    "ThreadId": "396532",
+    "Html": "<p>What about replacing the <span style=\"color: #000000; font-family: arial; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: 2; text-align: -webkit-auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: #ffffff; display: inline !important; float: none;\">original datas in Template.php like this</span></p>\r\n<p><span style=\"color: #000000; font-family: arial; font-size: 13px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22px; orphans: 2; text-align: -webkit-auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; background-color: #ffffff; display: inline !important; float: none;\">&nbsp;</span></p>\r\n<pre>$document-&gt;setValue('Value1', 'Sun');\r\n$document-&gt;setValue('Value2', 'Mercury');\r\n$document-&gt;setValue('Value3', 'Venus');\r\n$document-&gt;setValue('Value4', 'Earth');\r\n$document-&gt;setValue('Value5', 'Mars');\r\n$document-&gt;setValue('Name', utf8_encode($_POST['name']));\r\n$document-&gt;setValue('Vorname', utf8_encode($_POST['vorname']));\r\n$document-&gt;setValue('Street', $_POST['street']);\r\n$document-&gt;setValue('Zip', $_POST['zip']);\r\n$document-&gt;setValue('City', $_POST['city']);</pre>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-09-23T19:55:53.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

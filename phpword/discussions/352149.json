@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "823210",
+    "ThreadId": "352149",
+    "Html": "<p><span style=\"font-size: 12pt;\">I'm using PHPWord for my website developed with CakePHP. Everything's ok when I tested the PHPWord function at localhost. But after I hosted the website at the server, when I try to open the downloaded .docx file, it gave me an error as the post title said.  The details of the error is like:</span></p>\n<p><strong>Microsoft Office cannot open this file because some parts are missing or invalid.</strong></p>\n<p><span style=\"font-size: 12pt;\">I tried to save the file as .doc, the file can be opened but what I got is:</span></p>\n<p><strong><span style=\"font-size: 12pt;\">Fatal error: Class 'ZipArchive' not found in C:\\wamp\\www\\mysite\\app\\vendors\\PHPWord\\PHPWord\\Writer\\Word2007.php on line <em>70.</em></span></strong></p>\n<p><span style=\"font-size: 12pt;\">Does it has something to do with the URL? Why did the error point to an URL that was actually refering to a localhost address?</span><span style=\"font-size: 12pt;\"><em></em></span><strong><span style=\"font-size: 12pt;\"><em><br /> </em></span></strong></p>\n<p><span style=\"font-size: 12pt;\">I've googled around and found no solutions to the problem. I don't even know what the problem is!</span><span style=\"font-size: 12pt;\"> </span><span style=\"font-size: 12pt;\">So somebody <strong>PLEASE HELP</strong>!</span><strong><span style=\"font-size: 12pt;\"><em><br /> </em></span></strong></p>",
+    "PostedDate": "2012-04-12T19:36:02.937-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "823726",
+    "ThreadId": "352149",
+    "Html": "<p>I was so stupid that the problem was solved by just enabling the php_zip.ddl extension in php.ini. =&nbsp; =</p>",
+    "PostedDate": "2012-04-13T19:15:48.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "857732",
+    "ThreadId": "352149",
+    "Html": "<p>Would you share with us how to integrated PHPWord to CakePhp?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks before</p>\r\n<p>adikhairul@gmail.com</p>",
+    "PostedDate": "2012-07-05T02:56:04.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "858270",
+    "ThreadId": "352149",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Just put the downloaded PHPWord folder in the app/vendors folder, and in your function include the main file (as shown below):</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">function</span> your_function() {\n\n\t<span style=\"color:blue\">include</span>(<span style=\"color:#a31515\">'vendors/PHPWord/PHPWord.php'</span>);\n\n        $PHPWord = <span style=\"color:blue\">new</span> PHPWord();\n\n        $section = $PHPWord-&gt;createSection(<span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'borderColor'</span>=&gt;<span style=\"color:#a31515\">'00FF00'</span>, <span style=\"color:#a31515\">'borderSize'</span>=&gt;12));\n\t$section-&gt;addText(<span style=\"color:#a31515\">'I am placed on a default section.'</span>);\n\n        <span style=\"color:green\">// New landscape section</span>\n\t$section = $PHPWord-&gt;createSection(<span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'orientation'</span>=&gt;<span style=\"color:#a31515\">'landscape'</span>));\n        $section-&gt;addText(<span style=\"color:#a31515\">'I am placed on a landscape section. Every page starting from this section will be landscape style.'</span>);\n\t$section-&gt;addPageBreak();\n\t$section-&gt;addPageBreak();\n\n        <span style=\"color:green\">// New portrait section</span>\n\t$section = $PHPWord-&gt;createSection(<span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'marginLeft'</span>=&gt;600, <span style=\"color:#a31515\">'marginRight'</span>=&gt;600, <span style=\"color:#a31515\">'marginTop'</span>=&gt;600, <span style=\"color:#a31515\">'marginBottom'</span>=&gt;600));\n\t$section-&gt;addText(<span style=\"color:#a31515\">'This section uses other margins.'</span>);\n\n        header(<span style=\"color:#a31515\">&quot;Cache-Control: public&quot;</span>);\n        header(<span style=\"color:#a31515\">&quot;Content-Description: File Transfer&quot;</span>);\n        header(<span style=\"color:#a31515\">&quot;Content-Disposition: attachment; filename=your_file_name.docx&quot;</span>);\n        header(<span style=\"color:#a31515\">&quot;Content-Type: application/docx&quot;</span>);\n        $objWriter=PHPWord_IOFactory::createWriter($PHPWord,<span style=\"color:#a31515\">&quot;Word2007&quot;</span>);\n        $objWriter-&gt;save(<span style=\"color:#a31515\">'php://output'</span>);\n\n        <span style=\"color:blue\">exit</span>();\n    }\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>You can find more examples in the PHPWord folder on how to put contents into Word file and how to style them as well.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Feehilies.S</p>\r\n",
+    "PostedDate": "2012-07-06T03:30:00.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "889429",
+    "ThreadId": "352149",
+    "Html": "<p>Thank you very much&nbsp;<span>Feehilies.S.</span></p>\r\n<p>&nbsp;</p>\r\n<p>Your information very-very help us..</p>\r\n<p>&nbsp;</p>\r\n<p>Best Regards.,</p>\r\n<p>adikhairul</p>",
+    "PostedDate": "2012-07-23T21:08:49.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "895970",
+    "ThreadId": "352149",
+    "Html": "<p>Hi</p>\r\n<p>I have encoutered same problem \"<strong>Microsoft Office cannot open this file because some parts are missing or invalid.\"</strong></p>\r\n<p>&nbsp;</p>\r\n<p>But as you solved with enabling php_zip.ddl, i cant find such thing.</p>\r\n<p>My phpinfo (PHP Version 5.2.17) shows this:</p>\r\n<h2><a name=\"module_zip\">zip</a></h2>\r\n<table border=\"0\" cellpadding=\"3\" width=\"600\">\r\n<tbody>\r\n<tr>\r\n<td class=\"e\">Zip</td>\r\n<td class=\"v\">enabled</td>\r\n</tr>\r\n<tr>\r\n<td class=\"e\">Extension Version</td>\r\n<td class=\"v\">$Id: php_zip.c ...</td>\r\n</tr>\r\n<tr>\r\n<td class=\"e\">Zip version</td>\r\n<td class=\"v\">1.8.11</td>\r\n</tr>\r\n<tr>\r\n<td class=\"e\">Libzip version</td>\r\n<td class=\"v\">0.9.0</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>\r\n<p>Is the version too old or what?&nbsp;</p>\r\n<p>I use both MS office and Libre office, and the file opens only on libre office.</p>",
+    "PostedDate": "2012-08-06T04:04:39.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "896856",
+    "ThreadId": "352149",
+    "Html": "<p>Hi,</p>\r\n<p>I'm not sure about the version, but the php.ini file in which the php_zip must be enabled is on the web server, not on the php server. Like in my case, it's Apache.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Feehilies.S</p>",
+    "PostedDate": "2012-08-08T03:19:40.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "897935",
+    "ThreadId": "352149",
+    "Html": "<p>ok, thanks for the info.&nbsp;</p>",
+    "PostedDate": "2012-08-10T01:06:32.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

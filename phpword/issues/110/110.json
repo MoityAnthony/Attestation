@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "HI,\r\n\r\nI want to add special character(↑) like $section->addText('Hello World! ↑ U+2B06');. \r\n\r\nCould you please tell me what is the procedure to add special character in the word file.\r\n\r\nThanks,\r\nAvinash",
+    "LastUpdatedDate": "2017-09-06T23:50:26.24-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2017-09-06T23:50:26.24-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How to add special character(↑) in word document",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 110
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

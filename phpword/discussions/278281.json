@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "693608",
+    "ThreadId": "278281",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm using the following snippets of code, but can't get the text (&quot;ST&quot;) to appear as superscript. &nbsp;I also tried subscript (didn't work). &nbsp;I added bold, which works.</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$PHPWord-&gt;addParagraphStyle(<span style=\"color:#a31515\">'pRight'</span>,<span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'align'</span>=&gt;<span style=\"color:#a31515\">'right'</span>,<span style=\"color:#a31515\">'spaceBefore'</span>=&gt;0,<span style=\"color:#a31515\">'spaceAfter'</span>=&gt;0,<span style=\"color:#a31515\">'spacing'</span>=&gt;0));\r\n\r\n$textrun = $section-&gt;createTextRun(<span style=\"color:#a31515\">'pRight'</span>);\r\n$textrun-&gt;addText(<span style=\"color:#a31515\">&quot;January 01&quot;</span>, null);\r\n$textrun-&gt;addText(<span style=\"color:#a31515\">&quot;ST&quot;</span>, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'superScript'</span>=&gt;true, <span style=\"color:#a31515\">'bold'</span>=&gt;true));\r\n$textrun-&gt;addText(<span style=\"color:#a31515\">&quot;, 2011&quot;</span>, null);\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>Can anyone advise what I'm doing wrong?</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-11-03T15:36:36.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

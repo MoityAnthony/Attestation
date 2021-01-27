@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "440939",
+    "ThreadId": "212106",
+    "Html": "<p>Hi,</p>\r\n<p>First I'd like to say a big thanks to the developers, I'm a big fan of PHPExcel !</p>\r\n<p>I have a template in .doc which I want to open, insert some text in the appropriate places, and return the final doc to the user (ike the mailling function of Word2007). If doing this is very clear with phpexcel, I'm a bit lost with this one. I could re-encode the template in phpword and start with a blank page, but then the people who are going to maintain the system has no idea about PHP.&nbsp;</p>\r\n<p>Any advise ?</p>\r\n<p>Thanks in advance !</p>",
+    "PostedDate": "2010-05-09T22:51:55.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "440950",
+    "ThreadId": "212106",
+    "Html": "Hi,\r\n\r\nIf you want to open an existing word document and modify it, then it will be difficult for you to do it with phpWord. What you can do is to open that document as html , do whatever you want and then re-create the word document. But, PHPWord does not provide any functionality for the first part i.e converting to html. You can take help of open office which provides a functionality like this. \r\n\r\n\r\nRegards,\r\nSwarnendu",
+    "PostedDate": "2010-05-09T23:36:09.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "440962",
+    "ThreadId": "212106",
+    "Html": "<p>Thanks for the quick reply !</p>\r\n<p>I'll will re-create the header/footer and include all the text which need to be there.</p>\r\n<p>But it would be a very useful feature in the future :)</p>\r\n<p>Thx !</p>",
+    "PostedDate": "2010-05-10T00:08:26.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "472103",
+    "ThreadId": "212106",
+    "Html": "<p>PHPWord 0.6.2 Beta includes a really simple template system. See current release.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-24T07:05:16.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475829",
+    "ThreadId": "212106",
+    "Html": "<p>I've just tried to update a template with PHPWord but unfortunately it does not work like PHPExcel.</p>\r\n<p>In my own CMS I would like to be able to generate automaticaly a report based on a template with a nice company header and footer</p>\r\n<p>and then create a table with MySQL data.</p>\r\n<p>To sum-up I wish that the class Template was able to replace more than once a token in the template</p>\r\n<p>and also was able to update the template like IOFactory class in PHPExcel does.</p>\r\n<p>Do you think it is something worthy (update Template class) or is it wiser to create from scratch my automatic generated document ?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-03T01:51:02.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

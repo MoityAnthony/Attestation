@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "465334",
+    "ThreadId": "218902",
+    "Html": "<p>Anyone got the TOC functionality to work? I use the example from the documentation:</p>\r\n<div>\r\n<p>$styleTOC = array('tabLeader'=&gt;PHPWord_Style_TOC::TABLEADER_DOT);<br>$styleFont = array('spaceAfter'=&gt;60, 'name'=&gt;'Tahoma', 'size'=&gt;12);<br>$section-&gt;addTOC($styleFont, $styleTOC);</p>\r\n<p>The result is empty though..</p>\r\n</div>",
+    "PostedDate": "2010-07-09T04:41:44.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467744",
+    "ThreadId": "218902",
+    "Html": "<p>Problem solved, I had forgot to use the addTitle function for titles...</p>\r\n<p>However I get no page numbers (I add page numbers in the footer though). And I can manually update the TOC from Word to get page numbers but that is not the smoothest solution.</p>",
+    "PostedDate": "2010-07-15T05:43:17.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467857",
+    "ThreadId": "218902",
+    "Html": "<p>Glad to see that your problem is solved.</p>\r\n<p>The automatic update of the page numbers in the TOC isn't possible, because the native word function looks into the entire document and sets the page numbers directly. However, you need to right click the TOC and then update page numbers only.</p>",
+    "PostedDate": "2010-07-15T08:44:23.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "901816",
+    "ThreadId": "218902",
+    "Html": "<p>I try to add code to PHPWord/Writer/Word2007/Document.php like this:\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:r'</span>);\r\n      $objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:instrText'</span>);\r\n              $objWriter-&gt;writeAttribute(<span style=\"color: #a31515;\">'xml:space'</span>, <span style=\"color: #a31515;\">'preserve'</span>);\r\n              $objWriter-&gt;writeRaw(<span style=\"color: #a31515;\">'PAGEREF '</span>.$title[<span style=\"color: #a31515;\">'anchor'</span>].<span style=\"color: #a31515;\">'\\h'</span>);\r\n      $objWriter-&gt;endElement();\r\n$objWriter-&gt;endElement();\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\r\n$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:r'</span>);\r\n\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:fldChar'</span>);\r\n\t\t$objWriter-&gt;writeAttribute(<span style=\"color: #a31515;\">'w:fldCharType'</span>, <span style=\"color: #a31515;\">'end'</span>);\r\n\t$objWriter-&gt;endElement();\r\n$objWriter-&gt;endElement();\r\n\r\n<span style=\"color: green;\">//I add this</span>\r\n<span style=\"color: green;\">// start TOC page</span>\r\n$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:r'</span>);\r\n       $objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:t'</span>);\r\n               $objWriter-&gt;writeRaw($i+2);\r\n       $objWriter-&gt;endElement();\r\n$objWriter-&gt;endElement();\r\n<span style=\"color: green;\">//end </span>\r\n...\r\n</pre>\r\n<pre><br /></pre>\r\n<pre>In word2007 it works,but in 2003 it does not work</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2012-08-21T01:26:00.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1278502",
+    "ThreadId": "218902",
+    "Html": "wanglei_estar, this worked for me:<br />\n<pre><code>$objWriter-&gt;startElement('w:r');\n       $objWriter-&gt;startElement('w:t');\n               $objWriter-&gt;writeRaw($i+2);\n       $objWriter-&gt;endElement();\n$objWriter-&gt;endElement();\n//end \n</code></pre>\n\nthanks<br />\n",
+    "PostedDate": "2014-07-28T13:18:18.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1310146",
+    "ThreadId": "218902",
+    "Html": "Hii wanglei_estar,<br />\nI can see the Page number in TOC, but it does not seems to be correct page number. Any help?<br />\n",
+    "PostedDate": "2014-10-03T00:53:53.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

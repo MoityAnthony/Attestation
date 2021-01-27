@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "499789",
+    "ThreadId": "228959",
+    "Html": "<p>Hello,</p>\r\n<p>first of all thanks to the developers, for creating this library!</p>\r\n<p>So I'll go on with my questions:</p>\r\n<p>Is it somehow possible to retrieve the dimensions or twips from a TextElement? This would give me the information, f.e. if the complete TextElement would fit into the current page or if i should place it on the next page.</p>\r\n<p>Another problem is the positioning of elements in the document. I cannot position an Image right/left to a text. A workaround would be to use tables, is there any other method for positioning the elements or creating a text circumfluent?</p>",
+    "PostedDate": "2010-09-29T00:45:48.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "925840",
+    "ThreadId": "399124",
+    "Html": "\r\n<p>I have a paragraph (addParagraphStyle) and would like to start with a new line in the paragraph. In Word it would be SHIFT ENTER. How can I program that?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks Martin</p>\r\n",
+    "PostedDate": "2012-10-12T07:53:33.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "926501",
+    "ThreadId": "399124",
+    "Html": "<p>$section-&gt;addTextBreak($num);</p>\r\n<p>$num ： To break how many lines</p>",
+    "PostedDate": "2012-10-14T19:35:15.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "927416",
+    "ThreadId": "399124",
+    "Html": "<p>In my Word the command</p>\r\n<p>$section-&gt;addTextBreak($num);</p>\r\n<p>creates paragraphs. In need a new line in the paragraph. Like SHIFT ENTER in Word</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks Martin</p>",
+    "PostedDate": "2012-10-16T07:30:39.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

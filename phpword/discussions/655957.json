@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1477513",
+    "ThreadId": "655957",
+    "Html": "Hi there,\r<br />\nI love this library because this saves a lot of my time in exporting to .docx files.\r<br />\nWorking fine till I want to add some HTML output in docx file.\r<br />\nSo my problem is like this way:\r<br />\nI have a form where a user can enter information about him/herself.\r<br />\nThen I have to export that entered information from database to a word file.\r<br />\nI done this job by using placeholder concept using PHPWord.\r<br />\nBut now I have something like this, user have an option to write information in WYSIWYG editor which outputs in html.\r<br />\nSo now I am trying to do something that in docx file the output of html will be shown not the HTML tags. Because that document eventually downloaded by the user.\r<br />\nSo I had searched through the library and cant get any solution.\r<br />\nCan anyone help me in this case.\r<br />\nThanks<br />\n",
+    "PostedDate": "2016-06-28T11:47:43.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

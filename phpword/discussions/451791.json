@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1074452",
+    "ThreadId": "451791",
+    "Html": "Hi\r<br />\n<br />\nI just started using PHPWord, which i think is awesome.  I'm trying to put the following text (using custom font) in the word file:\r<br />\n<br />\n$fontStyleTitle = array('name'=&gt;'Times New Roman', 'color'=&gt;'000000', 'size'=&gt;12, 'bold'=&gt;true);\r<br />\n<br />\n$PHPWord-&gt;addFontStyle('titleStyle', $fontStyleTitle);\r<br />\n$string = &quot;FORM A – CHECKLIST TO BE COMPLETED FOR C1GBL’S APPLICATION&quot;;\r<br />\n<br />\n$text = $section-&gt;addText($string, 'titleStyle');\r<br />\n<br />\nBut the output is:\r<br />\n<br />\nFORM A â CHECKLIST TO BE COMPLETED FOR C1GBL\\âS APPLICATION\r<br />\n<br />\nI don't know how to fix this.  Can anyone help? Thanks in advance.\r<br />\n<br />\nAshis<br />\n",
+    "PostedDate": "2013-07-29T13:41:34.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1074782",
+    "ThreadId": "451791",
+    "Html": "Got it... change the addText function in Section.php to:<br />\n<pre><code>public function addText($text, $styleFont = null, $styleParagraph = null) {\n    $givenText = $text;\n    $text = new PHPWord_Section_Text($givenText, $styleFont, $styleParagraph);\n    $this-&gt;_elementCollection[] = $text;\n    return $text;\n}\n</code></pre>\n\nI removed the utf8_encode function.  Hope its of any help to someone...<br />\n",
+    "PostedDate": "2013-07-30T10:02:10.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

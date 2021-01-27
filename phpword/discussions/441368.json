@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1034848",
+    "ThreadId": "441368",
+    "Html": "Hi all,\r<br />\n<br />\nI have a bunch of data with numbering list in front of them in the word template.\r<br />\n<br />\nFor some of them is not a must when the file is being crated. I have the ${Value}... replaced to &quot;&quot;. But with those number in front of them without any info following that looks ugly.\r<br />\n<br />\nIs there a way to delete those unnecessary numbering lists when I don't use them?\r<br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2013-04-23T16:50:14.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

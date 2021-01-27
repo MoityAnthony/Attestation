@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "446985",
+    "ThreadId": "213736",
+    "Html": "<p>Hi, Is it possible to set the attribute &lsquo;barred&rsquo; for a text.</p>\r\n<p>&nbsp;</p>\r\n<p>array(&lsquo;name&rsquo;=&gt;&rsquo;Arial&rsquo;,&hellip;,&rsquo;barred&rsquo;=&gt;true); (for exemple)</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:12pt\" lang=EN-GB>Best regards</span></p>",
+    "PostedDate": "2010-05-25T02:09:21.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "446993",
+    "ThreadId": "213736",
+    "Html": "<p>What do you mean by &quot;barred&quot;? If you want a Strikethrough, then I suppose at present there are no such option. Following are the options for font styling :\r\n<pre>$this-&gt;_type = $type; <br>$this-&gt;_name = 'Arial'; <br>$this-&gt;_size = 20; <br>$this-&gt;_bold = false; <br>$this-&gt;_italic = false; <br>$this-&gt;_superScript = false; <br>$this-&gt;_subScript = false; <br>$this-&gt;_underline = PHPWord_Style_Font::UNDERLINE_NONE; <br>$this-&gt;_color = '000000'; $this-&gt;_fgColor = null; <br>$this-&gt;_align = null; <br>$this-&gt;_spaceBefore = null; <br>$this-&gt;_spaceAfter = null;</pre>\r\n</p>",
+    "PostedDate": "2010-05-25T02:28:09.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "447077",
+    "ThreadId": "213736",
+    "Html": "<p>Yes I mean Strikethrough of course.</p>\r\n<p>&nbsp;</p>\r\n<p>i made a small change in PHPWord to have the Strikethrough property.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-25T06:29:09.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "447098",
+    "ThreadId": "213736",
+    "Html": "<p>Thats nice.</p>\r\n<p>Please share such that others can also use.</p>",
+    "PostedDate": "2010-05-25T07:11:42.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450430",
+    "ThreadId": "213736",
+    "Html": "<p>Yes, with pleasure.</p>\r\n<p>How can I share my work?</p>",
+    "PostedDate": "2010-06-01T23:40:40.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450448",
+    "ThreadId": "213736",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\">\r\n<p>i made a small change in PHPWord to have the Strikethrough property.</p></blockquote><p></p>\r\n\r\nWhatever changes you made, you can post here. Put down in which file and what changes you made. And change the title of the thread from &quot;barred&quot; to &quot;Strikethrough&quot;.",
+    "PostedDate": "2010-06-02T00:55:51.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1204039",
+    "ThreadId": "213736",
+    "Html": "<strong>jep33 wrote:</strong><br />\n<blockquote>\nYes I mean Strikethrough of course. &nbsp; i made a small change in PHPWord to have the Strikethrough property. &nbsp;<br />\n</blockquote>\nHi,\r<br />\n<br />\nI have same requirement . can you please help me?\r<br />\n<br />\nThanks,\r<br />\nJaffar<br />\n",
+    "PostedDate": "2014-02-06T23:01:27.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1204051",
+    "ThreadId": "213736",
+    "Html": "Hi,\r<br />\n<br />\nI have sorted out my self.\r<br />\n<br />\nyou can pass array as styletext and in that array mention 'strikethrough'=&gt;true.<br />\n",
+    "PostedDate": "2014-02-06T23:23:05.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

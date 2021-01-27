@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "See comment from Matthias.",
+    "ClosedDate": "2011-05-23T10:36:15.88-07:00",
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "Do this:\r\n....\r\n$cellStyle = array('valign'=>'right');\r\n...\r\n$table->addCell(2000,$cellStyle)->addText('text');\r\n\r\nBut text still left.",
+    "LastUpdatedDate": "2011-05-25T00:40:00.527-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-03-14T02:29:18.317-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Not working valign in cell",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 22
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi,\n\nthe valign param defines the vertical alignment. So you can only use top, bottom and center.\n\nIf you want the alignment right, you have to style the paragraph text element with $style = array('align' => 'right').\n\nBest regards,\nMatthias",
+      "PostedDate": "2011-05-23T10:35:26.6-07:00",
+      "Id": 36249
+    },
+    {
+      "Message": "thanks",
+      "PostedDate": "2011-05-25T00:40:00.527-07:00",
+      "Id": 36375
+    }
+  ]
+}

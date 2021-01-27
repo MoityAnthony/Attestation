@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": "",
+    "Description": "In my recent project using PHPWord library, I found that all the east Asian characters appears in question mark or corrupted while latin characters appears fine. After checking the source code, I think this issue come with 2 reasons and can be fixed by just a little modification:\r\n\r\nFirst, some source code call utf8_encode() to wrap the text before inserting, but some insert directly. So I removed all of the 2 utf8_encode() call. Details shown below:\r\n-----\r\nFILE: Section.php     LINE: 157\r\nFUNCTION: PHPWord_Section::addText()     LINE: 1\r\n     remove the utf8_encode() call\r\n-----\r\nFILE: Section/Table/Cell.php     LINE: 142\r\nFUNCTION: PHPWord_Section_Table_Cell::addText()     LINE: 1\r\n     remove the utf8_encode() call\r\n-----\r\nCaller makes sure the text parameter is in UTF-8 encoding.\r\n\r\nSecond, east Asian font style leak as below:\r\n-----\r\nFILE: Writer/Word2007/Base.php     LINE: 233 ~ 237\r\nFUNCTION: PHPWord_Writer_Word2007_Base::_writeTextStyle()     LINE: 13 ~ 17\r\n     add this line\r\n     $objWriter->writeAttribute('w:eastAsia', $font);\r\n-----\r\nHowever, in the file Styles.php such an east Asian font style definition already exists at line 312 ~ 317.\r\n\r\nAfter these 3 line modification, the east Asian characters appears correctly.\r\n\r\nIn addition, I suggest to provide a way to set all the 4 font type separately in order to achieve the best display / print effort for mixed text. For example, if the font parameter is string type, set all the 4 types of font to that; when it is an array with 'w:ascii', 'w:hAnsi', 'w:eastAsia', 'w:cs' keys, set the font name separately.\r\n",
+    "LastUpdatedDate": "2012-08-13T21:03:58.243-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-05-31T19:31:50.317-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "East Asian characters appears wrongly",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 3,
+    "Id": 8
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "what about Arabic Char",
+      "PostedDate": "2010-09-22T05:51:46.583-07:00",
+      "Id": 16337
+    },
+    {
+      "Message": "Good!\n When you use it you shoul like this;\n$text        =  iconv('gbk','utf-8','我是中文');\n$fontStyle = array('name'=>iconv('gbk','utf-8','黑体'),'size'=>20);\n$paraStyle= array('align'=>'center');\n$section->addText($text,$fontStyle,$paraStyle);\n",
+      "PostedDate": "2012-08-13T21:03:58.243-07:00",
+      "Id": 74095
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2011-07-08T03:56:18.86-07:00",
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Found an error @Template.php. Missing directory separator @ contruct:\r\n\r\n    /**\r\n     * Create a new Template Object\r\n     * \r\n     * @param string $strFilename\r\n     */\r\n    public function __construct($strFilename) {\r\n        $path = dirname($strFilename);\r\n\t\t/**\r\n\t\t* Add Directory Separator Here\r\n\t\t* $this->_tempFileName = $path.time().'.docx';\r\n\t\t*/\r\n        $this->_tempFileName = $path.DIRECTORY_SEPARATOR.time().'.docx';\r\n        \r\n        copy($strFilename, $this->_tempFileName); // Copy the source File to the temp File\r\n\r\n        $this->_objZip = new ZipArchive();\r\n        $this->_objZip->open($this->_tempFileName);\r\n        \r\n        $this->_documentXML = $this->_objZip->getFromName('word/document.xml');\r\n    }\r\n",
+    "LastUpdatedDate": "2011-07-08T03:56:18.86-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-10-01T20:38:24.753-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Fix for Template.php: load template error",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 13
+  },
+  "FileAttachments": [
+    {
+      "FileId": 154243,
+      "FileName": "Template.php",
+      "DownloadUrl": ".\\154243"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Thanks for posting this. Will be included in next bug fix release.",
+      "PostedDate": "2011-07-08T03:56:14.813-07:00",
+      "Id": 39088
+    }
+  ]
+}

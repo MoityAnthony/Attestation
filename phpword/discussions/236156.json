@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "527448",
+    "ThreadId": "236156",
+    "Html": "\r\n<p>I'm having troubles with PHPWord when it comes to Hebrew. Everything works just fine but when I try to use Hebrew strings it shows up as gibberish.. tried to solve it, with no success though.. Can anyone give me a solution? thanks in advance!!!!!&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-26T09:45:54.837-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612759",
+    "ThreadId": "236156",
+    "Html": "<p>hello</p>\r\n<p>add :</p>\r\n<p>header('Content-type: text/html; charset=UTF-8');</p>\r\n<p>and remove all the utf-8 info in the php files ... it work fine for me in arabic.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-05-14T09:20:24.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

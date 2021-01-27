@@ -1,0 +1,51 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "See comment from Poster.",
+    "ClosedDate": "2011-05-23T11:35:24.89-07:00",
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "The modified content for PHPWord/Writer/Word2007/Document.php and PHPWord/Section.php is attached.\r\nIt fixes two null object dereference.",
+    "LastUpdatedDate": "2011-05-23T11:35:24.89-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-08-16T00:15:35.69-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Fix for Document::_writeTOC and Section::addListItem",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 11
+  },
+  "FileAttachments": [
+    {
+      "FileId": 143164,
+      "FileName": "patch-for-phpword.patch",
+      "DownloadUrl": ".\\143164"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Thanks for the patch. It will be included in the next release.\n\nBest regards,\nMatthias",
+      "PostedDate": "2011-05-23T11:35:10.02-07:00",
+      "Id": 36259
+    }
+  ]
+}

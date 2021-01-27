@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 4,
+    "Custom": null,
+    "Description": "In PHPWord_Writer_Word2007_Base:\r\nIn function _writeTextStyle:\r\nafter:\r\n$striketrough = $style->getStrikethrough();\r\n$underline = $style->getUnderline();\r\nadd:\r\n$superscript = $style->getSuperScript(); \r\n$subscript = $style->getSubScript(); \r\n\r\nand after:\r\n\t\tif($bold) {\r\n\t\t\t$objWriter->writeElement('w:b', null);\r\n\t\t}\r\n\t\r\nadd:\r\n\t\t// Superscript\r\n\t\tif($superscript) {\r\n            $objWriter->startElement('w:vertAlign');\r\n\t\t\t\t$objWriter->writeAttribute('w:val', 'superscript');\r\n\t\t\t$objWriter->endElement();\t\t\r\n\t\t}\r\n\t\t\r\n\t\t//subscript\r\n\t\tif($subscript) {\r\n            $objWriter->startElement('w:vertAlign');\r\n\t\t\t\t$objWriter->writeAttribute('w:val', 'subscript');\r\n\t\t\t$objWriter->endElement();\t\t\r\n\t\t}\r\n",
+    "LastUpdatedDate": "2013-01-23T00:03:06.357-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-05-21T08:14:17.643-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "superscript and subscript not working",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 24
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thank you.",
+      "PostedDate": "2012-07-02T00:28:57.84-07:00",
+      "Id": 69358
+    },
+    {
+      "Message": "First thanks for everything you have done, but i try it ,it doesn't work well ",
+      "PostedDate": "2012-10-08T03:17:23.593-07:00",
+      "Id": 78976
+    },
+    {
+      "Message": "Hi, I have implemented this change and I am also not able to get it working.\nI am attempting to call it as follows:\n\n\t\t$textrun = $section->createTextRun();\n\t\t$textrun->addText('A', array('color'=>'000080'));\n\t\t$textrun->addText('3', array('subscript'=>true);\n\t\t$textrun->addText(' Communications', array('color'=>'000080'));\n\nThe resulting text in the word document looks like this:\n\nA3 Communications\n\nI would really appreciate it if we could figure out what is wrong and come up with a fix for this as I desperately need to implement a subscript 3 into the client name in my generated document.\n\nThank you in anticipation.\nTony Green",
+      "PostedDate": "2013-01-21T10:50:54.117-08:00",
+      "Id": 86787
+    },
+    {
+      "Message": "I have now managed to get this working using the code provided, the missing information that allowed it to work was in the way it was called!!\nThe name of the property needs to have a capital \"S\" on the script part!\nSo to get A followed by subscript 3 you need to call the textrun like this:\n\n$textrun = $section->createTextRun();\n$textrun->addText('A', array('color'=>'000080'));\n$textrun->addText('3', array('subScript'=>true);\n\nNote the captial \"S\" on Script above.\nThe same applies when using superScript.\nHope that help someone else and saves them some time!\nCheers\nTony Green\n",
+      "PostedDate": "2013-01-23T00:03:06.357-08:00",
+      "Id": 86925
+    }
+  ]
+}

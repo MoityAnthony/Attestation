@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "714136",
+    "ThreadId": "283443",
+    "Html": "\r\n<p>It creating problem when I will add watermark logo in existing docx file, currently it is recreating a new document mean you have to use addText() function.</p>\r\n<p>please solve this problem or guide me what to do?</p>\r\n<p><strong><span style=\"text-decoration:underline\">How I watermark to an existing document?</span></strong></p>\r\n",
+    "PostedDate": "2011-12-19T02:36:40.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

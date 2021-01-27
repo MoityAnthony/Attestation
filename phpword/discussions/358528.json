@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "845367",
+    "ThreadId": "358528",
+    "Html": "\r\n<p>If any method for count a word in docx format?</p>\r\n",
+    "PostedDate": "2012-06-05T23:37:31.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "846383",
+    "ThreadId": "358528",
+    "Html": "<p>&nbsp;I use a COM class in php.but <span>COM functions are only available for the Windows version of PHP.So i try to use a phpword -&nbsp;Could u guys please help me on this?</span></p>",
+    "PostedDate": "2012-06-07T23:15:01.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

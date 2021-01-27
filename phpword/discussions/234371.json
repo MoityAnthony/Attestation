@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "520785",
+    "ThreadId": "234371",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>I have a little problem, after save the document when I try to open it in word 2007, it shows me the next error: &quot;The file xxxx.docx&nbsp;can't no be open because there are problems with the contents&quot;,</p>\r\n<p>The error is in spanish so i am not sure if this is the same error in english...</p>\r\n<p>I have php 5.2.6.</p>\r\n<p>&nbsp;</p>\r\n<p>Please excuse my English... its so ugly I know :)</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2010-11-11T13:50:37.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "533152",
+    "ThreadId": "234371",
+    "Html": "\r\n<p>&iquest;Any solution for this problem? thanks</p>\r\n",
+    "PostedDate": "2010-12-08T15:18:38.547-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "533177",
+    "ThreadId": "234371",
+    "Html": "\r\n<p>Do you have this problem with a simple example phpWord?&nbsp; Edit your code until the error stops, to help you find the problem?</p>\r\n<p>This is an interesting article. It suggests that you might be able to open a 'problem' docx with WordPad.</p>\r\n<p><a href=\"http://www.kombitz.com/2010/11/25/the-word-document-cannot-be-opened-because-there-are-problems-with-the-contents-problem/\" target=\"_blank\">http://www.kombitz.com/2010/11/25/the-word-document-cannot-be-opened-because-there-are-problems-with-the-contents-problem/</a></p>\r\n<p>Also, what is the message if you click 'Details' in the error message?</p>\r\n<p>If the 'Details' tell you where the error is, open the docx with a zip utility like WinZip. This allows you to read all the xml files that are 'inside' the docx.</p>\r\n<p>Good luck.</p>\r\n",
+    "PostedDate": "2010-12-08T16:49:05.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "635265",
+    "ThreadId": "234371",
+    "Html": "<p>Hi,</p>\r\n<p>I`m having the same problem. The problem appear even with the example (using the template example).</p>\r\n<p>If anyone have any solution I`d be grateful.</p>\r\n<p>&nbsp;</p>\r\n<p>Viktor</p>",
+    "PostedDate": "2011-06-30T01:42:43.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

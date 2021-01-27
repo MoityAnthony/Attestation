@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1220015",
+    "ThreadId": "538209",
+    "Html": "Hello there,\r<br />\n<br />\nI need to obtain a word document from a php code that contains an html form with checboxes. I don't know whether it will be possible to insert the results of the checboxes in the word document, I mean, pick up the results of the $_POST form.\r<br />\n<br />\nAny idea? Thanks a lot<br />\n",
+    "PostedDate": "2014-03-06T11:21:06.143-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

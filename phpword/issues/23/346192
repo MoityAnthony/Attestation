@@ -1,0 +1,160 @@
+<?php
+/**
+ * PHPWord
+ *
+ * Copyright (c) 2011 PHPWord
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPWord
+ * @package    PHPWord
+ * @copyright  Copyright (c) 010 PHPWord
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL
+ * @version    Beta 0.6.3, 08.07.2011
+ */
+
+
+/**
+ * PHPWord_DocumentProperties
+ *
+ * @category   PHPWord
+ * @package    PHPWord
+ * @copyright  Copyright (c) 2009 - 2011 PHPWord (http://www.codeplex.com/PHPWord)
+ */
+class PHPWord_Template {
+    
+    /**
+     * ZipArchive
+     * 
+     * @var ZipArchive
+     */
+    private $_objZip;
+    
+    /**
+     * Temporary Filename
+     * 
+     * @var string
+     */
+    private $_tempFileName;
+    
+    /**
+     * Document XML
+     * 
+     * @var string
+     */
+    private $_documentXML;
+    
+    
+    /**
+     * Create a new Template Object
+     * 
+     * @param string $strFilename
+     */
+    public function __construct($strFilename) {
+        $path = dirname($strFilename);
+        $this->_tempFileName = $path.DIRECTORY_SEPARATOR.time().'.docx';
+        
+        copy($strFilename, $this->_tempFileName); // Copy the source File to the temp File
+
+        $this->_objZip = new ZipArchive();
+        $this->_objZip->open($this->_tempFileName);
+        
+        $this->_documentXML = $this->_objZip->getFromName('word/document.xml');
+    }
+    
+    /**
+     * Set a Template value
+     * 
+     * @param mixed $search
+     * @param mixed $replace
+     */
+    /*public function setValue($search, $replace) {
+        if(substr($search, 0, 2) !== '${' && substr($search, -1) !== '}') {
+            $search = '${'.$search.'}';
+        }
+        
+        if(!is_array($replace)) {
+            $replace = utf8_encode($replace);
+        }
+        
+        $this->_documentXML = str_replace($search, $replace, $this->_documentXML);
+    }*/
+	
+	/**
+     * Set a Template value
+     * 
+     * @param string $search
+     * @param string $replace
+	 * @return the number of replacements made
+     */
+	public function setValue($search, $replace) {
+		$tagPattern = '(\<[^\>]+\>)*';
+		//Sorry about the name setValuea8s73ujik5.  Didn't want to interfere with any currently defined global variables.  Yes, I know... this is sloppy.
+		$GLOBALS['setValuea8s73ujik5'] = $replace;
+		$count = 0;
+		$this->_documentXML = preg_replace_callback(
+			'/\$\{('.$tagPattern.')'.preg_quote($search).'('.$tagPattern.')\}/',
+			//Don't forget that we need htmlspecialchars just in case...
+			create_function('$matches', '$value = htmlspecialchars($matches[1] . 
+			$GLOBALS[\'setValuea8s73ujik5\'].$matches[3]);
+			return str_replace("\n", "<w:br/>", $value);'),
+			$this->_documentXML, -1, $count);
+		unset($GLOBALS['setValuea8s73ujik5']);
+		return $count;
+	}
+	
+	/**
+     * Get a list of all Template values in the document
+     */
+	public function getValues() {
+		$matches = array();
+		if(preg_match_all('/\$\{([^\}]+)\}/', $this->_documentXML, $matches) === false || count($matches) != 2)
+			return false;
+		$temp = array();
+		for($i = 0; $i < count($matches[1]); $i++)
+			$temp[] = strip_tags($matches[1][$i]);
+		return $temp;
+	}
+    
+    /**
+     * Save Template
+     * 
+     * @param string $strFilename
+     */
+    public function save($strFilename) {
+        if(file_exists($strFilename)) {
+            unlink($strFilename);
+        }
+        
+        $this->_objZip->addFromString('word/document.xml', $this->_documentXML);
+        
+        // Close zip file
+        if($this->_objZip->close() === false) {
+            throw new Exception('Could not close zip file.');
+        }
+        
+        rename($this->_tempFileName, $strFilename);
+    }
+	
+	public function close() {
+		// Close zip file
+        if($this->_objZip->close() === false) {
+            throw new Exception('Could not close zip file.');
+        }
+        
+        unlink($this->_tempFileName);
+	}
+}
+?>

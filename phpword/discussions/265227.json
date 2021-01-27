@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "642639",
+    "ThreadId": "265227",
+    "Html": "\r\n<p>Hi, i have issue with line heights on text (i'm not working with tables)</p>\r\n<p>the simple code (this is all code):</p>\r\n<p>&nbsp;</p>\r\n<pre>$PHPWord = new PHPWord();\r\n$section = $PHPWord-&gt;createSection();\r\n\r\n$section-&gt;addText(&quot;hi&quot;);\r\n$section-&gt;addText(&quot;Hi&quot;);\r\n\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r\n$objWriter-&gt;save('doc/helloWorld.docx');</pre>\r\n<p>Result:</p>\r\n<p>http://i52.tinypic.com/2yw76zl.jpg</p>\r\n<p>Using: PHPWord_0.6.2_Beta</p>\r\n<p>thank you very much.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-07-14T14:28:27.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

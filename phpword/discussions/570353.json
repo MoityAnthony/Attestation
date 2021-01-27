@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1315365",
+    "ThreadId": "570353",
+    "Html": "Hi I am having a problem with saving a document from a template.\r<br />\n<br />\nI have a total of 147 templates, but at any point in time only need 20 of them, but once placed they need to be sequentially named, I have already dealt with this from the following code:<br />\n<pre><code>//Add Template Documentation\n//step 1 identify which documentation set is required\n$sql = &quot;SELECT * FROM templates_documents WHERE scope = '&quot;.$values[&quot;msscope&quot;].&quot;'&quot;;\n$rs = CustomQuery($sql); \n$results = $rs;\nwhile ($row = $results-&gt;fetch_assoc())\n{\n//Step 2 correctly name doc reference\nif ($row[&quot;scope&quot;] == '9001') $docref = $row[&quot;9001ref&quot;]; \nelseif ($row[&quot;scope&quot;] == '14001') $docref = $row[&quot;14001ref&quot;]; \nelseif ($row[&quot;scope&quot;] == '18001') $docref = $row[&quot;18001ref&quot;]; \nelseif ($row[&quot;scope&quot;] == '9001,14001') $docref = $row[&quot;914001ref&quot;]; \nelseif ($row[&quot;scope&quot;] == '9001,18001') $docref = $row[&quot;918001ref&quot;]; \nelseif ($row[&quot;scope&quot;] == '14001,18001') $docref = $row[&quot;1418001ref&quot;]; \nelseif ($row[&quot;scope&quot;] == '9001,14001,18001') $docref = $row[&quot;91418001ref&quot;];\n\n//Step 3 Decode Attachment Field\n$fileArray = json_decode($row[&quot;attachment&quot;],true);\n\n//values from Attachment Array\n$name1 = $fileArray[&quot;0&quot;][&quot;name&quot;]; \n$usrName1 = $fileArray[&quot;0&quot;][&quot;usrName&quot;];\n$size1 = $fileArray[&quot;0&quot;][&quot;size&quot;];\n$type1 = $fileArray[&quot;0&quot;][&quot;type&quot;];\n$searchStr1 = $fileArray[&quot;0&quot;][&quot;searchStr&quot;];\n\n$name2 = $folder.'/'.$docref.'.docx';\n$usrName2 = $docref.&quot;.docx&quot;;\n$size2=$size1;\n$type2=$type1;\n$searchStr2 = $usrName2.&quot;,!:sStrEnd&quot;;\n$attachment2 = '[{&quot;name&quot;:&quot;'.$folder.'\\/'.$usrName2.'&quot;,&quot;usrName&quot;:&quot;'.$usrName2.'&quot;,&quot;size&quot;:'.$size2.',&quot;type&quot;:&quot;'.$type2.'&quot;,&quot;searchStr&quot;:&quot;'.$searchStr2.'&quot;}]';</code></pre>\n\nThe above all works fine, but I get problems after introducing the following PHPWord code:<br />\n<pre><code>require_once 'plugins/PHPWord/Template.php';\nrequire_once 'plugins/PHPWord.php';\n$PHPWord = new PHPWord();\n$template = $PHPWord-&gt;loadTemplate('/home/sites/iso-drive.co.uk/public_html/portal/'.$name1);\n$template-&gt;save('/home/sites/iso-drive.co.uk/public_html/portal/'.$name2);\nunset($template);</code></pre>\n\nThe error coming up is in this <a href=\"http://prntscr.com/4ybq4o\" rel=\"nofollow\">screenshot</a>\r<br />\n<br />\nI have tried using relative and absolute paths, and cant figure out the problem\r<br />\n<br />\nfrom a var_dump I can see that the $name 1 and $name2 functions are working, ie in example I am trying $name1 returns Templates/test_rsnglzbn.docx and $name2 returns ClientFiles/152/PM-01.docx which is correct.  However if you look at error line 2 on the screenshot, it looks like the path is not correctly set.\r<br />\n<br />\nPlease help?<br />\n",
+    "PostedDate": "2014-10-21T08:36:19.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1315457",
+    "ThreadId": "570353",
+    "Html": "Anyone?<br />\n",
+    "PostedDate": "2014-10-21T12:58:18.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

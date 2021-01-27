@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1451407",
+    "ThreadId": "647126",
+    "Html": "Hello,\r<br />\nI'm using PHPWord to generate .docx words, from HTML.\r<br />\nI have the following situation:<br />\n&lt;ol&gt;\r\n&lt;li&gt;I'm directly inside the LI tag&lt;/li&gt;\r\n&lt;li&gt;&lt;span&gt;I'm directly inside the SPAN tag&lt;/span&gt;&lt;/li&gt;\r\n&lt;li&gt;&lt;p&gt;&lt;span&gt;I'm directly inside the SPAN tag... SPAN is inside P tag&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;\r\n&lt;/ol&gt;\r\nThe content of the 2nd and 3rd LI, doesn't render. It shows a blank content in the .docx.\r<br />\n<br />\nI tried render the SPAN tag changing the parseChildNodes():<br />\n<pre><code>$cNodes = $node-&gt;childNodes;\n            if (count($cNodes) &gt; 0) {\n                foreach ($cNodes as $cNode) {              \n                    // Added to get tables to work                    \n                    $htmlContainers = array(\n                        'span'\n                        \n                    );\n                    if (in_array( $cNode-&gt;nodeName, $htmlContainers ) ) {                        \n                        self::parseNode($cNode, $element, $styles, $data);\n                    } else{                    \n                        // All other containers as defined in AbstractContainer\n                        if ($element instanceof AbstractContainer) {                        \n                            self::parseNode($cNode, $element, $styles, $data);\n                        }\n                    }  \n                }\n            }</code></pre>\n\n",
+    "PostedDate": "2015-11-09T03:59:20.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "501747",
+    "ThreadId": "229470",
+    "Html": "<p>Hallo,</p>\r\n<p>my Question is very Simple but i have not find an Answer....</p>\r\n<p>Is it possible to generate a Word Document with Template that have more than 1 Page.</p>\r\n<p>Example:&nbsp; A Word Letter with Adress Field and i have more than 1 Adress for this Template.</p>\r\n<p>&nbsp;</p>\r\n<p>P.s. Sorry for my bad English ...</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-10-03T14:13:02.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "522487",
+    "ThreadId": "229470",
+    "Html": "\r\n<p>I am interested in the same thing.&nbsp; I believe this is more of a mail merge situation where you can pair an array or database with a template file and output a document that has a copy of the template filled out with each set of information on a separate\r\n page.</p>\r\n<p>I would be willing to help develop this functionality, i have pretty basic php knowledge but i've used classes and written my own objects before and i understand XML just not sure how i can put all that together to help out.</p>\r\n<p>My current project requires a mail-merge situation and i'm currently generating PDF documents but the real need is for editable word documents.</p>\r\n",
+    "PostedDate": "2010-11-15T21:05:23.283-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "644769",
+    "ThreadId": "229470",
+    "Html": "<p>Did anyone ever come up with a solution to this?</p>\r\n<p>I need to do something like this at the moment. Basically a mail merge. Loop through data, and using a template file, add a new page to the resulting document inserting different information each time.</p>",
+    "PostedDate": "2011-07-19T20:47:27.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

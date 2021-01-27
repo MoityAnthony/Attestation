@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "921076",
+    "ThreadId": "397834",
+    "Html": "\r\n<p>Hi,<br>\r\n<br>\r\nI need to save the file in .doc format or in .rtf<br>\r\n<br>\r\nThis works fine:<br>\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');<br>\r\n$objWriter-&gt;save('myDoc.docx');<br>\r\n<br>\r\nbut, this doesn't<br>\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2003');<br>\r\n$objWriter-&gt;save('myDoc.doc');<br>\r\n&nbsp;<br>\r\n<br>\r\nThanks in Advance..</p>\r\n",
+    "PostedDate": "2012-10-03T01:05:19.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

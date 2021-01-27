@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1327300",
+    "ThreadId": "573515",
+    "Html": "Hi all, <br />\n<br />\nI am using PHPWord to do following:<br />\n<ol>\n<li>\nLoad a &quot;template&quot;, with &quot;${field}&quot; to be replaced in my PHP with inputs from an HTML form. Done by $doc=$wa-&gt;load(...);<br />\n</li>\n<li>\nI tried to modify the document's meta data with some dynamic contents too. <br />\n</li>\n</ol>\nIt seems that a PhpOffice\\PhpWord\\Template $doc object does not have a getProperties method as there is in a PhpOffice\\PhpWord\\Phpword $wa object; while a $wa object does not have setValue method as in $doc.<br />\n<br />\nThe saving of the modifiled template is via $doc-&gt;save but it does not encapsulate what I did in $wa. <br />\n<br />\nAny hints?<br />\n",
+    "PostedDate": "2014-11-29T19:13:06.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

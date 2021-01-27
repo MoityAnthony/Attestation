@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "655554",
+    "ThreadId": "268457",
+    "Html": "\r\n<p>Is there a way to center a table on a page?</p>\r\n",
+    "PostedDate": "2011-08-09T16:30:48.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829408",
+    "ThreadId": "268457",
+    "Html": "<p>I would like to know this as well. &nbsp;My \"solution\" at this point is to make all tables the width of the page which is kind of hokey looking with smaller tables</p>",
+    "PostedDate": "2012-04-27T08:27:05.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

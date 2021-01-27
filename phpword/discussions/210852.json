@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "436515",
+    "ThreadId": "210852",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;&nbsp; I was using addText() method and for my condition, I am putting different styles on different strings in a single sentence. So, when I call addText() method for each individual phrase with different styles, it gives me the text in a new line. I want them all to be in a single line. Following is the example of code I am writing:</p>\r\n<p><span style=\"text-decoration:underline\"><strong>What I want:</strong></span></p>\r\n<pre><span style=\"color:red\">Hello</span> <span style=\"color:green\">All!</span></pre>\r\n<p>I am putting these two Strings in two different addText() method.</p>\r\n<p>$section-&gt;addText(&quot;Hello&quot;, array(&quot;color&quot; =&gt; &quot;red&quot;));</p>\r\n<p>$section-&gt;addText(&quot;All!&quot;, array(&quot;color&quot; =&gt; &quot;green&quot;));</p>\r\n<p><span style=\"text-decoration:underline\"><strong>And what I am getting:</strong></span></p>\r\n<p>\r\n<pre><span style=\"color:red\">Hello</span><br><br><span style=\"color:green\">All!</span></pre>\r\n</p>\r\n<p>How to disable these new line settings in addText() method?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Swarnendu</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-28T06:23:00.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "436668",
+    "ThreadId": "210852",
+    "Html": "Hello Swarnendu,<br><br>thanks for the feature request, I've added this into the feature <br>requests list.<br>The main problem is, that the docx writer always creates a new paragraph <br>for each text element.<br><br>For the moment, there is no workaround. sorry. But I think this feature <br>will be implemented in one the next releases we're planning at the moment.<br><br>best regards<br><br>Matthias<br><br><br>&gt; From: swarnendude<br>&gt;<br>&gt; Hi,<br>&gt;<br>&gt;    I was using addText() method and for my condition, I am putting <br>&gt; different styles on different strings in a single sentence. So, when I <br>&gt; call addText() method for each individual phrase with different <br>&gt; styles, it gives me the text in a new line. I want them all to be in a <br>&gt; single line. Following is the example of code I am writing:<br>&gt;<br>&gt; *What I want:*<br>&gt;<br>&gt; Hello All!<br>&gt;<br>&gt; I am putting these two Strings in two different addText() method.<br>&gt;<br>&gt; $section-&gt;addText(&quot;Hello&quot;, array(&quot;color&quot; =&gt; &quot;red&quot;));<br>&gt;<br>&gt; $section-&gt;addText(&quot;All!&quot;, array(&quot;color&quot; =&gt; &quot;green&quot;));<br>&gt;<br>&gt; *And what I am getting:*<br>&gt;<br>&gt; Hello<br>&gt;<br>&gt; All!<br>&gt;<br>&gt; How to disable these new line settings in addText() method?<br>&gt;<br>&gt;  <br>&gt;<br>&gt;  <br>&gt;<br>&gt; Thanks,<br>&gt;<br>&gt; Swarnendu<br>&gt;<br>&gt;  <br>&gt;<br>&gt; Read the full discussion online <br>&gt; &lt;http://phpword.codeplex.com/Thread/View.aspx?ThreadId=210852&ANCHOR#Post436515&gt;.<br>&gt;<br>&gt; To add a post to this discussion, reply to this email <br>&gt; ([email removed] <br>&gt; &lt;mailto:[email removed]?subject=%5Bphpword:210852%5D&gt;)<br>&gt;<br>&gt; To start a new discussion for this project, email <br>&gt; [email removed] &lt;mailto:[email removed]&gt;<br>&gt;<br>&gt; You are receiving this email because you subscribed to this discussion <br>&gt; on CodePlex. You can unsubscribe or change your settings <br>&gt; &lt;https://phpword.codeplex.com/subscriptions/thread/project/edit&gt; on <br>&gt; codePlex.com.<br>&gt;<br>&gt; Please note: Images and attachments will be removed from emails. Any <br>&gt; posts to this discussion will also be available online at codeplex.com<br>&gt;",
+    "PostedDate": "2010-04-28T11:14:50.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438621",
+    "ThreadId": "210852",
+    "Html": "<p>I have the same problem...<br>For now you can do this...<br>In the file PHPWord/Writer/Word2007/Base.php replace the line $text = htmlspecialchars($textrun-&gt;getText()); for $text = $textrun-&gt;getText(); and now when you insert text and you want that some words appears in other format you must write de xml code for that. For example when I want write &quot;Hello World&quot; I did that in this way</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>$BOLD=<span style=\"color:#a31515\">'&lt;/w:t&gt;&lt;/w:r&gt;&lt;w:r w:rsidRPr=&quot;00997AA1&quot;&gt; <span style=\"color:#000000\"><span style=\"color:#a31515\">&lt;w:rPr&gt;&lt;w:b/&gt;&lt;/w:rPr&gt;&lt;w:t xml:space=&quot;preserve&quot;&gt; %s&nbsp;</span></span></span></pre>\r\n<pre><span style=\"color:#a31515\"><span style=\"color:#000000\"><span style=\"color:#a31515\">&lt;/w:t&gt;&lt;/w:r&gt;&lt;w:r w:rsidRPr=&quot;00997AA1&quot;&gt; &lt;w:rPr&gt;&lt;/w:rPr&gt;&lt;w:t xml:space=&quot;preserve&quot;&gt;'</span>;</span></span></pre>\r\n<pre>$string=sprintf($BOLD,<span style=\"color:#a31515\">'World'</span>);\r\n$section-&gt;addText(<span style=\"color:#a31515\">'Hello '</span> .$string);\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Is similar for color, italic or whatever that you want, only you must use the xml code that you needed. if you notice, First I closed the tags of the previous text (w:t and w:r), then I wrote in bold, and finally I re-opened the same tags.<br><br>This is not the best solution because has a lots of problem but for now is better than nothing...<br><br>Greetings...&nbsp;</p>",
+    "PostedDate": "2010-05-03T21:56:19.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438649",
+    "ThreadId": "210852",
+    "Html": "<p>If you've used text runs in PHPExcel, I'm looking&nbsp;to code up the same mechanism for PHPWord. Something like:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>$objTextRun = $section-&gt;createTextRun(<span style=\"color:#a31515\">'Frankie Says&quot;'</span>);\r\n$objTextRun-&gt;addText(<span style=\"color:#a31515\">&quot;Hello &quot;</span>, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">&quot;color&quot;</span> =&gt; <span style=\"color:#a31515\">&quot;green&quot;</span>));\r\n$objTextRun-&gt;addText(<span style=\"color:#a31515\">&quot;World&quot;</span>, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">&quot;color&quot;</span> =&gt; <span style=\"color:#a31515\">&quot;red&quot;</span>));\r\n$objTextRun-&gt;addText(<span style=\"color:#a31515\">'&quot;'</span>);\r\n$section-&gt;createTextRun($objTextRun);\r\n</pre>\r\n</div>",
+    "PostedDate": "2010-05-03T23:38:48.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438769",
+    "ThreadId": "210852",
+    "Html": "<p>Mark, this is exactly the way I would prefer to integrate.</p>\r\n<p>For the usage I would prefer a little edited way:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white;border:1px solid #c0c0c0\">\r\n<pre>$objTextRun = $section-&gt;createTextRun(<span style=\"color:#a31515\">'Frankie Says&quot;'</span>);\r\n$objTextRun-&gt;addText(<span style=\"color:#a31515\">&quot;Hello &quot;</span>, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">&quot;color&quot;</span> =&gt; <span style=\"color:#a31515\">&quot;green&quot;</span>));\r\n$objTextRun-&gt;addText(<span style=\"color:#a31515\">&quot;World&quot;</span>, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">&quot;color&quot;</span> =&gt; <span style=\"color:#a31515\">&quot;red&quot;</span>));\r\n$objTextRun-&gt;addText(<span style=\"color:#a31515\">'&quot;'</span>);\r\n$section-&gt;addText($objTextRun);\r\n\r\n</pre>\r\n</div>\r\n</p>\r\n<p>The addText function could take a TextRun object or like before a text and optionally a font style:</p>\r\n<p>&nbsp;</p>\r\n<p>\r\n<div style=\"color:black;background-color:white;border:1px solid #c0c0c0\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">function</span> addText($text, $style = null) {\r\n\t<span style=\"color:blue\">if</span>($text <span style=\"color:blue\">instanceof</span> PHPWord_Section_TextRun) {\r\n\t\t$this-&gt;_elementCollection[] = $text;\r\n\t} <span style=\"color:blue\">else</span> {\r\n\t\t$givenText = utf8_encode($text);\r\n\t\t$text = <span style=\"color:blue\">new</span> PHPWord_Section_Text($givenText, $style);\r\n\t\t$this-&gt;_elementCollection[] = $text;\r\n\t}\r\n        <span style=\"color:blue\">return</span> $text;\r\n}\r\n</pre>\r\n</div>\r\n</p>\r\n<p>greetings</p>\r\n<p>raw</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-04T05:28:16.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "439009",
+    "ThreadId": "210852",
+    "Html": "On 04/05/2010 13:28, raw_venture_ad wrote:<br>&gt;<br>&gt; For the usage I would prefer a little edited way:<br>&gt;<br>&gt; The addText function could take a TextRun object or like before a text<br>&gt; and optionally a font style:<br>&gt;<br>&gt;<br>Not a problem, I can work with that.<br>I'll treat this as my first piece of work for PHPWord.<br><br>---<br>Mark Baker",
+    "PostedDate": "2010-05-04T14:40:50.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "472102",
+    "ThreadId": "210852",
+    "Html": "<p>Fixed in PHPWord 0.6.2 Beta. See current release.</p>",
+    "PostedDate": "2010-07-24T07:04:29.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "823906",
+    "ThreadId": "210852",
+    "Html": "<p>Hi r@<a class=\"UserProfileLink\" href=\"http://www.codeplex.com/site/users/view/raw_venture_ad\">raw_venture_ad</a>,</p>\r\n<p>I also have the same problem, Pls can u help me out to fix this in PHPWord 0.6.2 Beta and i am using the latest release.</p>\r\n<p>Thanks in Advance,</p>\r\n<p>&nbsp;</p>\r\n<p>-vathsan</p>",
+    "PostedDate": "2012-04-14T15:14:47.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "823913",
+    "ThreadId": "210852",
+    "Html": "<p>Hi,</p>\r\n<p>Got my problem solved.. Thanks..</p>\r\n<div>\r\n<p class=\"PHP-Code\">$textrun = $section-&gt;createTextRun();</p>\r\n<p class=\"PHP-Code\">$textrun-&gt;addText('I am bold', array('bold'=&gt;true));</p>\r\n<p class=\"PHP-Code\">$textrun-&gt;addText('I am italic, array('italic'=&gt;true));</p>\r\n<p class=\"PHP-Code\">$textrun-&gt;addText('I am colored, array('color'=&gt;'AACC00'));</p>\r\n<p class=\"PHP-Code\">Thanks to the excellent PHPWord Documentation.</p>\r\n</div>",
+    "PostedDate": "2012-04-14T16:05:52.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "891024",
+    "ThreadId": "210852",
+    "Html": "<p>Hi.</p>\r\n<p>This problem appears when file is oppened with Open Office.</p>\r\n<p>What could be done to solve it ?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2012-07-25T03:50:13.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1138215",
+    "ThreadId": "210852",
+    "Html": "as I can insert a newline or linebreak in this texRun?\r<br />\n<br />\nlike that:\r<br />\n<br />\n<strong>Fecha de nacimiento</strong>: 11/07/1982\r<br />\nDNI: 1 07988921D\r<br />\nNacionalidad: Española<br />\n<pre><code>$objTextRun = $section-&gt;createTextRun('');\n$objTextRun-&gt;addText(utf8_decode('Fecha de nacimiento: '), 'strongStyle', 'txt_Style');\n$objTextRun-&gt;addText(utf8_decode($Fecha_Nacimiento), 'txtStyle', 'txt_Style');\n// INSERT LINEBREAK HERE\n$objTextRun-&gt;addText(utf8_decode('DNI: '.$Tipo_Documento.' '.$Documento), 'txtStyle', 'txt_Style');\n// INSERT LINEBREAK HERE\n$objTextRun-&gt;addText(utf8_decode('Nacionalidad: '.$Nacionalidad), 'txtStyle', 'txt_Style');\n$section-&gt;addText($objTextRun);\n$section-&gt;addTextBreak(2);</code></pre>\n\nwith <strong>PHPWord 0.6.2</strong>!<br />\n",
+    "PostedDate": "2013-12-19T06:20:25.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1311442",
+    "ThreadId": "210852",
+    "Html": "My workaround is to use a template that has all the formats I need.\r<br />\n<br />\n$PHPWord = new PHPWord();\r<br />\n$document = $PHPWord-&gt;loadTemplate('Template.docx');\r<br />\n$document-&gt;setValue('XXXX', 'Sun');\r<br />\n$document-&gt;save('doc.docx');<br />\n",
+    "PostedDate": "2014-10-08T00:41:21.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

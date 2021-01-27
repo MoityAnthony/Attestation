@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "731985",
+    "ThreadId": "287733",
+    "Html": "\r\n<p>Im trying to update a template using a <strong>.doc</strong> file exported from Google docs onto my server and get the following error :</p>\r\n<p><strong>Warning</strong>: ZipArchive::getFromName() [<a href=\"http://www.aksystems.co.za/docit/ziparchive.getfromname\">ziparchive.getfromname</a>]: Invalid or unitialized Zip object in&nbsp;<strong>/home/aksystem/public_html/docit/PHPWord/Template.php</strong>&nbsp;on\r\n line&nbsp;<strong>74</strong></p>\r\n<p><br>\r\n<strong>Warning</strong><span>: ZipArchive::addFromString() [</span><a href=\"http://www.aksystems.co.za/docit/ziparchive.addfromstring\">ziparchive.addfromstring</a><span>]: Invalid or unitialized Zip object in&nbsp;</span><strong>/home/aksystem/public_html/docit/PHPWord/Template.php</strong><span>&nbsp;on\r\n line&nbsp;</span><strong>105</strong><br>\r\n<br>\r\n<strong>Warning</strong><span>: ZipArchive::close() [</span><a href=\"http://www.aksystems.co.za/docit/ziparchive.close\">ziparchive.close</a><span>]: Invalid or unitialized Zip object in&nbsp;</span><strong>/home/aksystem/public_html/docit/PHPWord/Template.php</strong><span>&nbsp;on\r\n line&nbsp;</span><strong>108</strong><br>\r\n<br>\r\n<strong>Fatal error</strong><span>: Uncaught exception 'Exception' with message 'Could not close zip file.' in ...PHPWord/Template.php:109 Stack trace: #0 ../createtemplate.php(23): PHPWord_Template-&gt;save('test.doc') #1 {main} thrown in&nbsp;</span><strong>.../PHPWord/Template.php</strong><span>&nbsp;on\r\n line&nbsp;</span><strong>109</strong></p>\r\n<p>&nbsp;</p>\r\n<p>When I use a standard .doc file saved through Office for Mac 2008 I get an <strong>\r\nInternal Server Error 500</strong>. But all works fine with .docx files though?</p>\r\n<p>I would really appreciate some help with this.</p>\r\n<p>Thanx</p>\r\n<p><strong><br>\r\n</strong></p>\r\n",
+    "PostedDate": "2012-01-28T05:47:20.04-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

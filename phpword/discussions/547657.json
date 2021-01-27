@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1253287",
+    "ThreadId": "547657",
+    "Html": "Hi, \r<br />\nI'm developping a web page in which the users can download a word file. \r<br />\nI'm trying to do this with PHPWord. But the file .docx that outputs from the page is corrupt and I can't open it. \r<br />\nHere's the script:<br />\n<pre><code>require_once 'PHPWord.php';\n$PHPWord = new PHPWord();\n\n$template = $PHPWord-&gt;loadTemplate('Budget.docx');\n$template-&gt;setValue('CLIENTE', $cliente);\n$template-&gt;setValue('DATA', $data);\n$template-&gt;setValue('INQUN', $inqun);\n$template-&gt;setValue('PROGETTO', $progetto);\n$template-&gt;setValue('LUOGO', $luogo);\n$template-&gt;setValue('QUANTITA', $quantita);\n$template-&gt;setValue('NOME', $nome);\n$template-&gt;setValue('CODICEDESIGN', $codice);\n$template-&gt;setValue('CERTIFICAZIONE', $certificazione);\n$template-&gt;setValue('MATERIALE', $material);\n$template-&gt;setValue('DIAMETRO', $diametro);\n$template-&gt;setValue('SPESSORES', $spessore);\n$template-&gt;setValue('SPESSOREF1', $spessoreF1);\n$template-&gt;setValue('SPESSOREF2', $spessoreF2);\n$template-&gt;setValue('UNITARIO', $unitario);\n$template-&gt;setValue('TOTALE', $totale);\n$template-&gt;setValue('PREZZOU', $prezzou);\n$template-&gt;setValue('PREZZOT', $prezzot);\n\n$template-&gt;save('Budget1.docx');\n</code></pre>\n\nWhere every value in the replace position is a string value.\r<br />\nWhat could be the problem that makes the file corrupt?<br />\n",
+    "PostedDate": "2014-06-05T06:54:45.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253713",
+    "ThreadId": "547657",
+    "Html": "Hi,\r<br />\n<br />\nWhich version of PHPWord were you using? PHPWord development is continued in <a href=\"https://github.com/PHPOffice/PHPWord\" rel=\"nofollow\">GitHub</a>. Can you get the latest version (0.11.1) and run your code against it?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2014-06-06T07:30:54.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1313136",
+    "ThreadId": "547657",
+    "Html": "Hi,\r<br />\n<br />\nI've came back to PHPWord after working with php header.\r<br />\nI'm trying to do it with the latest version but it gives me the same error.<br />\n",
+    "PostedDate": "2014-10-14T06:05:25.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1313869",
+    "ThreadId": "547657",
+    "Html": "I've found the problem!\r<br />\n<br />\nThe template I want to edit was made with OpenOffice. \r<br />\nI've made it with Google Docs and I've exported it like a Microsoft Word docx and it works.<br />\n",
+    "PostedDate": "2014-10-16T00:47:34.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

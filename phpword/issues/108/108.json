@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "html markup renders in browser: \"The <b>County Partnership for Children</b> is a <em>not-for-profit</em> agency\" -  renders in bold, and italics, respectively.\r\n\r\nhere is my code:\r\n```\r\n$objWriter = \\PhpOffice\\PhpWord\\IOFactory::createWriter( $PHPWord, 'Word2007' );\r\n$fileloaction = '/var/www/rootwebfolder/contracts/tmp';\r\n$filename = 'OCA_'.$LPShort.\"_\".date('YmdHis',time()).'.docx';\r\n$FullName = $fileloaction.'/'.$filename;\r\n//echo $FullName;\r\n$objWriter->save($FullName);\r\n```\r\n\r\nyet the rendered Word document still shows those html tags: The <b>Caswell County Partnership for Children</b> is a <em>not-for-profit</em> agency. \r\n\r\nin fact, my app exports 2 files to Word, the first shows the html tags, the 2nd in Word ignores the tags altogether, the text not marked up at all. yet, in the sql database, the tags are in each of the files.\r\n\r\nHelp?\r\n",
+    "LastUpdatedDate": "2017-05-03T13:04:50.913-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2017-05-03T13:03:33.397-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "PhpWord not rendering html properly in Word doc",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 108
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

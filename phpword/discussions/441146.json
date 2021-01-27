@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1033945",
+    "ThreadId": "441146",
+    "Html": "Hello,<br />\n<br />\nI'm writing a tool in PHP to create a documentation with the help of PHPWord. But I can't figure out how to link inside the word document. I know that it is possible in the docx format and PHPWord seems to be able to create external links. But how can create an internal link?<br />\n<br />\nBest regards,<br />\nTrustSeg<br />\n",
+    "PostedDate": "2013-04-22T06:23:02.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034120",
+    "ThreadId": "441146",
+    "Html": "Ok, it seems that I can set bookmarks with addTitle() and get the (automatically generated?) name with getAnchor(). In a natively generated word document (saved directly with Word) the &lt;w:hyperlink&gt; nodes contain the attribute &quot;w:anchor&quot; which stores the name of the bookmark node. But I found no way to set this attribute through PHPWord. I tried to create a link with:\r<br />\n<br />\n$section-&gt;addLink(&quot;_Toc252634155&quot;, &quot;Title 3&quot;);\r<br />\n<br />\n.. but this didn't work. PHPWord stores the target somewhere else but not in the file word\\document.xml in the &quot;w:anchor&quot; attribute. Does anyone have an idea? Please help.<br />\n",
+    "PostedDate": "2013-04-22T12:29:15.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

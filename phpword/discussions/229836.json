@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "503063",
+    "ThreadId": "229836",
+    "Html": "<p>Hi,</p>\r\n<p>I am trying to add HTML content into the document. Directly adding the HTML results in the HTML tags being displayed within the document as raw characters. Is there anyway to achieve this and retain formatting?</p>\r\n<p>Failing this I have been stripping the tags and using regular expressions to generate newlines after &lt;br/&gt; and &lt;/p&gt; tags. Unfortunately though when I use the addText function these newlines are stripped out.</p>\r\n<p>Is there any easy way to introduce line breaks into the document without doing additional parsing / splitting and inserting multiple text elements and using addTextBreak()?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-10-06T09:39:01.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "508417",
+    "ThreadId": "229836",
+    "Html": "<p>Hi,</p>\r\n<p>I had the same issue and found no solution in PHPword documentation.</p>\r\n<p>As for me I wanted to convert a nested html list item into word &nbsp;2007 format</p>\r\n<p>I used simplehtmldom written by&nbsp;S.C. Chen to parse the HMTL (Website: http://sourceforge.net/projects/simplehtmldom)</p>\r\n<p><span> </span>&lt;ul&gt;</p>\r\n<p><span>&nbsp;</span><span style=\"white-space:pre\"> </span>&lt;li&gt;<span> </span></p>\r\n<p><span>&nbsp;</span><span style=\"white-space:pre\"> </span>&lt;p&gt;<span> </span>&lt;big&gt;&lt;em&gt;Status of system requirement baseline (Assessment of system requirement allocated to software (completeness, stability) identification of issue and corresponding baseline Definition issue report open)&lt;/em&gt;&lt;/big&gt;&lt;/p&gt;<span> </span></p>\r\n<p><span style=\"white-space:pre\"> </span>&lt;ol&gt;</p>\r\n<p><span style=\"white-space:pre\"> </span>&lt;li&gt;<span> </span>cf Action 470,471 and 472</p>\r\n<p><span style=\"white-space:pre\"> </span>&lt;/li&gt;<span> </span></p>\r\n<p><span style=\"white-space:pre\"> </span>&lt;/ol&gt;<span> </span></p>\r\n<p><span style=\"white-space:pre\"> </span>&lt;/li&gt;<span> </span></p>\r\n<p><span style=\"white-space:pre\"> </span>&lt;li&gt;<span> </span></p>\r\n<p><span style=\"white-space:pre\"> </span>&lt;p&gt;<span> </span>&lt;big&gt;Status of plans and schedule&lt;/big&gt;&lt;/p&gt;<span> </span></p>\r\n<p><span style=\"white-space:pre\"> </span>&lt;ol&gt;</p>\r\n<p><span style=\"white-space:pre\"> </span>etc ....</p>\r\n<p>&nbsp;</p>\r\n<p>$html = str_get_html($str);</p>\r\n<p>foreach($html-&gt;find('ul') as $ul) {&nbsp;&nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>foreach($ul-&gt;find('li') as $li) { &nbsp; &nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>$p=$li-&gt;find('p big',0); &nbsp; &nbsp;&nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>if ($p-&gt;innertext != &quot;&quot;){ &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>$section_landscape-&gt;addText($p-&gt;plaintext,2); &nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>} &nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>foreach($li-&gt;find('ol') as $ol){&nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>foreach($ol-&gt;find('li') as $li2) { &nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>$text = clean_text($li2-&gt;plaintext); &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>$section_landscape-&gt;addListItem($text, 0); &nbsp; &nbsp; &nbsp;</p>\r\n<p>&nbsp;<span style=\"white-space:pre\"> </span>} &nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>&nbsp;<span style=\"white-space:pre\"> </span>}&nbsp;&nbsp; &nbsp;</p>\r\n<p><span style=\"white-space:pre\"> </span>}</p>\r\n<p>}</p>\r\n<p>It works but I need to put the right tag in my HTML otherwise it is crap</p>\r\n<p>I'm looking forward for a better solution too !</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-10-17T04:23:16.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509425",
+    "ThreadId": "229836",
+    "Html": "<p>Thanks for the info, I ended up doing something similar and parsing for paragraph and line-breaks and adding the sections manually. The rest of the HTML markup is lost however.</p>",
+    "PostedDate": "2010-10-19T08:05:25.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1263226",
+    "ThreadId": "550798",
+    "Html": "Hi all,\r<br />\n<br />\nI was trying to add a horizontal rule(horizontal line) inside docx file. I have gone through documentation and tried with the samples provided in github, but I was not able to find a way to add horizontal rule inside docx file, kindly share your thoughts on this. I also tried with adding lines into docx file but addLine function is also not working.\r<br />\n<br />\nThank you<br />\n",
+    "PostedDate": "2014-07-07T04:32:25.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1274402",
+    "ThreadId": "550798",
+    "Html": "Hey, Even i'm facing the same issue, I tried to search a lot in the documentation and also in google but found nothing, please anyone provide a tweak for doing this.\r<br />\nor else i might need to develop my project again in another word library.\r<br />\n<br />\nThanks in Advance<br />\n",
+    "PostedDate": "2014-07-19T14:22:35.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1278593",
+    "ThreadId": "550798",
+    "Html": "if it is for print that you can use css to turn the lines and use print of the chrome but if it is for creat a word file i'm thinking that maybe the only way is put the string\r<br />\nin array then count the position of all words.....  i'm still thinking other ways \r<br />\n<br />\n<br />\nthanks <br />\n",
+    "PostedDate": "2014-07-28T20:56:12.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

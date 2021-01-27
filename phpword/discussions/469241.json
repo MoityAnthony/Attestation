@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1124618",
+    "ThreadId": "469241",
+    "Html": "If I recall correctly, Microsoft Office Word 2007 and later versions have a function that allows users to insert math equations.  Is there any way that PHPWord can be used to preform similar actions?  I have considered simply inserting styled paragraphs that are center aligned and set to the correct font and text size, but the problem is that I can't seem to find any way to preform advanced formatting, such as inserting fractions or radicals.  Is there a way that this can be done?  Any and all suggestions and considerations are appreciated.  Thanks!<br />\n<br />\nI've done some research and discovered that Microsoft Word uses the OMML format to display these equations in documents.  The PHPDOCX library created by 2mdc allows for the insertion of OMML equations into PHP-generated Microsoft Word documents, but paid libraries are not something within my budget.<br />\n",
+    "PostedDate": "2013-11-16T12:29:18.69-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

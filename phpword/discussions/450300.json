@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1069419",
+    "ThreadId": "450300",
+    "Html": "Hello World!,\r<br />\n<br />\nI don't understand how I have to install PHPWORLD on my website, neither how to make a first php-script that could work... Can somebody give me the 'basic' explanations?... \r<br />\n<br />\nWhat have I to do with the 'zip'-file? Where and how (Fillezilla?) have I to place this files on my website (on the directory 'www'? on the directory 'libraries', of on an other directory?).\r<br />\n<br />\nCan you also give me the first lines of a workable script? What are the first sentences of that script? ('include &quot;PHPWORD&quot;'? or must that be 'include \\libraries\\PHPWORD\\phpword.php', or something like that?...\r<br />\n<br />\nYou see, I miss the essentiels to make working PHPWORD...\r<br />\n<br />\nMany thanks in advance for your reply, World!...<br />\n",
+    "PostedDate": "2013-07-17T01:59:08.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

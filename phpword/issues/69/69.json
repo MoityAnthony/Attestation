@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "PHP Word is great ¡\r\n\r\nI found some little issues I have been working on. I based from this \r\nhttps://phpword.codeplex.com/workitem/49\r\n\r\nNow template.php can find better in document.xml, header and footer.\r\n\r\nI implemented this if anyone is interested . \r\n\r\nI did not test clonerow.\r\n\r\n\r\n<?php\r\n/**\r\n * PHPWord\r\n *\r\n * Copyright (c) 2011 PHPWord\r\n *\r\n * This library is free software; you can redistribute it and/or\r\n * modify it under the terms of the GNU Lesser General Public\r\n * License as published by the Free Software Foundation; either\r\n * version 2.1 of the License, or (at your option) any later version.\r\n *\r\n * This library is distributed in the hope that it will be useful,\r\n * but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\r\n * Lesser General Public License for more details.\r\n *\r\n * You should have received a copy of the GNU Lesser General Public\r\n * License along with this library; if not, write to the Free Software\r\n * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA\r\n *\r\n * @category   PHPWord\r\n * @package    PHPWord\r\n * @copyright  Copyright (c) 010 PHPWord\r\n * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt    LGPL\r\n * @version    Beta 0.6.3, 08.07.2011\r\n */\r\n\r\n\r\n/**\r\n * PHPWord_DocumentProperties\r\n *\r\n * @category   PHPWord\r\n * @package    PHPWord\r\n * @copyright  Copyright (c) 2009 - 2011 PHPWord (http://www.codeplex.com/PHPWord)\r\n */\r\nclass PHPWord_Template {\r\n    \r\n    /**\r\n     * ZipArchive\r\n     * \r\n     * @var ZipArchive\r\n     */\r\n    private $_objZip;\r\n    \r\n    /**\r\n     * Temporary Filename\r\n     * \r\n     * @var string\r\n     */\r\n    private $_tempFileName;\r\n    \r\n    /**\r\n     * Document XML\r\n     * \r\n     * @var string\r\n     */\r\n    private $_documentXML;\r\n    \r\n\t/**\r\n\t * @var string\r\n\t */\r\n//Custom code Israel López (@learsima)\r\n    private $_adicional=array(\r\n\t\t'elementos' =>array()\r\n\t);\r\n    /**\r\n     * Create a new Template Object\r\n     * \r\n     * @param string $strFilename\r\n     */\r\n    public function __construct($strFilename) {\r\n        $path = dirname($strFilename);\r\n        $this->_tempFileName = $path.DIRECTORY_SEPARATOR.time().'.docx';\r\n        \r\n        copy($strFilename, $this->_tempFileName); // Copy the source File to the temp File\r\n\r\n        $this->_objZip = new ZipArchive();\r\n        $this->_objZip->open($this->_tempFileName);\r\n        //Custom code Israel López (@learsima)\r\n        $this->_documentXML = $this->_objZip->getFromName('word/document.xml');\r\n\t\t$this->_adicional['elementos'][0]['info']=$this->_documentXML;\r\n\t\t$this->_adicional['elementos'][0]['nombre']='document.xml';\r\n\t\t\r\n\t\t$posicion=1;\r\n\t\t//Custom code Israel López (@learsima)\r\n\t\tfor ($i=0; $i <2 ; $i++) { \r\n\t\t\t//Recorrer todos los posibles encabezado y pies de página\r\n\t\t\t//Todos los archivo comienzan con header y footer seguidos de un secuencial\r\n\t\t\t$existe=true;\r\n\t\t\t$contador=1;\r\n\t\t\t\r\n\t\t\tif($i==0){\r\n\t\t\t\t$nomenc='header';\r\n\t\t\t}else{\r\n\t\t\t\t$nomenc='footer';\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\twhile ($existe) {\r\n\t\t\t\t\r\n\t\t\t\t$nombre=$nomenc.$contador.'.xml';\r\n\t\t\t\t$elemento=$this->_objZip->getFromName('word/'.$nombre);\r\n\t\t\t\t\r\n\t\t\t\tif($elemento){\r\n\t\t\t\t\t$this->_adicional['elementos'][$posicion]['info']=$elemento;\r\n\t\t\t\t\t$this->_adicional['elementos'][$posicion]['nombre']=$nombre;\r\n\t\t\t\t\t$contador++;\r\n\t\t\t\t\t$posicion++;\r\n\t\t\t\t}else{\r\n\t\t\t\t\t$existe=false;\r\n\t\t\t\t}\r\n\t\t} \t\t\r\n\t}\r\n\t\t\t\t\r\n }\r\n    \r\n    /**\r\n     * Set a Template value\r\n     * \r\n     * @param mixed $search\r\n     * @param mixed $replace\r\n     */\r\npublic function setValue($search, $replace) {\r\n    $pattern = '|\\$\\{([^\\}]+)\\}|U'; \r\n    $openedTagPattern= '/<[^>]+>/';\r\n   \t$closedTagPattern= '/<\\/[^>]+>/';\r\n\r\n\t//echo count($this->_adicional).\"<br>\";\r\n    for ($i=0; $i <count($this->_adicional['elementos']) ; $i++) {\r\n    \t\r\n        preg_match_all($pattern, $this->_adicional['elementos'][$i]['info'], $matches);\r\n  \t \t\r\n    \tforeach ($matches[0] as $value) {\r\n        \t$modificado = preg_replace($openedTagPattern, '', $value);\r\n        \t$modificado = preg_replace($closedTagPattern, '', $modificado);\r\n       \t\t$this->_adicional['elementos'][$i]['info'] = str_replace($value, $modificado, $this->_adicional['elementos'][$i]['info']);\r\n    \t}\r\n\r\n    \tif(substr($search, 0, 2) !== '${' && substr($search, -1) !== '}') { //change to: substr($search, 0, 2) !== '${' if you need the $ character\r\n        \t$search = '${'.$search.'}'; //change to '${'.$search.'}' if $ needed\r\n    \t}\r\n\r\n   \t if(!is_array($replace)) {\r\n    \t   $replace = utf8_encode($replace);\r\n    }\r\n//Custom code Israel López (@learsima)\r\n    $this->_adicional['elementos'][$i]['info']= str_replace($search, $replace, $this->_adicional['elementos'][$i]['info']);\r\n \r\n\t}\r\n}\r\n   \r\n    \r\n    /**\r\n     * Clone a table row\r\n     * \r\n     * @param mixed $search\r\n     * @param mixed $numberOfClones\r\n     */\r\n\tpublic function cloneRow($search, $numberOfClones) {\r\n        if(substr($search, 0, 2) !== '${' && substr($search, -1) !== '}') {\r\n            $search = '${'.$search.'}';\r\n        }\r\n        \t\t\r\n\t\t$tagPos \t = strpos($this->_documentXML, $search);\r\n\t\t$rowStartPos = strrpos($this->_documentXML, \"<w:tr\", ((strlen($this->_documentXML) - $tagPos) * -1));\r\n\t\t$rowEndPos   = strpos($this->_documentXML, \"</w:tr>\", $tagPos) + 7;\r\n\r\n\t\t$result = substr($this->_documentXML, 0, $rowStartPos);\r\n\t\t$xmlRow = substr($this->_documentXML, $rowStartPos, ($rowEndPos - $rowStartPos));\r\n\t\tfor ($i = 1; $i <= $numberOfClones; $i++) {\r\n\t\t\t$result .= preg_replace('/\\$\\{(.*?)\\}/','\\${\\\\1#'.$i.'}', $xmlRow);\r\n\t\t}\r\n\t\t$result .= substr($this->_documentXML, $rowEndPos);\r\n\r\n\t\t$this->_documentXML = $result;\r\n\t}\r\n    \r\n    /**\r\n     * Save Template\r\n     * \r\n     * @param string $strFilename\r\n     */\r\n    public function save($strFilename) {\r\n        if(file_exists($strFilename)) {\r\n            unlink($strFilename);\r\n        }\r\n        //Custom code Israel López (@learsima)\r\n\t\tfor ($i=0; $i <count($this->_adicional['elementos']) ; $i++) { \r\n\t\t\t\r\n\t\t\t$nombre=$this->_adicional['elementos'][$i]['nombre'];\r\n\t\t\t\t\r\n\t\t\t$this->_objZip->addFromString('word/'.$nombre, $this->_adicional['elementos'][$i]['info']);\r\n\t\t}\r\n        \r\n        \r\n        // Close zip file\r\n        if($this->_objZip->close() === false) {\r\n            throw new Exception('Could not close zip file.');\r\n        }\r\n      \r\n        rename($this->_tempFileName, $strFilename);\r\n    }\r\n}\r\n?>\r\n",
+    "LastUpdatedDate": "2014-01-08T20:51:57.597-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-01-08T20:51:57.597-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Advanced string replace and header/footer",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 69
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

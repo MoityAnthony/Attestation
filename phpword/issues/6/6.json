@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": "",
+    "Description": "File: /PHPWord/Media.php\nClass: PHPWord_Media\nMethod: integer addSectionMediaElement($src, $type, PHPWord_Section_MemoryImage $memoryImage = null)\n\nI am not exactly sure, but it seems that you need to replace\n\n$rID = $cImg + $cObj + 7;\n\nwith\n\n$rID = self::countSectionMediaElements() + 7;\n\nto avoid Relationship Id attribute value duplication during generation of /word/_rels/document.xml.rels file.\n\nI tried to create a document that contains hyperlinks and images simultaneously, and got an error when opening a document in Microsoft Word. Once I made the above changes, the error disappeared.",
+    "LastUpdatedDate": "2017-12-08T11:20:14.1-08:00",
+    "PlannedForRelease": "PHPWord 0.6.0 Beta",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-05-13T03:31:40.333-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Relationship Id attribute value duplication",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 6
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Indeed, you're right. I fixed this bug.\n\nThanks for the report.",
+      "PostedDate": "2010-05-13T08:10:11.84-07:00",
+      "Id": 12387
+    }
+  ]
+}

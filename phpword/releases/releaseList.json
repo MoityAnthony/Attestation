@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "0",
+    "Name": "PHPWord 0.6.1 Beta",
+    "DevelopmentStatus": "Beta",
+    "Description": "!!! Changelog:\n\n* Fixed Error when adding a JPEG image and opening in office 2007 [url:Issue #1|http://phpword.codeplex.com/WorkItem/View.aspx?WorkItemId=1]\n* Fixed Already defined constant {\"PHPWORD_BASE_PATH\"} [url:Issue #2|http://phpword.codeplex.com/WorkItem/View.aspx?WorkItemId=2]\n* Fixed Error when adding images and links to a document [url:Issue #6|http://phpword.codeplex.com/WorkItem/View.aspx?WorkItemId=6]\n* Added font style properties \"spaceBefore\" and \"spaceAfter\" for PreserveText Objects [url:Issue #3|http://phpword.codeplex.com/WorkItem/View.aspx?WorkItemId=3]",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2010-07-24T07:00:42.647-07:00",
+    "Files": [
+      {
+        "Id": "d8e91633-837e-4c22-88cf-6c009c3448fa",
+        "FileName": "PHPWord_0.6.1_Beta.zip",
+        "Url": "./0/d8e91633-837e-4c22-88cf-6c009c3448fa",
+        "Type": "Source Code",
+        "UploadDate": "2010-05-13T08:31:21.29-07:00"
+      },
+      {
+        "Id": "f03626d5-b9bb-46d0-bcf2-0971b4d9e970",
+        "FileName": "PHPWord_Docs_0.6.1.docx",
+        "Url": "./0/f03626d5-b9bb-46d0-bcf2-0971b4d9e970",
+        "Type": "Documentation",
+        "UploadDate": "2010-05-13T08:35:01.48-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "PHPWord 0.6.0 Beta",
+    "DevelopmentStatus": "Beta",
+    "Description": "!!! Changelog:\n\n* Added support for hyperlinks (inserting and formatting)\n* Added support for GD images (created by PHP)\n* Added support for Full-Table-Styles\n* Added 10 examples\n* Added documentation (Developers Guide)",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2010-03-22T04:04:24.59-07:00",
+    "Files": [
+      {
+        "Id": "400b79d5-dfce-4ca1-bfa5-3c2867a0a4eb",
+        "FileName": "PHPWord_0.6.0_Beta.zip",
+        "Url": "./1/400b79d5-dfce-4ca1-bfa5-3c2867a0a4eb",
+        "Type": "Source Code",
+        "UploadDate": "2010-03-20T09:03:13.127-07:00"
+      },
+      {
+        "Id": "4365e220-c71f-4ef8-ade9-b8890e84785f",
+        "FileName": "PHPWord_Docs_0.6.0.docx",
+        "Url": "./1/4365e220-c71f-4ef8-ade9-b8890e84785f",
+        "Type": "Documentation",
+        "UploadDate": "2010-03-22T04:04:24.56-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "2",
+    "Name": "PHPWord 0.6.2-1 Beta",
+    "DevelopmentStatus": "Beta",
+    "Description": "* +Update Jul 08 2011:+\n** *This update only includes bugfixes and some minor changes that won't affect any feature! No features requests are included.*\n** Bug Fix for Workitem [url:http://phpword.codeplex.com/workitem/26]\n** Bug Fix for Workitem [url:http://phpword.codeplex.com/workitem/19]\n** Bug Fix for Workitem [url:http://phpword.codeplex.com/workitem/17]\n** Bug Fix for Workitem [url:http://phpword.codeplex.com/workitem/13]\n** Bug Fix for Workitem [url:http://phpword.codeplex.com/workitem/11]\n** Bug Fix for Example _Image.php_\n\n\n\n* Added support for watermarks\n* Added support for page borders\n* Added support for textrun elements (severel texts with different styles in one paragraph without breaks) [url:WorkItem #4|http://phpword.codeplex.com/workitem/4] / [url:Discussion|http://phpword.codeplex.com/Thread/View.aspx?ThreadId=210852]\n* Added really simple template support (search / replace values)\n* Edited handling with paragraph styles (paragraph styles are now placed in a own object)\n* Fixed error with UPPERCASED image extensions [url:WorkItem #4|http://phpword.codeplex.com/workitem/7]\n* Fixed error with space before text  ([url:http://phpword.codeplex.com/Thread/View.aspx?ThreadId=218106])\n* Using \"Lazy Loading\" for performance optimations",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2011-07-08T04:22:01.2-07:00",
+    "Files": [
+      {
+        "Id": "aa5109c3-affd-44ea-a43b-8dbfe4f28c2e",
+        "FileName": "PHPWord_0.6.2_Beta.zip",
+        "Url": "./2/aa5109c3-affd-44ea-a43b-8dbfe4f28c2e",
+        "Type": "Source Code",
+        "UploadDate": "2011-07-08T04:20:01.627-07:00"
+      },
+      {
+        "Id": "51479111-2197-44c0-875c-5036000bb071",
+        "FileName": "PHPWord_Docs_0.6.2.docx",
+        "Url": "./2/51479111-2197-44c0-875c-5036000bb071",
+        "Type": "Documentation",
+        "UploadDate": "2010-07-24T07:00:01.02-07:00"
+      }
+    ]
+  }
+]

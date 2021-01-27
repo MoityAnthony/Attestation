@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Dear All, \r\nplease help me to start work this project. i can not start. when run the word.php file then only blank page shown. i want to make a web based word processor like google document. but the white working area cannot design. so plz help me.",
+    "LastUpdatedDate": "2015-02-12T02:53:39.233-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-02-26T01:32:08.6-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "not working word.php just show blank page",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 73
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Same here.\n\nI had been struggling with OpenTBS, and managed to generate .odt docs, although not achieveing exactaly what I wanted. So I've changed to PHPWord, but all I got is a blank screen. Besides, PHP debugging is kind of hell, so I don't truly know what's wrong with my code. As far as I know, if you are using a template, you won't need to add sections. My code looks like this:\n\n```\n<?php\n\n      //Retrieve posted data\n      $title = $_POST['title'];\n      $msg = $_POST['msg'];  \n      $name = $_POST['name'];\n      $format = $_POST['format'];\n\n      //check if retrieved data is ok\n      echo (\"<p> title: \" + $title + \"</p>\");\n      echo (\"<p> msg: \" + $msg + \"</p>\");\n      echo (\"<p> name: \" + $name + \"</p>\");  \n\n      //Include PHPWord\n      $require = require_once '../librerias/PHPWord/PHPWord.php';\n\n      //Instance PHPWord object\n      $PHPWord = new PHPWord();\n\n      //Load Template (same directory as this .php file)\n      $document = $PHPWord->loadTemplate('test.docx');\n\n      //Replace template fields \n      $document->setValue('title', $title);\n      $document->setValue('msg', $msg);\n      $document->setValue('name', $name);\n      $document->setValue('weekday', date('l')); \n   \n      $document->save('show.docx');\n   ?> \n```",
+      "PostedDate": "2015-02-12T02:53:39.233-08:00",
+      "Id": 174467
+    }
+  ]
+}

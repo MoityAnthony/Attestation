@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "478880",
+    "ThreadId": "223142",
+    "Html": "<p>Hello:<br>I'm using the library and when trying to give the option bold to text doesn't work... Then I searched in the code and found this...</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>\t<span style=\"color:blue\">public</span> <span style=\"color:blue\">function</span> addListItem($text, $depth = 0, $styleFont = null, $styleList = null, $styleParagraph = null) {\r\n\t\t$text = utf8_encode($text);\r\n\t\t$listItem = <span style=\"color:blue\">new</span> PHPWord_Section_ListItem($text, $depth, $styleText, $styleList, $styleParagraph);\r\n\t\t$this-&gt;_elementCollection[] = $listItem;\r\n\t\t<span style=\"color:blue\">return</span> $listItem;\r\n\t}</pre>\r\n</div>\r\n</p>\r\n<p>In the file PHPWord/Section.php</p>\r\n<p>Then I replaced $styleText for $styleFont, and worked&nbsp;=)</p>\r\n<p>&nbsp;</p>\r\n<p>Greetings...</p>",
+    "PostedDate": "2010-08-10T18:15:33.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "479177",
+    "ThreadId": "223142",
+    "Html": "<p>Thanks for the bug report.</p>\r\n<p>Will be fixed in a few days.</p>",
+    "PostedDate": "2010-08-11T08:58:39.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

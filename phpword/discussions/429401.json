@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "985947",
+    "ThreadId": "429401",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I would like to create a word document, in landescape layout, but with a number of columns : like a big table with two colums :)</p>\r\n<p>&nbsp;</p>\r\n<p>But I don't find the solution to put a lot of object in a cell of table, and I don't find too the possibility to put my page in 2 columns.</p>\r\n<p>&nbsp;</p>\r\n<p>Is it possible ?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Anna.</p>\r\n",
+    "PostedDate": "2013-01-12T10:52:18.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1213400",
+    "ThreadId": "429401",
+    "Html": "is there any answer ?<br />\n",
+    "PostedDate": "2014-02-23T21:18:38.86-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224657",
+    "ThreadId": "429401",
+    "Html": "Sorry for the late reply. Do you mean you want to use a multicolumn layout? If so, you have to use the new colsNum attribute of paragraph style from <a href=\"https://github.com/PHPOffice/PHPWord\" rel=\"nofollow\">PHPWord version 0.8</a> available in GitHub. Later on, you can submit your issues to GitHub since the development is continued there. Thanks.<br />\n",
+    "PostedDate": "2014-03-19T22:03:39.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

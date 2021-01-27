@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1142271",
+    "ThreadId": "478006",
+    "Html": "hi all\r<br />\n<br />\nim using PHPword to create reports online and send them as email attachments, for the example i use the &quot;document with table&quot; code from the examples folder, save the file on the server and send it by mail.\r<br />\n<br />\nthe file is working OK when downloading the file to local machine and open with MS-Word, but when i try to open the file with Goolge Docs/Drive i get unexplained error.\r<br />\n<br />\ni also get an error when trying to upload the file to google docs/drive.\r<br />\n<br />\n<strong>this only happens when i add table abject to the document i create.</strong>\r<br />\n<br />\n<br />\nthanks,\r<br />\nItamar<br />\n",
+    "PostedDate": "2013-12-25T23:19:18.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

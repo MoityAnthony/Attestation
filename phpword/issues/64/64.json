@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\r\n\r\nI tried the Examples that came with the source but unable to get the Examples to generate files. I put a couple of echo statements in the examples to see where it got stuck and found out that it got stuck at SAVING the file. \r\n\r\nThe example from HeaderFooter.php is:\r\n\r\necho \"It got to this point<br />\";\r\n\r\n// Save File\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r\n$objWriter->save('/tmp/HeaderFooter.docx');\r\n\r\necho \"Word file outputted OK<br />\";\r\n\r\nPlease advise.",
+    "LastUpdatedDate": "2013-11-20T09:53:22.66-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-11-20T09:53:22.66-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "I can't get the source code to create files from examples",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 64
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

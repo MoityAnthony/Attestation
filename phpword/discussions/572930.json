@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1325275",
+    "ThreadId": "572930",
+    "Html": "hello,\r<br />\ni need to substitute a place holder ${piu_debitori} with a string which is dynamically created as follow:<br />\n<pre><code>$piu_acquirenti=&quot;&quot;\nfor($i=2;$i&lt;=$_POST['num_acquirenti'];$i++) {\n    $piu_acquirenti+=$_POST['nom_acquirente'.$i].', &lt;more dynamic text here ....&gt;';\n}\n$document-&gt;setValue('piu_acquirenti', $piu_acquirenti);</code></pre>\n\nif i try the same on a different place holder i don't get the same problem.\r<br />\nanother problem is with others variable like (c.f.: ${cf_creditore_ipoteca}).... $document-&gt;setValue('cf_creditore_pignoramento', $_POST['cf_creditore_pignoramento1']);.\r<br />\n<br />\nthe problem in both the cases is that the place holder does not get substituted and in the word remains the ${place_holder} signature\r<br />\n<br />\nwhat am i missing?<br />\n",
+    "PostedDate": "2014-11-23T09:26:29.96-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1334266",
+    "ThreadId": "572930",
+    "Html": "Hi, did you find a solution for this? I'm having the same problem. I type ${search-pattern} and it only works sometimes. Seemingly it works only if I copy and paste it in if I've typed it in somewhere else, so I'm not sure if word might be putting in some extra stuff that messes the search and replace up... <br />\n",
+    "PostedDate": "2014-12-17T11:27:41.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1334403",
+    "ThreadId": "572930",
+    "Html": "\r\n<div dir=\"ltr\">hello,\r\n<div>i solved it by delete and retype the <span style=\"font-size:13px\">${search-pattern} and it worked.</span><br>\r\n<div>it seems that the problem lay in a word's mistyping when you modify the words.</div>\r\n<div>if you remove / delete the <span style=\"font-size:13px\">${search-pattern} and rewrite it will work.</span></div>\r\n</div>\r\n</div>\r\n<div><br>\r\n<div>2014-12-17 20:27 GMT&#43;01:00 danbrowndan <span dir=\"ltr\">&lt;[email removed]&gt;</span>:\r\n<blockquote style=\"margin:0 0 0 .8ex; border-left:1px #ccc solid; padding-left:1ex\">\r\n<div>\r\n<p>From: danbrowndan</p>\r\n<div>Hi, did you find a solution for this? I'm having the same problem. I type ${search-pattern} and it only works sometimes. Seemingly it works only if I copy and paste it in if I've typed it in somewhere else, so I'm not sure if word might be putting in some\r\n extra stuff that messes the search and replace up... <br>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://phpword.codeplex.com/discussions/572930#post1334266\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email ([email removed])</p>\r\n<p>To start a new discussion for this project, email [email removed]</p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"http://phpword.codeplex.com/discussions/572930/unsubscribe/\" target=\"_blank\">\r\nunsubscribe</a> on CodePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at CodePlex.com</p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2014-12-18T00:58:43.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

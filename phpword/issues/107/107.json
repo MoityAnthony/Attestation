@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "php word document issue in gmail attachment .\r\nWhen i open file in gmail doc the image of word document is not displayed only just text will appear.\r\n\r\n",
+    "LastUpdatedDate": "2016-10-08T00:08:07.773-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2016-10-08T00:08:07.587-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Mail Image issue",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 107
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1612215,
+      "FileName": "Screenshot (224).png",
+      "DownloadUrl": ".\\1612215"
+    }
+  ],
+  "Comments": []
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "812507",
+    "ThreadId": "349184",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>im kinda new to this library but i was reading the examples but couldn't find a way to do way i would like.</p>\r\n<p>if have this xml string</p>\r\n<p>&lt;paragraph&gt;this is some text &lt;em&gt;this is some emboss text&lt;/em&gt; here the text continues&lt;img src=&quot;whereMyImageIsStored&quot;&gt; still some more text&lt;/paragraph&gt;</p>\r\n<p>if i would like to make a Docx Document out of this.&nbsp;</p>\r\n<p>&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;</p>\r\n<p>thirst thought would be to do something like</p>\r\n<p>$textPointer = $section-&gt;addText{maybeNode}(&quot;this is some text&quot;);</p>\r\n<p>$textPointer-&gt;addObjectBehind($section-&gt;addText(&quot;this is some emboss text&quot;, $emboseStyle);</p>\r\n<p>$textPointer-&gt;addTextBehind(&quot;here the text continues&quot;);</p>\r\n<p>$textPointer-&gt;addObjectBehind($section-&gt;addImage());</p>\r\n<p>$textPointer-&gt;addTextBehind(&quot;still som more text&quot;);</p>\r\n<p>Can anyone please help me out?</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-03-19T07:04:11.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

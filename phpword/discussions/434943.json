@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1008499",
+    "ThreadId": "434943",
+    "Html": "Hello!<br />\n<br />\nI try add image from my site (<a href=\"http://mysite/image.php\" rel=\"nofollow\">http://mysite/image.php</a>).<br />\ncode:<br />\n<pre><code>&lt;?php \nrequire_once '../PHPWord.php';\n$PHPWord = new PHPWord();\n$section = $PHPWord-&gt;createSection();\n$section-&gt;addMemoryImage('http://mysite/image.php');//&lt;---\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n$objWriter-&gt;save('Image.docx');\n?&gt;\n</code></pre>\n\n<strong><em>Fatal error: Uncaught exception 'Exception' with message 'Could not close zip file Image.docx.' in /PHPWord_0.6.2_Beta/PHPWord/Writer/Word2007.php:158<br />\nStack trace: #0 /PHPWord_0.6.2_Beta/Examples/Image.php(36):<br />\nPHPWord_Writer_Word2007-&gt;save('Image.docx') #1 {main} thrown in/PHPWord_0.6.2_Beta/PHPWord/Writer/Word2007.php on line 158</em></strong> <br />\n<br />\nWhen I use: <strong>$section-&gt;addImage('image.jpg');</strong> script it works.<br />\n<br />\nCan you help me please.<br />\nThanks for your answer.<br />\n",
+    "PostedDate": "2013-02-28T14:37:11.537-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

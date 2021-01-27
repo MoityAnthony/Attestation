@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1069204",
+    "ThreadId": "450251",
+    "Html": "how to merge several files into one docx?\r<br />\nI have tried:<br />\n<pre><code>$PHPWord = new PHPWord();\n$section = $PHPWord-&gt;createSection();\n$document = $PHPWord-&gt;loadTemplate('dir1/file1.docx');\n$section-&gt;addPageBreak();\n$document = $PHPWord-&gt;loadTemplate('dir1/file2.docx');\n$document-&gt;save('dir2/test.docx');</code></pre>\n\nbut saves only the last <br />\n",
+    "PostedDate": "2013-07-16T14:01:42.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

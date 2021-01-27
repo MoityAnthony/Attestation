@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "476674",
+    "ThreadId": "222522",
+    "Html": "<p>How to write in other language example Chinese, Japanese, Korean,Thai?</p>\r\n<p>It's possible to support multi-language like <a href=\"http://phpexcel.codeplex.com/\">PHPExcel</a>&nbsp; ?</p>\r\n<p>ps. Sorry for my english. :)</p>",
+    "PostedDate": "2010-08-04T19:49:06.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476682",
+    "ThreadId": "222522",
+    "Html": "<p>I found &amp; fix with <a href=\"http://phpword.codeplex.com/workitem/8\">this issue</a>&nbsp; thank!</p>",
+    "PostedDate": "2010-08-04T21:21:54.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

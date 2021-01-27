@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "952925",
+    "ThreadId": "405967",
+    "Html": "\r\n<p>I have PHP 5.1.6 and my Web Admin say me that is not possible upgrade to another versión, what can i do if i want to use PHPWord? .</p>\r\n<p>P.D. : Sorry for my english!!!</p>\r\n",
+    "PostedDate": "2012-12-07T06:27:19.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "989436",
+    "ThreadId": "405967",
+    "Html": "\r\n<p>To be honest, you should probably use a different web host! I believe it is possible to use PEAR to download the missing packages - I tried it when I was using PHP 5.1, but it was painful and I seem to remember other problems were created in the process\r\n - personally I wouldn't think it would be worth the effort. Neither PHP 5.1 nor PHP 5.2 are supported by the PHP project any more.</p>\r\n",
+    "PostedDate": "2013-01-20T14:27:44.183-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

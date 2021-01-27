@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "Is there a planned feature for table cell spanning or cell merging?",
+    "LastUpdatedDate": "2016-04-12T23:45:34.357-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-12-02T12:45:24.28-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Table cell span or merge cells feature",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 8,
+    "Id": 20
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Yes please!",
+      "PostedDate": "2014-02-20T06:40:09.443-08:00",
+      "Id": 134199
+    },
+    {
+      "Message": "Cell/row span is available in [PHPWord 0.8](https://github.com/PHPOffice/PHPWord/issues/74).",
+      "PostedDate": "2014-03-19T22:35:06.517-07:00",
+      "Id": 137409
+    }
+  ]
+}

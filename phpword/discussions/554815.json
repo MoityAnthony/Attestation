@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1279902",
+    "ThreadId": "554815",
+    "Html": "Hi,\r<br />\nI'm developping a web page in which the users can download a word file.\r<br />\nI'm trying to do this with PHPWord. But the file .docx that outputs from the page is corrupt and I can't open it. The problème is the caractere &quot;&amp;&quot;.\r<br />\nHere's the script:\r<br />\n<br />\nrequire_once 'PHPWord.php';\r<br />\n$PHPWord = new PHPWord();\r<br />\n<br />\n$template = $PHPWord-&gt;loadTemplate('Client.docx');\r<br />\n$client = &quot;Ben&amp;Nuts&quot;;\r<br />\n$template-&gt;setValue('CLIENTE', $cliente);\r<br />\n$template-&gt;save('Client.docx');\r<br />\n<br />\nWhy and how resolve it ?\r<br />\n<br />\nThank for the response.<br />\n",
+    "PostedDate": "2014-08-01T02:50:18.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1294316",
+    "ThreadId": "554815",
+    "Html": "I find a tempory solution!\r<br />\n<br />\nuse the function <strong>htmlentities</strong>\r<br />\n<br />\n$template = $PHPWord-&gt;loadTemplate('Client.docx');\r<br />\n$client = htmlentities(&quot;Ben&amp;Nuts&quot;);\r<br />\n$template-&gt;setValue('CLIENTE', $cliente);\r<br />\n$template-&gt;save('Client.docx'); <br />\n",
+    "PostedDate": "2014-08-28T08:32:45.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1294330",
+    "ThreadId": "554815",
+    "Html": "hi,\r<br />\nI'm sorry for my first reply.\r<br />\n<br />\n htmlentities resolve the problem with &quot;&amp;&quot; but when you have &quot;é&quot; or other accented letter, the output from the page is corrupt.\r<br />\n<br />\nI find only the problem with &quot;&amp;&quot; and not with an other special caractere...\r<br />\n<br />\nI propose this solution : <br />\n<pre><code>$client = str_replace(&quot;&amp;&quot;, &quot;&amp;amp;&quot;,&quot;Ben&amp;Nuts&quot;);\n</code></pre>\n\n",
+    "PostedDate": "2014-08-28T09:07:47.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1294762",
+    "ThreadId": "554815",
+    "Html": "Other caractere....<br />\n<pre><code>$client = str_replace(array(&quot;&amp;&quot;,'&gt;','&lt;'), array(&quot;&amp;amp;&quot;,&quot;&amp;gt;&quot;,&quot;&amp;lt;&quot;), $client);</code></pre>\n\n",
+    "PostedDate": "2014-08-29T01:24:04.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1294816",
+    "ThreadId": "554815",
+    "Html": "Thanks<br />\n",
+    "PostedDate": "2014-08-29T03:04:00.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

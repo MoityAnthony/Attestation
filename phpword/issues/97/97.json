@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "hello, as I can put margins for different first page for the second page?\r\n\r\nThe margins of the first page are symmetric with the second, to change the values of the left margin to right and right to left margin automatically",
+    "LastUpdatedDate": "2015-01-20T13:29:04.223-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2015-01-20T13:29:03.847-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "how do I create a document with symmetric margins in Word",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 97
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1422002,
+      "FileName": "word - margenes simetricos.png",
+      "DownloadUrl": ".\\1422002"
+    }
+  ],
+  "Comments": []
+}

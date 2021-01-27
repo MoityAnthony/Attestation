@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "In my recent project using PHPWord library, I found it would be failed to insert an image with uppercase extension (e.g. JPG, JPEG). There is a simple workaround:\r\n\r\nFILE: Section/Image.php      LINE: 76\r\nFUNCTION: PHPWord_Section_Image::__construct()     LINE: 6\r\n\r\nThe source code determine image type in this way:\r\nin_array($inf['extension'], $_supportedImageTypes)\r\n\r\nAt the line just above, there is an variable $ext defined but never used, which exactly fits this determination operation. So I changed the code to:\r\nin_array($ext, $_supportedImageTypes)\r\n\r\nThen it works fine.\r\n",
+    "LastUpdatedDate": "2010-07-24T07:01:39.85-07:00",
+    "PlannedForRelease": "PHPWord 0.6.2-1 Beta",
+    "ReleaseVisibleToPublic": true,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-05-31T18:50:25.533-07:00",
+    "Status": {
+      "Name": "Resolved",
+      "Id": 7
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Fail to insert an image with uppercase extension",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

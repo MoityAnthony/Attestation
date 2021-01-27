@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "989868",
+    "ThreadId": "430322",
+    "Html": "\r\n<p>Is it possible extract the text from a word document (doc and docx) and load it into a variable?</p>\r\n<p>I can only find code samples to create Word documents, but not to open them.</p>\r\n<p>Also I am a little confused about the system requirements:</p>\r\n<p>It says that Microsoft Office compatibility pack is required for older office versions, and one point below, that Windows is not required... but AFAIK Microsoft Office compatibility pack is only available on Windows. Which is it?</p>\r\n<p>My code will run on a Linux server, and I am looking for a simple solution to extract the text of a word document and do a wordcount.&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-21T10:09:23.64-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

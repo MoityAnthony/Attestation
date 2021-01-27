@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "993678",
+    "ThreadId": "431281",
+    "Html": "\r\n<p><span id=\"result_box\" lang=\"en\"><span>originally had</span> <span>problems</span>\r\n<span>with</span> <span>utf8</span> <span>characters</span> <span>like</span> <span>\r\naccents</span> <span>and</span> <span>&ntilde;</span> <span>not</span> <span>correctly</span>\r\n<span>wordphp</span> <span>codec</span><span>.</span> <span>solve</span> <span>the problem</span>\r\n<span>with</span> <span>a simple function</span><span>.</span><br>\r\n<br>\r\n<span>I leave</span> <span>if</span> <span>interested</span></span></p>\r\n<p><span lang=\"en\"><span>Example:<br>\r\n</span></span></p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">function</span> prepara_texto($texto)\n{\n        <span style=\"color:blue\">return</span> html_entity_decode(iconv(<span style=\"color:#a31515\">'UTF-8'</span>, <span style=\"color:#a31515\">'windows-1252'</span>,$texto));<br>}\n</pre>\r\n</div>\r\n<p>$document-&gt;setValue(<span style=\"color:#a31515\">'nombre_completo'</span>, prepara_texto(<span style=\"color:#a31515\">'Hugo mor&aacute;n es un ni&ntilde;on'</span>));<br>\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'fecha'</span>, <span style=\"color:#a31515\">\r\n'Hoy'</span>);<br>\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'correlativo'</span>, <span style=\"color:#a31515\">\r\n'2'</span>);<br>\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'contrato'</span>, <span style=\"color:#a31515\">\r\n'4545ij'</span>); <br>\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'socio'</span>, prepara_texto(<span style=\"color:#a31515\">'Mars'</span>));</p>\r\n",
+    "PostedDate": "2013-01-29T07:17:20.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1311427",
+    "ThreadId": "431281",
+    "Html": "Thanks, you save me the day! :-)<br />\n",
+    "PostedDate": "2014-10-07T23:01:40.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

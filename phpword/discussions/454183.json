@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1083525",
+    "ThreadId": "454183",
+    "Html": "Hello,\r<br />\n<br />\nthe PHPWord Framework ist great. Currently I have the problem, that my docx document looks different between Word MAC, Word 2010 and Word 2013. The imagesize is at the option the same at displaying unfortunately different. The header and footer is also a little bit different. The text between header and footer has the same style unfortunately different displaying.\r<br />\n<br />\nHas someone an idea what goes wrong?\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-08-22T02:21:27.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083598",
+    "ThreadId": "454183",
+    "Html": "Hello,\r<br />\n<br />\nMarc has the same problem, see here: <a href=\"https://phpword.codeplex.com/discussions/361377\" rel=\"nofollow\">https://phpword.codeplex.com/discussions/361377</a>\r<br />\n<br />\nGreetz<br />\n",
+    "PostedDate": "2013-08-22T05:40:21.903-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

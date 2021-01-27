@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1109227",
+    "ThreadId": "462723",
+    "Html": "Hello All, \r<br />\n<br />\nI have already readed the post related with this problem: <a href=\"https://phpword.codeplex.com/discussions/352149php_zi\" rel=\"nofollow\">https://phpword.codeplex.com/discussions/352149php_zi</a>\r<br />\n<br />\nBut I still haven't resolved my problem.\r<br />\n<br />\nI'm new to php, I understand that I need to enable the php_zip.ddl extension but __ I dont have  access to the php.ini file, I mean, I cant open it with a texteditor.__\r<br />\n<br />\nI also readed this page about enabling php_zip:\r<br />\n<a href=\"http://www.w3schools.com/php/php_ref_zip.asp\" rel=\"nofollow\">http://www.w3schools.com/php/php_ref_zip.asp</a>\r<br />\n<br />\n<br />\nMy php.info:\r<br />\n<br />\nPHP Version 5.4.20\r<br />\nConfiguration File (php.ini) Path\t/usr/local/lib\r<br />\nLoaded Configuration File\t/usr/local/lib/php.ini\r<br />\n<br />\nzlib\r<br />\n<br />\nZLib Support\t\t\tenabled\r<br />\nStream Wrapper\t\tcompress.zlib://\r<br />\nStream Filter\t\t\tzlib.inflate, zlib.deflate\r<br />\nCompiled Version\t\t1.2.3\r<br />\nLinked Version\t\t\t1.2.3\r<br />\n<br />\nDirective\t\t\t\t\tLocal Value\t\tMaster Value\r<br />\nzlib.output_compression\t\tOff\t\t\t\tOff\r<br />\nzlib.output_compression_level\t-1\t\t\t\t-1\r<br />\nzlib.output_handler\t\t\tno value\t\t\tno value\r<br />\n<br />\n<br />\nHow can I enable the php_zip? \r<br />\n<br />\nThank you very much and sorry if the question is stupid<br />\n",
+    "PostedDate": "2013-10-18T07:40:34.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

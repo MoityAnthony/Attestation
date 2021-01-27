@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "565442",
+    "ThreadId": "245848",
+    "Html": "\r\n<p>Hello!<br>\r\n<br>\r\n<span title=\"Zur Anzeige alternativer Übersetzungen klicken\"><span title=\"Zur Anzeige alternativer Übersetzungen klicken\">How</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">do I get</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">the</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">header</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">only</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">from</span>&nbsp;<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">the\r\n 2nd</span>&nbsp;p<span title=\"Zur Anzeige alternativer Übersetzungen klicken\">age?</span><br>\r\n<br>\r\n</span><br>\r\nderSESO&nbsp;</p>\r\n",
+    "PostedDate": "2011-02-13T08:40:52.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "573280",
+    "ThreadId": "245848",
+    "Html": "<p>create a separate section for the first page and do not include header in that.</p>\r\n<p>create a different section for the rest of pages..&nbsp;</p>",
+    "PostedDate": "2011-02-28T07:15:18.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578948",
+    "ThreadId": "245848",
+    "Html": "<p>Hi!</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: green;\">//-- Page 1 --</span>\r\n$section = $PHPWord-&gt;createSection($styleSeite);\r\n...\r\n\r\n<span style=\"color: green;\">//-- Page 2 --</span>\r\n$section = $PHPWord-&gt;createSection($styleSeite);\r\n...\r\n$header = $section-&gt;createHeader();\r\n$header-&gt;addPreserveText(<span style=\"color: #a31515;\">'Seite {PAGE} von {NUMPAGES} - Angebot Nr. {FILENAME} vom {SAVEDATE \\@ \"dd.MM.yyyy\"}'</span>, $styleTextHeader);\r\n\r\n$footer = $section-&gt;createFooter();\r\n$footer-&gt;addText(<span style=\"color: #a31515;\">'DIN ISO 9001 Certified . Tel. +49 (0)89 / ...'</span>, $styleTextFooter, $paraTextFooter);&nbsp;</pre>\r\n</div>\r\n<p>The document is created, but the opener is an error:</p>\r\n<p><span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">\"The</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">file</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">is</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">damaged</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">and</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">can not</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">be opened</span><span title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">.</span><br /><span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">Position</span><span title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">:</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">component</span><span title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">:</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">/word</span><span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">/</span><span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">document.xml</span><span title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">, Line</span><span title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">:</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">3345</span><span title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">,</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">Column</span><span title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">:</span> <span class=\"hps\" title=\"Zur Anzeige alternativer &Uuml;bersetzungen klicken\">0\"</span></p>",
+    "PostedDate": "2011-03-11T03:26:57.227-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "638166",
+    "ThreadId": "245848",
+    "Html": "<p>To avoid that error, try adding a header/footer in the first page too.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-07-06T07:51:31.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256328",
+    "ThreadId": "245848",
+    "Html": "Hello!\r<br />\n<br />\nWhat if the content on the first page is such that I don't know what point in the content will spill over to the second page?  Sometimes I won't have a second page, other times it could be up to 6 pages long.  I only want the header information on the 2nd and onward pages.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2014-06-14T10:39:29.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256956",
+    "ThreadId": "245848",
+    "Html": "Hi. The development of PHPWord is continued on <a href=\"https://github.com/PHPOffice/PHPWord\" rel=\"nofollow\">GitHub</a>. The latest stable version of PHPWord (0.11) has been able to create header/footer only on the first page. See <a href=\"https://github.com/PHPOffice/PHPWord/blob/master/samples/Sample_12_HeaderFooter.php\" rel=\"nofollow\">Sample_12_HeaderFooter.php</a>. Thanks.<br />\n",
+    "PostedDate": "2014-06-17T02:39:15.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

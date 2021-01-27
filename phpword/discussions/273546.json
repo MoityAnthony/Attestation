@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "675576",
+    "ThreadId": "273546",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I don&acute;t understand how should I configure the php word, I am running the server in my personal computer in D:/appserv/www/testproject/</p>\r\n<p>I am trying to run this test http://localhost/testproject/test.php and I am getting this error:</p>\r\n<p><strong>Fatal error</strong>: Call to undefined method PHPWord_Section_Text::setBold() in\r\n<strong>D:\\AppServ\\www\\testproject\\prueba.php</strong> on line <strong>25</strong></p>\r\n<p><br>\r\nCan anybody help me please.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-09-22T17:00:09.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "687951",
+    "ThreadId": "273546",
+    "Html": "<p>Here's what I did ... I copied PHPWord.php and its subfolder into the directory where I've pointed my include_path (set in php.ini).&nbsp; I suppose you could also set your include path using set_include_path.&nbsp; Then, change <span style=\"color: #008080;\">require_once '../PHPWord.php'; </span>to <span style=\"color: #008080;\">require_once 'PHPWord.php';</span>&nbsp; Having PHPWord.php in your include path will enable test.php to find it.&nbsp; It expects to find all the other code it needs in the directory that starts where it is located - so your test.php should now work.</p>",
+    "PostedDate": "2011-10-22T16:55:14.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

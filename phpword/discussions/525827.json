@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1197000",
+    "ThreadId": "525827",
+    "Html": "Smallcaps are not yet implemented but they're an easy task:\r<br />\n<br />\nin <em>PHPWord/Style/Font.php</em> add:<br />\n<pre><code>// after private $_fgColor;\nprivate $_smallCaps; \n...\n// in __construct(...) after $this-&gt;_fgColor = null;\n$this-&gt;_smallCaps = null; \n\n// at the end of the PHPWord_Style_Font class add methods:\n\npublic function getSmallcaps() {\n    return $this-&gt;_smallCaps;\n}\n\npublic function setSmallcaps($pValue = false) {\n    if($pValue == '') {\n        $pValue = false;\n    }\n    $this-&gt;_smallCaps = $pValue;\n    return $this;\n}</code></pre>\n\nIn PHPWord/Writer/Word2007/Base.php add:<br />\n<pre><code>// in function function _writeTextStyle,\n// after $underline = $style-&gt;getUnderline();\n\n$smallcaps = $style-&gt;getSmallcaps();\n\n// in function function _writeTextStyle\n//after if ($font != 'Arial') {...} add;\n\n//Smallcaps\nif(!is_null($smallcaps)) {\n    $objWriter-&gt;startElement('w:smallCaps');\n    $objWriter-&gt;writeAttribute('w:val', $smallcaps);\n    $objWriter-&gt;endElement();\n}</code></pre>\n\nThat's all!<br />\n",
+    "PostedDate": "2014-01-25T02:09:45.86-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224664",
+    "ThreadId": "525827",
+    "Html": "I've submitted your <a href=\"https://github.com/PHPOffice/PHPWord/issues/151\" rel=\"nofollow\">enhancement request</a>. Thanks.<br />\n",
+    "PostedDate": "2014-03-19T22:24:46.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

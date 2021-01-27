@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 4,
+    "Custom": null,
+    "Description": "Feature request to modify addImage() function: add parameter to 'turn off' trailing line break OR new addImageNoLineBreak() function OR ability to include addImage() function in addTextRun(). ",
+    "LastUpdatedDate": "2014-03-19T22:41:25.49-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2010-11-01T06:48:53.733-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "addImage() function with or without a line break",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 16
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Thanks for your request. I think it will be implemented in the next release.\n\nBest regards,\nMatthias",
+      "PostedDate": "2011-05-23T10:48:20.33-07:00",
+      "Id": 36255
+    },
+    {
+      "Message": "Hello, \nYes, I completely agree, you should add, please, \"addImage\" in \"TextRun\" or without line break",
+      "PostedDate": "2011-06-01T09:33:21.49-07:00",
+      "Id": 36768
+    },
+    {
+      "Message": "I've had a go at implementing a fix here: http://phpword.codeplex.com/discussions/232684 using text runs.\n\nAny feedback/improvements/bugs welcome!",
+      "PostedDate": "2012-01-11T07:06:18.26-08:00",
+      "Id": 52476
+    },
+    {
+      "Message": "Integrated in the latest version of PHPWord. [TextRun has addImage method](https://github.com/PHPOffice/PHPWord/blob/master/Classes/PHPWord/Section/TextRun.php).",
+      "PostedDate": "2014-03-19T22:41:25.49-07:00",
+      "Id": 137411
+    }
+  ]
+}

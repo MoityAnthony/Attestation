@@ -1,0 +1,29 @@
+Index: Document.php
+===================================================================
+--- Document.php	(revision 29229)
++++ Document.php	(revision 29230)
+@@ -347,8 +347,8 @@
+ 			
+ 				$objWriter->startElement('w:pPr');
+ 					
+-					if($isObject) {
+-						$this->_writeParagraphStyle($objWriter, $styleFont);
++					if($isObject && $styleFont->getParagraphStyle()!=null) {
++						$this->_writeParagraphStyle($objWriter, $styleFont->getParagraphStyle());
+ 					}
+ 					
+ 					if($indent > 0) {
+Index: Section.php
+===================================================================
+--- Section.php	(revision 29229)
++++ Section.php	(revision 29230)
+@@ -180,7 +180,7 @@
+ 	 */
+ 	public function addListItem($text, $depth = 0, $styleFont = null, $styleList = null, $styleParagraph = null) {
+ 		$text = utf8_encode($text);
+-		$listItem = new PHPWord_Section_ListItem($text, $depth, $styleText, $styleList, $styleParagraph);
++		$listItem = new PHPWord_Section_ListItem($text, $depth, $styleFont, $styleList, $styleParagraph);
+ 		$this->_elementCollection[] = $listItem;
+ 		return $listItem;
+ 	}
+

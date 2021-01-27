@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1202034",
+    "ThreadId": "528737",
+    "Html": "Hi,<br />\nI am trying to generate a DOCX file where I need to search &amp; replace some &quot;specific&quot; contents of a DOCX template with some value. setValue() helps me achieve these . <br />\n<br />\nBy default, the text that is inserted as replacement by setValue() in the generated docx file has black color. <br />\nBut however I need the color of the text to be red. <br />\n<br />\nI tried using setValue(string1,string2, array(color=&gt;'FF0000H')). But this doesn't work.<br />\nAlso I tried using addText().<br />\n<br />\nBut perhaps PHP Word doesn't allow formatting of text elements 'On the Fly'.<br />\n<br />\nCan someone please drop a hint?<br />\n",
+    "PostedDate": "2014-02-03T06:00:44.1-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224662",
+    "ThreadId": "528737",
+    "Html": "Currently, setValue can only search for a certain format, i.e. ${VAR}. You can't replace the color since it's not formatted like that. The only solution that I can find is you must be able to read the DOCX content, put it into PHPWord objects, and manipulate the objects with PHPWord methods.\r<br />\n<br />\nWe're working on <a href=\"https://github.com/PHPOffice/PHPWord/issues/70\" rel=\"nofollow\">DOCX Reader</a>. This scenario should be possible in a near future.<br />\n",
+    "PostedDate": "2014-03-19T22:18:14.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

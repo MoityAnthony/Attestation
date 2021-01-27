@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "\r\n\r\nHello,\r\nI have custom sized paper I need to dynamically create in PHP and while this worked in the old .6 version, it no longer works with the github version. Am I doing something wrong?\r\n```\r\n\r\n$twips = 1440;\r\n$width = $width * $twips;\r\n$height = $height * $twips;\r\n$marginTop = $marginTop * $twips;\r\n$marginLeft = $marginLeft * $twips;\r\n$marginRight = $marginRight * $twips;\r\n$marginBottom = $marginBottom * $twips;\r\n\r\n// New Word Document\r\n$PHPWord = new \\PhpOffice\\PhpWord\\PhpWord();\r\n\r\n// New portrait section\r\n$section = $PHPWord->addSection(array(\r\n    'pageSizeW'     => $width,\r\n    'pageSizeH'     => $height,\r\n    'marginTop'     => $marginTop,\r\n    'marginRight'   => $marginRight,\r\n    'marginLeft'    => $marginLeft,\r\n    'marginBottom'  => $marginBottom));\r\n\r\n```\r\nThe page size always is now coming out as A4 even though I am trying my own custom sizes. Any help would be appreciated.\r\n\r\nThanks,\r\nDavid\r\n",
+    "LastUpdatedDate": "2014-10-22T02:29:49.45-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-08-21T08:30:31.647-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "PageSizeH and PageSizeW don't work in github version",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 81
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

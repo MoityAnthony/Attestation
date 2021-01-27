@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "488621",
+    "ThreadId": "225901",
+    "Html": "<p>Hello when i out put the file ,It is a empty file,Some body help me?</p>\r\n<p>see the code here :</p>\r\n<p><br>require_once 'function/phpword/PHPWord.php';<br><br>$PHPWord = new PHPWord();<br><br>$document = $PHPWord-&gt;loadTemplate('c://test.docx');<br><br>$document-&gt;setValue('Value1', 'Sun');<br>$document-&gt;setValue('Value2', 'Mercury');<br>$document-&gt;setValue('Value3', 'Venus');<br>$document-&gt;setValue('Value4', 'Earth');<br>$document-&gt;setValue('Value5', 'Mars');<br>$document-&gt;setValue('Value6', 'Jupiter');<br>$document-&gt;setValue('Value7', 'Saturn');<br>$document-&gt;setValue('Value8', 'Uranus');<br>$document-&gt;setValue('Value9', 'Neptun');<br>$document-&gt;setValue('Value10', 'Pluto');<br>$document-&gt;setValue('Value11','goodluck');<br>$document-&gt;setValue('weekday', date('l'));<br>$document-&gt;setValue('time', date('H:i'));<br>//$aa=time().&quot;docx&quot;;<br>//$document-&gt;save($aa);<br>&nbsp;<br>header('Content-Type: application/vnd.ms-word');<br>header('Content-Disposition: attachment;filename=&quot;01simple.docx&quot;');<br>header('Cache-Control: max-age=0');<br>&nbsp;$writer=PHPWord_IOFactory::createWriter($PHPWord,&quot;Word2007&quot;);<br>&nbsp;$writer-&gt;save(&quot;php://output&quot;);</p>",
+    "PostedDate": "2010-09-02T20:47:54.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488622",
+    "ThreadId": "225901",
+    "Html": "<p>I want to out put the chaged file, if I using $document-&gt;save($aa); the file content is correct.&nbsp;&nbsp; .&nbsp;&nbsp; hope some body can help me ,thanks</p>",
+    "PostedDate": "2010-09-02T20:50:15.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "513390",
+    "ThreadId": "225901",
+    "Html": "\r\n<p></p>\r\n<pre><div style=\"color:black; background-color:white\"><pre>  header(<span style=\"color:#a31515\">'Content-Type: application/vnd.ms-word'</span>);\r\n  header(<span style=\"color:#a31515\">'Content-Disposition: attachment;filename=&quot;myfile.docx&quot;'</span>);\r\n  header(<span style=\"color:#a31515\">'Cache-Control: max-age=0'</span>);\r\n\r\n<span style=\"color:green\">// output the file to the browser</span>\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, <span style=\"color:#a31515\">'Word2007'</span>);\r\n$objWriter-&gt;save(<span style=\"color:#a31515\">'php://output'</span>);\r\n<span style=\"color:blue\">exit</span>; <span style=\"color:green\">//you must have the exit!</span>\r\n</pre>\r\n</div>\r\n<br>I found I must have the exit; line or it did not work. I hope this helps you.<br></pre>\r\n<p></p>\r\n",
+    "PostedDate": "2010-10-27T07:35:31.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "565435",
+    "ThreadId": "225901",
+    "Html": "<p>Hello jill... i try your suggest... but the file still empty...</p>",
+    "PostedDate": "2011-02-13T08:16:35.447-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "569509",
+    "ThreadId": "225901",
+    "Html": "<p>I'm doing it like this and it's working:</p>\r\n<p>header('Content-Description: File Transfer');<br />header('Content-type: application/force-download');<br />header('Content-Disposition: attachment; filename='.basename($filename));<br />header('Content-Transfer-Encoding: binary');<br />header('Content-Length: '.filesize($filename));<br />readfile($filename);﻿</p>\r\n<p>&nbsp;</p>\r\n<p>$filename must be the full path to the file.</p>\r\n<p>Which should match the path provided as argument for $document-&gt;save($filename).</p>",
+    "PostedDate": "2011-02-21T02:26:01.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "602332",
+    "ThreadId": "225901",
+    "Html": "<p>Anyone found the solution?</p>",
+    "PostedDate": "2011-04-25T02:26:17.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "602340",
+    "ThreadId": "225901",
+    "Html": "<p>Sorry for the previous comment. I didn't read well the whole discussion. Thank you!</p>",
+    "PostedDate": "2011-04-25T02:51:12.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "605826",
+    "ThreadId": "225901",
+    "Html": "<p>Hi all,<br /><br />I have the same problem, the file is saved right but when I try to output directly to the browser it is empty.<br /><br />I observed that despite PHPExcel that open \"report.xls\" if you use \"header('Content-Disposition: attachment;filename=\"report.xls\");\", PHPWord open \"report-1.docx\".<br /><br />The workaround is to save the file with a temporary name like suggests ADMelo, but these involve to manage the deletion of older file.<br /><br />Someone has a new suggestion?<br /><br />Thnaks in advance.</p>\r\n<pre>\r\n</pre>",
+    "PostedDate": "2011-05-02T05:59:50.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "605838",
+    "ThreadId": "225901",
+    "Html": "<p>I just got a cron job running daily to remove the files that are no longer needed. Since I know that during the night my application is very rarely used it is programmed for that time, for me it's a fine solution to deal with those files.</p>",
+    "PostedDate": "2011-05-02T06:36:25.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "641492",
+    "ThreadId": "225901",
+    "Html": "<p>Just add unlink($filename);</p>\r\n<p>&nbsp;</p>\r\n<p>header('Content-Description: File Transfer');<br /> header('Content-type: application/force-download');<br /> header('Content-Disposition: attachment; filename='.basename($filename));<br /> header('Content-Transfer-Encoding: binary');<br /> header('Content-Length: '.filesize($filename));<br /> readfile($filename);﻿</p>\r\n<p><strong>unlink($filename);</strong></p>\r\n<p>&nbsp;</p>\r\n<p>It will delete the saved file.</p>",
+    "PostedDate": "2011-07-13T00:06:21.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "730022",
+    "ThreadId": "225901",
+    "Html": "<p>I've tried what's written here and none worked.</p>\n<p>I've solved with the following code snippet:</p>\n<div style=\"background-color: white; color: black;\">\n<pre>$document-&gt;save($<span style=\"color: blue;\">file</span>);\r\n    \r\n    <span style=\"color: blue;\">if</span>(!$<span style=\"color: blue;\">file</span>) {     \r\n        <span style=\"color: green;\">// File doesn't exist, output error     </span>\r\n        <span style=\"color: blue;\">die</span>(<span style=\"color: #a31515;\">'file not found'</span>); \r\n    } \r\n    <span style=\"color: blue;\">else</span> {     \r\n        header(<span style=\"color: #a31515;\">\"Cache-Control: public\"</span>);     \r\n        header(<span style=\"color: #a31515;\">\"Content-Description: File Transfer\"</span>);     \r\n        header(<span style=\"color: #a31515;\">\"Content-Disposition: attachment; filename=$file\"</span>);     \r\n        header(<span style=\"color: #a31515;\">\"Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document\"</span>);     \r\n        header(<span style=\"color: #a31515;\">\"Content-Transfer-Encoding: binary\"</span>);         \r\n\r\n        readfile($<span style=\"color: blue;\">file</span>); \r\n    }\r\n    \r\n    unlink($<span style=\"color: blue;\">file</span>);\r\n    \r\n    <span style=\"color: blue;\">exit</span>;\r\n&nbsp;</pre>\n</div>\n<div id=\"_mcePaste\" class=\"mcePaste\" style=\"position: absolute; width: 1px; height: 1px; overflow: hidden; top: 0px; left: -10000px;\">﻿</div>\n<p>Where $file is the name of the file. No path, just the name.</p>",
+    "PostedDate": "2012-01-24T09:05:15.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1068023",
+    "ThreadId": "225901",
+    "Html": "I was facing same issue - Please check your image type and test with new image.<br />\n",
+    "PostedDate": "2013-07-14T02:57:44.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

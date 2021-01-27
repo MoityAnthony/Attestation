@@ -1,0 +1,122 @@
+[
+  {
+    "Id": "627639",
+    "ThreadId": "261365",
+    "Html": "\r\n<p>My application takes input from the user in a text area, and saves it to the database.&nbsp; Some users type their information in MS Word, and then cut/paste it into the textarea on the web application.&nbsp; If they use quotes or apostrophes, Word will\r\n convert them into &quot;smart quotes&quot;, or &quot;smart apostrophes&quot;.&nbsp; I am able to store these characters, and then display them back on a web page using the page encoding UTF-8, however, when I use this same data to output a MS word doc using PHPWORD, the characters\r\n don't show up correctly.</p>\r\n<p>Is there a way to tell PHPWord that my text is already in UTF8 format so it will display correctly?</p>\r\n",
+    "PostedDate": "2011-06-14T10:23:31.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "631036",
+    "ThreadId": "261365",
+    "Html": "<p>I found this problem when using templates. When if I read text from Excel file and then put it into docx file, UTF-8 chars displays incorrectly. The same appears when I write the text (encoded in UTF-8) directly into docx.</p>\r\n<p>Solution is to remove (or comment) the following part</p>\r\n<p>if(!is_array($replace)) {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $replace = utf8_encode($replace);<br />}</p>\r\n<p>&nbsp;</p>\r\n<p>in: public function setValue($search, $replace)</p>\r\n<p>&nbsp;</p>\r\n<p>in file:&nbsp; PHPWord/Template.php</p>",
+    "PostedDate": "2011-06-22T04:00:38.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "631111",
+    "ThreadId": "261365",
+    "Html": "<p>Thanks for your suggestion, I also found the same sort of solution, but I'm not using templates, so I had to fix it in a different place:</p>\r\n<p>in Section.php addText function:</p>\r\n<p>I did this:</p>\r\n<p>//&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $givenText = utf8_encode($text);<br />&nbsp;&nbsp;&nbsp; $givenText = $text;</p>\r\n<p>and in cell.php addText function</p>\r\n<p>I did this:</p>\r\n<p><br />//&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $text = utf8_encode($text);</p>\r\n<p>There are many more places where this should probably be done, but I'm only using section.addText and Cell.addText in my application so that's the only places I needed to change.</p>\r\n<p>&nbsp;</p>\r\n<p>Searching for utf8_encode found 19 matches in 7 files throughout the codebase.</p>\r\n<p>If the developer could address this in the main codebase it would greatly help people.</p>\r\n<p>The ironic thing about this problem is that the problem characters are coming from Microsoft Word in the first place!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-06-22T07:05:00.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "691836",
+    "ThreadId": "261365",
+    "Html": "<p>Thanks!&nbsp; PHPWord was gibbling my ASCII encoded french accents, removing utf8_encode from both Section.php and Cell.php's \"addText\" functions solved my problem!</p>",
+    "PostedDate": "2011-10-31T14:16:19.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811619",
+    "ThreadId": "261365",
+    "Html": "<p>Good to know.&nbsp;</p>",
+    "PostedDate": "2012-03-16T12:36:55.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "874682",
+    "ThreadId": "261365",
+    "Html": "<p>Has this been addressed in a later version of the library?</p>",
+    "PostedDate": "2012-07-18T14:41:09.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "892074",
+    "ThreadId": "261365",
+    "Html": "<p>I tried to encode the Chinese characters but the output produces:</p>\r\n<p><em><span style=\"font-size: 11pt;\">&Atilde;&sect;&Acirc;&brvbar;&Acirc;&Atilde;&yen;&Acirc;&raquo;&Acirc;&ordm;&Atilde;&sect;&Acirc;&Acirc;&Atilde;&brvbar;&Acirc;&sup3;&Acirc;&Atilde;&yen;&Acirc;&middot;&Acirc;&Atilde;&yen;&Acirc;&cedil;&Acirc;&Atilde;&brvbar;&Acirc;&Acirc;&nbsp;&Atilde;&yen;&Acirc;&Acirc;&Atilde;&yen;&Acirc;&middot;&Acirc;&yen;&Atilde;&curren;&Acirc;&cedil;&Acirc;&Atilde;&yen;&Acirc;&Acirc;&ordm;&Atilde;&yen;&Acirc;&Acirc;&Atilde;&curren;&Acirc;&cedil;&Acirc;&Atilde;&uml;&Acirc;&middot;&Acirc;&macr; / Quanzhou / Fujian / China</span></em></p>\r\n<p>&nbsp;</p>\r\n<p>Instead of:</p>\r\n<p><em><span style=\"font-size: 11pt;\">福建省泉州市惠南工业区北一路 / Quanzhou / Fujian / China </span></em></p>\r\n<p>When I display the result into my web page, no problem.</p>\r\n<p>When I tried to generate docx document: everything is fine, except the Chinese characters...</p>\r\n<p>Any other idea?</p>",
+    "PostedDate": "2012-07-26T22:58:01.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "898704",
+    "ThreadId": "261365",
+    "Html": "<p>If you have do this:</p>\r\n<p><span>&nbsp; //$givenText = utf8_encode($text);</span></p>\r\n<p><span>in the source code, so before you addtext you should encode the text again,just like this</span></p>\r\n<p><span>$text = iconv('gbk','utf-8','<em><span>福建省泉州市惠南工业区北一路</span></em>');</span></p>\r\n<p><span>$section-&gt;addText($text);</span></p>",
+    "PostedDate": "2012-08-13T03:14:16.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "917504",
+    "ThreadId": "261365",
+    "Html": "\r\n<p>Hello all,</p>\r\n<p>If have another issue concerning UTF8.</p>\r\n<p>I modified the section.php and cell.php to remove the utf8_encode functions.</p>\r\n<p>That works ok.</p>\r\n<p><strong><span style=\"text-decoration:underline\">But</span></strong></p>\r\n<p>I use a simple html ckeditor and convert the html with simple_html_dom to have some support for Bold, Italic and underline and a simple bullit list.</p>\r\n<p>The parsing by the simple_htlm_dom is however decode the special chars back into the strange characters that where there before the utf8_encode removal.</p>\r\n<p>Does someone have ann idea how to prevent this.</p>\r\n<p>This is the convert function:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">function</span> convertText($text,$object) {\n\n  $html_dom = <span style=\"color:blue\">new</span> simple_html_dom();\n  $html_dom-&gt;load(<span style=\"color:#a31515\">'&lt;html&gt;&lt;body&gt;'</span> . $text . <span style=\"color:#a31515\">'&lt;/body&gt;&lt;/html&gt;'</span>);\n<span style=\"color:green\">// Note, we needed to nest the html in a couple of dummy elements</span>\n\n<span style=\"color:green\">// Create the dom array of elements which we are going to work on:</span>\n$html_dom_array = $html_dom-&gt;find(<span style=\"color:#a31515\">'html'</span>,0)-&gt;children();\n\n<span style=\"color:green\">// Provide some initial settings:</span>\n$initial_state = <span style=\"color:blue\">array</span>(\n      <span style=\"color:#a31515\">'current_style'</span> =&gt; <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'bold'</span>=&gt;false, <span style=\"color:#a31515\">'align'</span>=&gt;<span style=\"color:#a31515\">'left'</span>, <span style=\"color:#a31515\">'color'</span>=&gt;<span style=\"color:#a31515\">'878787'</span>, <span style=\"color:#a31515\">'name'</span> =&gt; <span style=\"color:#a31515\">'Arial'</span>),\n      <span style=\"color:#a31515\">'style_sheet'</span> =&gt; h2d_styles_example(), <span style=\"color:green\">// This is an array (the &quot;style sheet&quot;) - returned by h2d_styles_Example() here (in styles.inc) - see this function for an example of how to construct this array.</span>\n      <span style=\"color:#a31515\">'parents'</span> =&gt; <span style=\"color:blue\">array</span>(0 =&gt; <span style=\"color:#a31515\">'body'</span>), <span style=\"color:green\">// Our parent is body</span>\n      <span style=\"color:#a31515\">'list_depth'</span> =&gt; 0, <span style=\"color:green\">// This is the current depth of any current list</span>\n      <span style=\"color:#a31515\">'context'</span> =&gt; <span style=\"color:#a31515\">'section'</span>, <span style=\"color:green\">// Possible values - section, footer or header</span>\n      <span style=\"color:#a31515\">'base_root'</span> =&gt; <span style=\"color:#a31515\">'http://www.mywebsite.com'</span>, <span style=\"color:green\">// Required for link elements - change it to your domain</span>\n      <span style=\"color:#a31515\">'base_path'</span> =&gt; <span style=\"color:#a31515\">'/'</span>, <span style=\"color:green\">// Path from base_root to whatever url your links are relative to</span>\n      <span style=\"color:#a31515\">'pseudo_list'</span> =&gt; TRUE, <span style=\"color:green\">// NOTE: Word lists not yet supported (TRUE is the only option at present)</span>\n      <span style=\"color:#a31515\">'pseudo_list_indicator_font_name'</span> =&gt; <span style=\"color:#a31515\">'Wingdings'</span>, <span style=\"color:green\">// Bullet indicator font</span>\n      <span style=\"color:#a31515\">'pseudo_list_indicator_font_size'</span> =&gt; <span style=\"color:#a31515\">'7'</span>, <span style=\"color:green\">// Bullet indicator size</span>\n      <span style=\"color:#a31515\">'pseudo_list_indicator_character'</span> =&gt; <span style=\"color:#a31515\">'l '</span>, <span style=\"color:green\">// Gives a circle bullet point with wingdings</span>\n      );    \n\n<span style=\"color:green\">// Convert the HTML and put it into the PHPWord object</span>\nh2d_insert_html($object, $html_dom_array[0]-&gt;nodes, $initial_state);\n\n\n}\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>I changed the load to:</p>\r\n<pre><div style=\"color:black; background-color:white\"><pre>$html_dom-&gt;load('<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">html</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">head</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">meta</span> <span style=\"color:red\">http-equiv</span><span style=\"color:blue\">=</span><span style=\"color:blue\">'Content-Type'</span> <span style=\"color:red\">content</span><span style=\"color:blue\">=</span><span style=\"color:blue\">'Type=text/html; charset=utf-8'</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">head</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">body</span><span style=\"color:blue\">&gt;</span>' . $text . '<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">body</span><span style=\"color:blue\">&gt;</span><span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">html</span><span style=\"color:blue\">&gt;</span>');\n\n\n</pre>\n</div>\nBut thats is also not working, and there is nothing converted anymore.<br>Somebody has a idea how I can solve this issue?<br><br>Thanxs</pre>\r\n",
+    "PostedDate": "2012-09-25T14:27:53.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "917690",
+    "ThreadId": "261365",
+    "Html": "<p>I will answer the previous question myself because I found that the h2d_htmlconverter uses also the TextRun.php from phpWord\\Section area.</p>\r\n<p>You have to make the same modification as in section.php and cell.php in textrun.php.</p>\r\n<p>The complete patch for this is listed here:</p>\r\n<p>http://htmltodocx.codeplex.com/SourceControl/changeset/view/f676be705744#htmltodocx/patches/phpword/utf8_encode_090512.patch</p>\r\n<p>Greetz Aren</p>",
+    "PostedDate": "2012-09-26T01:49:28.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "937167",
+    "ThreadId": "261365",
+    "Html": "<p>The patch does not change the character encoding. Problematic characters (&aacute;&eacute;&iacute;ő&oacute;&ouml;&uuml;&uacute;ű).</p>\r\n<p>What needs to be modified to properly use ?</p>",
+    "PostedDate": "2012-11-06T03:02:42.373-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993680",
+    "ThreadId": "261365",
+    "Html": "\r\n<p>I had problem same type maybe check this post</p>\r\n<p><a href=\"http://phpword.codeplex.com/discussions/431281\">http://phpword.codeplex.com/discussions/431281</a></p>\r\n<p>is ok for me</p>\r\n",
+    "PostedDate": "2013-01-29T07:23:19.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1066836",
+    "ThreadId": "261365",
+    "Html": "@sauronpl Thank you soooo much you saved me a lot of time!!  it worked for me using templates<br />\n",
+    "PostedDate": "2013-07-10T17:39:57.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1113961",
+    "ThreadId": "261365",
+    "Html": "Just want to share this without modifying the section.php and cell.php...\r<br />\n<br />\nI've just used utf8_decode to reverse the utf8_encode.<br />\n<pre><code>$section-&gt;addText( utf8_decode($text) );</code></pre>\n\n",
+    "PostedDate": "2013-10-29T20:46:57.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1225938",
+    "ThreadId": "261365",
+    "Html": "function utf2win1251 ($s)\r<br />\n{\r<br />\n $out = &quot;&quot;;\r<br />\n<br />\n for ($i=0; $i&lt;strlen($s); $i++)\r<br />\n {\r<br />\n  $c1 = substr ($s, $i, 1);\r<br />\n  $byte1 = ord ($c1);\r<br />\n  if ($byte1&gt;&gt;5 == 6) // 110x xxxx, 110 prefix for 2 bytes unicode\r<br />\n  {\r<br />\n   $i++;\r<br />\n   $c2 = substr ($s, $i, 1);\r<br />\n   $byte2 = ord ($c2);\r<br />\n   $byte1 &amp;= 31; // remove the 3 bit two bytes prefix\r<br />\n   $byte2 &amp;= 63; // remove the 2 bit trailing byte prefix\r<br />\n   $byte2 |= (($byte1 &amp; 3) &lt;&lt; 6); // last 2 bits of c1 become first 2 of c2\r<br />\n   $byte1 &gt;&gt;= 2; // c1 shifts 2 to the right\r<br />\n<br />\n   $word = ($byte1&lt;&lt;8) + $byte2;\r<br />\n   if ($word==1025) $out .= chr(168);                    // �\r<br />\n   elseif ($word==1105) $out .= chr(184);                // �\r<br />\n   elseif ($word&gt;=0x0410 &amp;&amp; $word&lt;=0x044F) $out .= chr($word-848); // �-� �-�\r<br />\n   else\r<br />\n   { <br />\n<pre><code> $a = dechex($byte1);\n $a = str_pad($a, 2, &quot;0&quot;, STR_PAD_LEFT);\n $b = dechex($byte2);\n $b = str_pad($b, 2, &quot;0&quot;, STR_PAD_LEFT);\n $out .= &quot;&amp;#x&quot;.$a.$b.&quot;;&quot;;</code></pre>\n\n}\r<br />\n  }\r<br />\n  else\r<br />\n  {\r<br />\n   $out .= $c1;\r<br />\n  }\r<br />\n }\r<br />\n<br />\n return $out;\r<br />\n}<br />\n",
+    "PostedDate": "2014-03-24T04:13:30.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

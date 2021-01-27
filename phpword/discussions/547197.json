@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1251683",
+    "ThreadId": "547197",
+    "Html": "Hi all,\r<br />\n<br />\nSome of you probably knew that the development of PHPWord is continued on <a href=\"https://github.com/PHPOffice/PHPWord\" rel=\"nofollow\">GitHub</a>. Version 0.11.0 has just been released with <a href=\"https://github.com/PHPOffice/PHPWord/releases/tag/0.11.0\" rel=\"nofollow\">lots of improvements</a>. You can read the developer's documentation in <a href=\"http://phpword.readthedocs.org/en/latest/\" rel=\"nofollow\">Read the Docs</a> and API documentation in <a href=\"http://phpoffice.github.io/PHPWord/docs/master/\" rel=\"nofollow\">GitHub</a>.\r<br />\n<br />\nSince this release still tagged as a &quot;minor&quot; release (backward compatibility maintained), your current code will most probably still works. The major differences is that PHPWord requires PHP 5.3 since 0.9.0 while you can still use 5.2 for the version in CodePlex (0.6.2). If you can upgrade your PHP version, please try the new release. We need your <a href=\"https://github.com/PHPOffice/PHPWord/issues\" rel=\"nofollow\">bug reports and feature requests</a> for further development of PHPWord.\r<br />\n<br />\nThank you.<br />\n",
+    "PostedDate": "2014-06-01T08:15:16.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

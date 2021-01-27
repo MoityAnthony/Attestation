@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have need to use the following list styles\r\n\r\nAlphabetically ordered list, lowercase (a, b, c, d)\r\nAlphabetically ordered list, uppercase (A, B, C, D)\r\nRoman numbers, lowercase (i, ii, iii, iv)\r\nRoman numbers, uppercase (I, II, III, IV)\r\n\r\nI cannot locate the 'PHPWord_Style_ListItem::TYPE...' for these options.\r\n\r\nIs there a workround available please?",
+    "LastUpdatedDate": "2014-03-16T23:09:22.137-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-09-09T22:46:09.477-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "list style",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 32
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

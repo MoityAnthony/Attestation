@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "980940",
+    "ThreadId": "427833",
+    "Html": "\r\n<p>I have recently found this product and have been able to successfully create new Word documents, but it seems I am unable to affect a template. &nbsp;I am not sure if this is a Word version issue, but I am using Word 2010.</p>\r\n<p>Following is the code I am using to replace two values:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>&lt;?php\r\n<span style=\"color:blue\">require_once</span> <span style=\"color:#a31515\">'../PHPWord/PHPWord.php'</span>;\r\n$PHPWord = <span style=\"color:blue\">new</span> PHPWord();\r\n$reportname= $latisid.<span style=\"color:#a31515\">' - '</span>.$devicename.<span style=\"color:#a31515\">'.docx'</span>;\r\n$template= <span style=\"color:#a31515\">'NewFixedAsset.docx'</span>;\r\n$document = $PHPWord-&gt;loadTemplate($template);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'ValueOne'</span>, <span style=\"color:#a31515\">'Test'</span>);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'ValueTwo'</span>, $proveng);\r\n$document-&gt;save(<span style=\"color:#a31515\">'./output/'</span>.$reportname);\r\n<span style=\"color:blue\">echo</span> <span style=\"color:#a31515\">&quot;&lt;a href='http://10.1.11.246/prov_inv/output/&quot;</span>.$reportname.<span style=\"color:#a31515\">&quot;'&gt;Download New Fixed Asset Document&quot;</span>;\r\n?&gt;\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>The text in Word is as follows:</p>\r\n<p>DATE: ValueOne<br>\r\nPREPARED AND TAGGED BY: &nbsp;ValueTwo</p>\r\n<p>The template is loaded and the new document saved, though no replacements occur.</p>\r\n<div>\r\n<p>Am I missing something? &nbsp;Is there a way to debug the setValue process?</p>\r\n<p>Any guidance would be greatly appreciated!</p>\r\n</div>\r\n",
+    "PostedDate": "2012-12-27T11:35:37.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1056232",
+    "ThreadId": "427833",
+    "Html": "I have got the same type of problems.\r<br />\nAnd I cannot find any valid response in this forum.\r<br />\n<br />\nIt is very very unclear to me what exactly I need to create in Word in order to get the setValue populated.\r<br />\n<br />\nis it a DOCVARIABLE, DOCPROPERTY, ${testValue}, ...\r<br />\nthe documentation is far from complete i.e. an a to z explication is missing.\r<br />\n<br />\nI hope that someone picks this up very soon. I cannot wait that much longer and am looking at alternative products that might fullfil our requirements if this does not get clarified.\r<br />\n<br />\nP.<br />\n",
+    "PostedDate": "2013-06-13T01:19:18.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1063805",
+    "ThreadId": "427833",
+    "Html": "<strong>patrickvdbemt wrote:</strong><br />\n<blockquote>\nI hope that someone picks this up very soon. I cannot wait that much longer and am looking at alternative products that might fullfil our requirements if this does not get clarified.<br />\n</blockquote>\nI am in the same boat. There is no documentation anywhere saying how the word file should be set up. Is it a field or just text? Who knows. The documentation for PHPWord is very disappointing after using PHPExcel which was a great product. <br />\n<br />\nI can load the template and create a new file with it but setValue() does absolutely nothing.<br />\n<br />\nVery frustrating.<br />\n",
+    "PostedDate": "2013-07-02T14:06:28.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1334268",
+    "ThreadId": "427833",
+    "Html": "Hi, I'm having the same problem. I've been trying to figure it out all day. The problem I've found is that if you type into the word document ${replace-me} it doesn't work. But If i type it in another text editor and paste it in, it works! \r<br />\n<br />\nIn theory anyway, I'm still having problems getting replacement to work inside the header and footer. Its difficult to tell if its the problem I've solved, or something different. :)<br />\n",
+    "PostedDate": "2014-12-17T11:34:19.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

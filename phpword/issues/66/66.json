@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The Template::setValue() method seems to have a couple of issues that I've discovered.\r\n\r\nFirstly, as documented, \"only single-line values can be replaced\". I have found that it is possible to insert multiline values using the <w:br/> tag. The function could probably be modified as follows to achieve this:\r\n\r\n```\r\npublic function setValue($search, $replace) {\r\n  if(substr($search, 0, 2) !== '${' && substr($search, -1) !== '}') {\r\n      $search = '${'.$search.'}';\r\n  }\r\n  \r\n  if(!is_array($replace)) {\r\n      $replace = utf8_encode($replace);\r\n      $replace = str_replace(\"\\n\", \"<w:br/>\", $replace);\r\n  }\r\n  \r\n  $this->_documentXML = str_replace($search, $replace, $this->_documentXML);\r\n}\r\n```\r\n\r\nNote that I haven't given any thought to character sets or any other validation, but in principal that should work.\r\n\r\nThe second issue I found is that often setValue() simply doesn't work at all. I found forum threads where other people have had this issue, but the ones I read didn't manage to figure out what the issue was.\r\n\r\nI took a look at the word/document.xml file in my docx file and found somewhat of a mess. Word inserts lots of additional markup as a document is being edited. There are hooks for the spelling and grammar checker that tell it where to put the red and green zig-zag underlines. In addition, if you modify existing text you often get additional <w:r>, <w:t> and various other tags thrown in.\r\n\r\nYou might have added a place holder like:\r\n\r\n```\r\n${placeHolder1}\r\n```\r\n\r\nbut what's actually in word/document.xml is:\r\n\r\n```\r\n<w:r><w:t>${</w:t></w:r><w:proofErr w:type=\"gramStart\"/><w:r><w:t>placeHolder1</w:t></w:r><w:proofErr w:type=\"gramEnd\"/><w:r><w:t>}</w:t></w:r>\r\n```\r\n\r\nsetValue() uses only a very simplistic str_replace() function which has no understanding of the format of the XML document and is completely unequipped to handle this.\r\n\r\nIdeally, I believe that the setValue() function needs to be rewritten using DOM methods so that it can handle the extra chaff that Word inserts.\r\n\r\nIn the meantime, I found that switching of spelling and grammar checking in Word's preferences removed the <w:proofErr> tags and after that manually deleting and completely retyping any placeholders that need to be changed (rather than modifying existing placeholder text) gets rid of the <w:r> and <w:t> tags. I was very carful to check the word/document.xml file afterwards!",
+    "LastUpdatedDate": "2013-11-28T04:01:01.783-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-11-28T04:01:01.783-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Template::setValue() shortcomings",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 66
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

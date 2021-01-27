@@ -1,0 +1,426 @@
+[
+  {
+    "Id": 3,
+    "Title": "Style property \"spaceAfter\" and \"spaceBefore\" for PreserveText Object"
+  },
+  {
+    "Id": 5,
+    "Title": "Add hyperlinks to header / footer parts"
+  },
+  {
+    "Id": 6,
+    "Title": "Relationship Id attribute value duplication"
+  },
+  {
+    "Id": 7,
+    "Title": "Fail to insert an image with uppercase extension"
+  },
+  {
+    "Id": 8,
+    "Title": "East Asian characters appears wrongly"
+  },
+  {
+    "Id": 9,
+    "Title": "Add titles but can't automatic number the titles "
+  },
+  {
+    "Id": 10,
+    "Title": "TitleTOC.php example crash on PHPWord version Beta 0.6.2, 24.07.2010"
+  },
+  {
+    "Id": 11,
+    "Title": "Fix for Document::_writeTOC and Section::addListItem"
+  },
+  {
+    "Id": 12,
+    "Title": "Arabic characters appears wrongly"
+  },
+  {
+    "Id": 13,
+    "Title": "Fix for Template.php: load template error"
+  },
+  {
+    "Id": 14,
+    "Title": "Could not close zip file"
+  },
+  {
+    "Id": 15,
+    "Title": "problem with template"
+  },
+  {
+    "Id": 16,
+    "Title": "addImage() function with or without a line break"
+  },
+  {
+    "Id": 17,
+    "Title": "Cell addText() function doesn't support paragraph style"
+  },
+  {
+    "Id": 19,
+    "Title": "Wrong parameter-name for font style when creating new ListItem"
+  },
+  {
+    "Id": 20,
+    "Title": "Table cell span or merge cells feature"
+  },
+  {
+    "Id": 21,
+    "Title": "Feature Wish Tokenreplacer"
+  },
+  {
+    "Id": 22,
+    "Title": "Not working valign in cell"
+  },
+  {
+    "Id": 23,
+    "Title": "setValue() and new line"
+  },
+  {
+    "Id": 24,
+    "Title": "superscript and subscript not working"
+  },
+  {
+    "Id": 25,
+    "Title": "How can i use .dot/dotx file"
+  },
+  {
+    "Id": 26,
+    "Title": "Wrong variable name"
+  },
+  {
+    "Id": 27,
+    "Title": "Feature Request: gell all used {$vars} from .docx Template"
+  },
+  {
+    "Id": 28,
+    "Title": "How do i load the word document and embed image in it"
+  },
+  {
+    "Id": 29,
+    "Title": "Table cell addText should support paragraphStyle"
+  },
+  {
+    "Id": 30,
+    "Title": "adding hyperlinks to other parts of the document"
+  },
+  {
+    "Id": 31,
+    "Title": "Tables in .docx misformated in OpenOffice"
+  },
+  {
+    "Id": 32,
+    "Title": "list style"
+  },
+  {
+    "Id": 33,
+    "Title": "Multi lines Text in the same table cell"
+  },
+  {
+    "Id": 34,
+    "Title": "Problems with cyrillic"
+  },
+  {
+    "Id": 35,
+    "Title": "Header and footer margins"
+  },
+  {
+    "Id": 36,
+    "Title": "AddRow method is not taking height less then to min height"
+  },
+  {
+    "Id": 37,
+    "Title": "loadTemplate and addImage function "
+  },
+  {
+    "Id": 38,
+    "Title": "PHPWord outputs corrupt file."
+  },
+  {
+    "Id": 39,
+    "Title": "Add support for absolute positioned images"
+  },
+  {
+    "Id": 40,
+    "Title": "Cannot modify existing files or combine multiple documents"
+  },
+  {
+    "Id": 41,
+    "Title": "CRLF from mySQL"
+  },
+  {
+    "Id": 42,
+    "Title": "Support for paragraph indentation"
+  },
+  {
+    "Id": 43,
+    "Title": "Bugs on Linux because of case sensitive"
+  },
+  {
+    "Id": 44,
+    "Title": "Add image using full URL is not working"
+  },
+  {
+    "Id": 45,
+    "Title": "Fgcolor parameter"
+  },
+  {
+    "Id": 46,
+    "Title": "Template Open, temporary file"
+  },
+  {
+    "Id": 47,
+    "Title": "Fatal error: Class 'ZipArchive' not found"
+  },
+  {
+    "Id": 48,
+    "Title": "implementation of table - colspan"
+  },
+  {
+    "Id": 49,
+    "Title": "Advanced string replace in setValue"
+  },
+  {
+    "Id": 50,
+    "Title": "How to bring value from webpage/html to PHP word code?"
+  },
+  {
+    "Id": 51,
+    "Title": "Use template to create sequential pages"
+  },
+  {
+    "Id": 52,
+    "Title": "How to add image from url?"
+  },
+  {
+    "Id": 53,
+    "Title": "temp file creation"
+  },
+  {
+    "Id": 54,
+    "Title": "page orientation"
+  },
+  {
+    "Id": 55,
+    "Title": "PDF Writer"
+  },
+  {
+    "Id": 56,
+    "Title": "CLONEPART FUNCTION (Repeat part of Template)"
+  },
+  {
+    "Id": 57,
+    "Title": "setValue() not working"
+  },
+  {
+    "Id": 58,
+    "Title": "Paragraph \"justify\" not working "
+  },
+  {
+    "Id": 59,
+    "Title": "How to use UTF-8"
+  },
+  {
+    "Id": 60,
+    "Title": "Splitting a cell PHPWord"
+  },
+  {
+    "Id": 61,
+    "Title": "Problems with PHPWord not displaying text"
+  },
+  {
+    "Id": 62,
+    "Title": "the phpword does not display text but page code!"
+  },
+  {
+    "Id": 63,
+    "Title": "please add a function to Template.php"
+  },
+  {
+    "Id": 64,
+    "Title": "I can't get the source code to create files from examples"
+  },
+  {
+    "Id": 65,
+    "Title": "Does it work with a docx file having \"mail-merged\" fields?"
+  },
+  {
+    "Id": 66,
+    "Title": "Template::setValue() shortcomings"
+  },
+  {
+    "Id": 67,
+    "Title": "pull request doesn't run"
+  },
+  {
+    "Id": 68,
+    "Title": "Template setValue doesn't work with values contain '&'"
+  },
+  {
+    "Id": 69,
+    "Title": "Advanced string replace and header/footer"
+  },
+  {
+    "Id": 70,
+    "Title": "PHPWord docs can't be opened on Android"
+  },
+  {
+    "Id": 71,
+    "Title": "TextRun addTextBreak"
+  },
+  {
+    "Id": 72,
+    "Title": "Word 2007 docs are opening in Compatibility Mode"
+  },
+  {
+    "Id": 73,
+    "Title": "not working word.php just show blank page"
+  },
+  {
+    "Id": 74,
+    "Title": "Alginment of Text in Tables in Footer"
+  },
+  {
+    "Id": 75,
+    "Title": "big differences"
+  },
+  {
+    "Id": 76,
+    "Title": "Save file to a specified path"
+  },
+  {
+    "Id": 77,
+    "Title": "Invalid error type specified in PHPWord.php on line 226"
+  },
+  {
+    "Id": 78,
+    "Title": "How can we create a horizontal rule inside docx file"
+  },
+  {
+    "Id": 79,
+    "Title": "phpword is not working with .doc extension"
+  },
+  {
+    "Id": 80,
+    "Title": "Codeigniter integer"
+  },
+  {
+    "Id": 81,
+    "Title": "PageSizeH and PageSizeW don't work in github version"
+  },
+  {
+    "Id": 82,
+    "Title": "path issues with phpword"
+  },
+  {
+    "Id": 83,
+    "Title": "watermark repeat "
+  },
+  {
+    "Id": 84,
+    "Title": "export word error"
+  },
+  {
+    "Id": 85,
+    "Title": "How can i replace constant with image in PHPWork?"
+  },
+  {
+    "Id": 86,
+    "Title": "Get a blank word document "
+  },
+  {
+    "Id": 87,
+    "Title": "Library treats amount in strings as variables"
+  },
+  {
+    "Id": 88,
+    "Title": "phpword underline <u> is not working in addHtml"
+  },
+  {
+    "Id": 89,
+    "Title": "bold and italic in li tag using addHtml()"
+  },
+  {
+    "Id": 90,
+    "Title": "textrun breaking up a paragraph"
+  },
+  {
+    "Id": 91,
+    "Title": "images not working"
+  },
+  {
+    "Id": 92,
+    "Title": "I am able to generate text field and checkboxes. but i am unable to move them at exact location where i want to place them PLease reply."
+  },
+  {
+    "Id": 93,
+    "Title": "Word titles converted to HTML paragraphs"
+  },
+  {
+    "Id": 94,
+    "Title": "Converting word to html does not render lists as lists"
+  },
+  {
+    "Id": 95,
+    "Title": "[Solved] FontStyle on SetValue Element"
+  },
+  {
+    "Id": 96,
+    "Title": "How to add css with checkbox"
+  },
+  {
+    "Id": 97,
+    "Title": "how do I create a document with symmetric margins in Word"
+  },
+  {
+    "Id": 98,
+    "Title": "Edit an Existing document and add watermark"
+  },
+  {
+    "Id": 99,
+    "Title": "In IPAD Download docx issues"
+  },
+  {
+    "Id": 100,
+    "Title": "Edit header/footer of an existing document through PHPWord."
+  },
+  {
+    "Id": 101,
+    "Title": "Georgian characters in a template"
+  },
+  {
+    "Id": 102,
+    "Title": "I have a form where user are filling questionnaire , When they submit special characters The doc created is corrupted"
+  },
+  {
+    "Id": 103,
+    "Title": "How to write rtl by phpword?"
+  },
+  {
+    "Id": 104,
+    "Title": "How to add 2 or more diffrent text styles on a single table cell ?"
+  },
+  {
+    "Id": 105,
+    "Title": "How to insert an image in existing word file at a specified position?"
+  },
+  {
+    "Id": 106,
+    "Title": "after save i have a corrupted file "
+  },
+  {
+    "Id": 107,
+    "Title": "Mail Image issue"
+  },
+  {
+    "Id": 108,
+    "Title": "PhpWord not rendering html properly in Word doc"
+  },
+  {
+    "Id": 109,
+    "Title": "How to embed and external font into the Word doc"
+  },
+  {
+    "Id": 110,
+    "Title": "How to add special character(↑) in word document"
+  }
+]

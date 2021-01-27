@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1006384",
+    "ThreadId": "434435",
+    "Html": "<strong>My Code:</strong>\r<br />\nrequire_once 'PHPWord.php';\r<br />\n<br />\n// Create a new PHPWord Object\r<br />\n$PHPWord = new PHPWord();\r<br />\n<br />\n// Every element you want to append to the word document is placed in a section. So you need a section:\r<br />\n$section = $PHPWord-&gt;createSection();\r<br />\n<br />\n// After creating a section, you can append elements:\r<br />\n$section-&gt;addText('Hello world!');\r<br />\n<br />\n$temp_file_uri = 'test.docx';\r<br />\n// At least write the document to webspace:\r<br />\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r<br />\n$objWriter-&gt;save($temp_file_uri);\r<br />\n<br />\n<br />\n<strong>Issue Generated.</strong>\r<br />\nFatal error: Uncaught exception 'Exception' with message 'Could not close zip file test.docx.' in D:\\hosting\\10275756\\html\\phpword\\PHPWord\\Writer\\Word2007.php:158 Stack trace: #0 D:\\hosting\\10275756\\html\\phpword\\index.php(35): PHPWord_Writer_Word2007-&gt;save('test.docx') #1 {main} thrown in D:\\hosting\\10275756\\html\\phpword\\PHPWord\\Writer\\Word2007.php on line 158\r<br />\n<br />\nURL: <a href=\"http://www.sritechapp.com/phpword/index.php\" rel=\"nofollow\">http://www.sritechapp.com/phpword/index.php</a><br />\n",
+    "PostedDate": "2013-02-25T08:25:13.677-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1006398",
+    "ThreadId": "434435",
+    "Html": "Check file/directory permissions for test.docx in the current working directory<br />\n",
+    "PostedDate": "2013-02-25T08:37:44.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1472356",
+    "ThreadId": "654283",
+    "Html": "Hi,<br />\n<br />\nI am new to PHPWord and was wondering if the script can help with the following problem.<br />\n<br />\nI have a folder with numerous .doc (and some .docx) files and would like to open each of them, and then replace strings such as &quot;$$PROPERTY$$&quot; with my previously entered $property variable. There are also replacements for $$DATE$$, $$AREA$$, $$OUTLET$$ and others.<br />\n<br />\nFinally, there is also one image embedded in the word files that should be replaced with the one linked in my $logo variable. The pictures are both the same size and same location.<br />\n<br />\nHow would I best go about this and can WordPHP actually do this?<br />\n<br />\nThank you,<br />\nPatrick<br />\n",
+    "PostedDate": "2016-05-03T20:17:54.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

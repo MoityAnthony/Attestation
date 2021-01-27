@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1089920",
+    "ThreadId": "456166",
+    "Html": "Hi, in the documentation under working with templates, it says &quot;It is not possible to add new PHPWord elements to a loaded template file.&quot; Would images and/or Excel tables be classed as 'PHPWord elements' in this case or is it possible to create a Word template and us PHPWord to generate a number of documents each with the same basic layout but with a different image and/or table inported via URL.\r<br />\n<br />\nMany thanks\r<br />\nLewis<br />\n",
+    "PostedDate": "2013-09-08T12:20:53.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

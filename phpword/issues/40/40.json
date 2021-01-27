@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "One of the features that is unfortunately missing is the ability to not only open and modify existing documents, but at the very least combine or merge documents.\r\n\r\nInitially this is a placeholder for my efforts to rectify this issue.  Any insight or help is appreciated. (I have a vested interest in this getting done, as I need it for a paid project)",
+    "LastUpdatedDate": "2012-10-10T10:07:41.31-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2012-01-11T14:00:22.107-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Cannot modify existing files or combine multiple documents",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 40
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Couldn't you just use templating to open existing documents? \nAnd has there been any addition to the ability to combine multiple documents?",
+      "PostedDate": "2012-10-10T09:13:10.167-07:00",
+      "Id": 79329
+    },
+    {
+      "Message": "unfortunately, as it stands, templating does NOT work in that manner.\n\nI do have some code that merges multiple documents, but I need to clean up the code, and work out a couple of kinks in it.\n\nAt this point, however, I'm starting to feel like this project is largely abandoned, and the code that I see thus far seems to have become vastly bloated and convoluted.  Just THINKING about reading through the API documentation is giving me a migraine.  Cleaning it up myself would take far longer than just re-doing everything from scratch as a cleaner, easier to use library.\n\nI can send you some code and examples of the last work I did with it, corkysru, but henceforth I'm officially no longer using nor supporting phpword.\n\nI wasn't one of the original developers, nor became part of any official development team, so to most people this makes little difference.  It's not even a \"rage-quit\".  It was good software, and it worked for what I needed it to do at the time, but dealing with the shortcomings has become too expensive an investment, so it's time for me, at least, to move on.",
+      "PostedDate": "2012-10-10T10:07:41.31-07:00",
+      "Id": 79335
+    }
+  ]
+}

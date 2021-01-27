@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Converting a word 2011 document with a list to html renders the list items as paragraphs\r\n\r\ne.g.\r\n\r\n1)\tBuy pants\r\n\ta.\tMust be blue\r\n\tb.\tMust be flared\r\n2)\tBuy shirt\r\n\ta.\tMust be white\r\n3)\tBuy tie\r\n\ta.\tMust be awful\r\n\tb.\tOffensive\r\n\tc.\tStripy\r\n\r\nBecomes:\r\n\r\nBuy pants\r\n\r\nMust be blue\r\n\r\nMust be flared\r\n\r\nBuy shirt\r\n\r\nMust be white\r\n\r\nBuy tie\r\n\r\nMust be awful\r\n\r\nOffensive\r\n\r\nStripy\r\n",
+    "LastUpdatedDate": "2015-01-06T09:56:01.783-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2015-01-06T09:54:49.883-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Converting word to html does not render lists as lists",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 94
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

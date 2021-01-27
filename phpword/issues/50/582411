@@ -1,0 +1,61 @@
+<?php
+session_start();
+
+require_once('PHPWord.php');
+
+
+	$PHPWord = new PHPWord();
+	$document = $PHPWord->loadTemplate('TemplateKebenaranProjek.docx');
+
+	$host="localhost";
+	$username="root";
+	$password="";
+	$database="finalproject";
+	$student_id=$_POST['student_id'];
+	
+	$osr = mysql_connect($host, $username, $password) or trigger_error(mysql_error(),E_USER_ERROR); 
+	mysql_select_db("$database") or die (mysql_error());
+	
+	//query
+	$query_RecordsetFail = "SELECT * FROM student,surat,admin";
+	$RecordsetFail = mysql_query($query_RecordsetFail, $osr) or die(mysql_error());
+	$row_RecordsetFail = mysql_fetch_assoc($RecordsetFail);
+	
+	/*$query_RecordsetAdmin = "SELECT adminfullname,department FROM admin where adminid='$id'";
+	$RecordsetAdmin = mysql_query($query_RecordsetAdmin, $osr) or die(mysql_error());
+	$row_RecordsetAdmin = mysql_fetch_assoc($RecordsetAdmin);
+	*/
+	
+	//declaration
+	$NoID= $student_id;
+	$NamaPemilik=$row_RecordsetFail['fullname'];
+	$IcNum=$row_RecordsetFail['ic_number'];
+	$Course=$row_RecordsetFail['course'];
+	$letter=$row_RecordsetFail['jenissurat'];
+	$NamaAdmin=$row_RecordsetFail['adminfullname'];
+	$Jawatan=$row_RecordsetFail['department'];
+	
+	
+	//set value
+	
+	$document->setValue('NamaPelajar', $NamaPemilik);
+	$document->setValue('NRIC', $IcNum);
+	$document->setValue('Course', $Course);
+	$document->setValue('ID', $NoID);
+	$document->setValue('NamaAdmin', $NamaAdmin);
+	$document->setValue('Jawatan', $Jawatan);
+
+	$new_file = 'KebenaranProjek.docx';
+	$document->save($new_file);
+		
+		  	header('Content-Description: File Transfer');
+			header('Content-type: application/force-download');
+			header('Content-Disposition: attachment; filename='.basename($new_file));
+			header('Content-Transfer-Encoding: binary');
+			header('Content-Length: '.filesize($new_file));
+			readfile($new_file);
+   
+?>
+
+
+

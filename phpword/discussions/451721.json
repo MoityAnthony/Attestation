@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1074203",
+    "ThreadId": "451721",
+    "Html": "Hi\r<br />\n<br />\nI have created word document using PHPWord template.\r<br />\n<br />\nIf the template having images, then I try to open the created document it says that Undeclared prefix.<br />\n<pre><code>The file test.docx cannot be opened because there are problems with the contents.\nDetails\nUndeclared prefix\nLocation Part: word/document.xml, Line: 2, column: 1292385</code></pre>\n\nPlease help.<br />\n",
+    "PostedDate": "2013-07-28T23:50:53.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

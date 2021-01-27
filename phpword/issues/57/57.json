@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": null,
+    "Description": "here is my php code:\r\n```\r\n$PHPWord = new PHPWord();\r\n$template = $PHPWord->loadTemplate(APPPATH.'files/test.docx');\r\n$template->setValue('test1', 'hello');\r\n$template->setValue('test2', 'whats');\r\n$template->setValue('test3', 'up');\r\n$template->setValue('test4', 'koby');\r\n$template->setValue('test5', '!!!!!!');\r\n$template->save('files/test.docx');\r\n```\r\n\r\nhere is my word document text:\r\n\r\n${test1}\r\n${test2}\r\n${test3}\r\n${test4}\r\n${test5}\r\n\r\nThe output word content:\r\n\r\nhello\r\n${test2}\r\n${test3}\r\n${test4}\r\n${test5}\r\n\r\nsetValue(); only sets the value for the first line ${test1}\r\n\r\nAny help would be great",
+    "LastUpdatedDate": "2015-10-21T16:41:45.627-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-07-02T14:19:07.007-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "setValue() not working",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 57
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "The issue is with your template and not with the PHP code.  If you open the template with a zip program and then view the document.xml file in the 'word' folder, you'll see the basic XML of the document.  All of your template declarations are split in pieces, except #1.  This is something I've run into with Word for years.  You can safely delete everything between the pieces of your template variables.  Here is an example of what I mean, with ${test5} being broken apart:\n\n```\n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<w:document xmlns:wpc=\"http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas\" xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:wp14=\"http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing\" xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:w14=\"http://schemas.microsoft.com/office/word/2010/wordml\" xmlns:wpg=\"http://schemas.microsoft.com/office/word/2010/wordprocessingGroup\" xmlns:wpi=\"http://schemas.microsoft.com/office/word/2010/wordprocessingInk\" xmlns:wne=\"http://schemas.microsoft.com/office/word/2006/wordml\" xmlns:wps=\"http://schemas.microsoft.com/office/word/2010/wordprocessingShape\" mc:Ignorable=\"w14 wp14\">\n\t<w:body>\n\t\t<w:p w:rsidR=\"00AC49DC\" w:rsidRDefault=\"00243DD6\">\n\t\t\t<w:r>\n\t\t\t\t<w:t>${test1}</w:t>\n\t\t\t</w:r>\n\t\t</w:p>\n\t\t<w:p w:rsidR=\"00243DD6\" w:rsidRDefault=\"00243DD6\">\n\t\t\t<w:r>\n\t\t\t\t<w:t>${test2}</w:t>\n\t\t\t</w:r>\n\t\t</w:p>\n\t\t<w:p w:rsidR=\"00243DD6\" w:rsidRDefault=\"00243DD6\">\n\t\t\t<w:r>\n\t\t\t\t<w:t>${test3}</w:t>\n\t\t\t</w:r>\n\t\t</w:p>\n\t\t<w:p w:rsidR=\"00243DD6\" w:rsidRDefault=\"00243DD6\">\n\t\t\t<w:r>\n\t\t\t\t<w:t>${test4}</w:t>\n\t\t\t</w:r>\n\t\t</w:p>\n\t\t<w:p w:rsidR=\"00243DD6\" w:rsidRDefault=\"00243DD6\">\n\t\t\t<w:r>\n\t\t\t\t<w:t>${</w:t>\n\t\t\t</w:r>\n\t\t\t<w:bookmarkStart w:id=\"0\" w:name=\"_GoBack\"/>\n\t\t\t<w:bookmarkEnd w:id=\"0\"/>\n\t\t\t<w:r>\n\t\t\t\t<w:t>test5}</w:t>\n\t\t\t</w:r>\n\t\t</w:p>\n\t\t<w:sectPr w:rsidR=\"00243DD6\" w:rsidSect=\"00C107D0\">\n\t\t\t<w:pgSz w:w=\"12240\" w:h=\"15840\" w:code=\"1\"/>\n\t\t\t<w:pgMar w:top=\"907\" w:right=\"907\" w:bottom=\"907\" w:left=\"907\" w:header=\"720\" w:footer=\"720\" w:gutter=\"0\"/>\n\t\t\t<w:cols w:space=\"720\"/>\n\t\t\t<w:docGrid w:linePitch=\"272\"/>\n\t\t</w:sectPr>\n\t</w:body>\n</w:document>\n```\n\nAdam",
+      "PostedDate": "2013-07-03T12:18:24.93-07:00",
+      "Id": 105016
+    },
+    {
+      "Message": "Please vote if this was helpful or solved your problem.",
+      "PostedDate": "2014-01-08T19:14:02.223-08:00",
+      "Id": 129892
+    },
+    {
+      "Message": "ok but what is the solution for this, how do i edit the function setValue",
+      "PostedDate": "2015-10-21T16:41:45.627-07:00",
+      "Id": 191818
+    }
+  ]
+}

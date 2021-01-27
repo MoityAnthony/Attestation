@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "993275",
+    "ThreadId": "431166",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>First thanks for your library, it works very well !</p>\r\n<p>However m<span style=\"font-size:10pt\">y customer would like edit the generated file, but he has an Office 2003 licence, so they only edit a file with doc extension.&nbsp;</span></p>\r\n<p>So is it possible to save as doc file or convert the docx into doc file with php ?</p>\r\n<p>Thanks for your response :)</p>\r\n",
+    "PostedDate": "2013-01-28T13:40:26.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

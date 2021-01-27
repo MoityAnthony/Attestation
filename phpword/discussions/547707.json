@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1253477",
+    "ThreadId": "547707",
+    "Html": "I'm programming a website in PHP which requires the use of certain documents. This class would make it a lot easier for me to modify a certain template and send the filled document.\r<br />\n<br />\nI've read the license but I'm still not sure if this type of situation is in there.\r<br />\n<br />\n<br />\nThe only way someone will know who programmed this class will be by watching a preview of the system and/or by accessing it's source code. The file will be inside the same structure in which came in ( Some_Directory/PHPWord/Template.php ) and I'll just get rid of the other classes, for now because there's no need for them on this system.\r<br />\n<br />\nThe only thing I'm asking is for the files PHPWord.php and Template.php. I'll modify the second one to make it even easier for me to output the final document as a PDF File (unless you already have that feature and I didn't see it. On that case, I guess I'm also asking for that file/class/function as well)\r<br />\n<br />\n<br />\nI will not publish anything until I get the confirmation from someone who can give me such answer. I'll be constantly checking this post (e-mail notifications are awesome), so... I'm hoping to see some reply soon :)\r<br />\n<br />\nThanks for your time and effort,\r<br />\nCarlos<br />\n",
+    "PostedDate": "2014-06-05T14:07:06.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253712",
+    "ThreadId": "547707",
+    "Html": "Hi Carlos,<br />\n<br />\nPHPWord is licensed under LGPL. You may modify and redistribute any parts of this library for <a href=\"http://www.gnu.org/licenses/gpl-faq.html#GPLCommercially\" rel=\"nofollow\">commercial purpose</a>, but you have to provide the source code for that part ONLY. Not your whole application.<br />\n<br />\nIf you want to protect other parts of your application, you may need to adjust the way you structure your code so that the parts that you have to give away contain minimum amount of intellectual property that you want to protect.<br />\n",
+    "PostedDate": "2014-06-06T07:27:04.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-06-12T08:28:41.697-07:00"
+  },
+  {
+    "Id": "1253753",
+    "ThreadId": "547707",
+    "Html": "So, can I just put a link on a page, somewhere, to download the source code of all the classes I'm using from PHPWord and everything's fine?<br />\n<br />\nBy the way, just to make sure, does PHPWord have a class/function to convert/safe the document as a PDF file, Or even something to protect the final .docx file from being modified, in any way possible?<br />\n",
+    "PostedDate": "2014-06-06T09:33:16.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253920",
+    "ThreadId": "547707",
+    "Html": "Yes. If you're using other open-source libraries, it may be best for you to group them together.\r<br />\n<br />\nThe development of PHPWord is continued on <a href=\"https://github.com/PHPOffice/PHPWord\" rel=\"nofollow\">GitHub</a>. We now have a PDF writer, but not fully developed. Here's the doc: <a href=\"http://phpword.readthedocs.org/en/develop/\" rel=\"nofollow\">http://phpword.readthedocs.org/en/develop/</a><br />\n",
+    "PostedDate": "2014-06-06T17:32:04.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-06-12T08:28:39.387-07:00"
+  }
+]

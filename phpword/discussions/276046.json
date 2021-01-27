@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "684804",
+    "ThreadId": "276046",
+    "Html": "\r\n<p>Hi all,</p>\r\n<p>first of all a big THANKS for making this library. I really hope that it's development will continue.</p>\r\n<p>My question is: does anyone know how to insert continuous sections?</p>\r\n<p>Best regards,</p>\r\n<p>imacovei</p>\r\n",
+    "PostedDate": "2011-10-16T02:11:45.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "684822",
+    "ThreadId": "276046",
+    "Html": "<p>I have found the solution!</p>\r\n<p>the idea is toadd the XML node &lt;w:type w:val=\"continuous\"/&gt;</p>\r\n<p>as follows:</p>\r\n<p>&nbsp;&nbsp;&nbsp; &lt;w:sectPr&gt;<br />&nbsp;&nbsp;&nbsp; &nbsp; &lt;w:type w:val=\"continuous\"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;w:headerReference w:type=\"default\" r:id=\"rId9\"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;w:pgSz w:w=\"11906\" w:h=\"16838\"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;w:pgMar w:top=\"2300\" w:right=\"1418\" w:bottom=\"1500\" w:left=\"1300\" w:header=\"720\" w:footer=\"720\" w:gutter=\"0\"/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;w:cols w:space=\"720\"/&gt;<br />&nbsp;&nbsp;&nbsp; &lt;/w:sectPr&gt;</p>\r\n<p>I have modified the sources as follows:</p>\r\n<p>PHPWord\\Writer\\Word2007\\Document.php, function _writeEndSection, added:</p>\r\n<p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(!is_null($_type)) {<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $objWriter-&gt;startElement('w:type');<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $objWriter-&gt;writeAttribute('w:val', $_type);<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $objWriter-&gt;endElement();<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</p>\r\n<p>&nbsp;</p>\r\n<p>PHPWord\\Section\\Settings.php, class PHPWord_Section_Settings,</p>\r\n<p>added new private variable &nbsp;&nbsp;&nbsp;</p>\r\n<p>/**<br />&nbsp;&nbsp;&nbsp; &nbsp;* Section Type<br />&nbsp;&nbsp;&nbsp; &nbsp;* <br />&nbsp;&nbsp;&nbsp; &nbsp;* @var string<br />&nbsp;&nbsp;&nbsp; &nbsp;*/<br />&nbsp;&nbsp;&nbsp; private $_sectionType;</p>\r\n<p>then</p>\r\n<p>initialized it with null in the __constructor:</p>\r\n<p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $this-&gt;_sectionType = null;</p>\r\n<p>and finally added setter and getter:</p>\r\n<p>&nbsp;&nbsp;&nbsp; /**<br />&nbsp;&nbsp;&nbsp; &nbsp;* Set Section Type<br />&nbsp;&nbsp;&nbsp; &nbsp;* <br />&nbsp;&nbsp;&nbsp; &nbsp;* @param string $pValue<br />&nbsp;&nbsp;&nbsp; &nbsp;*/<br />&nbsp;&nbsp;&nbsp; public function setSectionType($pValue = null) {<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $this-&gt;_sectionType = $pValue;<br />&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; /**<br />&nbsp;&nbsp;&nbsp; &nbsp;* Get Section Type<br />&nbsp;&nbsp;&nbsp; &nbsp;* <br />&nbsp;&nbsp;&nbsp; &nbsp;* @return string<br />&nbsp;&nbsp;&nbsp; &nbsp;*/<br />&nbsp;&nbsp;&nbsp; public function getSectionType() {<br />&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return $this-&gt;_sectionType;<br />&nbsp;&nbsp;&nbsp; }</p>\r\n<p>&nbsp;</p>\r\n<p>Usage example:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $PHPWord = new PHPWord();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $section = $PHPWord-&gt;createSection();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $sectionStyle = $section-&gt;getSettings();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $sectionStyle-&gt;setSectionType(\"continuous\");</p>",
+    "PostedDate": "2011-10-16T04:36:57.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "685880",
+    "ThreadId": "276046",
+    "Html": "<p>This was a great help, and well documented&nbsp;-- only thing (I think) you forgot was to add to the _writeEndSection function in Document.php:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $_type = $_settings-&gt;getSectionType();</p>",
+    "PostedDate": "2011-10-18T10:01:25.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "686252",
+    "ThreadId": "276046",
+    "Html": "<p>You're totally right Cindy!<br />I'll update my sources. Thanks.<br />imacovei</p>",
+    "PostedDate": "2011-10-19T02:58:09.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

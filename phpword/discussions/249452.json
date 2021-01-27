@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "579565",
+    "ThreadId": "249452",
+    "Html": "\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:green\">Hello, I'm having difficulty getting a downloaded word document to display any information. I have tried with both $objWriter setups.  Please help!  I have a deadline.  :(</span></pre>\r\n<pre><span style=\"color:green\"><br></span></pre>\r\n<pre><span style=\"color:green\"><div style=\"color:black; background-color:white\"><pre><span style=\"color:blue\">include</span> <span style=\"color:#a31515\">'config/sf_config.php'</span>;\r\n<span style=\"color:blue\">include</span> <span style=\"color:#a31515\">'functions/site_functions.php'</span>;\r\n<span style=\"color:blue\">require_once</span> <span style=\"color:#a31515\">'functions/PHPWord.php'</span>;\r\n<span style=\"color:blue\">require_once</span> <span style=\"color:#a31515\">'functions/PHPWord/Writer/Word2007.php'</span>;\r\n\r\n\r\n$con = mysql_connect($sf_server,$sf_user,$sf_pass);\r\nmysql_select_db($sf_db,$con);\r\n\r\n<span style=\"color:green\">// Create a new PHPWord Object</span>\r\n$PHPWord = <span style=\"color:blue\">new</span> PHPWord();\r\n\r\n<span style=\"color:green\">// Every element you want to append to the word document is placed in a section. So you need a section:</span>\r\n$section = $PHPWord-&gt;createSection();\r\n\r\n<span style=\"color:green\">// After creating a section, you can append elements:</span>\r\n$section-&gt;addText(<span style=\"color:#a31515\">'Hello world!'</span>);\r\n</pre>\r\n</div>\r\n</span></pre>\r\n<pre><span style=\"color:green\">/* Output to file */</span>\r\n$date = date(<span style=\"color:#a31515\">&quot;m-d-y&quot;</span>);\r\n<span style=\"color:green\">//$objWriter = new PHPWord_Writer_Word2007($PHPWord);</span>\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, <span style=\"color:#a31515\">'Word2007'</span>);\r\nheader(<span style=\"color:#a31515\">'Content-Type: application/vnd.ms-word'</span>);\r\nheader(<span style=\"color:#a31515\">&quot;Content-Disposition: attachment;filename=\\&quot;Awards_Booklet_$date.docx\\&quot;&quot;</span>);\r\nheader(<span style=\"color:#a31515\">'Cache-Control: max-age=0'</span>);\r\n$objWriter-&gt;save(<span style=\"color:#a31515\">&quot;php://output&quot;</span>);\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2011-03-12T14:01:48.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "579861",
+    "ThreadId": "249452",
+    "Html": "<p>replace code under /* output to file*/ with the one below..</p>\r\n<p>/* output to file */<br />$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');<br />$objWriter-&gt;save('report.docx');<br /><br />header(\"location:report.docx\");</p>\r\n<p>&nbsp;</p>\r\n<p>hope this will help</p>",
+    "PostedDate": "2011-03-13T23:19:37.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

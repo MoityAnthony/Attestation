@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you're using PHP v5.4.27 and trying to save your word document to a specified directory, PHPWord won't save it. I had PHP v5.4.16 and I had no problem saving word files using the method below.\r\n\r\n```\r\n$objWriter->save(\"FILENAME.docx\", 'path/to/save/file/');\r\n```\r\n\r\nAfter I upgraded the PHP version to 5.4.27 the plugin didn't save the file. There was no permission issue, no error thrown.  I had to downgrade the PHP version and it resolved the issue.",
+    "LastUpdatedDate": "2014-04-24T11:52:19.213-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-04-24T11:52:19.213-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Save file to a specified path",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 76
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

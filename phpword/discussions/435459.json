@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1010666",
+    "ThreadId": "435459",
+    "Html": "Hello everybody,\r<br />\n<br />\nI have a problem with this character &quot;&amp;&quot;. \r<br />\n<br />\nIf I use the function $section-&gt;addTitle(str $mystring), wherein $mystring contains the character &quot;&amp;&quot;, then when I open the generated document, Word says &quot;The Office Open XML file cannot be opened  because there are problems with the contents.&quot;\r<br />\n<br />\nThank you in advance for your help.\r<br />\n<br />\nDamien<br />\n",
+    "PostedDate": "2013-03-05T08:23:53.323-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010668",
+    "ThreadId": "435459",
+    "Html": "Just a precision, I don't have the problem with the function $section-&gt;addTitle(str $mystring).\r<br />\n<br />\nIt's strange !<br />\n",
+    "PostedDate": "2013-03-05T08:27:13.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

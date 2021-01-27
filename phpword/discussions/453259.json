@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1080042",
+    "ThreadId": "453259",
+    "Html": "Hi everybody,\r<br />\n<br />\nI am currently working on a project that involves me creating a document through PHP, thus, PHPWord was the logical choice. However, I'm having a slight issue in that everything I am passing in to PHPWord is not being put into the document. When I open the document it is completely blank. My code is as follows:<br />\n<pre><code>require_once '../PHPWord.php';\n        $PHPWord = new PHPWord();\n\n        //Cover Sheet\n        $coverSheet = $PHPWord-&gt;createSection();\n        $coverSheet-&gt;addText(Input::get('cover_title'), array('name' =&gt; 'Tahoma', 'size' =&gt; 24));\n        $coverSheet-&gt;addTextBreak(1);\n        $coverSheet-&gt;addText(date('l dS F Y'), array('name' =&gt; 'Tahoma', 'size' =&gt; 18));\n        $coverSheet-&gt;addTextBreak(1);\n        $coverSheet-&gt;addImage(Input::get('company_logo'));\n        $coverSheet-&gt;addImage(Input::get('client_logo'));\n\n        //Saving\n        $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n        $temp_filename = tempnam('', 'xyz');\n        $objWriter-&gt;save($temp_filename.'.docx');\n\n\n        //Download the file and delete temp version\n        header('Content-Description: File Transfer');\n        header('Content-Type: application/octet-stream');\n        header('Content-Disposition: attachment; filename='.$temp_filename.'.docx');\n        header('Content-Transfer-Encoding: binary');\n        header('Expires: 0');\n        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');\n        header('Pragma: public');\n        header('Content-Length: '.filesize($temp_filename));\n        flush();\n        readfile($temp_filename);\n        unlink($temp_filename);\n        exit;</code></pre>\n\nAny ideas on how to fix this would be greatlyappreciated.<br />\n",
+    "PostedDate": "2013-08-13T04:37:43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

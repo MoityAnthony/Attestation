@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Good morning my friends!\r\n\r\n  I'm posting here a code that I created to use the while to repeat part of the document between two tags. Sorry for my English, I'm using a translator\r\n\r\n  Note # 1: The beginning and the size of substr I made based on the XML document, taking care not to cut through the xml tags. This still needs to be improved so that does not depend on changes in this case funcioanaria with a portion of the document, but can be pulled inside the function by placing the counter. eg clonePart ('[tags]', '[tage]', $ num, 120.14). If someone can help me improve this code so grateful that it becomes automated.\r\n\r\n  Note # 2: This code will create a numbering in all variables according to the number of copies, so you can access all the variables of all copies, see the example after the code.\r\n \r\n  IMPORTANT: This code is not yet optimized, but it works. He was inspired by the code cloneRows made ​​by Jeroen Moors (http://jeroen.is/phpword-templates-with-repeating-rows/) that can even be used together as I myself. Any doubts do whatever possible to help!\r\n\r\n Add to Template.php\r\n```\r\npublic function clonePart($start, $end, $numberOfClones){\r\n\t$string = $this->_documentXML;\r\n        $ini = strpos($string,$start);\r\n\r\n        if ($ini == 0) return \"\";\r\n        $ini += strlen($start);     \r\n        $len = strpos($string,$end,$ini) - $ini;\r\n\t\t\r\n\t\t$part = substr($string,$ini,$len);\r\n\t\t$part = substr($part,18,(strlen($part)-237)); //Note #1\r\n\t\t$partJN = '';\r\n\t\t\r\n\t\tfor ($i = 1; $i <= $numberOfClones; $i++) {\r\n\t\t $partJN .= str_replace('OT}','_'.$i.'}',$part); //Note #2, this is used to put numbers to variables, OT is a anchor, exemple: ${nameOT} turn to ${name_1} ${name_2}...\r\n\t\t}\r\n\t\t\r\n\t\t$this->_documentXML = str_replace('[STApart]','',$this->_documentXML); //Erase Tag\r\n\t\t$this->_documentXML = str_replace('[ENDpart]','',$this->_documentXML); //Erase Tag\r\n\t\t$this->_documentXML = str_replace($part,'',$this->_documentXML); //Erase Original Part Because doenst have count\r\n\t\t\r\n\t\t$partJN = utf8_decode($partJN);\r\n\t\t$this->setValue('reportone',$partJN); //Place Content to a Variable (in this case ${reportone}\r\n\t}\r\n```\r\n\r\nMysql use exemple:\r\n\r\n```\r\n$NUM = num_rows;\r\nclonePart('[mystarttag]', '[myendtag]', $NUM);\r\n$i=1;\r\n\r\nwhile($FET){\r\n $doc->SetValue('name_'.$i,$FET['name']);\r\n $i++;\r\n}\r\n```",
+    "LastUpdatedDate": "2013-07-02T14:24:49.74-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-06-26T07:02:57.87-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "CLONEPART FUNCTION (Repeat part of Template)",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 56
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

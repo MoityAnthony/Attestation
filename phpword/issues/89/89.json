@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It is here any solution to add bold and italic in li tag using addHtml()\r\n\r\nExample:-\r\n```\r\n$html = \"<ul><li>Hello my name is <strong>John</strong></li></ul>\";\r\n```\r\n\r\nCode:-\r\n```\r\n\\PhpOffice\\PhpWord\\Shared\\Html::addHtml($section, $html)\r\n```\r\n\r\nResponse on docx file is:-\r\n\r\n•\tHello my name is\r\n\r\nJohn content is missing\r\n\r\nHtml.php attached.\r\n\r\nThanks",
+    "LastUpdatedDate": "2014-12-16T21:10:07.78-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-12-16T21:01:37.953-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "bold and italic in li tag using addHtml()",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 89
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1005018,
+      "FileName": "Html.php",
+      "DownloadUrl": ".\\1005018"
+    }
+  ],
+  "Comments": []
+}

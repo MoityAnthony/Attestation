@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1101104",
+    "ThreadId": "459757",
+    "Html": "Hi\r<br />\nI wish to add text in various colours to a table cell. So I define a table cell:\r<br />\n$WORD_table-&gt;addRow();\r<br />\n$cell=$WORD_table-&gt;addCell(9637,array('gridSpan' =&gt; 5));\r<br />\n<br />\nAnd then in a loop do:\r<br />\n<br />\n$cell-&gt;addText($bird,array('color'=&gt;'red'));\r<br />\n<br />\nwhere the colour changes according to some properties of the item I am adding. This works well EXCEPT that each item of text then appears as a new paragraph in the table cell, and I want then all to be in a single table cell.\r<br />\nSo I did the following after the creation of $cell:\r<br />\n<br />\n$textrun = $cell-&gt;createTextRun();\r<br />\n<br />\nand then replaced the $cell-&gt;addText by $textrun-&gt;addText. This works well and is not covered in the documentation, so I just thought I would share this in case anyone has a similar problem!<br />\n",
+    "PostedDate": "2013-09-30T16:10:58.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

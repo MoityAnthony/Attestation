@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "686433",
+    "ThreadId": "276472",
+    "Html": "<p>Hi,</p>\n<p>&nbsp;</p>\n<p>what's wrong ?</p>\n<p>$section-&gt;addMemoryImage('http://placehold.it/90x90'); didn't work ?</p>\n<p><span style=\"font-family: Consolas, 'Courier New', Courier, monospace; white-space: pre;\"></span></p>\n<div style=\"color: black; background-color: white;\">\n<pre>--&gt; Fatal error: Uncaught <span style=\"color: blue;\">exception</span> <span style=\"color: #a31515;\">'Exception'</span> with message <span style=\"color: #a31515;\">'Could not close zip file Image.docx.'</span> \n\nin /PHPWord/Writer/Word2007.php:158 Stack trace:&nbsp;</pre>\n<pre><span style=\"color: green;\">#0 /Examples/Image.php(23): PHPWord_Writer_Word2007-&gt;save('Image.docx') </span>\n\n<span style=\"color: green;\">#1 {main} thrown in&amp;#65533;/PHPWord/Writer/Word2007.php&amp;#65533;on line&amp;#65533;158</span>\n</pre>\n</div>\n<p><span style=\"font-family: Consolas, 'Courier New', Courier, monospace; white-space: pre;\"></span></p>\n<p><strong>&nbsp;</strong></p>\n<p>Any ideas ?</p>\n<p>&nbsp;</p>\n<p>regards</p>",
+    "PostedDate": "2011-10-19T08:56:40.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

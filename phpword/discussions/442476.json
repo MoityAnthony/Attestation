@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1039099",
+    "ThreadId": "442476",
+    "Html": "Hi every body,\r<br />\nI'm just discovering PHPWord which seems to suit OK my needs.\r<br />\n<br />\nI try to load template.docx to see how it complies to my requirements, but every time i run the script i get the flwg error <br />\n<pre><code>Fatal error: Call to a member function loadTemplate() on a non-object in /volume1/web/PHPWord_0/PHPWordEssai.php on line 6</code></pre>\n\nMy script code is <br />\n<pre><code>&lt;?php\n// Include the PHPWord.php, all other classes were loaded by an autoloader\nrequire_once 'PHPWord.php';\nrequire_once 'PHPWord/Template.php';\n\n$template = $PHPWord-&gt;loadTemplate('Examples/Template.docx');\n$template-&gt;setValue('Name', 'Somebody someone');\n$template-&gt;setValue('Street', 'Coming-Undone-Street 32');\n\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n$objWriter-&gt;save('../ComperioV1/dossierPerso/Template.docx');\n\n// Create a new PHPWord Object\n$PHPWord = new PHPWord();\n\n// Every element you want to append to the word document is placed in a section. So you need a section:\n$section = $PHPWord-&gt;createSection();\n\n// After creating a section, you can append elements:\n$section-&gt;addText('Bonjour tout le monde!', array('name'=&gt;'Times', 'size'=&gt;32, 'bold'=&gt;true));\n\n// You can directly style your text by giving the addText function an array:\n$section-&gt;addText('Hello world! I am formatted.', array('name'=&gt;'Tahoma', 'size'=&gt;16, 'bold'=&gt;true));\n\n// If you often need the same style again you can create a user defined style to the word document\n// and give the addText function the name of the style:\n$PHPWord-&gt;addFontStyle('myOwnStyle', array('name'=&gt;'Verdana', 'size'=&gt;14, 'color'=&gt;'1B2232'));\n$section-&gt;addText('Hello world! I am formatted by a user defined style', 'myOwnStyle');\n\n// You can also putthe appended element to local object an call functions like this:\n$myTextElement = $section-&gt;addText('Hello World!');\n//$myTextElement-&gt;setBold();\n//$myTextElement-&gt;setName('Verdana');\n//$myTextElement-&gt;setSize(22);\n\n// At least write the document to webspace:\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n$objWriter-&gt;save('../ComperioV1/dossierPerso/helloWorld.docx');\n?&gt;</code></pre>\n\nThe file helloWorld.docx is generated OK.\r<br />\n<br />\nAny help would appreciated \r<br />\n<br />\nMany thks<br />\n",
+    "PostedDate": "2013-05-03T09:31:06.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039103",
+    "ThreadId": "442476",
+    "Html": "u must instantiate the object $PHPWord ;)<br />\n$PHPWord = new PHPWord();<br />\n$template = $PHPWord-&gt;loadTemplate('Examples/Template.docx');<br />\n",
+    "PostedDate": "2013-05-03T09:42:08.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039155",
+    "ThreadId": "442476",
+    "Html": "Many thks Mourad now i run into into an other trouble : the issue from the template is empty !<br />\n<br />\nMy code :<br />\n<pre><code>&lt;?php\n// Include the PHPWord.php, all other classes were loaded by an autoloader\nrequire_once 'PHPWord.php';\nrequire_once 'PHPWord/Template.php';\n\n$PHPWord = new PHPWord();\n$template = $PHPWord-&gt;loadTemplate('Examples/Template.docx');\n\n$template-&gt;setValue('Value1', '101');\n$template-&gt;setValue('Value2', '102');\n$template-&gt;setValue('Value3', '103');\n$template-&gt;setValue('Value4', '104');\n$template-&gt;setValue('Value5', '105');\n$template-&gt;setValue('Value6', '106');\n$template-&gt;setValue('Value7', '107');\n$template-&gt;setValue('Value8', '1008');\n$template-&gt;setValue('Value9', '1000');\n$template-&gt;setValue('Value10', '10067');\n\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n$objWriter-&gt;save('../ComperioV1/dossierPerso/Template.docx');\n?&gt;</code></pre>\n\nWhy that ?<br />\n<br />\nUp Anybody ?<br />\n",
+    "PostedDate": "2013-05-03T12:09:07.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039732",
+    "ThreadId": "442476",
+    "Html": "replace the following code:<br />\n<pre><code>$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n$objWriter-&gt;save('../ComperioV1/dossierPerso/Template.docx');</code></pre>\n\nby<br />\n<pre><code>$template-&gt;save('../ComperioV1/dossierPerso/Template.docx');\nunset($template);</code></pre>\n\n",
+    "PostedDate": "2013-05-06T00:17:18.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039806",
+    "ThreadId": "442476",
+    "Html": "THK U Mourad it works great.\r<br />\n<br />\nNow i want to save file with date &amp; time in the filename i get funny stuff like file name : modeleBP6-5-2013 12B\u0018.docx. Weird isn't it ?\r<br />\n<br />\nMy code :<br />\n<pre><code>&lt;?php\n// Include the PHPWord.php, all other classes were loaded by an autoloader\nrequire_once 'PHPWord.php';\nrequire_once 'PHPWord/Template.php';\n\n$PHPWord = new PHPWord();\n$template = $PHPWord-&gt;loadTemplate('Examples/Template.docx');\n\n$date = new DateTime('now Europe/Paris');\n$dateFormate = $date-&gt;format(&quot;j-n-Y h:i:s&quot;);\n$timeFormate = $date-&gt;format(&quot;h:i:s&quot;);\n\n$template-&gt;setValue('weekday', $date-&gt;format(&quot;l&quot;));\n$template-&gt;setValue('time', $dateFormate);  \n$template-&gt;setValue('Value1', '101');\n$template-&gt;setValue('Value2', '102');\n$template-&gt;setValue('Value3', '103');\n$template-&gt;setValue('Value4', '104');\n$template-&gt;setValue('Value5', '105');\n$template-&gt;setValue('Value6', '106');\n$template-&gt;setValue('Value7', '107');\n$template-&gt;setValue('Value8', '1008');\n$template-&gt;setValue('Value9', '1000');\n$template-&gt;setValue('Value10', '0067');\n\n\n//  $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n//  $objWriter-&gt;save('../ComperioV1/dossierPerso/modeleBP.docx');\n//  $template = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n$template-&gt;save('../../ComperioV1/dossierPerso/modeleBP'.$dateFormate.'.docx');\nunset($template);\n?&gt;</code></pre>\n\nAny help would be appreciated.\r<br />\nMany thks<br />\n",
+    "PostedDate": "2013-05-06T03:59:30.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039882",
+    "ThreadId": "442476",
+    "Html": "File names do not accept the &quot;:&quot;, tried to change the shape of the time to H-i-s<br />\n",
+    "PostedDate": "2013-05-06T07:09:42.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1039896",
+    "ThreadId": "442476",
+    "Html": "Just great, it perfectly works.\r<br />\nThousands of thanks !!!!<br />\n",
+    "PostedDate": "2013-05-06T07:32:11.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1140249",
+    "ThreadId": "442476",
+    "Html": "hi, i would like to add a style to my variables comming from the data base for exemple let's say that i have a table users; in the table i have contact_first_name contact_last_name, adress, phone, and i want to show the full name of the client in red how can i do it with setvalue or with another function or what?<br />\n<pre><code>$sql=&quot;select * from users&quot;;\n$req=mysql_query($sql);\n$row=mysql_fetch_array($req);\nforeach($row as $data)\n      {\n             $name=$data['contact_first_name'].' '.$data['contact_first_name'];\n             $adress=$data['adress'];\n             $phone=$data['phone'];\n      }\n$template-&gt;setValue('name', $name);\n$template-&gt;setValue('adress', $adress);\n$template-&gt;setValue('phone', $phone);\n</code></pre>\n\nin the code above how can i set : $template-&gt;setValue('name', $name) to show the name in red, and is it possible to add icones before the content of the variables, i mean add icone of a phone before the phone number of the contact, and another one before the name and the adress as well.<br />\n<br />\nPlease any help is appreciated.<br />\nthanks.<br />\n",
+    "PostedDate": "2013-12-20T03:49:28.207-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

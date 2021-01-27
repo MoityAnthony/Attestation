@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "802571",
+    "ThreadId": "346564",
+    "Html": "\r\n<p>Is there any way to support .doc or is there any online utility I can use to automatically convert between .doc and .docx using PHP? I need to support these documents on my website for computer illiterate teachers who would struggle to convert the format\r\n themselves. The teachers run Word 2003. They can open .docx but they will not be able to save to that format.</p>\r\n",
+    "PostedDate": "2012-02-28T05:36:23.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

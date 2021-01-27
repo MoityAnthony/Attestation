@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I implemented support for paragraph indentation. The patch is included.",
+    "LastUpdatedDate": "2012-02-20T23:06:36.537-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2012-02-20T23:06:36.41-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Support for paragraph indentation",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 42
+  },
+  "FileAttachments": [
+    {
+      "FileId": 345022,
+      "FileName": "PHPWord paragraph indentation.patch",
+      "DownloadUrl": ".\\345022"
+    }
+  ],
+  "Comments": []
+}

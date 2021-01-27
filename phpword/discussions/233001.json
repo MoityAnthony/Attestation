@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "515290",
+    "ThreadId": "233001",
+    "Html": "\r\n<p>Is it possible to reference the source of an image as a location not on the web server (such as s3.amazonaws.com)? Locally hosted images have worked fine for me, but locations with full access such as our S3 account on Amazon, do not work with PHPWord. This\r\n would be a very useful feature, or is there a setting I am missing?</p>\r\n<p>Also, it would be useful to be able to specify indents for a page/section, in addition to using the already existing margin feature.</p>\r\n<p>Thanks, PHPWord is proving to be very useful so far.</p>\r\n",
+    "PostedDate": "2010-10-31T21:56:14.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

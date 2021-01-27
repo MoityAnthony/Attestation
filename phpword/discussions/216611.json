@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "457561",
+    "ThreadId": "216611",
+    "Html": "<p>Hi,</p>\r\n<p>im using phpword &amp; its so amazing component that i have search in google and finaly found it!</p>\r\n<p>but there is no way to handle 'direction'!</p>\r\n<p>how can i do it??</p>\r\n<p>because i use right to left language, but there is no way to do it.</p>",
+    "PostedDate": "2010-06-19T06:35:00.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467871",
+    "ThreadId": "216611",
+    "Html": "<p>Just use the align style.</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>$section-&gt;addText(<span style=\"color:#a31515\">'Hello World!'</span>, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'align'</span>=&gt;<span style=\"color:#a31515\">'right'</span>));\r\n</pre>\r\n</div>\r\n</p>",
+    "PostedDate": "2010-07-15T09:08:52.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

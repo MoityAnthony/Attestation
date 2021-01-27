@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1054037",
+    "ThreadId": "446339",
+    "Html": "When you tab to a new page, this reset the count on first row and then continue with the normal count<br />\n<br />\nlike show in this image:<br />\n<img src=\"http://oi44.tinypic.com/4kg381.jpg\" alt=\"Image\" /><br />\n<br />\nso in the second page in the first row start in 0 but the second row continue normally the count<br />\n<br />\nI need the count rate usually when jumping a following page, how I can know if the document to jump from one page to the next? or some help for these issues<br />\n<br />\n<br />\nmy code:<br />\n<pre><code> $PHPWord = new PHPWord();\n    $res = $system-&gt;getOrderByCostumer($_POST[&quot;start&quot;], $_POST[&quot;end&quot;]);\n    $section = $PHPWord-&gt;createSection();\n    $table = $section-&gt;addTable();\n    $array = $function-&gt;getArrayDoc($res);\n\n    for ($index = 0; $index &lt; count($array); $index) {\n\n        $table-&gt;addRow();\n        for ($c = 1; $c &lt;= 4; $c++, $index++) {\n\n\n            $table-&gt;addCell(1750)-&gt;addText(isset($array[$index]) ? $index : '');\n        }\n    }\n\n\n\n    header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document;charset=utf-8');\n    header(&quot;Content-Disposition: attachment;filename='&quot; . $dateNow . &quot;.docx'&quot;);\n    header('Cache-Control: max-age=0');\n    $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n    $objWriter-&gt;save('php://output');</code></pre>\n\n",
+    "PostedDate": "2013-06-07T06:49:51.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

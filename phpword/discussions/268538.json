@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "655849",
+    "ThreadId": "268538",
+    "Html": "\r\n<p>There seems to be a bug when adding text via addText() and there will be a white space before the text starts. This is only on the first line, from the second line it is shown correct again is against the left border.<br>\r\n<br>\r\n<br>\r\nExample of a letter:<br>\r\n&nbsp;<br>\r\n---------------------------------------------------<br>\r\n// get text form database<br>\r\n<br>\r\n$text_letter = &quot;Company Name<br>\r\nStreetname plus number<br>\r\nCity plus postal code<br>\r\nCountry code<br>\r\n<br>\r\n<br>\r\n<br>\r\nDate: 10 august 2011<br>\r\n<br>\r\n<br>\r\n<br>\r\nDear Customer,<br>\r\n<br>\r\nHere is the information you have asked for. Here is the information you have asked for. Here is the information you have asked for. Here is the information you have asked for. Here is the information you have asked for.\r\n<br>\r\n<br>\r\n<br>\r\nRegards,<br>\r\n<br>\r\nTheo&quot;;</p>\r\n<p><br>\r\n// add this to section<br>\r\n<br>\r\naddText($text_letter);<br>\r\n<br>\r\nThis will be saved and printed as:<br>\r\n<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Company Name&nbsp; &lt;---- <span style=\"color:#ff0000\">\r\n<em>here the first line is indented</em></span><br>\r\nStreetname plus number<br>\r\nCity plus postal code<br>\r\nCountry code<br>\r\n<br>\r\n<br>\r\n<br>\r\nDate: 10 august 2011<br>\r\n<br>\r\n<br>\r\n<br>\r\nDear Customer,<br>\r\n<br>\r\nHere is the information you have asked for. Here is the information you have asked for. Here is the information you have asked for. Here is the information you have asked for. Here is the information you have asked for.\r\n<br>\r\n<br>\r\n<br>\r\nRegards,<br>\r\n<br>\r\nTheowil<br>\r\n---------------------------------------------------<br>\r\n<br>\r\nThis is even more of a problem when the different sections (address, date, letter text, ending) are put separately in the section via addText(), then each part will start with a white area, like an indent.<br>\r\n<br>\r\nIs this a known problem or is there some solution or work around for this?<br>\r\n<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nTheo</p>\r\n",
+    "PostedDate": "2011-08-10T06:10:44.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "656607",
+    "ThreadId": "268538",
+    "Html": "<p>Not a known problem. Save the created Word doc as a .zip file. Then unzip it and examine the .xml file. Look to see what formatting is there that creates the white space. Perhaps that knowledge will help.</p>",
+    "PostedDate": "2011-08-11T08:09:14.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

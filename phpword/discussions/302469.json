@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "751605",
+    "ThreadId": "302469",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I am loading letter templates like this, my problem is if some of the entries are empty in my database it just leaves a blank line in my letter (word docuemtn), any idea how I can get around this please?\r\n</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$document = $PHPWord-&gt;loadTemplate(<span style=\"color:#a31515\">&quot;$CFG-&gt;templatesdir/letters/$le&quot;</span>);\r\n\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'date'</span>, date(<span style=\"color:#a31515\">&quot;jS F Y&quot;</span>));\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'pm'</span>, $pm);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'position'</span>, $position);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'location'</span>, $sa-&gt;practice-&gt;location);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'address1'</span>, $sa-&gt;practice-&gt;address1);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'address2'</span>, $sa-&gt;practice-&gt;address2);\r\n$document-&gt;setValue(<span style=\"color:#a31515\">'address3'</span>, $sa-&gt;practice-&gt;address3);</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2012-02-10T02:05:13.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

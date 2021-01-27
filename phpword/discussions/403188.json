@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "941644",
+    "ThreadId": "403188",
+    "Html": "\r\n<p>If i try to create a &nbsp;new file from template the text from file is &quot;<span style=\"font-size:small; font-family:Geneva\">PKKnAword/document.xmlPKKnAword/document.xmlPK?1&quot;</span></p>\r\n<p><span style=\"font-size:small; font-family:Geneva\"><br>\r\n</span></p>\r\n<p><span style=\"font-family:Geneva; font-size:small\">$this-&gt;loadModel('EmptyContract');</span></p>\r\n<p><span style=\"font-family:Geneva; font-size:small\">&nbsp;</span><span style=\"font-family:Geneva; font-size:small\">$contract=$this-&gt;EmptyContract-&gt;findByid($id_contract);</span></p>\r\n<p><span style=\"font-size:small; font-family:Geneva\"><span>$patch=COMPANY_CONTRACTS.$contract['EmptyContract']['patch'];</span><br>\r\n<span>require_once('contracts/PHPWord.php');</span><br>\r\n<span>$PHPWord = new PHPWord();</span><br>\r\n<span>$template = $PHPWord-&gt;loadTemplate($patch);</span><br>\r\n<span>$template -&gt; setValue('DATE', date(DATETIME));</span><br>\r\n<span>$template-&gt;save(COMPANY_CONTRACTS.'Test.docx');</span><br>\r\n</span></p>\r\n",
+    "PostedDate": "2012-11-14T08:13:46.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

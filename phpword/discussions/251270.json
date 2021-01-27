@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "586712",
+    "ThreadId": "251270",
+    "Html": "\r\n<p>noticed that paragraph style wasn't rendering.</p>\r\n<p>changed addText() in section\\table\\cell.php, line 110:</p>\r\n<p>&nbsp;&nbsp;&nbsp; public function addText($text, $style = null, $styleParagraph = null) {<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $text = utf8_encode($text);<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $text = new PHPWord_Section_Text($text, $style, $styleParagraph);<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $this-&gt;_elementCollection[] = $text;<br>\r\n&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return $text;<br>\r\n&nbsp;&nbsp;&nbsp; }</p>\r\n",
+    "PostedDate": "2011-03-25T14:04:01.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "586914",
+    "ThreadId": "251270",
+    "Html": "<p>Please see this discussion for a fix!</p>\n<p><a title=\"Cell paragraph style fix\" href=\"http://phpword.codeplex.com/discussions/222575\" target=\"_self\">http://phpword.codeplex.com/discussions/222575</a></p>",
+    "PostedDate": "2011-03-26T07:51:57.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

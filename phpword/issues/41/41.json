@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Can anyone advise on how I can retain CRLF from a mySQL field into WORD\r\nI have tried \r\n        $Addr = $rsRow['Address'];\r\n        $eols = array(\"\\n\", \"\\r\");\r\n        $line_from_db = str_replace(\"\\r\\n\", \"\\n\", $LEAddr);\r\n        $line_from_db = str_replace($eols, '/n', $line_from_db) ;\r\n        $section->addText($line_from_db, 'rLEStyle', 'pLEStyle');\r\nbut it just outputs the line interspursed with the replace character.\r\n\r\nThanks in advance for your help.\r\nChris",
+    "LastUpdatedDate": "2012-02-05T10:24:23.457-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2012-02-05T10:24:23.457-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "CRLF from mySQL",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 41
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

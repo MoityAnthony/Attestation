@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "635300",
+    "ThreadId": "263387",
+    "Html": "\r\n<p>I have a problem with template. I developed my web app on Xampp for Windows and it work fine.</p>\r\n<p>After I deployed (I'm using symfony) on Xampp for Linux (Ubuntu) and I do not have errors, but the template loaded is empty.</p>\r\n<p>I checked phpinfo in windows and linux and they are similar (I saw xml and zip extension)</p>\r\n<p>On linux I have PHP 5.3.5 and on windows PHP 5.2.9. Could be this the reason? I don't think.</p>\r\n<p>I'm looking for eventually permission problem but I don't see nothing.</p>\r\n<p>Do you have any idea?</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-06-30T03:09:01.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

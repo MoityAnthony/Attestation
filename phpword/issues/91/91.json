@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "I added a photo to word 2011 mac edition.\r\n\r\nIt doesn't show when I convert the word document to html.",
+    "LastUpdatedDate": "2015-01-06T09:23:26.047-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2015-01-06T09:09:03.867-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "images not working",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 91
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "In word 2011 I added the image via\n\ninsert > photo > picture from file",
+      "PostedDate": "2015-01-06T09:23:09.62-08:00",
+      "Id": 169554
+    },
+    {
+      "Message": "Pull request for fixing this issue:\n\nhttps://github.com/PHPOffice/PHPWord/pull/464",
+      "PostedDate": "2015-01-06T09:23:26.047-08:00",
+      "Id": 169555
+    }
+  ]
+}

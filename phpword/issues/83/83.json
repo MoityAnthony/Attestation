@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 1,
+    "Custom": null,
+    "Description": "Q1: I wnat to repeat my watermark , but it not work. \r\nQ2:How to set the number in the foot of the page in  center(the default position is on the left) \r\nQ3:How to use the title . please give me a example\r\n\r\n",
+    "LastUpdatedDate": "2014-10-22T02:47:20.907-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-10-22T02:28:58.51-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "watermark repeat ",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 83
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "When i added the footer or header , there will be a error as followings : can not open office word XML ,because of the  error content.",
+      "PostedDate": "2014-10-22T02:47:20.907-07:00",
+      "Id": 162900
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "584725",
+    "ThreadId": "250781",
+    "Html": "\r\n<p>Hi All!</p>\r\n<p>I'm using PHPWord library and it's so good. But when i read docx file with open office on Ubuntu, It's been crashed!</p>\r\n<p>I have try to find a library to export to word 2003 with doc file, but it's nothing :( ...</p>\r\n<p>&nbsp;</p>\r\n<p>So who can help me ! I want export doc or docx file, but it can read on Open Office on Ubuntu !</p>\r\n<p>Thanks and Regard!</p>\r\n",
+    "PostedDate": "2011-03-22T19:30:37.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "594045",
+    "ThreadId": "250781",
+    "Html": "<p>Which version of OpenOffice??</p>\r\n<p>Have you tried with LibreOffice 3.3 ?</p>",
+    "PostedDate": "2011-04-08T03:32:07.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

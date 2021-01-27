@@ -1,0 +1,154 @@
+[
+  {
+    "Id": "1033108",
+    "ThreadId": "440933",
+    "Html": "Hi all!  I have modified a couple files to fully handle the configuration of tables and their row heights.  All I added to the addRow() function was an additional parameter that indicated the hRule to be used in the document.xml file of the Word docx.  Here is a before and after of the PHP usage.\r<br />\nBefore:<br />\n<pre><code>$table-&gt;addRow(100);</code></pre>\n\nAfter:<br />\n<pre><code>$table-&gt;addRow(100,&quot;exact&quot;);\n$table-&gt;addRow(100,null);</code></pre>\n\nUsing &quot;exact&quot; makes the row height adhere to the value.  Using a null value will provide the current default behavior of giving you the &quot;At least&quot; property in Word.  To glue all of this together, I modified the Table.php and Base.php scripts.  This was added to the top of Table.php just behind the $_rowHeights = array(); statement:<br />\n<pre><code>    /**\n     * Row height rule\n     *\n     * @var array\n     */\n    private $_rowHeightRules = array();</code></pre>\n\nThe addRow function was updated to be this:<br />\n<pre><code>    /**\n    * Add a row\n    *\n    * @param int $height\n    * @param string $hRule\n    */\n    public function addRow($height = null,$hRule) {\n        $this-&gt;_rows[] = array();\n        $this-&gt;_rowHeights[] = $height;\n        $this-&gt;_rowHeightRules[] = $hRule;\n    }</code></pre>\n\nThis was added near the bottom of Table.php just behind the getRowHeights() function:<br />\n<pre><code>    /**\n     * Get all row height rules\n     *\n     * @return array\n     */\n    public function getRowHeightRules() {\n            return $this-&gt;_rowHeightRules;\n    }</code></pre>\n\nAnd I modified the function in Base.php to handle the additional instructions:<br />\n<pre><code>protected function _writeTable(PHPWord_Shared_XMLWriter $objWriter = null, PHPWord_Section_Table $table) {\n        $_rows = $table-&gt;getRows();\n        $_cRows = count($_rows);\n        \n        if($_cRows &gt; 0) {\n            $objWriter-&gt;startElement('w:tbl');\n                $tblStyle = $table-&gt;getStyle();\n                if($tblStyle instanceof PHPWord_Style_Table) {\n                    $this-&gt;_writeTableStyle($objWriter, $tblStyle);\n                } else {\n                    if(!empty($tblStyle)) {\n                        $objWriter-&gt;startElement('w:tblPr');\n                            $objWriter-&gt;startElement('w:tblStyle');\n                                $objWriter-&gt;writeAttribute('w:val', $tblStyle);\n                            $objWriter-&gt;endElement();\n                        $objWriter-&gt;endElement();\n                    }\n                }\n\n                $_heights = $table-&gt;getRowHeights();\n                $_height_rule = $table-&gt;getRowHeightRules();\n                for($i=0; $i&lt;$_cRows; $i++) {\n                    $row = $_rows[$i];\n                    $height = $_heights[$i];\n                    $rule = $_height_rule[$i];\n                    \n                    $objWriter-&gt;startElement('w:tr');\n                    \n                        if(!is_null($height)) {\n                            $objWriter-&gt;startElement('w:trPr');\n                                $objWriter-&gt;startElement('w:trHeight');\n                                    if(!is_null($rule)) {\n                                        $objWriter-&gt;startAttribute('w:hRule');\n                                            $objWriter-&gt;text($rule);\n                                        $objWriter-&gt;endAttribute();\n                                    }\n                                    $objWriter-&gt;startAttribute('w:val');\n                                        $objWriter-&gt;text($height);\n                                    $objWriter-&gt;endAttribute();\n                                $objWriter-&gt;endElement();\n                            $objWriter-&gt;endElement();\n                        }\n                        \n                        foreach($row as $cell) {\n                            $objWriter-&gt;startElement('w:tc');\n                                \n                                $cellStyle = $cell-&gt;getStyle();\n                                $width = $cell-&gt;getWidth();\n                                \n                                $objWriter-&gt;startElement('w:tcPr');\n                                    $objWriter-&gt;startElement('w:tcW');\n                                        $objWriter-&gt;writeAttribute('w:w', $width);\n                                        $objWriter-&gt;writeAttribute('w:type', 'dxa');\n                                    $objWriter-&gt;endElement();\n                                    \n                                    if($cellStyle instanceof PHPWord_Style_Cell) {\n                                        $this-&gt;_writeCellStyle($objWriter, $cellStyle);\n                                    }\n                                    \n                                $objWriter-&gt;endElement();\n                                \n                                $_elements = $cell-&gt;getElements();\n                                if(count($_elements) &gt; 0) {\n                                    foreach($_elements as $element) {\n                                        if($element instanceof PHPWord_Section_Text) {\n                                            $this-&gt;_writeText($objWriter, $element);\n                                        } elseif($element instanceof PHPWord_Section_TextRun) {\n                                            $this-&gt;_writeTextRun($objWriter, $element);\n                                        } elseif($element instanceof PHPWord_Section_Link) {\n                                            $this-&gt;_writeLink($objWriter, $element);\n                                        } elseif($element instanceof PHPWord_Section_TextBreak) {\n                                            $this-&gt;_writeTextBreak($objWriter);\n                                        } elseif($element instanceof PHPWord_Section_ListItem) {\n                                            $this-&gt;_writeListItem($objWriter, $element);\n                                        } elseif($element instanceof PHPWord_Section_Image ||\n                                                 $element instanceof PHPWord_Section_MemoryImage) {\n                                            $this-&gt;_writeImage($objWriter, $element);\n                                        } elseif($element instanceof PHPWord_Section_Object) {\n                                            $this-&gt;_writeObject($objWriter, $element);\n                                        } elseif($element instanceof PHPWord_Section_Footer_PreserveText) {\n                                            $this-&gt;_writePreserveText($objWriter, $element);\n                                        }\n                                    }\n                                } else {\n                                    $this-&gt;_writeTextBreak($objWriter);\n                                }\n                                \n                            $objWriter-&gt;endElement();\n                        }\n                    $objWriter-&gt;endElement();\n                }\n            $objWriter-&gt;endElement();\n        }\n    }</code></pre>\n\nThis all works well in my own usage and testing.  Anyone needing a diff/patch/script should reply.  Thanks!\r<br />\n<br />\nAdam<br />\n",
+    "PostedDate": "2013-04-19T09:00:29.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1033772",
+    "ThreadId": "440933",
+    "Html": "Thanks a lot it will be usefull for my project ;)!<br />\n<br />\nEDIT: It's corrupting my reports... :(<br />\n",
+    "PostedDate": "2013-04-21T23:35:50.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034132",
+    "ThreadId": "440933",
+    "Html": "I'm happy to troubleshoot if you can give examples.  Ideally, you'd be able to pass along a ZIP of your library, a dataset, and your script.<br />\n",
+    "PostedDate": "2013-04-22T12:50:48.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034197",
+    "ThreadId": "440933",
+    "Html": "Hi Aburgett, would you be able to attach - or paste - a patch file for the changes?<br />\n",
+    "PostedDate": "2013-04-22T15:55:11.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034204",
+    "ThreadId": "440933",
+    "Html": "Sure thing, as soon as I return to the office tomorrow (EST).  I have also updated the code base to allow column spanning in tables in Word, but that will be a new thread.<br />\n",
+    "PostedDate": "2013-04-22T16:09:20.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034320",
+    "ThreadId": "440933",
+    "Html": "Brilliant. By the way, if you want to add the patch as an attachment this can be done by creating a new issue (<a href=\"https://codeplex.codeplex.com/workitem/26583\" rel=\"nofollow\">you can't add attachments to discussion threads</a>).<br />\n",
+    "PostedDate": "2013-04-22T23:01:09.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034328",
+    "ThreadId": "440933",
+    "Html": "\r\n<div>On 23/04/2013 07:01, neilt17 wrote:<br>\r\n</div>\r\n<blockquote type=\"cite\">\r\n<p>From: neilt17</p>\r\n<div id=\"ThreadNotificationPostBody\">Brilliant. By the way, if you want to add the patch as an attachment this can be done by creating a new issue (<a href=\"https://codeplex.codeplex.com/workitem/26583\" rel=\"nofollow\">you can't add attachments to discussion\r\n threads</a>).<br>\r\n</div>\r\n</blockquote>\r\nIf you want to add a pull request, it can be done via <a href=\"https://github.com/PHPOffice/PHPWord\">\r\nhttps://github.com/PHPOffice/PHPWord</a><br>\r\n",
+    "PostedDate": "2013-04-22T23:44:14.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1034507",
+    "ThreadId": "440933",
+    "Html": "I'm not familiar enough with Git yet to be confident in a pull request.  Please see:\r<br />\n<br />\n<a href=\"https://phpword.codeplex.com/workitem/48\" rel=\"nofollow\">https://phpword.codeplex.com/workitem/48</a>\r<br />\n<br />\nfor the attached diff that includes BOTH updates.<br />\n",
+    "PostedDate": "2013-04-23T05:55:55.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1211167",
+    "ThreadId": "440933",
+    "Html": "<blockquote>\nI have also updated the code base to allow column spanning in tables in Word, but that will be a new thread.<br />\n</blockquote>\nI don't see anything in the documentation or examples of column spanning.  Please advise.<br />\n",
+    "PostedDate": "2014-02-20T06:38:37.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1211413",
+    "ThreadId": "440933",
+    "Html": "I don't believe it's made it into the code or documentation yet as there hasn't been a recent release.  The code I wrote is in production with me however.  Please review this:\r<br />\n<br />\n<a href=\"https://phpword.codeplex.com/workitem/48\" rel=\"nofollow\">https://phpword.codeplex.com/workitem/48</a>\r<br />\n<br />\nAdam<br />\n",
+    "PostedDate": "2014-02-20T14:13:23.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1211494",
+    "ThreadId": "440933",
+    "Html": "Adam, since the last release was almost 3 years ago, any ETA on another release?  This tool is really an awesome thing. I found PHPExcel a couple weeks ago and am now able to create some really nice and complicated spreadsheets.  This PHPWord tool is shaping up to being something really great.\r<br />\n<br />\nDid I read your other comment right about you all working on a PHP to PDF tool?<br />\n",
+    "PostedDate": "2014-02-20T18:24:35.887-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1211747",
+    "ThreadId": "440933",
+    "Html": "Bill,\r<br />\n<br />\nI don't know when the next release may be.  I'm pretty comfortable with the product as is, so I'm not anxious for anything different.  Do you a copy of my production version to solve your table problem, or do you have it working.  Yes, I agree, these are great tools.\r<br />\n<br />\nAs far as the PHP to PDF tool, the answer is &quot;sort of&quot;.  I work for a company in the service and maintenance industry and we're about 10 years behind in our technology &quot;vision&quot;.  With that being said, every step is a leap and the return is massive but so are the efforts at times.  To be specific our external service providers have been printing PDFs, filling them out with pen, and faxing/mailing them to us before we can invoice and be invoiced.  Jumping from A to Z in this situation would be to go from paper to a mobile web application and create a PDF based on the data only if necessary, but I'm instead having to go from A to C to F... so building a PDF form that can be submitted via email is the next step.  I created a template of the form in LibreOffice (as opposed to MS Word because the PDF form is retained when exporting as a PDF and LibreOffice is cross platform and scriptable).  Then I apply a Submit button using Acrobat and have a full PDF template.  Using iText (iTextSharp and C# via VisualStudio or SharpDevelop on Windows or Monodevelop on Linux), I can update the PDF template with work order specific information (work order #, date, location, equipment, etc) and distribute it to the provider via email.  The provider performs the work and emails it back using the Submit button.  I have a PHP script that watches a mailbox, and calls PDFtk against the attachment to pull the field names and values, validate that the necessary information is included, kicks it back to the provider if not or attaches to the work order in our CRM.\r<br />\n<br />\nBelieve it or not, this could be fully automatic if I could figure out how to make LibreOffice make the submit button properly, or apply it programmatically otherwise.  No matter what templating scheme you use, it usually boils down to working in XML.  Scribus, LibreOffice/OpenOffice and Word are all based on XML.  Normally, LibreOffice/OpenOffice and Word work with a zip file container of the data (meaning you can open a DOCX file with a zip program to see the content as individual components).  They all have the ability to work with flat XML files (fodt, xml, and sla) which is very handy for creating automated templates as you can work with the XML directly (without decompressing, modifying and recreating the container) and then perform various functions using a script interface to the software itself.\r<br />\n<br />\nAdam<br />\n",
+    "PostedDate": "2014-02-21T06:20:15.28-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1236949",
+    "ThreadId": "440933",
+    "Html": "Hi <br />\nI try to do that ut I have now an error xml on the header2.xml<br />\nI try to do a table on the header <br />\nIt's not possible to use on the header ?<br />\nThanks<br />\n",
+    "PostedDate": "2014-04-23T02:24:14.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1237181",
+    "ThreadId": "440933",
+    "Html": "Post or email your PHP script and I'll check it against my package.  Thanks!<br />\n",
+    "PostedDate": "2014-04-23T10:41:51.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1241375",
+    "ThreadId": "440933",
+    "Html": "Hi \r<br />\nDo you think that I can do this package with the new version of phpword 0.9 ? \r<br />\nWe can find already a 2nd parameter $rowStyle \r<br />\nThanks<br />\n",
+    "PostedDate": "2014-05-04T20:07:48.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1242820",
+    "ThreadId": "440933",
+    "Html": "I'm not aware of version .9 being available.  I looked just now and do not see it available in the Source Code area or the Downloads area.  I believe my changes received good feedback, so I wouldn't be surprised if they were integrated in a future release though.\r<br />\n<br />\nI'm happy to assist you, but you're not being very forthcoming or helpful.<br />\n",
+    "PostedDate": "2014-05-07T17:03:05.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1242828",
+    "ThreadId": "440933",
+    "Html": "<strong>Bill_VA wrote:</strong><br />\n<blockquote>\nAdam, since the last release was almost 3 years ago, any ETA on another release?  This tool is really an awesome thing. I found PHPExcel a couple weeks ago and am now able to create some really nice and complicated spreadsheets.  This PHPWord tool is shaping up to being something really great.<br />\n<br />\nDid I read your other comment right about you all working on a PHP to PDF tool?<br />\n</blockquote>\nHi again Bill.  I wanted to circle back with you and mention the TCPDF library.  One of the most frustrating things about working with PHPWord for me is pagination and breaks.  The ability to tell with much certainty where I am on a page (cursor wise, if that's a good analogy) isn't as clear in PHPWord as I would like and it makes outputting a 'mostly polished' document difficult when you start using tables.\r<br />\n<br />\nTCPDF gives you fairly accurate X,Y coordinate of where you are that is very helpful.  But the output is then mostly static being a PDF.<br />\n",
+    "PostedDate": "2014-05-07T17:26:03.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1242844",
+    "ThreadId": "440933",
+    "Html": "FYI, I had some issues with version 8 today (page numbers in footers) and went to GitHub and found version 10 was released and stable.  I had to redo a little bit of code, but otherwise looks and works well.  (<a href=\"https://github.com/PHPOffice/PHPWord/releases/tag/0.10.0\" rel=\"nofollow\">https://github.com/PHPOffice/PHPWord/releases/tag/0.10.0</a>)\r<br />\n<br />\nAdam, thanks for the info on TCPDF, I'll take a look.<br />\n",
+    "PostedDate": "2014-05-07T18:33:11.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1242861",
+    "ThreadId": "440933",
+    "Html": "Hi \r<br />\nThanks \r<br />\nI try also version 10 and it 's same better <br />\n",
+    "PostedDate": "2014-05-07T20:19:55.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

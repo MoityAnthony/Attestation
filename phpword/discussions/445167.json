@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1049453",
+    "ThreadId": "445167",
+    "Html": "Hi <br />\n<br />\nHow do I create fields in Word in order to change the value of it in PHPWord? I tried to use Insert-&gt;Quickparts-&gt;Comments but that doesn't work. I use Word 2007.<br />\n<br />\nThis is my code to change the value:<br />\n<pre><code>$filename = 'joren.docx';\n$PHPWord = new PHPWord();\n$template = $PHPWord-&gt;loadTemplate('files/cv/test.docx');\n$template-&gt;setValue('field1', 'Somebody someone');\n$template-&gt;save('files/cv/'.$filename);\n\n$downlink = 'files/cv/'.$filename;\nheader(&quot;Content-type: application/vnd.ms-word&quot;);\nheader(&quot;Content-disposition: attachment; filename=&quot;.$filename.&quot;;&quot;);\nheader('Content-Length: '.filesize($downlink));\nheader(&quot;Pragma: no-cache&quot;);\nheader(&quot;Expires: 0&quot;);\nob_clean();\n@readfile($downlink);</code></pre>\n\n",
+    "PostedDate": "2013-05-28T00:54:21.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

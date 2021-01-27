@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "631581",
+    "ThreadId": "262438",
+    "Html": "\r\n<p>I have a large table that spans several pages. How can I create a running header on each page of the table? That is, if the table extends to a new page, I want to repeat the table header in the first row of that page. Is this possible with PHPWord?</p>\r\n<p>Thank you,</p>\r\n",
+    "PostedDate": "2011-06-22T20:07:25.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "654885",
+    "ThreadId": "262438",
+    "Html": "<p>I'd like to do the same thing.</p>",
+    "PostedDate": "2011-08-08T17:31:21.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "654899",
+    "ThreadId": "262438",
+    "Html": "<p>I found this article:</p>\r\n<p>-------------------</p>\r\n<p><a href=\"http://office.microsoft.com/en-us/word-help/repeat-a-table-heading-on-subsequent-pages-HP010036315.aspx\" target=\"_blank\">http://office.microsoft.com/en-us/word-help/repeat-a-table-heading-on-subsequent-pages-HP010036315.aspx</a></p>\r\n<p>Repeated table headings are visible only in <strong><a class=\"glossary\">Print Layout view</a></strong> or when you print the document.</p>\r\n<ol class=\"cntIndent36\" type=\"1\">\r\n<li>Select the heading row or rows. The selection must include the first row of the table.</li>\r\n<li>Under <strong class=\"ui\">Table Tools</strong>, on the <strong class=\"ui\">Layout</strong> tab, in the <strong class=\"ui\">Data</strong> group, click <strong class=\"ui\">Repeat Header Rows</strong>.</li>\r\n</ol>\r\n<p><strong class=\"cntnote\">Note&nbsp;</strong>&nbsp;&nbsp;Microsoft Office Word automatically  repeats table headings on new pages that result from automatic page  breaks. Word does not repeat a heading if you insert a manual page break  within a table.</p>\r\n<p>--------------------</p>\r\n<p>You might reverse engineer the required code? Create a Word doc with a repeating table header. Save it as a mytest.zip then look at the xml used to create the repeating header?</p>\r\n<ol class=\"cntIndent36\" type=\"1\"> </ol>",
+    "PostedDate": "2011-08-08T18:42:30.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

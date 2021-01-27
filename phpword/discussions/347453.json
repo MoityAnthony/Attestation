@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "806068",
+    "ThreadId": "347453",
+    "Html": "<p>I try to format a textrun in smallcaps but I don't succeed.&nbsp;</p>\n<p>The feature doesn't seem to be available in PHPWORD but I'm not certain.</p>\n<p>Does anyone know how to create this feature if it's really unavailable in PW ?</p>\n<p>Thanks a lot !</p>",
+    "PostedDate": "2012-03-06T01:43:31.403-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "807695",
+    "ThreadId": "347453",
+    "Html": "<p>I have succeeded in developping this feature.</p>\n<p>Follow steps below to add this feature to PHPWord library :</p>\n<ol>\n<li>Open file : <span style=\"color: #808080;\">/PHPWord/Shared/Font.php</span> </li>\n<li>Add class property : <span style=\"color: #808080;\">private $_smallcaps;</span> </li>\n<li>Initialize class property like this in <strong>constructor</strong> : <span style=\"color: #808080;\"> $this-&gt;_smallcaps = null;</span> </li>\n<li><span style=\"color: #808080;\"><span style=\"color: #000000;\">Open file : </span>PHPWord/Writer/Word2007/Base.php</span></li>\n<li>Implement in <strong>_writeTextStyle()</strong> function <strong>before</strong> the next line <strong> $objWriter-&gt;startElement('w:rPr'); </strong>this code<strong> : </strong><span style=\"color: #888888;\">$smallcaps = $style-&gt;getSmallcaps();</span></li>\n<li>Implement in <strong>_writeTextStyle()</strong> function <strong>after</strong> the next line <strong> $objWriter-&gt;startElement('w:rPr');</strong> the code&nbsp; below : </li>\n</ol>\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"color: #808080;\">//Smallcaps</span><br /> <span style=\"color: #808080;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(!is_null($smallcaps)) {</span><br /> <span style=\"color: #808080;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $objWriter-&gt;startElement('w:smallCaps');</span><br /> <span style=\"color: #808080;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $objWriter-&gt;writeAttribute('w:val', $smallcaps);</span><br /> <span style=\"color: #808080;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $objWriter-&gt;endElement();</span><br /> <span style=\"color: #808080;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>\n<p>Feature is added !</p>\n<p><strong>To use it in a textrun</strong> you simply have to do like this : <br /> <span style=\"color: #808080;\">$yourTextrun-&gt;addText('your text',array('smallcaps'=&gt;true));</span></p>\n<p><strong>To use it in a section text</strong> you simply have to do like this : <br /> <span style=\"color: #808080;\">$yourSection-&gt;addText('your&nbsp; text',array('smallcaps'=&gt;true));</span></p>\n<p><br /> Enjoy it !<br /> - - - - - - - - - -<br /> By Larry P.</p>",
+    "PostedDate": "2012-03-08T12:57:42.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

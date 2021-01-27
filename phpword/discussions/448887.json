@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1063811",
+    "ThreadId": "448887",
+    "Html": "here is my php code:<br />\n<pre><code>$PHPWord = new PHPWord();\n$template = $PHPWord-&gt;loadTemplate(APPPATH.'files/test.docx');\n$template-&gt;setValue('test1', 'hello');\n$template-&gt;setValue('test2', 'whats');\n$template-&gt;setValue('test3', 'up');\n$template-&gt;setValue('test4', 'koby');\n$template-&gt;setValue('test5', '!!!!!!');\n$template-&gt;save('files/test.docx');</code></pre>\n\nhere is my word document text:<br />\n<br />\n${test1}<br />\n${test2}<br />\n${test3}<br />\n${test4}<br />\n${test5}<br />\n<br />\nThe output word content:<br />\n<br />\nhello<br />\n${test2}<br />\n${test3}<br />\n${test4}<br />\n${test5}<br />\n<br />\nsetValue(); only sets the value for the first line ${test1}<br />\n<br />\nAny help would be great<br />\n",
+    "PostedDate": "2013-07-02T14:18:15.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064869",
+    "ThreadId": "448887",
+    "Html": "You need to type &quot;${test1} ${test2} ${test3} ${test4} ${test5}&quot; on your template manually, not copy/paste. Encountered this just recently. Hope this helps.<br />\n",
+    "PostedDate": "2013-07-05T06:02:08.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

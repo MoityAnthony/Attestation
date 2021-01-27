@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "843383",
+    "ThreadId": "357926",
+    "Html": "\r\n<p>Hi guys:</p>\r\n<p>is possible to set margin to paragraph?</p>\r\n<p>&lt;p style=&quot;margin-left: 20px&quot;&gt;bla bla bla&lt;/p&gt;</p>\r\n<p>or use space to replace</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you</p>\r\n",
+    "PostedDate": "2012-05-31T20:52:19.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1345331",
+    "ThreadId": "357926",
+    "Html": "I am also facing the same problem.<br />\nHow can i add some spaces/tabs/margin before paragraph (&lt;p&gt; tag) . Actually i want to start my paragraph after some spaces/tabs.Is it possible?<br />\n<br />\nThanks in advance<br />\n",
+    "PostedDate": "2015-01-23T05:03:22.5-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1487309",
+    "ThreadId": "357926",
+    "Html": "I created a solution that works for me. I don't know if is the right way, if works every time, if works to everyone, etc....do the following:<br />\n<h1><strong><em>FILE -&gt; /PHPWord/Style/Paragraph.php</em></strong></h1>\nADD TO THE CLASS <strong>PHPWord_Style_Paragraph</strong>  \n<br />\n<pre><code>private $_indentLeft;\nprivate $_indentRight;\npublic function getIndentLeft() {\n    return $this-&gt;_indentLeft;\n}\npublic function getIndentRight() {\n    return $this-&gt;_indentRight;\n}\npublic function setIndentLeft($pValue = null) {\n    $this-&gt;_indentLeft = $pValue;\n    return $this;\n}\npublic function setIndentRight($pValue = null) {\n    $this-&gt;_indentRight = $pValue;\n    return $this;\n}</code></pre>\n\nAND <strong>ADD</strong> TO __construct() FUNCTION<br />\n<pre><code>$this-&gt;_indentLeft         = null;\n$this-&gt;_indentRight         = null;</code></pre>\n\n<h1><strong><em>FILE -&gt; /PHPWord/Writer/Word2007/Base.php</em></strong></h1>\n<strong>ADD</strong> TO _writeParagraphStyle() FUNCTION <br />\n<pre><code>    $indentLeft = $style-&gt;getIndentLeft();\n    $indentRight = $style-&gt;getIndentRight();\n\n    if(!is_null($indentLeft) || !is_null($indentRight)) {\n            $objWriter-&gt;startElement('w:pPr');\n                $objWriter-&gt;startElement('w:ind');\n                if(!is_null($indentLeft)){\n                    $objWriter-&gt;writeAttribute('w:left', $indentLeft);\n                }\n                if(!is_null($indentRight)){\n                    $objWriter-&gt;writeAttribute('w:right', $indentRight);\n                }\n                $objWriter-&gt;endElement();\n            $objWriter-&gt;endElement(); \n      }\n</code></pre>\n\nTHAN JUST USE AS A STYLE<br />\n<pre><code>$paragraph = $section-&gt;createTextRun(array('indentLeft' =&gt; 500,'indentRight'=&gt;500))-&gt;addText('YOUR TEXT' );</code></pre>\n\n",
+    "PostedDate": "2016-11-02T16:43:25.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

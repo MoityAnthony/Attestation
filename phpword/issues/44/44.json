@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": null,
+    "Description": "Hello All,\r\n\r\nI want to add image in doc file using full file path but its not taking.\r\n\r\nfor example If i want to add image from\r\nhttp://www.example.com/image/abc.jpg\r\n\r\nthen I got below error\r\n\r\n\"Source does not exist or unsupported image type\"\r\n\r\nthen what i need to do to use this image. I have image on different domain so I need this to work in this way.\r\n\r\nAny help really appreciated.\r\n\r\nWaiting for your response.\r\n\r\nThanks,\r\nTrilokchand Modi.\r\n",
+    "LastUpdatedDate": "2014-03-19T22:43:09.803-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2012-03-14T04:04:27.027-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Add image using full URL is not working",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 4,
+    "Id": 44
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Hi Trilokchand!\n\nAt this time, the \"addImage()\" function is limited to working with images that are local to the machine the script is running on.\n\nIn the PHPWord folder, you'll find the Section.php script.  This is where the \"addImage()\" function is defined for the basic $section area.  The function is also defined in the Footer.php, Table/Cell.php, and Header.php scripts for those document areas.  In the \"addImage()\" function, the $image variable is set by calling \"new PHPWord_Section_Image\" with the $src and $style variables as arguments.  The PHPWord_Section_Image class is defined in the PHPWord/Section/Image.php script.  The \"__construct()\" function is ultimately your culprit as it calls the \"file_exists()\" PHP function against the $src variable.  \"file_exists()\" work on local files only and will return \"false\" in when called against valid image URL's.\n\nI think what you're looking for is located here:\n\nThis snippet seems succinct enough and would allow you to open the image after saving to /tmp or from the $imageData link as well with the \"addMemoryImage()\" function in PHPWord.  The downside is that you have to handle the image format on your own:\n```\n###--- imagecreatefromjpeg only opens JPEG files from your disk.\n###--- To load JPEG images from a URL, use the function below.\n\nfunction LoadJPEG ($imgURL) {\n    ##-- Get Image file from Port 80 --##\n    $fp = fopen($imgURL, \"r\");\n    $imageFile = fread ($fp, 3000000);\n    fclose($fp);\n\n    ##-- Create a temporary file on disk --##\n    $tmpfname = tempnam (\"/temp\", \"IMG\");\n\n    ##-- Put image data into the temp file --##\n    $fp = fopen($tmpfname, \"w\");\n    fwrite($fp, $imageFile);\n    fclose($fp);\n\n    ##-- Load Image from Disk with GD library --##\n    $im = imagecreatefromjpeg ($tmpfname);\n\n    ##-- Delete Temporary File --##\n    unlink($tmpfname);\n\n    ##-- Check for errors --##\n    if (!$im) {\n        print \"Could not create JPEG image $imgURL\";\n    }\n    return $im;\n}\n\n$imageData = LoadJPEG(\"http://www.example.com/example.jpg\");\nHeader( \"Content-Type: image/jpeg\");\nimagejpeg($imageData, '', 100);\n```\n\nAB",
+      "PostedDate": "2014-01-08T20:11:54.2-08:00",
+      "Id": 129895
+    },
+    {
+      "Message": "http://www.php.net/manual/en/function.imagecreatefromjpeg.php#22783",
+      "PostedDate": "2014-01-08T20:13:21.517-08:00",
+      "Id": 129896
+    },
+    {
+      "Message": "Adding images from URL has been enabled in the [latest version](https://github.com/PHPOffice/PHPWord/pull/122).",
+      "PostedDate": "2014-03-19T22:43:09.803-07:00",
+      "Id": 137412
+    }
+  ]
+}

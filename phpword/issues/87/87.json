@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "So i have the following string as __input__:\r\n\r\n__'Should pay $2000.30 and give back $300.'__\r\n\r\nThe __output__ int he word doc comes out as:\r\n\r\n__'Should pay 00.30 and give back 0__ '\r\n\r\n\r\nI think, library is not able to differentiate between the variables and amounts in string. Please let me know if there is temporary fix to this issue i am working on an important project at work and this is the only thing stopping the release of project. \r\n\r\n\r\nThank you in advance :)",
+    "LastUpdatedDate": "2014-12-04T07:48:07.823-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2014-12-04T07:48:07.823-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Library treats amount in strings as variables",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 87
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

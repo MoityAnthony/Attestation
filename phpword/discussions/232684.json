@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "514098",
+    "ThreadId": "232684",
+    "Html": "\r\n<p>Hello, I've to generate a page with many badge as possible (they are 7,2cm by &nbsp;10,3cm), and I used (in a foreach loop) :</p>\r\n<p><span></span></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$imageStyle = <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'width'</span>=&gt;272, <span style=\"color:#a31515\">'height'</span>=&gt;387);\r\n\r\n$section-&gt;addImage(<span style=\"color:#a31515\">&quot;logo/&quot;</span>.$item[<span style=\"color:#a31515\">'id'</span>].<span style=\"color:#a31515\">&quot;.jpg&quot;</span>, $imageStyle);\r\n</pre>\r\n</div>\r\n<p><span></span></p>\r\n<p>Then, I generate the docx.</p>\r\n<p>But after each image there is a line break... So I've 1 badge per page :(</p>\r\n<p>Is there a possibility to bypass these line breaks ?</p>\r\n<p>Thank you.</p>\r\n<p>--</p>\r\n<p>Clement</p>\r\n",
+    "PostedDate": "2010-10-28T10:17:33.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "514162",
+    "ThreadId": "232684",
+    "Html": "\r\n<p>I wish for this feature too. To complicate matters, I need to insert an image and add text after it (without a line break after the image) inside a table cell.</p>\r\n<p>I tried to use the 'createTextRun' function to see if I could add an image without a trailing line break, but it didn't work.</p>\r\n<p>See NON-working code below:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$statusCell = $table-&gt;addCell(1300, $cellStyle);\r\n$statusCellTextRun = $statusCell-&gt;createTextRun();\r\n$statusCellTextRun-&gt;addImage(<span style=\"color:#a31515\">'myimage.jpg'</span>);\r\n$statusCellTextRun-&gt;addText('my text');\r\n</pre>\r\n</div>\r\n<p>See this thread for a related discussion:</p>\r\n<p><a title=\"Trailing line breaks after addText function\" href=\"http://phpword.codeplex.com/Thread/View.aspx?ThreadId=210852\" target=\"_self\">http://phpword.codeplex.com/Thread/View.aspx?ThreadId=210852</a></p>\r\n",
+    "PostedDate": "2010-10-28T12:11:13.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "671852",
+    "ThreadId": "232684",
+    "Html": "<p>do you have any solution?</p>",
+    "PostedDate": "2011-09-14T11:31:03.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "671879",
+    "ThreadId": "232684",
+    "Html": "<p>Sorry but I haven't found any solution, I have used another solution for my badges (in generating directly a PDF).</p>\r\n<p>Good luck !</p>",
+    "PostedDate": "2011-09-14T12:38:53.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "709586",
+    "ThreadId": "232684",
+    "Html": "<p>same problem here</p>",
+    "PostedDate": "2011-12-08T15:09:14.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "720079",
+    "ThreadId": "232684",
+    "Html": "<p>I got around the problem by using a table with cells - ie image in the first cell and then text in the next cell. Not the prettiest but worked.</p>",
+    "PostedDate": "2012-01-03T15:25:01.247-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "723673",
+    "ThreadId": "232684",
+    "Html": "<p>I've got a working solution. It's pretty much untested so use it with caution. If you can add to this in any way then please do!</p>\n<p>Add the following function to /Section/TextRun.php</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">public</span> <span style=\"color: blue;\">function</span> addImage($src, $style = null) {\n\t$image = <span style=\"color: blue;\">new</span> PHPWord_Section_Image($src, $style);\n\t\n\t<span style=\"color: blue;\">if</span>(!is_null($image-&gt;getSource())) {\n\t\t$rID = PHPWord_Media::addSectionMediaElement($src, <span style=\"color: #a31515;\">'image'</span>);\n\t\t$image-&gt;setRelationId($rID);\n\t\t\n\t\t$this-&gt;_elementCollection[] = $image;\n\t\t<span style=\"color: blue;\">return</span> $image;\n\t} <span style=\"color: blue;\">else</span> {\n\t\ttrigger_error(<span style=\"color: #a31515;\">'Source does not exist or unsupported image type.'</span>);\n\t}<br /></pre>\n<pre>}</pre>\n<pre><br /></pre>\n</div>\n<p>Then modify the _writeTextRun function in /Writer/Word2007/Base.php as follows</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">protected</span> <span style=\"color: blue;\">function</span> _writeTextRun(PHPWord_Shared_XMLWriter $objWriter = null, PHPWord_Section_TextRun $textrun) {\n\t$elements = $textrun-&gt;getElements();\n\t$styleParagraph = $textrun-&gt;getParagraphStyle();\n\t\n\t$SpIsObject = ($styleParagraph <span style=\"color: blue;\">instanceof</span> PHPWord_Style_Paragraph) ? true : false;\n\t\n\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:p'</span>);\n\t\n\t\n\t<span style=\"color: blue;\">if</span>($SpIsObject) {\n\t\t$this-&gt;_writeParagraphStyle($objWriter, $styleParagraph);\n\t} <span style=\"color: blue;\">elseif</span>(!$SpIsObject &amp;&amp; !is_null($styleParagraph)) {\n\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:pPr'</span>);\n\t\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:pStyle'</span>);\n\t\t\t\t$objWriter-&gt;writeAttribute(<span style=\"color: #a31515;\">'w:val'</span>, $styleParagraph);\n\t\t\t$objWriter-&gt;endElement();\n\t\t$objWriter-&gt;endElement();\n\t}\n\t\n\t<span style=\"color: blue;\">if</span>(count($elements) &gt; 0) {\n\t\t<span style=\"color: blue;\">foreach</span>($elements <span style=\"color: blue;\">as</span> $element) {\n\t\t\t<span style=\"color: blue;\">if</span>($element <span style=\"color: blue;\">instanceof</span> PHPWord_Section_Text) {\n\t\t\t\t$this-&gt;_writeText($objWriter, $element, true);\n\t\t\t} <span style=\"color: blue;\">elseif</span>($element <span style=\"color: blue;\">instanceof</span> PHPWord_Section_Link) {\n\t\t\t\t$this-&gt;_writeLink($objWriter, $element, true);\n\t\t\t}\n\t\t\t<span style=\"color: blue;\">else</span> <span style=\"color: blue;\">if</span>($element <span style=\"color: blue;\">instanceof</span> PHPWord_Section_Image) {\n\t\t\t\t$this-&gt;_writeImage($objWriter, $element,true);\n\t\t\t}\n\t\t}\n\t}\n\t\n\t$objWriter-&gt;endElement();\n}\n\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>Finally, update the _writeImage function in the same class with the following:</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre>\t<span style=\"color: blue;\">protected</span> <span style=\"color: blue;\">function</span> _writeImage(PHPWord_Shared_XMLWriter $objWriter = null, $image, $withoutP = false) {\n\t\t$rId = $image-&gt;getRelationId();\n\t\t\n\t\t$style = $image-&gt;getStyle();\n\t\t$width = $style-&gt;getWidth();\n\t\t$height = $style-&gt;getHeight();\n\t\t$align = $style-&gt;getAlign();\n\t\t\n\t\t<span style=\"color: blue;\">if</span>(!$withoutP) {\n\t\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:p'</span>);\n\t\t\n\t\t\t<span style=\"color: blue;\">if</span>(!is_null($align)) {\n\t\t\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:pPr'</span>);\n\t\t\t\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:jc'</span>);\n\t\t\t\t\t\t$objWriter-&gt;writeAttribute(<span style=\"color: #a31515;\">'w:val'</span>, $align);\n\t\t\t\t\t$objWriter-&gt;endElement();\n\t\t\t\t$objWriter-&gt;endElement();\n\t\t\t}\n\t\t}\n\t\t\n\t\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:r'</span>);\n\t\t\t\n\t\t\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'w:pict'</span>);\n\t\t\t\t\t\n\t\t\t\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'v:shape'</span>);\n\t\t\t\t\t\t$objWriter-&gt;writeAttribute(<span style=\"color: #a31515;\">'type'</span>, <span style=\"color: #a31515;\">'#_x0000_t75'</span>);\n\t\t\t\t\t\t$objWriter-&gt;writeAttribute(<span style=\"color: #a31515;\">'style'</span>, <span style=\"color: #a31515;\">'width:'</span>.$width.<span style=\"color: #a31515;\">'px;height:'</span>.$height.<span style=\"color: #a31515;\">'px'</span>);\n\t\t\t\t\t\t\n\t\t\t\t\t\t$objWriter-&gt;startElement(<span style=\"color: #a31515;\">'v:imagedata'</span>);\n\t\t\t\t\t\t\t$objWriter-&gt;writeAttribute(<span style=\"color: #a31515;\">'r:id'</span>, <span style=\"color: #a31515;\">'rId'</span>.$rId);\n\t\t\t\t\t\t\t$objWriter-&gt;writeAttribute(<span style=\"color: #a31515;\">'o:title'</span>, <span style=\"color: #a31515;\">''</span>);\n\t\t\t\t\t\t$objWriter-&gt;endElement();\n\t\t\t\t\t$objWriter-&gt;endElement();\n\t\t\t\t\t\n\t\t\t\t$objWriter-&gt;endElement();\n\t\t\t\t\n\t\t\t$objWriter-&gt;endElement();\n\t\t\t\n\t\t<span style=\"color: blue;\">if</span>(!$withoutP) {\n\t\t\t$objWriter-&gt;endElement();\n\t\t}\n\t}\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>You should then be able to use</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre>$textRun-&gt;addImage($my_image);\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>To add an image into a text run without any trailing line breaks.</p>\n<p>Like I said, this is pretty much untested and I don't know what it breaks - so use at your own risk!</p>",
+    "PostedDate": "2012-01-11T06:56:45.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "813373",
+    "ThreadId": "232684",
+    "Html": "<p>Thank you <span class=\"UserProfileLink\">N</span><span class=\"UserProfileLink\">athan.</span></p>\r\n<p><span class=\"UserProfileLink\">I've followed your instructions and got it working :).</span></p>\r\n<p><span class=\"UserProfileLink\">Still... I want to set the image do. I tried using the </span>v:shapetype element and played around with all of the v:shape &amp; v:imagedata attributes with no success.</p>\r\n<p>Does anyone know how to change the image layout?</p>\r\n<p>Thanks!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-03-21T00:59:09.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "901456",
+    "ThreadId": "232684",
+    "Html": "<p>Good,&nbsp;<a class=\"UserProfileLink\" href=\"http://www.codeplex.com/site/users/view/NathanGaskin\">NathanGaskin</a>, thanks very much!!!</p>",
+    "PostedDate": "2012-08-20T01:48:22.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1291600",
+    "ThreadId": "232684",
+    "Html": "Hi\r<br />\nThe above solution works fine for section. How can I use it for header as when I use it in header, the doc gets corrupt. Please help !!!<br />\n",
+    "PostedDate": "2014-08-20T00:56:40.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

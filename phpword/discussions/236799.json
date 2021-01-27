@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "529793",
+    "ThreadId": "236799",
+    "Html": "\r\n<p>my code like this but i don't know why my file with no data when i use alert box</p>\r\n<p>anyone help me please!!!!!!!!!!</p>\r\n<p>&nbsp;</p>\r\n<p>require_once '../PHPWord.php';<br>\r\ninclude_once('../connection.php');<br>\r\n<br>\r\n$traing_code=@$_REQUEST['id'];<br>\r\n$query=mysql_query(&quot;SELECT * FROM training_training where TCode=$traing_code&quot;);<br>\r\n$row=mysql_fetch_row($query);<br>\r\n<br>\r\n$sql_ta=mysql_query(&quot;select * from training_acitivies where TA_Code=$row[2]&quot;);<br>\r\n$ta_des=mysql_fetch_row($sql_ta);<br>\r\n<br>\r\n$sql_pro=mysql_query(&quot;select * from training_programe where pro_code=$row[1]&quot;);<br>\r\n$pro=mysql_fetch_row($sql_pro);<br>\r\n<br>\r\n$sql_user=mysql_query(&quot;select * from pro_person where Code=$row[16]&quot;);<br>\r\n$user=mysql_fetch_row($sql_user);<br>\r\n<br>\r\n$sql_trainner=mysql_query(&quot;select * from training_trainner where Code=$row[0]&quot;);<br>\r\n$trainner=mysql_fetch_row($sql_trainner);<br>\r\n<br>\r\n$sql_trainee=mysql_query(&quot;select * from training_categories where CCode=$row[0]&quot;);<br>\r\n$trainee=mysql_fetch_row($sql_trainee);<br>\r\n<br>\r\n$sql_type=mysql_query(&quot;select * from training_type where TYPE_CODE=$row[9]&quot;);<br>\r\n$type=mysql_fetch_row($sql_type);<br>\r\n<br>\r\n<br>\r\n$sql_provider=mysql_query(&quot;select * from training_provider where Pro_Code=$row[8]&quot;);<br>\r\n$provider=mysql_fetch_row($sql_provider);<br>\r\n<br>\r\n$PHPWord = new PHPWord();<br>\r\n<br>\r\n$document = $PHPWord-&gt;loadTemplate('training_report.docx');<br>\r\n<br>\r\n$document-&gt;setValue('pro_code',$traing_code);<br>\r\n$document-&gt;setValue('strdate', $row[4]);<br>\r\n$document-&gt;setValue('enddate',$row[5]);<br>\r\n$document-&gt;setValue('des', $row[3]);<br>\r\n$document-&gt;setValue('usaid_trainee',$row[18]);<br>\r\n$document-&gt;setValue('usaid_instr', $row[17]);<br>\r\n$document-&gt;setValue('usaid_travel',$row[19]);<br>\r\n$document-&gt;setValue('type',$type[1]);<br>\r\n$document-&gt;setValue('provider',$provider[1]);<br>\r\n//$document-&gt;save('123.docx');<br>\r\nheader('Content-Type: application/vnd.ms-word');<br>\r\nheader('Content-Disposition: attachment;filename=&quot;myfile.docx&quot;');<br>\r\nheader('Cache-Control: max-age=0');</p>\r\n",
+    "PostedDate": "2010-12-01T18:37:30.967-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "532316",
+    "ThreadId": "236799",
+    "Html": "\r\n<p>Try this code at the end:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$fileName = <span style=\"color:#a31515\">'my_file_name'</span>;\r\nheader(<span style=\"color:#a31515\">'Content-Type: application/vnd.ms-word'</span>);\r\nheader(<span style=\"color:#a31515\">'Content-Disposition: attachment;filename=&quot;'</span>.$fileName.<span style=\"color:#a31515\">'.docx&quot;'</span>);  <span style=\"color:green\">// set the file name</span>\r\nheader(<span style=\"color:#a31515\">'Cache-Control: max-age=0'</span>);\r\n\r\n<span style=\"color:green\">// Save and output file to browser</span>\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, <span style=\"color:#a31515\">'Word2007'</span>);\r\n$objWriter-&gt;save(<span style=\"color:#a31515\">'php://output'</span>);\r\n<span style=\"color:blue\">exit</span>;     <span style=\"color:green\">//you MUST have the exit!</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2010-12-07T07:34:35.79-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

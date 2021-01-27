@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1133010",
+    "ThreadId": "472252",
+    "Html": "Immediately apologize for my English because I use a translator .<br />\n<br />\nGood day, to upload data in MS WORD pattern using a library PHPWord, on the whole, satisfied . But recently encountered one problem.<br />\nSo template format has the following format :<br />\n<pre><code>$ {section}\n$ {object}\n$ {docs}</code></pre>\n\nJust fill it up is not difficult but I have to enter the data from the base and there are the following dependencies $ {docs} depends on $ {object} and $ {object} of $ {section}, ie after sampling from a base in the template must be added automatically record new variables. for example, after sampling pattern should look like<br />\n<pre><code>    $ {section_1}\n\n    $ {object_1_1}\n    $ {docs_1_1_1}\n    $ {docs_1_1_2}\n    $ {docs_1_1_3}\n\n    $ {object_1_2}\n    $ {docs_1_2_1}\n    $ {docs_1_2_2}\n\n    $ {section_2}\n\n    $ {object_2_1}\n    $ {docs_2_1_1}\n    $ {docs_2_1_2}\n    $ {docs_2_1_3}\n    $ {docs_2_1_4}\n\n    $ {object_2_2}\n    $ {docs_2_2_1}\n    $ {docs_2_2_2}\n\n    etc.\n</code></pre>\n\nAnd after that fill these variables .<br />\n",
+    "PostedDate": "2013-12-08T21:40:13.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

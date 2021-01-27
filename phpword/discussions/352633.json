@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "825225",
+    "ThreadId": "352633",
+    "Html": "\r\n<p>I am using XAMPP, and all of my web files are stored inside htdocs folder called Company_System. inside, there are all of my images folder, css folder, php files and i have put the PHPWord folder inside there too (Company_System/PHPWord). Then there is a\r\n PHPWord, Examples, and PHPWord.php in there. I created another folder called Files and store a docx and php file to be used as template(I copied from the examples folder).</p>\r\n<p>I have a invoice.php in the root folder that i want to include by calling the template. In the invoice.php, I have a text area element so that the staff can edit the template on the fly to generate the invoice.</p>\r\n<p>Then I want to make it to be able to save to other desired names with new file created without overwriting the template.php.</p>\r\n<p>Which file do i need to modify?</p>\r\n<p>What lines of codes i need to add/remove?</p>\r\n<p>Do I need database access for file saving?</p>\r\n<p>Please help. Thank you.</p>\r\n",
+    "PostedDate": "2012-04-17T19:51:58.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "522542",
+    "ThreadId": "234844",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>Does anyone tested <span>PHPWord_0.6.2_Beta with Open-Office. </span></p>\r\n<p><span>For me Open Office Writer (3.2.0) hangs - just exit's while trying to open any generated documents by PHPWord.</span></p>\r\n<p><span>Also tried empty documents and example files - the same problem, while Microsoft Word opens correctly.<br>\r\n</span></p>\r\n<p><span>Thanks.<br>\r\n</span></p>\r\n",
+    "PostedDate": "2010-11-16T00:30:22.467-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "522678",
+    "ThreadId": "234844",
+    "Html": "\r\n<p>I had a similar issue: OO Writer 3.2 would crash every time I tried to open a PHPWord .docx. I sent an error report to OO, and they suggested I uninstall OO 3.2 and install OO 3.4_dev. Okay, OO Writer now opens the .docx but the tables on the page are not\r\n formatted correctly. It's better than crashing though.</p>\r\n",
+    "PostedDate": "2010-11-16T06:30:31.563-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

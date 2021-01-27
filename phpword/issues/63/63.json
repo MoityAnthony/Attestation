@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "because my file 's charset is utf-8,not iso-8859-1.\r\n\r\nthus,i remove utf8_encode relative lines:\r\n\r\n```\r\nif(!is_array($replace)) {\r\n            $replace = utf8_encode($replace);\r\n}\r\n```\r\n\r\nand it become a new function \"setValueByDefaultCharset\" ,the last code is :\r\n\r\n```\r\npublic function setValueByDefaultCharset($search, $replace) {\r\n        if(substr($search, 0, 2) !== '${' && substr($search, -1) !== '}') {\r\n            $search = '${'.$search.'}';\r\n        }\r\n        \r\n        \r\n        \r\n        $this->_documentXML = str_replace($search, $replace, $this->_documentXML);\r\n    }\r\n```",
+    "LastUpdatedDate": "2013-11-09T03:01:05.57-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-11-09T02:59:44.42-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "please add a function to Template.php",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 63
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

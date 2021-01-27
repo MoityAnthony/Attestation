@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "Hi guys,\r\n\r\ni think, this is just a small feature wish, but would be great to have something similar to a search and replace function.\r\nI would call this Tokenreplacer.\r\n\r\nThis way we could replace ###date### with a date text or ###name### with the customername without the need of completly dynamicly creating the document.\r\n\r\nRegards\r\nKay",
+    "LastUpdatedDate": "2011-03-03T10:03:50.4-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-03-03T05:07:40.557-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Feature Wish Tokenreplacer",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 21
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "should be possible with an iteration over PHPWord::getSections();\nIteration over PHPWord_Section::getElements()\n\nAdditionally each text element needs a function \"replace($token, $what)\"\nNow it's possible to check wether such an element has the above method \nhttp://de.php.net/method_exists\n\nUsing that tables may get this function as well an distribute the call to all cells.\n\nWhat do you think?\nRegards\nKay\n",
+      "PostedDate": "2011-03-03T05:29:04.033-08:00",
+      "Id": 29933
+    },
+    {
+      "Message": "ok is in http://phpword.codeplex.com/releases/view/49543\nthanks",
+      "PostedDate": "2011-03-03T10:03:50.4-08:00",
+      "Id": 29945
+    }
+  ]
+}

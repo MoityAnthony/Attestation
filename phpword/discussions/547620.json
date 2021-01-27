@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1253162",
+    "ThreadId": "547620",
+    "Html": "Hi,\r<br />\nI want to create .docx file along with html controls like Textbox, radio buttons etc... on the fly.\r<br />\nI used PHPWord, which is showing text and tables properly but unable to show Textbox, radio buttons.\r<br />\nHow can i create the HTML controls like Textbox, radio buttons in .docx file using PHP?\r<br />\n<br />\nPlease help me asap... \r<br />\n<br />\nThanks\r<br />\nKiran <br />\n",
+    "PostedDate": "2014-06-05T00:00:07.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253334",
+    "ThreadId": "547620",
+    "Html": "There is ongoing development for PHPWord here: <a href=\"https://github.com/PHPOffice/PHPWord\" rel=\"nofollow\">https://github.com/PHPOffice/PHPWord</a><br />\n",
+    "PostedDate": "2014-06-05T08:16:50.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253556",
+    "ThreadId": "547620",
+    "Html": "Hi JillElaine,<br />\nThanks for your reply.<br />\n<br />\nAccording to the above URL, possible to add Textbox and Checkbox to the .docx file from PHP.<br />\nHow do we add Radi buttons and Drop boxes to .docx file?<br />\n<br />\nAnd i tried to parse the Textbox and Checkbox data. But  it is not posible to find which checked box is CHECKED.<br />\n<br />\nThis is most important issue for me.<br />\nIs there any way to add those HTML controls to .docx file from PHP?<br />\nAnd how can parse those HTML controls from .docx file?<br />\n<br />\nPlease help me asap..<br />\n<br />\nThanks,<br />\nKiran<br />\n",
+    "PostedDate": "2014-06-05T20:33:22.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1253704",
+    "ThreadId": "547620",
+    "Html": "Hi Kiran.<br />\n<br />\nThe latest PHPWord version (0.11.0) only support writing CheckBox and no reading for any form elements. I've submitted an enhancement request <a href=\"https://github.com/PHPOffice/PHPWord/issues/266\" rel=\"nofollow\">here</a>.<br />\n<br />\nYou're free to fork the script and enhance it for your need.<br />\n",
+    "PostedDate": "2014-06-06T07:06:50.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256934",
+    "ThreadId": "547620",
+    "Html": "Hi ivanlanin,<br />\n<pre><code>Great help from you and your support team. I cehcked the developer version. Now Checkbox, Textbox and Dropdown working great.\n\nIs it possible to add radio buttons, hidden variables? I need to use hidden variables while parsing the .docx file data.    \n\nI need to save that form elements data in Database. i used doc2txt.php file to parse .docx file, but it is unable to parse the SELECTED option from dropdown and unable to find which checkbox is CHECKED or not in the .docx file. \nSo, how to parse those form elements from .docx file?\n\nWhat are the steps i need to follow if latest PHPWORD files working for PHP5.1 and 5.2 versions?\n\nPlease help me asap.\n</code></pre>\n\nThanks,<br />\nKiran<br />\n",
+    "PostedDate": "2014-06-17T01:26:46.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256960",
+    "ThreadId": "547620",
+    "Html": "Hi Kiran,<br />\n<ol>\n<li>PHPWord doesn't support radio buttons nor hidden variables yet</li>\n<li>The file <code>doc2txt.php</code> is not part of PHPWord. Did you make it yourself? PHPWord doesn't support parsing form elements, yet.</li>\n<li>PHPWord requires 5.3 because we use namespaces. You can't use PHP version lower than that.</li>\n</ol>\n",
+    "PostedDate": "2014-06-17T02:53:51.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1256968",
+    "ThreadId": "547620",
+    "Html": "Hi ivanlanin,\r<br />\nThanks for your valuable response.\r<br />\n<br />\n-&gt; i  am using the doc2txt.php file, which is taking from the below URL \r<br />\n<a href=\"http://www.phpclasses.org/package/7934-PHP-Convert-MS-Word-Docx-files-to-text.html\" rel=\"nofollow\">http://www.phpclasses.org/package/7934-PHP-Convert-MS-Word-Docx-files-to-text.html</a>\r<br />\n<br />\n-&gt;For hidden variables, is there any possibility to assign values to variables which are not showing in .docx file. While parsing the .docx file, we are able to getting those invisible values. \r<br />\n<br />\nThanks,\r<br />\nKiran<br />\n",
+    "PostedDate": "2014-06-17T03:33:09.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

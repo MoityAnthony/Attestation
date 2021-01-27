@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "440243",
+    "ThreadId": "211886",
+    "Html": "<p>Hi,</p>\r\n<p>Is it possible to set a margin (both left and right side) for the generated word document?</p>\r\n<p>&nbsp;</p>\r\n<p>regards,</p>\r\n<p>Swarnendu</p>",
+    "PostedDate": "2010-05-07T01:13:39.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "440250",
+    "ThreadId": "211886",
+    "Html": "<p>Yes it is.</p>\r\n<p>When creating a section you can specify the margins like this:</p>\r\n<p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>$style = <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'marginLeft'</span>=&gt;600, <span style=\"color:#a31515\">'marginRight'</span>=&gt;600, <span style=\"color:#a31515\">'marginTop'</span>=&gt;600, <span style=\"color:#a31515\">'marginBottom'</span>=&gt;600);\r\n$section = $PHPWord-&gt;createSection($style);\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p>regards</p>\r\n<p>raw</p>",
+    "PostedDate": "2010-05-07T01:27:00.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "440252",
+    "ThreadId": "211886",
+    "Html": "<p>Margins are set using the setMarginLeft(), setMarginRight(), setMarginBottom() and setMarginTop() methods of the section settings object.</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:green\">// New Word Document </span>\r\n$PHPWord = <span style=\"color:blue\">new</span> PHPWord(); \r\n\r\n<span style=\"color:green\">// New section </span>\r\n$section = $PHPWord-&gt;createSection(); \r\n$section-&gt;getSettings()-&gt;setMarginLeft(1200); \r\n$section-&gt;getSettings()-&gt;setMarginRight(1200); \r\n\r\n$section-&gt;addText(&quot;T<span style=\"color:#a31515\">'was Brillig, and the Slithey Toves did gyre and gimble in the wabe.&quot;</span>);\r\n</pre>\r\n</div>",
+    "PostedDate": "2010-05-07T01:28:42.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "440253",
+    "ThreadId": "211886",
+    "Html": "Hi,\r\n\r\nThanks for the reply. Missed that part in the example. \r\n\r\nRegards\r\nSwarnendu",
+    "PostedDate": "2010-05-07T01:30:41.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

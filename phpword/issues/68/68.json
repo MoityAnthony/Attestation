@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 2,
+    "Custom": null,
+    "Description": "I was try with sample Template.php in download packet with value contain '&' and get error \"Illegal name character.\"\r\n\r\n$PHPWord = new PHPWord();\r\n\r\n$document = $PHPWord->loadTemplate('Template.docx');\r\n\r\n$document->setValue('Value1', 'Sun abc/123 & 4');\r\n$document->setValue('Value2', 'Mercury & Test');\r\n$document->setValue('Value3', 'Venus');\r\n$document->setValue('Value4', 'Earth');\r\n$document->setValue('Value5', 'Mars');\r\n$document->setValue('Value6', 'Jupiter');\r\n$document->setValue('Value7', 'Saturn');\r\n$document->setValue('Value8', 'Uranus');\r\n$document->setValue('Value9', 'Neptun');\r\n$document->setValue('Value10', 'Pluto');\r\n\r\n$document->setValue('weekday', date('l'));\r\n$document->setValue('time', date('H:i'));\r\n\r\n$document->save('Solarsystem.docx');\r\n\r\nMaybe a bug here. Any help would be great",
+    "LastUpdatedDate": "2014-01-08T19:35:32.013-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2013-12-29T23:41:15.9-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Template setValue doesn't work with values contain '&'",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 68
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "try this\n\n$Text_to_Add = htmlentities(\"Me & my Code\");\n$section->addText($Text_to_Add);\n\nhttp://stackoverflow.com/questions/8576964/phpword-export-giving-corrupt-word-file",
+      "PostedDate": "2014-01-05T00:33:00.66-08:00",
+      "Id": 129120
+    },
+    {
+      "Message": "I believe this solution is correct to your issue.  Please update when possible.  Handling special characters like that is something you should get accustomed to, especially if sourcing data/documents from multiple platforms (Mac,Linux,Windows).",
+      "PostedDate": "2014-01-08T19:35:32.013-08:00",
+      "Id": 129894
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "904612",
+    "ThreadId": "393213",
+    "Html": "\r\n<p>If I do the following &nbsp;:</p>\r\n<p>&nbsp;$table = $section-&gt;addTable();&nbsp; &nbsp; &nbsp;</p>\r\n<p>&nbsp;$table-&gt;addRow(300);&nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p>$table-&gt;addCell(750)-&gt;addText(&quot;test1&quot;);&nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p>$table-&gt;addCell(1000)-&gt;addText(&quot;test2&quot;);&nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p>$table-&gt;addCell(300)-&gt;addText(&quot;test3&quot;);</p>\r\n<p>The width of the cells do not change, instead they just split their width over the size of the page...</p>\r\n<p>Anybody else have this problem?</p>\r\n",
+    "PostedDate": "2012-08-27T07:18:09.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "924147",
+    "ThreadId": "393213",
+    "Html": "<p>It could be that the reach the maximum size. For more information regarding the sizes I recommend you to read this: <a href=\"http://startbigthinksmall.wordpress.com/2010/01/04/points-inches-and-emus-measuring-units-in-office-open-xml/\">http://startbigthinksmall.wordpress.com/2010/01/04/points-inches-and-emus-measuring-units-in-office-open-xml/</a></p>",
+    "PostedDate": "2012-10-09T10:33:44.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

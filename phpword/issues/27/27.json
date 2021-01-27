@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I need for a project a function to parse all used {$vars} from .docx Template.\r\n\r\nHere my function, witch i create for this, perhaps it is useful for other or the PHPWord project itself.\r\n\r\nTemplate.php\r\n/**\r\n    * Funktion to find all defined vars in template\r\n    * @return array with all vars as value\r\n    */\r\n    public function getAllVars() {\r\n        $encode = 'UTF-8';\r\n        $anz = mb_substr_count($this->_documentXML, '${', $encode);\r\n\r\n        $vars = array();\r\n\r\n        $lastpos = 0;\r\n        for ($i = 0; $i < $anz; $i++) {\r\n            $start = mb_strpos($this->_documentXML, '${', $lastpos, $encode);\r\n            $end = mb_strpos($this->_documentXML, '}', $start, $encode);\r\n            $var_name = mb_substr($this->_documentXML, $start, $end-$start+1, $encode);\r\n            $lastpos = $end;\r\n\r\n            $vars[] = mb_substr($var_name, 2, -1, $encode);\r\n        }\r\n\r\n        return $vars;\r\n    }",
+    "LastUpdatedDate": "2011-09-06T03:50:51.76-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-08-15T02:12:51.603-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Feature Request: gell all used {$vars} from .docx Template",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 27
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

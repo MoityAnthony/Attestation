@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "581341",
+    "ThreadId": "249914",
+    "Html": "\r\n<p>HI All,</p>\r\n<p>&nbsp;</p>\r\n<p>Pls help me, how to write styles for word doc.</p>\r\n<p>I want to reduce line height, but i couldnt.</p>\r\n<p>&nbsp;</p>\r\n<p>Any help</p>\r\n",
+    "PostedDate": "2011-03-16T04:43:32.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "586915",
+    "ThreadId": "249914",
+    "Html": "<p>If the problem (spaceBefore &amp; spaceAfter not working) is in a Table Cell, please see this discussion for a fix.</p>\r\n<p><a title=\"Cell paragraph style fix\" href=\"http://phpword.codeplex.com/discussions/222575\" target=\"_self\">http://phpword.codeplex.com/discussions/222575</a></p>",
+    "PostedDate": "2011-03-26T07:55:41.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

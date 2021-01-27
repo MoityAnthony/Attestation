@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1039294",
+    "ThreadId": "442534",
+    "Html": "Hi every body,\r<br />\n<br />\nThe issue from the template is empty !\r<br />\nWhat's wrong with may code ?\r<br />\n<br />\nMy code :<br />\n<pre><code>&lt;?php\n// Include the PHPWord.php, all other classes were loaded by an autoloader\nrequire_once 'PHPWord.php';\nrequire_once 'PHPWord/Template.php';\n\n$PHPWord = new PHPWord();\n$template = $PHPWord-&gt;loadTemplate('Examples/Template.docx');\n\n$template-&gt;setValue('Value1', '101');\n$template-&gt;setValue('Value2', '102');\n$template-&gt;setValue('Value3', '103');\n$template-&gt;setValue('Value4', '104');\n$template-&gt;setValue('Value5', '105');\n$template-&gt;setValue('Value6', '106');\n$template-&gt;setValue('Value7', '107');\n$template-&gt;setValue('Value8', '1008');\n$template-&gt;setValue('Value9', '1000');\n$template-&gt;setValue('Value10', '10067');\n\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\n$objWriter-&gt;save('../ComperioV1/dossierPerso/Template.docx');\n?&gt;</code></pre>\n\nWhy that ?\r<br />\n<br />\nMany thks for your advises !<br />\n",
+    "PostedDate": "2013-05-04T00:18:42.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043192",
+    "ThreadId": "442534",
+    "Html": "create template file &quot;Template.docx&quot; under the same directory of Template.php then edit the template file using microsoft word. you may put variable ${Value1}, ${Value2} .... to replace the value of setValue.<br />\n",
+    "PostedDate": "2013-05-13T23:38:20.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043213",
+    "ThreadId": "442534",
+    "Html": "replace :\r<br />\n<br />\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r<br />\n$objWriter-&gt;save('../ComperioV1/dossierPerso/Template.docx');\r<br />\n<br />\nby :\r<br />\n<br />\n$template-&gt;save('../ComperioV1/dossierPerso/Template.docx');<br />\n",
+    "PostedDate": "2013-05-14T00:11:03.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1043669",
+    "ThreadId": "442534",
+    "Html": "Thank U guys for good advises.<br />\n<br />\nNow i would like to know if i can have several templates and can i manage this ?<br />\n<br />\nI issued, with MS Word, 3 templates (Templates1.docx, Templates2.docx, Templates2.docx) located in my site root folder. Any things worked out ...<br />\n<br />\nMany thanks <br />\n",
+    "PostedDate": "2013-05-14T23:58:54.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

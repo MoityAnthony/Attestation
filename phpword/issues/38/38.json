@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 3,
+    "Custom": null,
+    "Description": "I used the example code from PHPWord's site: http://phpword.codeplex.com/documentation And when I try and open it with Word I get the error \"The Office Open XML file test.docx cannot be opened because there are problems with the contents.\" and when I click \"Details\" It simply says \"The file is corrupt and cannot be opened.\" It does let me repair it and open it, but that wouldn't be very user friendly... Here is the code I'm using:\r\n\r\n// Create a new PHPWord Object\r\n$PHPWord = new PHPWord();\r\n\r\n// Every element you want to append to the word document is placed in a section. So you need a section:\r\n$section = $PHPWord->createSection();\r\n\r\n// After creating a section, you can append elements:\r\n$section->addText('Hello world!');\r\n\r\n// You can directly style your text by giving the addText function an array:\r\n$section->addText('Hello world! I am formatted.', array('name'=>'Tahoma', 'size'=>16, 'bold'=>true));\r\n\r\n// If you often need the same style again you can create a user defined style to the word document\r\n// and give the addText function the name of the style>:\r\n$PHPWord->addFontStyle('myOwnStyle', array('name'=>'Verdana', 'size'=>14, 'color'=>'1B2232'));\r\n$section->addText('Hello world! I am formatted by a user defined style', 'myOwnStyle');\r\n\r\n// You can also putthe appended element to local object an call functions like this:\r\n$myTextElement = $section->addText('Hello World!');\r\n\r\n\r\n\r\nheader('Content-Type: application/vnd.ms-word');\r\nheader('Content-Disposition: attachment;filename=\"test.docx\"');\r\nheader('Cache-Control: max-age=0');\r\n// At least write the document to webspace:\r\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r\n$objWriter->save('php://output');\r\n\r\n\r\nAs you can see I did use php://output as the save there. Any ideas on how to get rid of the corruption. I did open the zip and saw that at the end of document.xml it appears there is blank line. Maybe that is causing it?\r\n\r\nThanks!",
+    "LastUpdatedDate": "2013-03-27T02:04:11.73-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2011-12-21T18:15:42.487-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "PHPWord outputs corrupt file.",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 38
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "try this :\n          $objWriter->save('test.docx');\n\n          echo '<a href=\"test.docx\">DownLoad</a>';",
+      "PostedDate": "2012-07-18T05:39:27.647-07:00",
+      "Id": 70373
+    },
+    {
+      "Message": "I've come across this, I have tried PHPWord on 2 systems, works fine on one and corrupted on the other, when you open the corrupt files though they're fine.  And it happens whether you save it or open it.  Only major differences between environments is 1 is running php5.2 64bit, and the other is running php5.3 32 bit, the former is the one that's failing.  They open fine in OpenOffice as well.\n\nI'm using the templating features, not tried any other way.\n\nIs there a fix for this?",
+      "PostedDate": "2012-11-07T18:48:05.553-08:00",
+      "Id": 81936
+    },
+    {
+      "Message": "make sure that the _staticDocParts referenced in PHPWord\\Writer\\Word2007.php can be loaded",
+      "PostedDate": "2013-03-27T02:03:52.743-07:00",
+      "Id": 94505
+    }
+  ]
+}

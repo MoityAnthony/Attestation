@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "982174",
+    "ThreadId": "428209",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>Is it possible to use one .docx file as a template for multiple pages in a document.</p>\r\n<p>For example:</p>\r\n<p style=\"padding-left:30px\"><em>Create Document</em></p>\r\n<p style=\"padding-left:30px\"><em>For loop ( 1 to n )</em></p>\r\n<p style=\"padding-left:30px\"><em><span style=\"white-space:pre\"></span>Load template</em></p>\r\n<p style=\"padding-left:30px\"><em><span style=\"white-space:pre\"></span>Search & replace variables</em></p>\r\n<p style=\"padding-left:30px\"><em>End loop</em></p>\r\n<p style=\"padding-left:30px\"><em>Save&Download document</em></p>\r\n<p>I'm trying to do this for records in database using foreach loop.</p>\r\n<p>Thanks in advance.</p>\r\n",
+    "PostedDate": "2013-01-01T15:42:53.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "984685",
+    "ThreadId": "428209",
+    "Html": "\r\n<p>I have re-written the template code to do this very thing. When I am happy it works OK, then I will ask the developers if they would like to use it (if the have not developed the feature already).</p>\r\n<p>At The moment it seems to deal the simple templates, which includes tables, headers and footers fine.</p>\r\n",
+    "PostedDate": "2013-01-09T13:41:52.533-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "984686",
+    "ThreadId": "428209",
+    "Html": "\r\n<p>It would be great if you could give me idea how to do it, or share code... I need this for my project where I would like to export multiple posts from my web app into one big Word file, each post on separate page... I'm currently using simple template, with\r\n some variables which get replaced before export.<br>\r\n<br>\r\nThanks.&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-09T13:46:02.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "984701",
+    "ThreadId": "428209",
+    "Html": "\r\n<p>I have just uploaded it to the issue tracker. You will have to replace the template.php with it. It also includes some code to better detect the SetValue fields, but I believe there may be better out there.</p>\r\n",
+    "PostedDate": "2013-01-09T14:11:42.48-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1153448",
+    "ThreadId": "428209",
+    "Html": "Dear Lloydie,\r<br />\n<br />\nI have the problem to output several pages starting from a mysql select (something like SELECT * FROM TABLE).\r<br />\nI saw you faced the problem some time ago.\r<br />\nAre you so kind to teach me how and where place a SELECT ...  within the template.php program and if you have a sample copy to send me of it.\r<br />\nI'm not a programmer and I have serious difficult to deal with tech things.\r<br />\nI'm stucked in this point from very long time and nobody is helping me.\r<br />\nMany thanks in advance.\r<br />\nBye\r<br />\nGiovanni\r<br />\n<a href=\"mailto:giovanni.chiozza@libero.it\" rel=\"nofollow\">giovanni.chiozza@libero.it</a><br />\n",
+    "PostedDate": "2014-01-11T02:35:59.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

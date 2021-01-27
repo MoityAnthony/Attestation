@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1445425",
+    "ThreadId": "645337",
+    "Html": "I'm Trying use the sample 05 on phpword to create a text with Multi Columns (like a newspaper).\r<br />\n<br />\nThe sample here:\r<br />\n<br />\n<a href=\"https://github.com/PHPOffice/PHPWord/blob/develop/samples/Sample_05_Multicolumn.php#L1\" rel=\"nofollow\">https://github.com/PHPOffice/PHPWord/blob/develop/samples/Sample_05_Multicolumn.php#L1</a>\r<br />\n<br />\nBut using the sample 05 is not working, an error appears saying \r<br />\n<br />\n&quot;Call to a member function addSection() on null&quot; \r<br />\n<br />\nCan somebody give me a another example to how to do this?\r<br />\n<br />\n<br />\n<strong>This is my code:</strong>\r<br />\n<br />\n require_once 'PHPWord.php';<br />\n<pre><code> // New Word Document\n $PHPWord = new PHPWord();\n\n // New portrait section\n  $section = $PHPWord-&gt;createSection();\n\n\n\n // Two columns text\n     $section = $phpWord-&gt;addSection(\n         array(\n        'colsNum'   =&gt; 2,\n        'colsSpace' =&gt; 1440,\n        'breakType' =&gt; 'continuous',\n      )</code></pre>\n\n);\r<br />\n<br />\n<br />\n$section-&gt;addText(htmlspecialchars(&quot;Two columns, one inch (1440 twips) spacing.&quot;, ENT_COMPAT, 'UTF-8'));\r<br />\n<br />\n<br />\n<br />\n<br />\n// Save File\r<br />\n$objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');\r<br />\n$objWriter-&gt;save('AdvancedTable.docx');\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2015-09-22T11:16:22.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

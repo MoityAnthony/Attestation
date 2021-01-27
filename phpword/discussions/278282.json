@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "693610",
+    "ThreadId": "278282",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm using:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$section-&gt;addPageBreak();\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>to add a new page, but it appears it adds a new line at the beginning of the new page.</p>\r\n<p>Is there any way to remove it, or am I doing anything wrong?</p>\r\n<p>I didn't see any options in PHPWord_Docs_0.6.2.docx.</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-11-03T15:44:41.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "717043",
+    "ThreadId": "278282",
+    "Html": "<p>First of all, congrats to the author of phpword. Excellent work!</p>\n<p>I use this library in an recent project, have changed it to suit my needs and addressed many issues. More when and if asked...</p>\n<p>&nbsp;</p>\n<p>Now, for the new line after page break:</p>\n<p>Change the <em>settings.xml</em> file to the corresponding file in a plain docx you created from Word 2007/2010 in your pc. Most important, set <strong>compat</strong> tag empty.</p>",
+    "PostedDate": "2011-12-25T07:51:09.64-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1126069",
+    "ThreadId": "278282",
+    "Html": "Thanks for this !\r<br />\n<br />\nI just delete all data in the settings.xml file's compat section and it works !\r<br />\n(directory to the settings.xml file : _<em>PHPWord/<em>staticDocParts/settings.xml</em></em> )<br />\n",
+    "PostedDate": "2013-11-18T08:33:37.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1223006",
+    "ThreadId": "278282",
+    "Html": "it would be great to know what we are deleting. It worked, I had same problem, but all those options, what are they? Maybe we broke something what we don't see right now?<br />\n<pre><code>    &lt;w:compat&gt;\n        &lt;w:useNormalStyleForList/&gt;\n        &lt;w:doNotUseIndentAsNumberingTabStop/&gt;\n        &lt;w:useAltKinsokuLineBreakRules/&gt;\n        &lt;w:allowSpaceOfSameStyleInTable/&gt;\n        &lt;w:doNotSuppressIndentation/&gt;\n        &lt;w:doNotAutofitConstrainedTables/&gt;\n        &lt;w:autofitToFirstFixedWidthCell/&gt;\n        &lt;w:underlineTabInNumList/&gt;\n        &lt;w:displayHangulFixedWidth/&gt;\n        &lt;w:splitPgBreakAndParaMark/&gt;\n        &lt;w:doNotVertAlignCellWithSp/&gt;\n        &lt;w:doNotBreakConstrainedForcedTable/&gt;\n        &lt;w:doNotVertAlignInTxbx/&gt;\n        &lt;w:useAnsiKerningPairs/&gt;\n        &lt;w:cachedColBalance/&gt;\n    &lt;/w:compat&gt;</code></pre>\n\n",
+    "PostedDate": "2014-03-14T23:30:52.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1224655",
+    "ThreadId": "278282",
+    "Html": "Bug confirmed. I've submitted a <a href=\"https://github.com/PHPOffice/PHPWord/issues/150\" rel=\"nofollow\">bug report</a> for this in GitHub. Thanks.<br />\n",
+    "PostedDate": "2014-03-19T21:55:27.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1246669",
+    "ThreadId": "278282",
+    "Html": "This bug was fixed. Please read the detail in <a href=\"https://github.com/PHPOffice/PHPWord/issues/150\" rel=\"nofollow\">GitHub</a>. Thanks.<br />\n",
+    "PostedDate": "2014-05-18T08:51:10.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

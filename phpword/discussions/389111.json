@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "891591",
+    "ThreadId": "389111",
+    "Html": "\r\n<p>I need to use table in header, but it does not work. this is my code:</p>\r\n<p>&nbsp;</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>$header = $section-&gt;createHeader();\r\n$table = $header-&gt;addTable($styleTable);\r\n$table-&gt;addRow();\r\n$table-&gt;addCell(1500)-&gt;addImage($logo_small, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'align'</span> =&gt; <span style=\"color:#a31515\">'left'</span>));\r\n$table-&gt;addCell(1500)-&gt;addPreserveText(<span style=\"color:#a31515\">' {PAGE} of {NUMPAGES} '</span>, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'align'</span>=&gt;<span style=\"color:#a31515\">'both'</span>));\r\n$table-&gt;addCell(1000)-&gt;addImage($header_img, <span style=\"color:blue\">array</span>(<span style=\"color:#a31515\">'align'</span> =&gt; <span style=\"color:#a31515\">'right'</span>));\r\n</pre>\r\n</div>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>has anyone tried this and had similar problems?</p>\r\n<p>i am using Libre office.</p>\r\n",
+    "PostedDate": "2012-07-26T03:52:09.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "892064",
+    "ThreadId": "389111",
+    "Html": "<p>maybe the problem is the path to your images?</p>\r\n<p>Your code sounds good: I have the nearly same code! And it works for me...</p>\r\n<p>Is there any error?</p>",
+    "PostedDate": "2012-07-26T22:10:07.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "892140",
+    "ThreadId": "389111",
+    "Html": "<p>I tried a table without images too, just text but with no good results.</p>\r\n<p>I am guessing that Libre office does not interpret some specific lines of xml of phpword. because when i create a new docx file using libre office and open it again, table disapears from header.</p>\r\n<p>So i think this topic needs to be closed, because problem is not with the script.</p>",
+    "PostedDate": "2012-07-27T01:17:47.243-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "892880",
+    "ThreadId": "389111",
+    "Html": "<p>yes, I think so because I use the same code and it works as expected.</p>\r\n<p>Sorry for you...</p>",
+    "PostedDate": "2012-07-29T22:49:39.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "893573",
+    "ThreadId": "389111",
+    "Html": "<p>It works for me ,maybe the src of your image is not correct.</p>\r\n<p>&nbsp;</p>\r\n<p>what is your word version?</p>",
+    "PostedDate": "2012-07-31T04:59:21.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "893576",
+    "ThreadId": "389111",
+    "Html": "<p>i use Libre Office 3.5 (not MS word), so that is the problem. The script is doing its job just fine. Although in the future i hope either libre office or this script will add some more support for each other :)</p>",
+    "PostedDate": "2012-07-31T05:04:45.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

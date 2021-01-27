@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "662631",
+    "ThreadId": "270211",
+    "Html": "\r\n<p>Hi there</p>\r\n<p>I created a Word document with 2 headers.<br>\r\nThe only problem is that when the user inserts a page-break on the first page of the document, the first header re-appears on the second page.<br>\r\nIs there something in PHPWord like &quot;Header different from first page&quot; ??</p>\r\n<p>Thanks for the reply</p>\r\n",
+    "PostedDate": "2011-08-24T05:23:10.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "458017",
+    "ThreadId": "216740",
+    "Html": "Is there any way to create a nested table (cells within a cell, colspan sort of thing)? I can't find any info on it.\r\n\r\nThanks!",
+    "PostedDate": "2010-06-21T06:00:15.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "458915",
+    "ThreadId": "216740",
+    "Html": "<p>I too would like to know if this can be done.</p>",
+    "PostedDate": "2010-06-23T05:18:32.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461784",
+    "ThreadId": "216740",
+    "Html": "Actually, nested tables or advanced table styles (colspans or rowspans) aren't supported. I'm sorry.",
+    "PostedDate": "2010-06-30T12:38:20.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "524804",
+    "ThreadId": "216740",
+    "Html": "\r\n<p>I would love to see nested tables as well.&nbsp; Perhaps in the next release? :)</p>\r\n",
+    "PostedDate": "2010-11-20T14:47:05.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1098971",
+    "ThreadId": "216740",
+    "Html": "I just got solution for this issue.\r<br />\n<br />\nplease see <a href=\"https://phpword.codeplex.com/discussions/245828\" rel=\"nofollow\">https://phpword.codeplex.com/discussions/245828</a><br />\n",
+    "PostedDate": "2013-09-25T04:58:14.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

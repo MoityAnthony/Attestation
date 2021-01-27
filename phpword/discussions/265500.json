@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "643567",
+    "ThreadId": "265500",
+    "Html": "\r\n<p>I have my application server build on windows OC ( PHP, apache 2.2.14, phpword ). When I migrate to linux does not work.</p>\r\n<p>Parts of my code:</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $section-&gt;addText('Hello!', array('name' =&gt; 'Arial', 'size' =&gt; '11', 'bold' =&gt; true), 'pStyle');</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; header ( 'Content-Description: File Transfer' );<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; header(&quot;Content-type: application/vnd.ms-word&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; header(&quot;Content-Disposition: attachment; filename=temp.doc&quot;);<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; header(&quot;Pragma: no-cache&quot;);<br>\r\n<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $objWriter = PHPWord_IOFactory::createWriter($PHPWord, 'Word2007');<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $objWriter-&gt;save('php://output');</p>\r\n<p>If any ideas?</p>\r\n",
+    "PostedDate": "2011-07-17T23:36:21.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "805985",
+    "ThreadId": "265500",
+    "Html": "<p>I had the same problem, because I had changed PHPWord.php in phpword.php and the map PHPWord in phpword. Linux is case sensitive...</p>",
+    "PostedDate": "2012-03-05T23:26:03.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

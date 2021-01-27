@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1289785",
+    "ThreadId": "561093",
+    "Html": "Can anyone help me? Please. I have a problem and I can not find a solution. <br />\n1- I need merge two word documents with pictures.<br />\n2- Or something like &quot;setValue&quot; for images. Replace text to image.<br />\n<br />\nThe merge works fine, the problem is that the image does not exist in the main document, the second docx repeats the same &quot;image1.jpeg&quot; picture that the main document. I need add the new Image in the main document and change the reference.<br />\n<br />\nI have tried many codes, but without success.<br />\n<br />\nPlease, somebody  have any idea?<br />\n<br />\nThank you<br />\n",
+    "PostedDate": "2014-08-13T13:01:02.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

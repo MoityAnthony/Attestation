@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1279712",
+    "ThreadId": "554773",
+    "Html": "how to align table in the center of the page?<br />\n",
+    "PostedDate": "2014-07-31T13:14:53.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1285160",
+    "ThreadId": "554773",
+    "Html": "ADD in function _writeTable    (base.php)    this:<br />\n<pre><code>$objWriter-&gt;startElement('w:tblpPr');\n$objWriter-&gt;writeAttribute(&quot;w:tblpXSpec&quot;,&quot;center&quot;);\n $objWriter-&gt;endElement();</code></pre>\n\nRESOLVED!<br />\n",
+    "PostedDate": "2014-08-04T13:24:37.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-08-04T13:25:05.313-07:00"
+  }
+]

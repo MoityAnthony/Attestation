@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "899508",
+    "ThreadId": "391688",
+    "Html": "\r\n<p>Posting this in case it's helpful to anyone else:</p>\r\n<p>&quot;illegal qualified name character&quot; error when opening transfer form generated into .docx and also &quot;missing semi-colon&quot;</p>\r\n<p>I got this problem when opening a file which had been created from information held in the database, but updated through the front-end. The information was saved to the database and then on-demand written out into the place markers in a template document.</p>\r\n<p>It was down to the characters &gt; &lt; &amp; being in the text and Word was trying to interpret them.</p>\r\n<p>I worked around it by adding htmlentities() around the text I was writing to the word document - the document can now be opened!</p>\r\n",
+    "PostedDate": "2012-08-15T06:25:36.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "899772",
+    "ThreadId": "391688",
+    "Html": "<p>What about</p>\r\n<h1>htmlspecialchars()&nbsp;</h1>",
+    "PostedDate": "2012-08-15T22:08:25.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

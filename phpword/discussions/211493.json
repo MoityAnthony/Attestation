@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "438726",
+    "ThreadId": "211493",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;&nbsp;&nbsp; I found, I can only add link tag in body section of the document but I am not allowed to put that in header/footer. Microsoft word allows putting links in header/footer. Where is the exact problem?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Swarnendu</p>",
+    "PostedDate": "2010-05-04T02:33:18.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438756",
+    "ThreadId": "211493",
+    "Html": "Hello Swarnendu,\r\n\r\nthis feature isn't implemented by the moment.\r\nThe problem is that each hyperlink has a relation-id to the corresponding relation xml file in the word package.\r\nYou cannot just add the &quot;addLink&quot; function to the header/footer class because the O2007-writer doesn't support this feature. Its complex to implement.\r\n\r\n\r\nraw",
+    "PostedDate": "2010-05-04T04:46:25.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438758",
+    "ThreadId": "211493",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;&nbsp; Got your point. Thanks for your reply.</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Swarnendu</p>",
+    "PostedDate": "2010-05-04T04:53:04.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

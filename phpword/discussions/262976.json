@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "633695",
+    "ThreadId": "262976",
+    "Html": "\r\n<p>Is it possible to create a template with a spot to add in an image?</p>\r\n",
+    "PostedDate": "2011-06-27T12:02:14.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "813522",
+    "ThreadId": "262976",
+    "Html": "<p>This is pretty much untested. but this is working for me (although mine is slightly different):</p>\n<ol>\n<li>add the following function to PHPWord/Template.php :\n<pre> public function save_image($id,$filepath,&amp;$document=null) { \n    \tif(file_exists($filepath))\n    \t{\n    \t\t$this-&gt;_objZip-&gt;deleteName('word/media/'.$id);    \t\t\n    \t\t$this-&gt;_objZip-&gt;addFile ($filepath,'word/media/'.$id);\n    \t\t//$document-&gt;setValue($id.'::width', \"300px\");\n    \t\t//$document-&gt;setValue($id.'::height', \"300px\");\n    \t}   \n    }<br /></pre>\n</li>\n<li>create a document with an actual image to be used as a place holder (this solution don't allow setting the with &amp; height of the image or multiple extensions). </li>\n<li>unzip the the documnt and check for the file name in word/media folder. use this file name as the $id for the save_image function. </li>\n</ol>\n<p>you can now use:</p>\n<p>$document-&gt;save_image('image1',$image_path,$document);</p>\n<div id=\"_mcePaste\" class=\"mcePaste\" style=\"position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;\">\n<pre>$id</pre>\n</div>",
+    "PostedDate": "2012-03-21T07:15:45.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1233945",
+    "ThreadId": "262976",
+    "Html": "Hello!\r<br />\n<br />\nI tried your example but I got the following error:\r<br />\nFatal error: Uncaught exception 'Exception' with message 'Could not close zip file.' in C:\\Program Files (x86)\\EasyPHP-5.3.6.1\\www\\ihomologacion\\Classes\\PHPWord\\PHPWord\\Template.php:180 Stack trace: #0 C:\\Program Files (x86)\\EasyPHP-5.3.6.1\\www\\ihomologacion\\word.php(18): PHPWord_Template-&gt;save('./wordRelleno.d...') #1 {main} thrown in C:\\Program Files (x86)\\EasyPHP-5.3.6.1\\www\\ihomologacion\\Classes\\PHPWord\\PHPWord\\Template.php on line 180\r<br />\n<br />\nThank you a lot for your help!<br />\n",
+    "PostedDate": "2014-04-14T09:32:55.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1433411",
+    "ThreadId": "262976",
+    "Html": "<pre><code>add in Template.php class :\n\npublic function replaceStrToImg( $strKey, $arrImgPath ){\n        $strKey = '${'.$strKey.'}';\n        if( !is_array($arrImgPath) )\n            $arrImgPath = array($arrImgPath);\n        \n        $rels = $this-&gt;_objZip-&gt;getFromName('word/_rels/document.xml.rels'); \n        $types = $this-&gt;_objZip-&gt;getFromName('[Content_Types].xml'); \n        \n        $count =  substr_count($rels, 'Relationship') - 1;\n        $relationTmpl = '&lt;Relationship Id=&quot;RID&quot; Type=&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/image&quot; Target=&quot;media/IMG&quot;/&gt;';\n        $imgTmpl = '&lt;w:pict&gt;&lt;v:shape type=&quot;#_x0000_t75&quot; style=&quot;width:289px;height:108px&quot;&gt;&lt;v:imagedata r:id=&quot;RID&quot; o:title=&quot;&quot;/&gt;&lt;/v:shape&gt;&lt;/w:pict&gt;';\n        $typeTmpl = ' &lt;Override PartName=&quot;/word/media/IMG&quot; ContentType=&quot;image/EXT&quot;/&gt;';\n        $toAdd = $toAddImg = $toAddType = '';\n        $aSearch = array('RID', 'IMG');\n        $aSearchType = array('IMG', 'EXT');\n        \n        foreach($arrImgPath as $index =&gt; $img ){\n            $imgExt = array_pop( explode('.', $img) );\n            if( in_array($imgExt, array('jpg', 'JPG') ) )\n                $imgExt = 'jpeg';\n            $imgName = 'img' . ( time() + $index ) . '.' . $imgExt;\n            $rid = 'rId' . ($count + $index);\n            \n            $this-&gt;_objZip-&gt;addFile($img, 'word/media/' . $imgName);\n            \n            $toAddImg .= str_replace('RID', $rid, $imgTmpl) ;\n            \n            $aReplace = array($imgName, $imgExt);\n            $toAddType .= str_replace($aSearchType, $aReplace, $typeTmpl) ;\n            \n            $aReplace = array($rid, $imgName);\n            $toAdd .= str_replace($aSearch, $aReplace, $relationTmpl);\n        }\n        \n        $this-&gt;_documentXML = str_replace( '&lt;w:t&gt;' . $strKey . '&lt;/w:t&gt;', $toAddImg, $this-&gt;_documentXML);\n        $types = str_replace('&lt;/Types&gt;', $toAddType, $types) . '&lt;/Types&gt;';\n        $rels = str_replace('&lt;/Relationships&gt;', $toAdd, $rels) . '&lt;/Relationships&gt;';\n       \n        $this-&gt;_objZip-&gt;addFromString('word/_rels/document.xml.rels', $rels);\n        $this-&gt;_objZip-&gt;addFromString('[Content_Types].xml', $types);\n        $this-&gt;_objZip-&gt;addFromString('word/document.xml', $this-&gt;_documentXML);\n    }\n\n\nuse example:\n\n$PHPWord = new PHPWord();\n$document = $PHPWord-&gt;loadTemplate($template);\n$arrImagenes =  array(\n    '../../images/mc.png',\n    '../../images/logo.png',\n    '../../mineria/image/logo.jpg',\n    '../../images/draw-icon.png'\n    \n);\n$document-&gt;replaceStrToImg('AreaImg', $arrImagenes);\n$documentName = 'Concepto_Tecnico_' . date('Ymd_His') . '.docx';\n$document-&gt;save( $documentName);</code></pre>\n\n",
+    "PostedDate": "2015-07-07T10:06:30.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

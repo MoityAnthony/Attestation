@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a form where user are filling questionnaire , When they submit special characters The doc created is corrupted\r\n\r\nHow can I fix this \r\n\r\nMy code \r\n\r\n```\r\nrequire_once 'src/PhpWord/Autoloader.php';\r\n\t\t\t\\PhpOffice\\PhpWord\\Autoloader::register();\r\n\t\t\t\r\n\t\t\tif(isset($_POST['submit_docs'])){\r\n\t\t\t$companyname= $_POST['companyname'];\r\n                        // Creating the new document...\r\n\t\t\t$phpWord = new \\PhpOffice\\PhpWord\\PhpWord();\r\n                        // Adding an empty Section to the document...\r\n\t\t\t$section = $phpWord->addSection();\r\n\r\n                        $html .= '<ul><li>Company Name and Address : '.$_POST[\"companyname\"].' </li></ul>';\r\n                        \t\t\t\\PhpOffice\\PhpWord\\Shared\\Html::addHtml($section, $html);\r\n\t\t\t$objWriter = \\PhpOffice\\PhpWord\\IOFactory::createWriter($phpWord, 'Word2007');\r\n\t\t\t$objWriter->save('questionnaire/DMKSA_Questionnaire_'.$arr[0].'.docx');\r\n```\r\n\r\nError \r\n\r\n```\r\nWarning: DOMDocument::loadXML(): StartTag: invalid element name in Entity, line: 1 in /home/iclock/public_html/test/src/PhpWord/Shared/Html.php\r\n```\r\n \r\nThis happens only when special characters like '<' is being submitted \r\n\r\nAny leads on this \r\n\r\n ",
+    "LastUpdatedDate": "2015-11-03T23:27:55.56-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "phpword",
+    "ReportedDate": "2015-11-03T23:27:55.56-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "I have a form where user are filling questionnaire , When they submit special characters The doc created is corrupted",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 102
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

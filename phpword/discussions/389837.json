@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "894077",
+    "ThreadId": "389837",
+    "Html": "\r\n<p>Hi, i am struggling with styling a table.</p>\r\n<p>Is there a way to set table background and width (100%) ?</p>\r\n",
+    "PostedDate": "2012-08-01T03:17:51.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "924153",
+    "ThreadId": "389837",
+    "Html": "<p>At the moment not. But if you want I can send you my code. With my code it is possible. I try to get my changes into the official source code.</p>\r\n<p>&nbsp;</p>\r\n<p>If you need it write me directly and I can send you the code.</p>",
+    "PostedDate": "2012-10-09T10:38:58.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "926502",
+    "ThreadId": "389837",
+    "Html": "<p>Thanks huanga, this is my email.</p>\r\n<p>wanglei@estarinfo.net</p>",
+    "PostedDate": "2012-10-14T19:39:37.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017021",
+    "ThreadId": "389837",
+    "Html": "Can you please send the code to set the table width to 100%<br />\n",
+    "PostedDate": "2013-03-18T05:57:47.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1058537",
+    "ThreadId": "389837",
+    "Html": "<strong>huanga wrote:</strong><br />\n<blockquote>\nAt the moment not. But if you want I can send you my code. With my code it is possible. I try to get my changes into the official source code. &nbsp; If you need it write me directly and I can send you the code.<br />\n</blockquote>\nI would greatly appreciate getting this code as well. I am trying to make ID cards with a background image, and I need to be able to layer images and text on top of each other. Thank you!<br />\n",
+    "PostedDate": "2013-06-19T01:29:58.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

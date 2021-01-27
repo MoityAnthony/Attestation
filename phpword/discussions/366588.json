@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "865140",
+    "ThreadId": "366588",
+    "Html": "\r\n<p>Hi, I'm trying to use&nbsp;</p>\r\n<div>\r\n<p>$footer-&gt;addPreserveText('Page {PAGE} of {NUMPAGES}.'); to get the total number of pages but it's invalid.</p>\r\n<p>I actually want to set a value for the total number of pages and placed it in my body.&nbsp;</p>\r\n<p>Any solutions available apart from this documentation given? thanks</p>\r\n</div>\r\n",
+    "PostedDate": "2012-07-13T11:26:43.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "478853",
+    "ThreadId": "223137",
+    "Html": "Is it possible to have page columns with PHPWord from the code, and not from a template?",
+    "PostedDate": "2010-08-10T16:03:48.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "479855",
+    "ThreadId": "223137",
+    "Html": "<p>Or perhaps a table within a table?</p>\r\n<p>Also, is there a way to set up the default tab spacing?</p>",
+    "PostedDate": "2010-08-12T12:02:30.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

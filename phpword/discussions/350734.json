@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "818121",
+    "ThreadId": "350734",
+    "Html": "\r\n<p>Hi&nbsp; all</p>\r\n<p>I am trying to export html content to word docuemt my problem with text direction ?</p>\r\n<p>is there is way to specify text direct with $section-&gt;addText() <strong>right to left</strong>&nbsp; or\r\n<strong>left to right</strong></p>\r\n<p>&nbsp;</p>\r\n<p>thank&nbsp; you all !</p>\r\n",
+    "PostedDate": "2012-03-31T05:46:20.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "982870",
+    "ThreadId": "350734",
+    "Html": "\r\n<p>hi anaskoara this subject interest me as well pls tell me if you have some answers...</p>\r\n",
+    "PostedDate": "2013-01-03T16:01:18.46-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

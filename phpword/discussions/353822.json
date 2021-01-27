@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "829407",
+    "ThreadId": "353822",
+    "Html": "\r\n<p>I have a couple of reports I am trying to create that are very large (1000 pages or more) and have a lot of small but simple tables (up to several per page). &nbsp;The server I'm using is ZendCE for Windows and I'm hitting the 32 bit memory limit for windows\r\n applications (NOTE: *not* the php.ini limit) . &nbsp;I can't find any pointers in the documentation for reducing the memory.</p>\r\n<p>Are there any pointers?</p>\r\n",
+    "PostedDate": "2012-04-27T08:25:18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

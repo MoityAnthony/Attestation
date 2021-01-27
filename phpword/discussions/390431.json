@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "896037",
+    "ThreadId": "390431",
+    "Html": "\r\n<p>Hello!</p>\r\n<p>I got some problems regarding inserting UTF-8 formatted texts into templates using function setValue.</p>\r\n<p>I repaired it in file PHPWord/Template.php changing line 89 from&nbsp;</p>\r\n<p>$replace = utf8_encode($replace);&nbsp;</p>\r\n<p>to</p>\r\n<p>if (mb_detect_encoding($replace, &quot;UTF-8&quot;) != &quot;UTF-8&quot;)&nbsp;$replace = utf8_encode($replace);</p>\r\n<p>&nbsp;</p>\r\n<p>Im sure you understand why it is important...&nbsp;</p>\r\n<p>BR,</p>\r\n<p>Andy</p>\r\n",
+    "PostedDate": "2012-08-06T07:00:35.027-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "897203",
+    "ThreadId": "390431",
+    "Html": "<p><a href=\"/discussions/261365\">This issue has been discussed before</a>. I'm not sure of why text needs to go through utf8_encode() - in other words I haven't seen an example of where it might be needed.</p>\r\n<p>I use PHPWord in the&nbsp;<a href=\"http://htmltodocx.codeplex.com/\">HTML to docx Converter&nbsp;project</a>, but have removed all instances of utf8_encode() (actually replacing it with a dummy function which passes a string through unchanged) - so that version of PHPWord can handle international character sets.</p>",
+    "PostedDate": "2012-08-08T13:32:23.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
